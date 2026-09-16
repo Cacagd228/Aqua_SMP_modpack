@@ -1,0 +1,13 @@
+name = "Create: Access Denied"
+filename = "create-access-denied-0.0.4+c6.0.10.mc1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/l7OfHLkp/versions/g0JvLmzZ/create-access-denied-0.0.4%2Bc6.0.10.mc1.21.1.jar"
+hash-format = "sha512"
+hash = "11f371e3ed28e25d1878a438cdaec43e06dc4a7f5d5d24e5b5bff9be8c5b67c0af5acd7c86ba9e4efa0c128ab1ef4a6909cae920c4e2c8b60a30275e13197bf2"
+
+[update]
+[update.modrinth]
+mod-id = "l7OfHLkp"
+version = "g0JvLmzZ"

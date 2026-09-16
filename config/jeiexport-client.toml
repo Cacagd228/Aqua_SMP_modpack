@@ -1,0 +1,3 @@
+[recipe_tree]
+	#Give the first player a Recipe Tree guide in newly created singleplayer worlds.
+	spawnBookInNewWorlds = true

@@ -1,0 +1,16 @@
+#Client-side settings for Create: Marketplace
+[appearance]
+	#Where the Marketplace button should appear when EMI is not installed.
+	#CORNER - Bottom-left corner (default)
+	#INVENTORY_SIDE - Left side of the inventory
+	#CUSTOM - Use custom coordinates
+	#Allowed Values: CORNER, INVENTORY_SIDE, CUSTOM
+	buttonPosition = "CORNER"
+	#Custom X coordinate for the button (used only if buttonPosition is CUSTOM)
+	# Default: 2
+	# Range: 0 ~ 4000
+	customButtonX = 2
+	#Custom Y coordinate for the button (used only if buttonPosition is CUSTOM)
+	# Default: 2
+	# Range: 0 ~ 4000
+	customButtonY = 2

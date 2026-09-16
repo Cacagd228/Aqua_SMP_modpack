@@ -1,0 +1,8 @@
+name = "Panoptic Recipe Builder (private, pinned)"
+filename = "panoptic_recipe_builder-1.21.1-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/panoptic_recipe_builder-1.21.1-1.0.0.jar"
+hash-format = "sha512"
+hash = "8ac1853be42e739aff32d4d98bfd73a2bb38e3647e6d41d1a813fe638ecc78269dcc32a8e4535551e9a0187490d7ce6b04090d2a19a4615c2057e5b45c91b4ae"

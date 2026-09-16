@@ -1,0 +1,13 @@
+name = "CC Synaxis Connector"
+filename = "ccsconnector-0.0.1-beta.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RJW88pUc/versions/xLs1oKzH/ccsconnector-0.0.1-beta.jar"
+hash-format = "sha512"
+hash = "c12d273d2d1ac1dd6feb118c6299ee5e5267249c1ae9652cc72cad3748522370c97a75d3ca4fa3b37084ac4ff3e345104ce183861a9f9b5f1240d15c71b7ea1e"
+
+[update]
+[update.modrinth]
+mod-id = "RJW88pUc"
+version = "xLs1oKzH"

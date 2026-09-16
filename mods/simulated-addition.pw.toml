@@ -1,0 +1,13 @@
+name = "Simulated Addition"
+filename = "simulated_addition-1.0.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/j55CF8YT/versions/H1UegNiW/simulated_addition-1.0.2.jar"
+hash-format = "sha512"
+hash = "2ca063650a83e3c3cbee89618f1d2543096ac163be4cf8a036cf2d99fb6f1f1f7fee4bbdc202ab5f07af49ec445022c99d06841e5d86545d1f027991cdadb2f1"
+
+[update]
+[update.modrinth]
+mod-id = "j55CF8YT"
+version = "H1UegNiW"

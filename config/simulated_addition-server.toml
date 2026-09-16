@@ -1,0 +1,16 @@
+#.
+#Parameters and abilities of Create's kinetic mechanisms
+[kinetics]
+
+		#.
+		#.
+		#Fine tune the kinetic stats of individual components
+		[kinetics.stressValues.v2]
+
+			#.
+			#.
+			#[in Stress Units]
+			#Configure the individual stress impact of mechanical blocks. Note that this cost is doubled for every speed increase it receives.
+			[kinetics.stressValues.v2.impact]
+				directional_propeller_bearing = 2.0
+				directional_gyroscopic_propeller_bearing = 2.0

@@ -1,0 +1,13 @@
+name = "Aqua SMP"
+author = "Cacagd228"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "4ed1b10b686baed5ba1436893223a0c52f3910d760193d24813c1d844469b695"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.248"

@@ -1,0 +1,8 @@
+name = "Waterwheel Bearing (pinned)"
+filename = "waterwheelbearing-3.0.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/waterwheelbearing-3.0.0.jar"
+hash-format = "sha512"
+hash = "46beec54613dcb6ce89fbf76df3c00f5dadd7085d791630767f7e66f9a034fb7c7d2adc6064ed83ba49e30227294549ae1ce52bb118cb4559041c80f00d88449"

@@ -1,0 +1,8 @@
+name = "Harder Diesel (pinned, CurseForge-only)"
+filename = "harderdiesel-1.4.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/harderdiesel-1.4.0.jar"
+hash-format = "sha512"
+hash = "c15f54a3d601cf953726aa5084c53508e6e6d8cfb89fd9f213655f6ea1230c5e0b5be237776cd1b2bbf7e05d6c0bc11c059e30c4535c85d6153c5b9c959871e5"

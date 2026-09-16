@@ -1,0 +1,13 @@
+name = "Create: Warnautics"
+filename = "Create_Warnautics-1.0.7+mc.1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/DtRY2QQN/versions/LPMh7gyG/Create_Warnautics-1.0.7%2Bmc.1.21.1.jar"
+hash-format = "sha512"
+hash = "0fffa967aa047c7c3b7e4edd84c9dc8a9956c60bb00b9d3ecdb6a367805413996219ae5ca2afd173a190a6bf3d6df5a4730997431f08c9024bd4343009dd6033"
+
+[update]
+[update.modrinth]
+mod-id = "DtRY2QQN"
+version = "LPMh7gyG"

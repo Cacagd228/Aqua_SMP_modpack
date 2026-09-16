@@ -1,0 +1,16 @@
+#Progress display mode (ALL, LIMIT)
+#ALL: show overall progress [completed / total quests]
+#LIMIT: show linear segment only (max length defined below)
+#Any other value will display the full branching chain without limits
+progress_mode = ""
+#Only used when progress_mode = LIMIT
+#Default = 5
+# Default: 5
+# Range: 1 ~ 1024
+limit_length = 5
+#Include hidden quests in progress calculation (SHOW, HIDE, UNKNOWN)
+#SHOW    = Include hidden quests in progress
+#HIDE    = Exclude hidden quests from progress
+#UNKNOWN = Adds a '+' after the total if there are hidden quests
+#Default = HIDE
+include_hidden = "HIDE"

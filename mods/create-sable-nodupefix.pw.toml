@@ -1,0 +1,13 @@
+name = "Create Sable NoDupeFix"
+filename = "nodupefix-2.0.0.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/YAINbE5q/versions/vtFEjzCw/nodupefix-2.0.0.jar"
+hash-format = "sha512"
+hash = "4dacaf417e3970b46f2ab272f50d2f06adaa1cccef7fe87334a795dcf2a5f2495000645f0da89270e67ee6a9f74a122301c130922f6104e04542752f3c59c21b"
+
+[update]
+[update.modrinth]
+mod-id = "YAINbE5q"
+version = "vtFEjzCw"

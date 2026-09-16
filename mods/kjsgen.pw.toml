@@ -1,0 +1,13 @@
+name = "KubeJS Generator"
+filename = "kjsgen-neoforge-2.0.5+mc1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/J1O5LzHw/versions/qDW8nWEx/kjsgen-neoforge-2.0.5%2Bmc1.21.1.jar"
+hash-format = "sha512"
+hash = "19c5e6dbd314133899096042c3f613e05201ed3ffe7a62b2b34e5bf137ae606160df9ae711ae0ffcf630153bd52cf017f53237516b3c788e6b1ed3d1f731fc05"
+
+[update]
+[update.modrinth]
+mod-id = "J1O5LzHw"
+version = "qDW8nWEx"

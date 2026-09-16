@@ -1,0 +1,3 @@
+#.
+#If the wiggly hot air effect inside of balloons should be rendered
+hotAirRendering = true

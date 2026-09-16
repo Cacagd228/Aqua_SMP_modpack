@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [],
+  "remove": [
+    "create:goggles",
+    "hexcasting:lens",
+    "beachparty:sunglasses",
+    "relics:piglin_mask",
+    "#createbigcannons:gas_masks",
+    "#artifacts:slot/face"
+  ]
+}

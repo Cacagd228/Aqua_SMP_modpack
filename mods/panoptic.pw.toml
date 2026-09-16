@@ -1,0 +1,13 @@
+name = "Panoptic"
+filename = "Panoptic-1.08a-NeoForge-1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/kLz9tNkz/versions/sycWlGzO/Panoptic-1.08a-NeoForge-1.21.1.jar"
+hash-format = "sha512"
+hash = "c77f0b86d6d93936eb75b8800c32391714d89b8b6dc1ae5dd2d13095b3a1731a69751929a659f8a61129f1ef9cd2cb881be7ca39c366545cf55f08667b01e865"
+
+[update]
+[update.modrinth]
+mod-id = "kLz9tNkz"
+version = "sycWlGzO"

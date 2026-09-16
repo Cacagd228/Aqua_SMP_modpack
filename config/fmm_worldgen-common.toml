@@ -1,0 +1,112 @@
+#=====================================================
+#      FMM Island World Generation Configuration      
+#=====================================================
+[general]
+
+	[general.small_islands]
+		#Grid spacing (cell size in blocks) for small island distribution.
+		#Default: 750.0 (Spacious ocean distance between small islands)
+		# Default: 750.0
+		# Range: 64.0 ~ 8192.0
+		grid_size = 750.0
+		#Minimum radius for small islands (diameter = 2 * radius).
+		#Default: 75.0 (Min Diameter = 150 blocks)
+		# Default: 75.0
+		# Range: 10.0 ~ 1000.0
+		min_radius = 75.0
+		#Maximum radius for small islands (diameter = 2 * radius).
+		#Default: 87.5 (Max Diameter = 175 blocks)
+		# Default: 87.5
+		# Range: 10.0 ~ 1000.0
+		max_radius = 87.5
+		#Spawn probability of small islands per grid cell (0.0 to 1.0).
+		#Default: 0.40 (40% spawn chance per 750-block cell)
+		# Default: 0.4
+		# Range: 0.0 ~ 1.0
+		spawn_chance = 0.4
+
+	[general.medium_islands]
+		#Grid spacing (cell size in blocks) for medium island distribution.
+		#Default: 1400.0 (Spacious ocean distance between medium islands)
+		# Default: 1400.0
+		# Range: 128.0 ~ 8192.0
+		grid_size = 1400.0
+		#Minimum radius for medium islands (diameter = 2 * radius).
+		#Default: 125.0 (Min Diameter = 250 blocks)
+		# Default: 125.0
+		# Range: 20.0 ~ 2000.0
+		min_radius = 125.0
+		#Maximum radius for medium islands (diameter = 2 * radius).
+		#Default: 175.0 (Max Diameter = 350 blocks)
+		# Default: 175.0
+		# Range: 20.0 ~ 2000.0
+		max_radius = 175.0
+		#Spawn probability of medium islands per grid cell (0.0 to 1.0).
+		#Default: 0.35 (35% spawn chance per 1400-block cell)
+		# Default: 0.35
+		# Range: 0.0 ~ 1.0
+		spawn_chance = 0.35
+
+	[general.large_islands]
+		#Grid spacing (cell size in blocks) for large island distribution.
+		#Default: 2400.0 (Spacious distance between grand continents)
+		# Default: 2400.0
+		# Range: 256.0 ~ 16384.0
+		grid_size = 2400.0
+		#Minimum radius for large islands (diameter = 2 * radius).
+		#Default: 187.5 (Min Diameter = 375 blocks)
+		# Default: 187.5
+		# Range: 50.0 ~ 4000.0
+		min_radius = 187.5
+		#Maximum radius for large islands (diameter = 2 * radius).
+		#Default: 212.5 (Max Diameter = 425 blocks)
+		# Default: 212.5
+		# Range: 50.0 ~ 4000.0
+		max_radius = 212.5
+		#Spawn probability of large islands per grid cell (0.0 to 1.0).
+		#Default: 0.30 (30% spawn chance per 2400-block cell)
+		# Default: 0.3
+		# Range: 0.0 ~ 1.0
+		spawn_chance = 0.3
+
+	[general.climate_and_coast]
+		#Spawn weight/chance for HOT islands (Savannas, Badlands Mesas, Mangrove Oases).
+		#Default: 0.15 (15%)
+		# Default: 0.15
+		# Range: 0.0 ~ 1.0
+		hot_island_chance = 0.15
+		#Spawn weight/chance for WARM islands (Tropical Jungles, Cherry Blossom Hills, Sunflower Plains).
+		#Default: 0.25 (25%)
+		# Default: 0.25
+		# Range: 0.0 ~ 1.0
+		warm_island_chance = 0.25
+		#Spawn weight/chance for TEMPERATE islands (Oak/Birch Forest Hills, Dark Oak Woods, Green Alpine Meadows).
+		#Default: 0.30 (30%)
+		# Default: 0.3
+		# Range: 0.0 ~ 1.0
+		temperate_island_chance = 0.3
+		#Spawn weight/chance for COLD islands (Boreal Pine & Spruce Taiga, Windswept Cliffs - NO SNOW on the ground).
+		#Default: 0.15 (15%)
+		# Default: 0.15
+		# Range: 0.0 ~ 1.0
+		cold_island_chance = 0.15
+		#Spawn weight/chance for SNOWY islands (Snowy Taiga, Alpine Frozen Peaks, Ice Spikes & Tundra - WINTER).
+		#Default: 0.15 (15%)
+		# Default: 0.15
+		# Range: 0.0 ~ 1.0
+		snowy_island_chance = 0.15
+		#Width of the sandy/snowy beach ring around all islands in blocks.
+		#Default: 20.0 blocks
+		# Default: 20.0
+		# Range: 4.0 ~ 64.0
+		beach_width = 20.0
+		#Minimum radius/width of the shallow reef lagoon (10-15 blocks depth) around islands.
+		#Default: 30.0 blocks
+		# Default: 30.0
+		# Range: 0.0 ~ 500.0
+		warm_ocean_min_radius = 30.0
+		#Maximum radius/width of the shallow reef lagoon (10-15 blocks depth) around islands.
+		#Default: 120.0 blocks
+		# Default: 120.0
+		# Range: 10.0 ~ 500.0
+		warm_ocean_max_radius = 120.0

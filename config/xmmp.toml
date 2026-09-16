@@ -1,0 +1,14 @@
+# Maximum number of chunk row requests the server accepts from a single player per second
+maxChunkRowRequestsPerSecond = 64
+# Maximum number of retries for sending/receiving a chunk before giving up
+maxRetries = 20
+# Maximum number of chunk uploads the server accepts from a single player per second
+maxChunkUploadsPerSecond = 512
+# Maximum number of chunks to send (per tick)
+chunkSendLimit = 8
+# Maximum number of pending chunk requests during synchronization
+maxPendingSyncChunks = 64
+# Interval (in milliseconds) to clean up the unnecessary data
+flushInterval = 5000
+# Maximum number of chunks to apply (per tick)
+chunkApplyLimit = 32

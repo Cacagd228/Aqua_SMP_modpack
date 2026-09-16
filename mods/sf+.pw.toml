@@ -1,0 +1,13 @@
+name = "Signs Faster"
+filename = "Signs Faster (v1.0.0) - 1.21.1 (NeoForge).jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/NqwetDY4/versions/jbTzhPX0/Signs%20Faster%20%28v1.0.0%29%20-%201.21.1%20%28NeoForge%29.jar"
+hash-format = "sha512"
+hash = "ddbb8cdbb962e0dec00bdcd7ea3c7d566429d62ff547e5cf1f2438577152958279319d2672fb19ecb276c093849742b7f487ae4f1436c429b694c0f36e853d44"
+
+[update]
+[update.modrinth]
+mod-id = "NqwetDY4"
+version = "jbTzhPX0"

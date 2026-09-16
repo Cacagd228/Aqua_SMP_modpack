@@ -1,0 +1,13 @@
+name = "CBC Military Supplement"
+filename = "CBC-Military-Supplement-1.21.1-2.1.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WnQUCdnh/versions/lOHOokMh/CBC-Military-Supplement-1.21.1-2.1.4.jar"
+hash-format = "sha512"
+hash = "948904ddbdacaa4c63f4c7605a4312270a48487f801386e410451a81f98db29417d15e876d1266550ff4106825335f5d6dd6d10a91bf5cf822acc6818d15d324"
+
+[update]
+[update.modrinth]
+mod-id = "WnQUCdnh"
+version = "lOHOokMh"

@@ -1,0 +1,13 @@
+name = "Advancement Disable"
+filename = "advancementdisable-neoforge-1.0.1+1.21.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/XIsVTmcm/versions/6McVQNC9/advancementdisable-neoforge-1.0.1%2B1.21.jar"
+hash-format = "sha512"
+hash = "0a3f643f36b3eb94386e5022f8f8f205d2df3a35da56c533672e267c05e7e7dbf3574e115fdb82a1ca541bd4248da11cc11428850dea1827e15ed310a30a516d"
+
+[update]
+[update.modrinth]
+mod-id = "XIsVTmcm"
+version = "6McVQNC9"

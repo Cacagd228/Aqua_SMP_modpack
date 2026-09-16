@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install packwiz
+        run: |
+          go install github.com/packwiz/packwiz@latest
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+
+      - name: Refresh and export
+        run: |
+          packwiz refresh
+          packwiz mr export -o "AquaSMP-${GITHUB_REF_NAME}.mrpack"
+
+      - name: Publish to Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "AquaSMP-*.mrpack"
+          generate_release_notes: true

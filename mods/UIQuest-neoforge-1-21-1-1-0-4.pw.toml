@@ -1,0 +1,8 @@
+name = "UIQuest (pinned)"
+filename = "UIQuest-neoforge-1.21.1-1.0.4.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/UIQuest-neoforge-1.21.1-1.0.4.jar"
+hash-format = "sha512"
+hash = "b0c6e31fbc7f4fbdd1b60b5b89c529631f5325ed5a07fcf5dacfa794a7a41155c0be1c7bb50386769feea12878044b10d53ddc1f9f911f878822ba81587f4174"

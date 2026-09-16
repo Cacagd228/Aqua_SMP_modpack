@@ -1,0 +1,8 @@
+name = "Sable Xaero Maps (private, pinned)"
+filename = "sablexaeromaps-1.21.1-1.4.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/sablexaeromaps-1.21.1-1.4.0.jar"
+hash-format = "sha512"
+hash = "b9922cf91ab0e110c17c8524ed8187538d3d11f49c9e3990dc67404868179b0782ecd7099bda496d17448ebc72b465e35b1aacb2138d24124ef6cf35fb8a183e"

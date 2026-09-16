@@ -1,0 +1,8 @@
+name = "FTB Quests (pinned, CurseForge-only)"
+filename = "ftb-quests-neoforge-2101.1.34.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/ftb-quests-neoforge-2101.1.34.jar"
+hash-format = "sha512"
+hash = "e7a52058ee29f317e7c7cd86ebf4205835fcc9a467da02768cf4c9691aae79918a4b67e9689a483e8b424144813a180a32d383946370213dcc840136d827586e"

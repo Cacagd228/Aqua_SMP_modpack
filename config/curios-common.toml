@@ -1,0 +1,4 @@
+#List of slots to create or modify.
+#See documentation for syntax: https://docs.illusivesoulworks.com/curios/configuration#slot-configuration
+#
+slots = ["id=head;size=1;order=10;add_cosmetic=false", "id=face;size=1;order=20;icon=kubejs:slot/face;add_cosmetic=false", "id=necklace;size=1;order=30;add_cosmetic=false", "id=bracelet;size=2;order=40;add_cosmetic=false", "id=hands;size=1;order=50;add_cosmetic=false", "id=ring;size=2;order=60;add_cosmetic=false", "id=belt;size=1;order=70;add_cosmetic=false", "id=feet;size=1;order=80;add_cosmetic=false", "id=back;size=1;order=90;add_cosmetic=false", "id=shared;size=1;order=100;icon=kubejs:slot/shared;add_cosmetic=false", "id=body;use_native_gui=false", "id=charm;use_native_gui=false", "id=curio;use_native_gui=false", "id=hexpouch;use_native_gui=false", "id=thighs;use_native_gui=false"]

@@ -1,0 +1,8 @@
+name = "Apofix (custom, src D:/Проекты/apofix)"
+filename = "Apofix-1.21.1-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/Apofix-1.21.1-1.0.0.jar"
+hash-format = "sha512"
+hash = "5d47c8a9dfc4064efa76b82bc87c9d68c0e155c78536ce2bed3dd4e993ec177c86968460ef249dbfad82ff313846d6d744bbf7439682d4e7cf0922897ceb888a"

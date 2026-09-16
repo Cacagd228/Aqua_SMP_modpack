@@ -1,0 +1,5 @@
+{
+  "size": 1,
+  "icon": "kubejs:slot/shared",
+  "validators": ["kubejs:any_curio"]
+}

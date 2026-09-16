@@ -1,0 +1,45 @@
+[cracking_reactor]
+	#Minimum height of the Cracking Reactor required to process recipes
+	# Default: 3
+	# Range: 2 ~ 7
+	"Cracking Reactor Minimum Height" = 3
+
+[separator]
+	#Minimum height of the Separator required to process recipes
+	# Default: 3
+	# Range: 2 ~ 8
+	"Separator Minimum Height" = 3
+
+[pollution]
+	#Pollution emitted per tick by active Cracking Reactor (0..10). B: 0.02 = T1~8мин x1, T5~12с x100
+	# Default: 0.02
+	# Range: 0.0 ~ 10.0
+	CrackingPollutionPerTick = 0.02
+	#Pollution emitted per tick by active Separator
+	# Default: 0.016
+	# Range: 0.0 ~ 10.0
+	SeparatorPollutionPerTick = 0.016
+	#Pollution emitted per tick by active Distillation Tower (CDG)
+	# Default: 0.018
+	# Range: 0.0 ~ 10.0
+	DistillationPollutionPerTick = 0.018
+	#Pollution decay per diffusion tick (0..0.2). B: 0.0004 non-linear (0.5+val/1000*0.5) → 1000→0 ~80мин, 2× медленнее набора
+	# Default: 4.0E-4
+	# Range: 0.0 ~ 0.2
+	PollutionDecayRate = 4.0E-4
+	#Pollution diffusion per gradient (0..1). Conservative flux=diffusion*(val-neighbor)/4. B: 0.0018 → завод 1.08/с выходит на ~500 (T2-T3) за ~9-10 мин
+	# Default: 0.0018
+	# Range: 0.0 ~ 1.0
+	PollutionDiffusionRate = 0.0018
+	#Global multiplier for all pollution emissions (0..100). Use command /harderdiesel pollution multiplier
+	# Default: 1.0
+	# Range: 0.0 ~ 100.0
+	GlobalPollutionMultiplier = 1.0
+
+[oil]
+	#Global oil toggle (/harderdiesel oil enable|disable). When off, oil cannot be pumped and scanners show nothing; existing deposits are kept and resume after re-enabling
+	OilEnabled = true
+	#Fraction of eligible chunks that actually contain oil (0..1). Deterministic per world seed. Affects only not-yet-generated deposits
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	OilChunkChance = 0.5

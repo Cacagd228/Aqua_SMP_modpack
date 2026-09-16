@@ -1,0 +1,13 @@
+name = "In Control!"
+filename = "incontrol-1.21-10.2.7.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/KpICtuVx/versions/gsy3YqYj/incontrol-1.21-10.2.7.jar"
+hash-format = "sha512"
+hash = "1f710665df092147d845b69ea7c0d5c1290218870999446f7595b7b0abfa743a6759de77baa7b443a303ed5f103d39b9188c1b4405babbfbcc36737bfe0f1f22"
+
+[update]
+[update.modrinth]
+mod-id = "KpICtuVx"
+version = "gsy3YqYj"
