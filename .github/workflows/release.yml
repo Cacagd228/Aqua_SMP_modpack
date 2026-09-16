@@ -30,7 +30,7 @@ jobs:
 
       - name: Assemble full zip (Prism import)
         run: |
-          packwiz install
+          python3 tools/fetch-mods.py
           STAGE="prism-stage"
           mkdir -p "$STAGE/minecraft"
           cp prism/mmc-pack.json "$STAGE/"
