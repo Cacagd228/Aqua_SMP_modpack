@@ -25,8 +25,9 @@ prism-stage/
 
 # Если пак случайно открывают как PrismLauncher-инстанс
 instance.cfg
-mmc-pack.json
+/mmc-pack.json
 mmc-pack.json.bak
+!prism/mmc-pack.json
 logs/
 saves/
 screenshots/
