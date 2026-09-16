@@ -19,6 +19,8 @@ mods/*.jar
 
 # Локальные экспортные артефакты (боевые лежат в GitHub Releases)
 *.mrpack
+AquaSMP-*.zip
+prism-stage/
 
 # Если пак случайно открывают как PrismLauncher-инстанс
 instance.cfg

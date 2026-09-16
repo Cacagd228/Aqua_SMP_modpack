@@ -23,13 +23,26 @@ jobs:
           go install github.com/packwiz/packwiz@latest
           echo "$HOME/go/bin" >> "$GITHUB_PATH"
 
-      - name: Refresh and export
+      - name: Refresh and export .mrpack
         run: |
           packwiz refresh
           packwiz mr export -o "AquaSMP-${GITHUB_REF_NAME}.mrpack"
 
+      - name: Assemble full zip (Prism import)
+        run: |
+          packwiz install
+          STAGE="prism-stage"
+          mkdir -p "$STAGE/minecraft"
+          cp prism/mmc-pack.json "$STAGE/"
+          cp icon.png "$STAGE/minecraft/icon.png"
+          cp -r mods config kubejs defaultconfigs "$STAGE/minecraft/"
+          rm -f "$STAGE/minecraft/mods/"*.pw.toml
+          (cd "$STAGE" && zip -qr "../AquaSMP-${GITHUB_REF_NAME}-prism.zip" .)
+
       - name: Publish to Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: "AquaSMP-*.mrpack"
+          files: |
+            AquaSMP-*.mrpack
+            AquaSMP-*-prism.zip
           generate_release_notes: true
