@@ -26,9 +26,9 @@
 ## Состав
 
 - **196 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
-- **15 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
-  - кастомные: `FMMWorldgen`, `lineage_core`, `meowaddons`, `meowhex`, `apofix`
-    (исходники — в `D:\Проекты\`, см. таблицу ниже);
+- **16 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
+- кастомные: `FMMWorldgen`, `lineage_core`, `meowaddons`, `meowhex`, `apofix`,
+  `fmm_teams`;
   - CurseForge-only, запинены: `ftb-library`, `ftb-quests`, `ftb-teams`,
     `framework`, `harderdiesel`, `waterwheelbearing`, `UIQuest`;
   - приватные/репаки: `create-aeronautics-bundled-*-FIXED`,
@@ -43,7 +43,7 @@
 | Meow Addons | `meowaddons` | 1.0.0 | Create-аддоны: блоки, передатчики, пондеры |
 | MeowHex | `meowhex` | 1.0.0 | Hex-магия: мана, паттерны, контент |
 | Apofix | `apofix` | 1.0.0 | Доп. атрибуты для Apothic Attributes |
-| FMM Teams | `fmm_teams` | 0.1.0 | Команды в стиле Panoptic (в разработке, в пак **не входит**) |
+| FMM Teams | `fmm_teams` | 0.1.0 | Команды в стиле Panoptic (бета) |
 
 ## Разработка
 

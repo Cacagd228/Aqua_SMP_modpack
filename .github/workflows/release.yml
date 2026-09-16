@@ -46,3 +46,4 @@ jobs:
             AquaSMP-*.mrpack
             AquaSMP-*-prism.zip
           generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, 'beta') }}

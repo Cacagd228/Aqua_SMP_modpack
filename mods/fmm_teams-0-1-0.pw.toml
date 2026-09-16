@@ -1,0 +1,8 @@
+name = "FMM Teams (custom)"
+filename = "fmm_teams-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/fmm_teams-0.1.0.jar"
+hash-format = "sha512"
+hash = "61bef61dac9029664e7dc22a6c5f0dfdebd963e0a297209df4eced398ecfae079fe6d2d165b7ac47e102f3573c4a62eed77f2db298c2baf25fc48d516bcedfb5"

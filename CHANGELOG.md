@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0-beta.1
+
+- `lineage_core`: починенный билд 2.0.0.
+- Добавлен `fmm_teams` 0.1.0 (бета): команды в стиле Panoptic.
+- Сборка в статусе беты.
+
 ## v1.0.0 — миграция на packwiz
 
 - Переезд со старой репы `Factory_must_meowing` (ветка `master`, ~958 МБ в `.git`).
