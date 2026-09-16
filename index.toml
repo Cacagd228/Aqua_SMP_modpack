@@ -6,7 +6,7 @@ hash = "28d6c29b53ee800044057b6341f8bfdd023f1fc94f1fe5e380c8906564a860ee"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "55785366277afe64dd9559b400a62fb5b10a2bf29a889ce6f881dfe14ff7a665"
+hash = "775a19a4ecae40d936da2f71d620f7b30d8c744896121999067ae7c2a0055656"
 
 [[files]]
 file = "LICENSE"
@@ -14,7 +14,7 @@ hash = "ae5380406d9feadb97f8f067df8cd88eb245eace9144150bfbc677da15e0efa0"
 
 [[files]]
 file = "README.md"
-hash = "d86e8b808cc652b4dcbeeb256894b257a1852c9f29a9b970bb98516d771ffcde"
+hash = "a2e62d08f107c581dd29aa07148782ea159488fda00e11680977e9e7413c870c"
 
 [[files]]
 file = "config/DistantHorizons.toml"
@@ -1498,7 +1498,7 @@ hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
 
 [[files]]
 file = "mods/Apofix-1-21-1-1-0-0.pw.toml"
-hash = "f257805b0318c5ba31acb3c7ad5d5f02ca53d612c73fcc53943bc916e3d3571b"
+hash = "33892d8243c76f3dc6e19670a380ad2c73526a9a64333ddbd6bcc8f8cbc62c50"
 metafile = true
 
 [[files]]
@@ -1507,7 +1507,7 @@ hash = "7250fae27fa66e2e809843a309a121ec6dc9c6a7473818d4e2abbdaad46ea827"
 
 [[files]]
 file = "mods/FMMWorldgen-1-0-0.pw.toml"
-hash = "141b932b297c70d7c86f5333523fba70d0ac12d5645c8bb9d40c50486b08d001"
+hash = "1306efea82354811f3604caa35737412b6e016a26b8ad64f619fed986cb1dbf6"
 metafile = true
 
 [[files]]
@@ -2284,7 +2284,7 @@ metafile = true
 
 [[files]]
 file = "mods/lineage_core-2-0-0.pw.toml"
-hash = "caf865ee798756432089fc757c7eb06f14a4f0f570e5f7db88e3808f6ba4945c"
+hash = "793fd8d27b254e7fa1041a5509e3f241b68a0a677efae8e07188fb0865def907"
 metafile = true
 
 [[files]]
@@ -2303,7 +2303,7 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-0.pw.toml"
-hash = "9c17e2da6fa12312a542fb352e1b4ae993a7fbff9ee927bfb04b4712216a6ea0"
+hash = "9c7b18848aeeb5c595df8cc58c794d29eb76d938ab37be19d40864ea00cbe63c"
 metafile = true
 
 [[files]]
@@ -2316,7 +2316,7 @@ hash = "3869f3459ebccac0f0de163df9c92d11d975d899f0b1a6c30e774c51b77f72e8"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "20bbab1e87a5536f511efbb6c572aec2796ace5f04bf2f04597c9912033b8d1b"
+hash = "c4cc73207709763c806eb43193b3ff7a4c045325115cf3a526f30bbfb2b865ce"
 metafile = true
 
 [[files]]

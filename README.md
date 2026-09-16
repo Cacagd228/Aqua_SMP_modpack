@@ -29,14 +29,14 @@
 - Убрано из старой сборки: `jeiexport` (дев-инструмент), дубль
   `moonlight-3.5.2`, `neoforge.mods.toml` из `mods/`.
 
-| Кастомный мод | mod_id | Версия | Исходники |
+| Кастомный мод | mod_id | Версия | Что делает |
 |---|---|---|---|
-| FMM Worldgen | `fmm_worldgen` | 1.0.0 | `D:\Проекты\fmmworldgen` |
-| Lineage Core | `lineage_core` | 2.0.0 | `D:\Проекты\fmmc` (замена FMMOriginsCore) |
-| Meow Addons | `meowaddons` | 1.0.0 | `D:\Проекты\meow addons` |
-| MeowHex | `meowhex` | 1.0.0 | `D:\Проекты\meowhex` |
-| Apofix | `apofix` | 1.0.0 | `D:\Проекты\apofix` |
-| FMM Teams | `fmm_teams` | 0.1.0 | `D:\Проекты\fmm teams` (будущее, в пак **не входит**) |
+| FMM Worldgen | `fmm_worldgen` | 1.0.0 | Кастомная генерация мира-архипелага |
+| Lineage Core | `lineage_core` | 2.0.0 | Ядро: расы/происхождения, команды, статистика |
+| Meow Addons | `meowaddons` | 1.0.0 | Create-аддоны: блоки, передатчики, пондеры |
+| MeowHex | `meowhex` | 1.0.0 | Hex-магия: мана, паттерны, контент |
+| Apofix | `apofix` | 1.0.0 | Доп. атрибуты для Apothic Attributes |
+| FMM Teams | `fmm_teams` | 0.1.0 | Команды в стиле Panoptic (в разработке, в пак **не входит**) |
 
 ## Разработка
 
