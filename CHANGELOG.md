@@ -6,6 +6,7 @@
 - Убран `create_parachute` (jar, конфиг, записи packwiz).
 - `powergrid` 0.6.1 → 0.6.2 (PR #1 от MrPe4henika; дочинен `index.toml`).
 - `meowaddons` 1.0.0 пересобран из исходников: тирные mixer/saw/millstone/crusher/deployer/fan (T1–T6).
+- `create_avionics` 0.5.2 → 0.6.0.
 
 ## v1.1.0-beta.1
 
