@@ -13,22 +13,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check if release already exists
+        id: check_release
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          EXISTING=$(gh release list --limit 100 --json tagName -q ".[] | select(.tagName == \"$TAG\") | .tagName")
+          if [ -n "$EXISTING" ]; then
+            echo "Release for $TAG already exists, skipping"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-go@v5
+        if: steps.check_release.outputs.skip != 'true'
         with:
           go-version: stable
 
       - name: Install packwiz
+        if: steps.check_release.outputs.skip != 'true'
         run: |
           go install github.com/packwiz/packwiz@latest
           echo "$HOME/go/bin" >> "$GITHUB_PATH"
 
       - name: Refresh and export .mrpack
+        if: steps.check_release.outputs.skip != 'true'
         run: |
           packwiz refresh
           packwiz mr export -o "AquaSMP-${GITHUB_REF_NAME}.mrpack"
 
       - name: Assemble full zip (Prism import)
+        if: steps.check_release.outputs.skip != 'true'
         run: |
           python3 tools/fetch-mods.py
           STAGE="prism-stage"
@@ -40,10 +60,12 @@ jobs:
           (cd "$STAGE" && zip -qr "../AquaSMP-${GITHUB_REF_NAME}-prism.zip" .)
 
       - name: Build server pack
+        if: steps.check_release.outputs.skip != 'true'
         run: |
           python3 tools/build-server-pack.py "AquaSMP-server-${GITHUB_REF_NAME}.zip"
 
       - name: Publish to Releases
+        if: steps.check_release.outputs.skip != 'true'
         uses: softprops/action-gh-release@v2
         with:
           files: |
@@ -52,3 +74,4 @@ jobs:
             AquaSMP-server-*.zip
           generate_release_notes: true
           prerelease: ${{ contains(github.ref_name, 'beta') }}
+          draft: false
