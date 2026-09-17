@@ -39,11 +39,16 @@ jobs:
           rm -f "$STAGE/minecraft/mods/"*.pw.toml
           (cd "$STAGE" && zip -qr "../AquaSMP-${GITHUB_REF_NAME}-prism.zip" .)
 
+      - name: Export server pack
+        run: |
+          packwiz export server -o "AquaSMP-server-${GITHUB_REF_NAME}.zip"
+
       - name: Publish to Releases
         uses: softprops/action-gh-release@v2
         with:
           files: |
             AquaSMP-*.mrpack
             AquaSMP-*-prism.zip
+            AquaSMP-server-*.zip
           generate_release_notes: true
           prerelease: ${{ contains(github.ref_name, 'beta') }}
