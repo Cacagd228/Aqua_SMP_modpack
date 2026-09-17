@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:lokis_gambit",
+  "category": "meowhex:runes",
+  "icon": "hexcasting:staff",
+  "sortnum": 80,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:lokis_gambit",
+      "anchor": "meowhex:lokis_gambit",
+      "input": "entity, entity",
+      "output": "",
+      "text": "meowhex.page.lokis_gambit.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.lokis_gambit.2"
+    }
+  ]
+}

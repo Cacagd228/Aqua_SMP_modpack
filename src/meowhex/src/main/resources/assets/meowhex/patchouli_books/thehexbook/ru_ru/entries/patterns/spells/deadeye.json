@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:deadeye",
+  "category": "meowhex:patterns/spells",
+  "icon": "meowhex:sniper_scope",
+  "sortnum": 90,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:deadeye",
+      "anchor": "meowhex:deadeye",
+      "input": "сущность",
+      "output": "",
+      "text": "meowhex.page.deadeye.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.deadeye.2"
+    }
+  ]
+}

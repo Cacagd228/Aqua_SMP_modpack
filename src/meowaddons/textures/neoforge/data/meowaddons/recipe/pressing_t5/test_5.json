@@ -1,0 +1,5 @@
+{
+  "type": "meowaddons:pressing_t5",
+  "ingredients": [{ "item": "create:zinc_ingot" }],
+  "results": [{ "id": "create:zinc_sheet" }]
+}

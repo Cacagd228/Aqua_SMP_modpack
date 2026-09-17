@@ -1,0 +1,5 @@
+{
+  "type": "meowaddons:pressing_t4",
+  "ingredients": [{ "item": "create:brass_ingot" }],
+  "results": [{ "id": "create:brass_sheet" }]
+}

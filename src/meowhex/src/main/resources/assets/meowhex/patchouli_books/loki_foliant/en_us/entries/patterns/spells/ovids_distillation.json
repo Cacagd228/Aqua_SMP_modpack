@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:ovids_distillation",
+  "category": "meowhex:runes",
+  "icon": "minecraft:blast_furnace",
+  "sortnum": 81,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:ovids_distillation",
+      "anchor": "meowhex:ovids_distillation",
+      "input": "entity/vector, entity/vector",
+      "output": "",
+      "text": "meowhex.page.ovids_distillation.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.ovids_distillation.2"
+    }
+  ]
+}

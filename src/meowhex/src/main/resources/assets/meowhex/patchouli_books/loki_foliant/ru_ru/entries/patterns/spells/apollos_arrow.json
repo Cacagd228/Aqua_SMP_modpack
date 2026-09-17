@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:apollos_arrow",
+  "category": "meowhex:runes",
+  "icon": "minecraft:arrow",
+  "sortnum": 85,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:apollos_arrow",
+      "anchor": "meowhex:apollos_arrow",
+      "input": "vector/entity, vector, number",
+      "output": "",
+      "text": "meowhex.page.apollos_arrow.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.apollos_arrow.1b"
+    }
+  ]
+}

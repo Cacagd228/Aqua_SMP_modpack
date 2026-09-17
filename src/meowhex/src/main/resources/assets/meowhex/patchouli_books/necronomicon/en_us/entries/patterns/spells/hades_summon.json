@@ -1,0 +1,34 @@
+{
+  "name": "hexcasting.action.meowhex:hades_summon",
+  "category": "meowhex:runes",
+  "icon": "minecraft:zombie_head",
+  "sortnum": 84,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:hades_summon",
+      "anchor": "meowhex:hades_summon",
+      "input": "vector, vector, boolean",
+      "output": "",
+      "text": "meowhex.page.hades_summon.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.hades_summon.2"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:hades_recall",
+      "anchor": "meowhex:hades_recall",
+      "input": "",
+      "output": "",
+      "text": "meowhex.page.hades_recall.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.hades_recall.2"
+    }
+  ]
+}

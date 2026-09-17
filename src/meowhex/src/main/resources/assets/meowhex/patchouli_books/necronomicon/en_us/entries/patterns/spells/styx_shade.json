@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:styx_shade",
+  "category": "meowhex:runes",
+  "icon": "minecraft:vex_spawn_egg",
+  "sortnum": 87,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:styx_shade",
+      "anchor": "meowhex:styx_shade",
+      "input": "vector, vector",
+      "output": "",
+      "text": "meowhex.page.styx_shade.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.styx_shade.2"
+    }
+  ]
+}

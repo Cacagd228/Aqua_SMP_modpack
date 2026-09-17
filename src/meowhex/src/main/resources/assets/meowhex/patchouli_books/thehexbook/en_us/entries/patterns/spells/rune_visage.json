@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.meowhex:rune_visage",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 91,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:rune_visage",
+      "anchor": "meowhex:rune_visage",
+      "input": "vector, number, iota",
+      "output": "",
+      "text": "meowhex.page.rune_visage.1"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+Third-party code used in this project
+=======================================
+
+Panoptic visual toolkit — https://github.com/Mokich/Panoptic
+Copyright (c) Mokich. Licensed under GNU Lesser General Public
+License v3.0 only (LGPL-3.0-only).
+
+Vendored verbatim (no logic modifications), relocated from
+net.mokich.panoptic.api.* to xyz.lineage.vendored.panoptic.api.*
+solely to avoid a JPMS split-package clash when the Panoptic mod
+is installed alongside, and kept in their original file layout:
+  src/main/java/xyz/lineage/vendored/panoptic/api/ui/GuiStyle.java
+  src/main/java/xyz/lineage/vendored/panoptic/api/ui/HelpCard.java
+  src/main/java/xyz/lineage/vendored/panoptic/api/util/Disc.java
+
+The full license text is in LGPL-3.0.txt next to this file.
+Source and newer versions: https://github.com/Mokich/Panoptic

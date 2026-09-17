@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:block",
+  "pools": [{
+    "rolls": 1,
+    "entries": [{ "type": "minecraft:item", "name": "meowaddons:frame_chromatic_compound" }],
+    "conditions": [{ "condition": "minecraft:survives_explosion" }]
+  }]
+}

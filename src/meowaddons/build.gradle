@@ -1,0 +1,72 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '1.0.24'
+}
+
+version = '1.0.0'
+group = 'com.meowaddons'
+
+base {
+    archivesName = 'meowaddons'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+}
+
+neoForge {
+    version = '21.1.248'
+
+    mods {
+        meowaddons {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+        data {
+            data()
+        }
+    }
+}
+
+dependencies {
+    compileOnly("mezz.jei:jei-1.21.1-neoforge-api:19.43.0.393")
+    runtimeOnly("mezz.jei:jei-1.21.1-neoforge:19.43.0.393")
+
+    compileOnly files('run/mods/geckolib-neoforge-1.21.1-4.9.2.jar')
+
+
+    compileOnly files('devmods/ponder-neoforge-1.0.82.jar')
+    compileOnly files('devmods/flywheel-neoforge-1.21.1-1.0.6.jar')
+    compileOnly files('devmods/create-1.21.1-6.0.10.jar')
+    runtimeOnly files('devmods/ponder-neoforge-1.0.82.jar')
+    runtimeOnly files('devmods/flywheel-neoforge-1.21.1-1.0.6.jar')
+    runtimeOnly files('devmods/create-1.21.1-6.0.10.jar')
+}
+
+sourceSets.main.resources.srcDir 'textures/neoforge'
+
+tasks.withType(Jar).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

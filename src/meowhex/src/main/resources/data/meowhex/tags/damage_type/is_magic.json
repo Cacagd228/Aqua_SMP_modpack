@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "hexcasting:overcast",
+    "minecraft:magic",
+    "minecraft:indirect_magic",
+    "minecraft:wither",
+    "minecraft:dragon_breath"
+  ]
+}

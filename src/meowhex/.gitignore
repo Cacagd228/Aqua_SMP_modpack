@@ -1,0 +1,23 @@
+# Gradle / build
+.gradle/
+.kotlin/
+build/
+bin/
+run/
+patch_tmp/
+build_output.txt
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.claude/
+
+# Unpacked-jar traces — never commit (real sources live in src/)
+/assets/
+/net/
+/META-INF/
+/pack.mcmeta
+/site/
+/armory_rpgs/
+*.py

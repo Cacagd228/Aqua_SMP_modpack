@@ -1,0 +1,11 @@
+{
+  "silence": {
+    "sounds": [
+      {
+        "name": "meowhex:silence",
+        "stream": false
+      }
+    ],
+    "subtitle": "sound.meowhex.silence"
+  }
+}

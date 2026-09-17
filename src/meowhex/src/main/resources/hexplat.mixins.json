@@ -1,0 +1,27 @@
+{
+  "minVersion": "0.8",
+  "required": true,
+  "compatibilityLevel": "JAVA_21",
+  "package": "at.petrak.hexcasting.mixin",
+  "mixins": [
+    "MixinAbstractVillager",
+    "MixinMob",
+    "MixinRaider",
+    "MixinVillager",
+    "MixinWitch",
+    "accessor.AccessorAbstractArrow",
+    "accessor.AccessorEntity",
+    "accessor.AccessorLivingEntity",
+    "accessor.AccessorUseOnContext",
+    "accessor.AccessorVillager",
+    "accessor.CriteriaTriggersAccessor"
+  ],
+  "client": [
+    "accessor.client.AccessorBlockEntityRenderDispatcher",
+    "accessor.client.AccessorMouseHandler",
+    "accessor.client.AccessorRenderStateShard",
+    "client.MixinClientLevel",
+    "client.MixinGui",
+    "client.MixinPlayerRenderer"
+  ]
+}

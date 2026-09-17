@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:heras_wrath",
+  "category": "meowhex:runes",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 87,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:heras_wrath",
+      "anchor": "meowhex:heras_wrath",
+      "input": "сущность, число",
+      "output": "",
+      "text": "meowhex.page.heras_wrath.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.heras_wrath.2"
+    }
+  ]
+}

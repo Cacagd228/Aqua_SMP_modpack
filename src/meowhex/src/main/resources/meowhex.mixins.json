@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.nanorasmus.nanodev.hex_js.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SpellPatternInterceptor",
+    "FreeCastMediaMixin",
+    "MsgShiftScrollMixin",
+    "ConjureBlockDeceptionMixin",
+    "SilenceMagicBlockMixin",
+    "MishapSilenceMixin",
+    "SelfTortureMixin",
+    "FreeCastChanceMixin",
+    "HexCastTrackerMixin",
+    "PingPongBounceMixin",
+    "patternstyle.MixinChangePatternDisplay",
+    "patternstyle.MixinListIotaDisplay"
+  ],
+  "client": [
+    "SpellbookScrollableMixin",
+    "patternstyle.MixinPatternStyle",
+    "patternstyle.MixinTextDrawerPatSty",
+    "patternstyle.MixinParsePatternFormatting",
+    "patternstyle.MixinScreenChatClick",
+    "patternstyle.MixinEditBoxAtomicMarkers"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

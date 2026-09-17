@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "hexcasting:charged_amethyst"
+    },
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "N": {
+      "item": "meowhex:amethyst_necklace"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    " C ",
+    "ANA",
+    " D "
+  ],
+  "result": {
+    "item": "meowhex:charged_amethyst_necklace"
+  }
+}

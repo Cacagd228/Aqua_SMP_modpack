@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.lineage.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "client.VeilPlayerRenderMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

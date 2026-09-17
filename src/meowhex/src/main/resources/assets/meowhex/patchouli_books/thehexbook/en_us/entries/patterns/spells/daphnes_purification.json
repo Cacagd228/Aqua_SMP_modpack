@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:daphnes_purification",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:oak_sapling",
+  "sortnum": 82,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:daphnes_purification",
+      "anchor": "meowhex:daphnes_purification",
+      "input": "vector (block pos)",
+      "output": "",
+      "text": "meowhex.page.daphnes_purification.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.daphnes_purification.2"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "apofix:max_mana": "Max Mana",
+    "apofix:max_mana.desc": "Maximum mana pool.",
+    "apofix:mana_regen": "Mana Regen",
+    "apofix:mana_regen.desc": "Mana regenerated per second.",
+    "apofix:mana_discount": "Mana Discount",
+    "apofix:mana_discount.desc": "Fractional discount on mana costs. 0 = no discount, 1 = free casts.",
+    "apofix:magic_resist": "Magic Resist",
+    "apofix:magic_resist.desc": "Fractional reduction of all magic damage. 1 = full immunity.",
+    "apofix:fire_magic_resist": "Fire Magic Resist",
+    "apofix:fire_magic_resist.desc": "Fractional reduction of fire magic damage. 1 = full immunity.",
+    "apofix:water_magic_resist": "Water Magic Resist",
+    "apofix:water_magic_resist.desc": "Fractional reduction of water magic damage. 1 = full immunity.",
+    "apofix:earth_magic_resist": "Earth Magic Resist",
+    "apofix:earth_magic_resist.desc": "Fractional reduction of earth magic damage. 1 = full immunity.",
+    "apofix:air_magic_resist": "Air Magic Resist",
+    "apofix:air_magic_resist.desc": "Fractional reduction of air magic damage. 1 = full immunity.",
+    "apofix:free_cast_chance": "Free Cast Chance",
+    "apofix:free_cast_chance.desc": "Chance that a cast costs no mana. 1 = always free.",
+    "apofix:silence_status": "Silence Status",
+    "apofix:silence_status.desc": "0 = casting allowed, 1 = casting blocked."
+}

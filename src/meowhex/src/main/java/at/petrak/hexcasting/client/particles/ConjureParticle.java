@@ -1,0 +1,80 @@
+package at.petrak.hexcasting.client.particles;
+
+import at.petrak.hexcasting.common.particles.ConjureParticleOptions;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.*;
+import net.minecraft.util.FastColor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
+
+public class ConjureParticle extends TextureSheetParticle {
+    private static final Random RANDOM = new Random();
+
+    private final SpriteSet sprites;
+
+    ConjureParticle(ClientLevel pLevel, double x, double y, double z, double dx, double dy, double dz,
+        SpriteSet pSprites, int color) {
+        super(pLevel, x, y, z, dx, dy, dz);
+        this.quadSize *= 0.9f;
+        this.setParticleSpeed(dx, dy, dz);
+
+        var r = FastColor.ARGB32.red(color);
+        var g = FastColor.ARGB32.green(color);
+        var b = FastColor.ARGB32.blue(color);
+        this.setColor(r / 255f, g / 255f, b / 255f);
+        this.setAlpha(0.3f);
+
+        this.friction = 0.96F;
+        this.gravity = dy != 0 && dx != 0 && dz != 0 ? -0.01F : 0F;
+        this.speedUpWhenYMotionIsBlocked = true;
+        this.sprites = pSprites;
+
+        this.roll = RANDOM.nextFloat(360);
+        this.oRoll = this.roll;
+
+        this.lifetime = (int) (64.0 / ((Math.random() + 3f) * 0.25f));
+        this.hasPhysics = false;
+        this.setSpriteFromAge(pSprites);
+    }
+
+    public @NotNull ParticleRenderType getRenderType() {
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    }
+
+    public void tick() {
+        super.tick();
+        this.setSpriteFromAge(this.sprites);
+        this.alpha = 1.0f - ((float) this.age / (float) this.lifetime);
+        this.alpha *= 0.3f;
+        this.quadSize *= 0.96f;
+    }
+
+    public void setSpriteFromAge(@NotNull SpriteSet pSprite) {
+        if (!this.removed) {
+            int age = this.age * 4;
+            if (age > this.lifetime) {
+                age /= 4;
+            }
+            this.setSprite(pSprite.get(age, this.lifetime));
+        }
+    }
+
+    public static class Provider implements ParticleProvider<ConjureParticleOptions> {
+        private final SpriteSet sprite;
+
+        public Provider(SpriteSet pSprites) {
+            this.sprite = pSprites;
+        }
+
+        @Nullable
+        @Override
+        public Particle createParticle(ConjureParticleOptions type, ClientLevel level,
+            double pX, double pY, double pZ,
+            double pXSpeed, double pYSpeed, double pZSpeed) {
+            return new ConjureParticle(level, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed, this.sprite, type.color());
+        }
+    }
+
+}

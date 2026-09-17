@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "meowhex:staff/lesser_battery"
+    },
+    "Y": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "Z": {
+      "item": "minecraft:amethyst_block"
+    },
+    "A": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "pattern": [
+    " YX",
+    "AZY",
+    "YA "
+  ],
+  "result": {
+    "item": "meowhex:staff/long/sealed_lesser_battery"
+  }
+}

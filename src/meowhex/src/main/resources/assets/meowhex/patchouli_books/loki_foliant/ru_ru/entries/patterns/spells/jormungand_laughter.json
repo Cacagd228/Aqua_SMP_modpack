@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:jormungand_laughter",
+  "category": "meowhex:runes",
+  "icon": "minecraft:spectral_arrow",
+  "sortnum": 92,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:jormungand_laughter",
+      "anchor": "meowhex:jormungand_laughter",
+      "input": "entity, number",
+      "output": "",
+      "text": "meowhex.page.jormungand_laughter.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.jormungand_laughter.2"
+    }
+  ]
+}

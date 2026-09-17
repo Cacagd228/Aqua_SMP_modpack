@@ -1,0 +1,13 @@
+{
+  "parent": "create:block/mechanical_press/item",
+  "textures": {
+    "8": "meowaddons:block/press_side_t3",
+    "gearbox": "meowaddons:block/press_gearbox_t3",
+    "gearbox_top": "meowaddons:block/press_gearbox_top_t3",
+    "mechanical_press_top": "meowaddons:block/press_top_t3",
+    "mechanical_press_bottom": "meowaddons:block/press_bottom_t3",
+    "particle": "meowaddons:block/press_side_t3",
+    "0": "create:block/axis",
+    "1": "create:block/axis_top"
+  }
+}

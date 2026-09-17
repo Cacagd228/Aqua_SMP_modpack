@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:utgard_seal",
+  "category": "meowhex:runes",
+  "icon": "meowhex:self_torture_ring",
+  "sortnum": 91,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:utgard_seal",
+      "anchor": "meowhex:utgard_seal",
+      "input": "pattern/list",
+      "output": "",
+      "text": "meowhex.page.utgard_seal.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.utgard_seal.2"
+    }
+  ]
+}

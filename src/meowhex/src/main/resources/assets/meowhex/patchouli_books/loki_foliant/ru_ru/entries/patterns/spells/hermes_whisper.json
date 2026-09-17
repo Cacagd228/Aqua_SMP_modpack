@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:hermes_whisper",
+  "category": "meowhex:runes",
+  "icon": "minecraft:armor_stand",
+  "sortnum": 86,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:hermes_whisper",
+      "anchor": "meowhex:hermes_whisper",
+      "input": "pattern/list, entity",
+      "output": "",
+      "text": "meowhex.page.hermes_whisper.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.hermes_whisper.1b"
+    }
+  ]
+}

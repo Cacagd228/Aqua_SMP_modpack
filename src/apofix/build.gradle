@@ -1,0 +1,123 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+base {
+    archivesName = "${fileName}-${mcVersion}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(project.properties.javaVersion)
+
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {}
+
+neoForge {
+    version = project.properties.forgeVersion
+
+    parchment {
+        def split = "${parchmentVersion}".split('-')
+        minecraftVersion = split[1]
+        mappingsVersion = split[0]
+    }
+
+    mods {
+        create(project.name) {
+            sourceSet project.sourceSets.main
+        }
+    }
+
+    runs {
+        configureEach {
+            logLevel = org.slf4j.event.Level.DEBUG
+            taskBefore generateModMetadata
+        }
+
+        client {
+            client()
+            ideName = "${project.name} - Client"
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+            ideName = "${project.name} - Server"
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', "${modid}", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            ideName = "${project.name} - Data"
+        }
+    }
+
+    ideSyncTask generateModMetadata
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://maven.shadowsoffire.dev/releases"
+        content {
+            includeGroup "dev.shadowsoffire"
+        }
+    }
+}
+
+dependencies {
+    implementation "dev.shadowsoffire:Placebo:${mcVersion}-${placeboVersion}"
+    implementation "dev.shadowsoffire:ApothicAttributes:${mcVersion}-${attributeslibVersion}"
+}
+
+tasks.named("generateModMetadata") {
+    inputs.dir('src/templates')
+
+    def replaceProperties = [
+        modid: modid,
+        version: version,
+        modName: modName,
+        author: author,
+        desc: desc,
+        mcVersion: mcVersion,
+        forgeVersion: forgeVersion,
+        placeboVersion: placeboVersion,
+        attributeslibVersion: attributeslibVersion
+    ]
+
+    inputs.properties replaceProperties
+
+    from("src/templates")
+    into("src/generated/resources")
+
+    filesMatching('neoforge.mods.toml') {
+        expand replaceProperties
+        name 'META-INF/neoforge.mods.toml'
+    }
+}
+
+tasks.named('processResources') {
+    dependsOn generateModMetadata
+}
+
+tasks.withType(Jar) {
+    dependsOn generateModMetadata
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
+
+sourceSets {
+    templates {
+        resources {
+            srcDir 'src/templates'
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+java {
+    withSourcesJar()
+}

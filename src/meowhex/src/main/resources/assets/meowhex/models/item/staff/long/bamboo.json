@@ -1,0 +1,6 @@
+{
+  "parent": "meowhex:item/staff/long/extended_staff",
+  "textures": {
+    "layer0": "meowhex:item/long/extended_bamboo"
+  }
+}

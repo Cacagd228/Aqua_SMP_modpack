@@ -1,0 +1,22 @@
+{
+  "block.meowaddons.interdimensional_transmitter": "Interdimensional Transmitter",
+  "itemGroup.meowaddons": "Meow Addons",
+  "gui.meowaddons.transmitter.address": "Address",
+  "gui.meowaddons.transmitter.address_hint": "address (* and ? allowed)",
+  "gui.meowaddons.transmitter.confirm": "Confirm",
+  "gui.meowaddons.transmitter.cancel": "Cancel",
+  "block.meowaddons.frame_andesite": "Andesite Frame",
+  "block.meowaddons.frame_steel": "Steel Frame",
+  "block.meowaddons.frame_latun": "Brass Frame",
+  "block.meowaddons.frame_shadow_steel": "Shadow Steel Frame",
+  "block.meowaddons.frame_refined_radiance": "Refined Radiance Frame",
+  "block.meowaddons.frame_chromatic_compound": "Chromatic Compound Frame",
+  "block.meowaddons.press_t1": "Press T1 (Andesite)",
+  "block.meowaddons.press_t2": "Press T2 (Brass)",
+  "block.meowaddons.press_t3": "Press T3 (Steel)",
+  "block.meowaddons.press_t4": "Press T4 (Shadow Steel)",
+  "block.meowaddons.press_t5": "Press T5 (Refined Radiance)",
+  "block.meowaddons.press_t6": "Press T6 (Chromatic Compound)",
+  "tooltip.meowaddons.press_tier": "Tier: %s",
+  "tooltip.meowaddons.press_speed": "Speed: x%s"
+}

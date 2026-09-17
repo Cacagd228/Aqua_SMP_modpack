@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:erebus_chain",
+  "category": "meowhex:runes",
+  "icon": "minecraft:chain",
+  "sortnum": 85,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:erebus_chain",
+      "anchor": "meowhex:erebus_chain",
+      "input": "entity, entity",
+      "output": "",
+      "text": "meowhex.page.erebus_chain.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.erebus_chain.2"
+    }
+  ]
+}

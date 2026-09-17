@@ -1,0 +1,22 @@
+{
+    "apofix:max_mana": "Макс. мана",
+    "apofix:max_mana.desc": "Максимальный запас маны.",
+    "apofix:mana_regen": "Реген маны",
+    "apofix:mana_regen.desc": "Маны в секунду.",
+    "apofix:mana_discount": "Скидка на ману",
+    "apofix:mana_discount.desc": "Доля скидки на стоимость заклинаний. 0 = без скидки, 1 = бесплатно.",
+    "apofix:magic_resist": "Маг. сопротивление",
+    "apofix:magic_resist.desc": "Доля снижения всего магического урона. 1 = полный иммунитет.",
+    "apofix:fire_magic_resist": "Маг. сопротивление (огонь)",
+    "apofix:fire_magic_resist.desc": "Доля снижения урона от магии огня. 1 = полный иммунитет.",
+    "apofix:water_magic_resist": "Маг. сопротивление (вода)",
+    "apofix:water_magic_resist.desc": "Доля снижения урона от магии воды. 1 = полный иммунитет.",
+    "apofix:earth_magic_resist": "Маг. сопротивление (земля)",
+    "apofix:earth_magic_resist.desc": "Доля снижения урона от магии земли. 1 = полный иммунитет.",
+    "apofix:air_magic_resist": "Маг. сопротивление (воздух)",
+    "apofix:air_magic_resist.desc": "Доля снижения урона от магии воздуха. 1 = полный иммунитет.",
+    "apofix:free_cast_chance": "Шанс бесплатного каста",
+    "apofix:free_cast_chance.desc": "Шанс, что каст не потратит ману. 1 = всегда бесплатно.",
+    "apofix:silence_status": "Статус безмолвия",
+    "apofix:silence_status.desc": "0 = каст разрешён, 1 = каст запрещён."
+}

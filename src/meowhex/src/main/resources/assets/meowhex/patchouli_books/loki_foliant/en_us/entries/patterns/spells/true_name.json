@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:true_name",
+  "category": "meowhex:runes",
+  "icon": "minecraft:name_tag",
+  "sortnum": 94,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:true_name",
+      "anchor": "meowhex:true_name",
+      "input": "",
+      "output": "",
+      "text": "meowhex.page.true_name.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.true_name.2"
+    }
+  ]
+}

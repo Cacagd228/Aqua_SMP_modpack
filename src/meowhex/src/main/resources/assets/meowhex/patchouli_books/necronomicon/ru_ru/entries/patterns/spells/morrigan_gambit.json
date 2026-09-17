@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:morrigan_gambit",
+  "category": "meowhex:runes",
+  "icon": "minecraft:phantom_membrane",
+  "sortnum": 86,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:morrigan_gambit",
+      "anchor": "meowhex:morrigan_gambit",
+      "input": "entity",
+      "output": "",
+      "text": "meowhex.page.morrigan_gambit.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.morrigan_gambit.2"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "meowaddons:block/press_t4" },
+    "facing=east": { "model": "meowaddons:block/press_t4", "y": 90 },
+    "facing=south": { "model": "meowaddons:block/press_t4", "y": 180 },
+    "facing=west": { "model": "meowaddons:block/press_t4", "y": 270 }
+  }
+}

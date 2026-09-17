@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:gerd_substitution",
+  "category": "meowhex:runes",
+  "icon": "minecraft:fermented_spider_eye",
+  "sortnum": 90,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:gerd_substitution",
+      "anchor": "meowhex:gerd_substitution",
+      "input": "entity",
+      "output": "",
+      "text": "meowhex.page.gerd_substitution.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.gerd_substitution.2"
+    }
+  ]
+}

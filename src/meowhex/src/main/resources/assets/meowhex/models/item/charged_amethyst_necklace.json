@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "meowhex:item/charged_amethyst_necklace"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:chronos_delay",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:clock",
+  "sortnum": 95,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:chronos_delay",
+      "anchor": "meowhex:chronos_delay",
+      "input": "number, pattern/list",
+      "output": "",
+      "text": "meowhex.page.chronos_delay.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.chronos_delay.2"
+    }
+  ]
+}

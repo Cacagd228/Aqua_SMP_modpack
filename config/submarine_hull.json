@@ -36729,10 +36729,6 @@
     "maxWaterDepth": 58,
     "implosionChance": 0.65
   },
-  "create_parachute:parachute_block": {
-    "maxWaterDepth": 27,
-    "implosionChance": 0.835
-  },
   "create_radar:auto_pitch_controller": {
     "maxWaterDepth": 14,
     "implosionChance": 0.85

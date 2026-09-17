@@ -1,0 +1,6 @@
+{
+	"parent": "meowaddons:block/interdimensional_transmitter/block_vertical",
+	"textures": {
+		"5": "meowaddons:block/transmitter_vertical_powered"
+	}
+}

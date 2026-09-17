@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+build/
+bin/
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Запуски игры (dev-окружение)
+run/
+
+# Temp work files (recolors, foreign texture copies)
+temp/

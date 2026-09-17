@@ -1,0 +1,5 @@
+{
+  "type": "meowaddons:pressing_t3",
+  "ingredients": [{ "item": "minecraft:copper_ingot" }],
+  "results": [{ "id": "create:copper_sheet" }]
+}

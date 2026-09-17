@@ -1,0 +1,5 @@
+{
+  "type": "meowaddons:pressing_t6",
+  "ingredients": [{ "item": "minecraft:netherite_ingot" }],
+  "results": [{ "id": "create:netherite_sheet" }]
+}

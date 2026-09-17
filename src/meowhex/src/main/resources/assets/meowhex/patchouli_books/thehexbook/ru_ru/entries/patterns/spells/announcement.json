@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.meowhex:announcement",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 88,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:announcement",
+      "anchor": "meowhex:announcement",
+      "input": "iota",
+      "output": "",
+      "text": "meowhex.page.announcement.1"
+    }
+  ]
+}

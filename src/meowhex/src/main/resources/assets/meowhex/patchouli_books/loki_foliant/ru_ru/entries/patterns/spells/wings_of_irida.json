@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.meowhex:wings_of_irida",
+  "category": "meowhex:runes",
+  "icon": "meowhex:drawing_orb",
+  "sortnum": 89,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:wings_of_irida",
+      "anchor": "meowhex:wings_of_irida",
+      "input": "vector, vector",
+      "output": "",
+      "text": "meowhex.page.wings_of_irida.1"
+    }
+  ]
+}

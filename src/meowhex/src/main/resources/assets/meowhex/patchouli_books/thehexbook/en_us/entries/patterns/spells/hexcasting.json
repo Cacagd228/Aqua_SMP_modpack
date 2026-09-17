@@ -1,0 +1,52 @@
+{
+  "name": "hexcasting.entry.hexcasting_spell",
+  "category": "meowhex:patterns/spells",
+  "icon": "hexcasting:artifact",
+  "sortnum": 3,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.hexcasting_spell.basics"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexcasting:craft/cypher",
+      "anchor": "hexcasting:craft/cypher",
+      "input": "[pattern]",
+      "output": "",
+      "text": "hexcasting.page.hexcasting_spell.craft/cypher"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexcasting:craft/trinket",
+      "anchor": "hexcasting:craft/trinket",
+      "input": "[pattern]",
+      "output": "",
+      "text": "hexcasting.page.hexcasting_spell.craft/trinket",
+      "hex_size": 8
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexcasting:craft/artifact",
+      "anchor": "hexcasting:craft/artifact",
+      "input": "[pattern]",
+      "output": "",
+      "text": "hexcasting.page.hexcasting_spell.craft/artifact",
+      "hex_size": 5
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexcasting:erase",
+      "anchor": "hexcasting:erase",
+      "input": "",
+      "output": "",
+      "text": "hexcasting.page.hexcasting_spell.erase.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.hexcasting_spell.erase.2"
+    }
+  ]
+}

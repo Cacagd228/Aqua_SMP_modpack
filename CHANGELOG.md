@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1-beta.1
+
+- `lineage_core` 2.0.1 (сборка из исходников `src/linage_core`): пофикшена раса Лудоман.
+- Убран `create_parachute` (jar, конфиг, записи packwiz).
+
 ## v1.1.0-beta.1
 
 - `lineage_core`: починенный билд 2.0.0.

@@ -1,0 +1,34 @@
+{
+  "name": "hexcasting.action.meowhex:hermes_deception",
+  "category": "meowhex:runes",
+  "icon": "minecraft:armor_stand",
+  "sortnum": 83,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:hermes_deception",
+      "anchor": "meowhex:hermes_deception",
+      "input": "entity, vector, vector",
+      "output": "",
+      "text": "meowhex.page.hermes_deception.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.hermes_deception.2"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:hermes_recall",
+      "anchor": "meowhex:hermes_recall",
+      "input": "",
+      "output": "",
+      "text": "meowhex.page.hermes_recall.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.hermes_recall.2"
+    }
+  ]
+}

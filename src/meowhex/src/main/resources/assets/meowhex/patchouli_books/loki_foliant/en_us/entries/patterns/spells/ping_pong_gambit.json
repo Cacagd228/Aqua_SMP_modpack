@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:ping_pong_gambit",
+  "category": "meowhex:runes",
+  "icon": "minecraft:slime_ball",
+  "sortnum": 93,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:ping_pong_gambit",
+      "anchor": "meowhex:ping_pong_gambit",
+      "input": "entity, number",
+      "output": "",
+      "text": "meowhex.page.ping_pong_gambit.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.ping_pong_gambit.2"
+    }
+  ]
+}

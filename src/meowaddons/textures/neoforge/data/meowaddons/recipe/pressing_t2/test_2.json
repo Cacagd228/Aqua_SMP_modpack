@@ -1,0 +1,5 @@
+{
+  "type": "meowaddons:pressing_t2",
+  "ingredients": [{ "item": "minecraft:gold_ingot" }],
+  "results": [{ "id": "create:golden_sheet" }]
+}

@@ -1,0 +1,22 @@
+{
+  "block.meowaddons.interdimensional_transmitter": "Межпространственный передатчик",
+  "itemGroup.meowaddons": "Meow Addons",
+  "gui.meowaddons.transmitter.address": "Адрес",
+  "gui.meowaddons.transmitter.address_hint": "адрес (* и ? разрешены)",
+  "gui.meowaddons.transmitter.confirm": "Подтвердить",
+  "gui.meowaddons.transmitter.cancel": "Отмена",
+  "block.meowaddons.frame_andesite": "Рамка из андезита",
+  "block.meowaddons.frame_steel": "Рамка из стали",
+  "block.meowaddons.frame_latun": "Рамка из латуни",
+  "block.meowaddons.frame_shadow_steel": "Рамка из теневой стали",
+  "block.meowaddons.frame_refined_radiance": "Рамка из изысканного сияния",
+  "block.meowaddons.frame_chromatic_compound": "Рамка из хроматического соединения",
+  "block.meowaddons.press_t1": "Пресс T1 (Андезит)",
+  "block.meowaddons.press_t2": "Пресс T2 (Латунь)",
+  "block.meowaddons.press_t3": "Пресс T3 (Сталь)",
+  "block.meowaddons.press_t4": "Пресс T4 (Теневая сталь)",
+  "block.meowaddons.press_t5": "Пресс T5 (Изысканное сияние)",
+  "block.meowaddons.press_t6": "Пресс T6 (Хроматическое соединение)",
+  "tooltip.meowaddons.press_tier": "Тир: %s",
+  "tooltip.meowaddons.press_speed": "Множитель: x%s"
+}
