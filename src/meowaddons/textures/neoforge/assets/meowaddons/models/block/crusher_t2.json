@@ -1,0 +1,10 @@
+{
+	"parent": "create:block/crushing_wheel/textures",
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "create:models/block/crushing_wheel/crushing_wheel.obj",
+	"textures": {
+		"plates": "meowaddons:block/press_side_t2",
+		"particle": "create:block/brass_casing"
+	}
+}

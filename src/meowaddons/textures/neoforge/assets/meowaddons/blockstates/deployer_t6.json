@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis_along_first=false,facing=down": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,facing=east": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "y": 270
+    },
+    "axis_along_first=false,facing=north": {
+      "model": "meowaddons:block/deployer_vertical_t6",
+      "y": 180
+    },
+    "axis_along_first=false,facing=south": {
+      "model": "meowaddons:block/deployer_vertical_t6"
+    },
+    "axis_along_first=false,facing=up": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,facing=west": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "y": 90
+    },
+    "axis_along_first=true,facing=down": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "x": 270
+    },
+    "axis_along_first=true,facing=east": {
+      "model": "meowaddons:block/deployer_vertical_t6",
+      "y": 270
+    },
+    "axis_along_first=true,facing=north": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "y": 180
+    },
+    "axis_along_first=true,facing=south": {
+      "model": "meowaddons:block/deployer_horizontal_t6"
+    },
+    "axis_along_first=true,facing=up": {
+      "model": "meowaddons:block/deployer_horizontal_t6",
+      "x": 90
+    },
+    "axis_along_first=true,facing=west": {
+      "model": "meowaddons:block/deployer_vertical_t6",
+      "y": 90
+    }
+  }
+}

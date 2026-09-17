@@ -3,11 +3,9 @@
   "textures": {
     "8": "meowaddons:block/press_side_t5",
     "gearbox": "meowaddons:block/press_gearbox_t5",
-    "gearbox_top": "meowaddons:block/press_gearbox_top_t5",
+    "gearbox_top": "create:block/refined_radiance_casing",
     "mechanical_press_top": "meowaddons:block/press_top_t5",
     "mechanical_press_bottom": "meowaddons:block/press_bottom_t5",
-    "particle": "meowaddons:block/press_side_t5",
-    "0": "create:block/axis",
-    "1": "create:block/axis_top"
+    "particle": "create:block/refined_radiance_casing"
   }
 }

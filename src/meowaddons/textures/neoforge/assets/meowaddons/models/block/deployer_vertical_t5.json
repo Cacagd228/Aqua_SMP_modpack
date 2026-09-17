@@ -1,0 +1,12 @@
+{
+  "parent": "create:block/deployer/vertical",
+  "textures": {
+    "5": "meowaddons:block/deployer_piston_t5",
+    "6": "meowaddons:block/deployer_bottom_t5",
+    "7": "meowaddons:block/deployer_inner_t5",
+    "andesite_casing_short": "meowaddons:block/casing_short_t5",
+    "gearbox": "meowaddons:block/press_gearbox_t5",
+    "gearbox_top": "meowaddons:block/press_gearbox_top_t5",
+    "particle": "meowaddons:block/press_gearbox_top_t5"
+  }
+}

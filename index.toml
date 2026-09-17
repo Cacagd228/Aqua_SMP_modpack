@@ -2899,12 +2899,12 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-0.pw.toml"
-hash = "9c7b18848aeeb5c595df8cc58c794d29eb76d938ab37be19d40864ea00cbe63c"
+hash = "bcca36a044bf353d87df536c0111c4deb743d1f77fa2adeff49364f653590ccc"
 metafile = true
 
 [[files]]
 file = "mods/meowaddons-1.0.0.jar"
-hash = "eebf1dffb51c3b75d04a97783f2a3f91693492807f8cd57f69094a9ba3f4f8c5"
+hash = "1a8eb448b7f01e564a3ea4e338b70a11010a7013d484b9778acc220c07408da2"
 
 [[files]]
 file = "mods/meowhex.jar"
@@ -3036,12 +3036,12 @@ hash = "39bd87ba2731d2f2416f464120f9019e733558156dbcf85552ef3d5e0703b11b"
 
 [[files]]
 file = "mods/power-grid.pw.toml"
-hash = "522ea92e4206f8d0b823e444fea75d8c6897261863b17c7c5bf16e26195a7cdb"
+hash = "f38c46513ae7e5c7700b4fd0b337931c9ba4e23fb57c0be9b6248771df714fd0"
 metafile = true
 
 [[files]]
-file = "mods/powergrid-mc1.21.1-0.6.1.jar"
-hash = "b2835c36af6794a963737c617b5f9dd6b41aba5078d418c88847193fbcf702e5"
+file = "mods/powergrid-mc1.21.1-0.6.2.jar"
+hash = "e40d67a874431925d502af88e85064883c67936cfd689033d7df560cffcf19e7"
 
 [[files]]
 file = "mods/prickle-neoforge-1.21.1-21.1.11.jar"

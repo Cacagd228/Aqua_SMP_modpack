@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "meowaddons:block/fan_t2",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "meowaddons:block/fan_t2",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "meowaddons:block/fan_t2",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "meowaddons:block/fan_t2",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "meowaddons:block/fan_t2"
+    },
+    "facing=west": {
+      "model": "meowaddons:block/fan_t2",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

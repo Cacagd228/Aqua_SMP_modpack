@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "meowaddons:block/crusher_t1",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "meowaddons:block/crusher_t1"
+    },
+    "axis=z": {
+      "model": "meowaddons:block/crusher_t1",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

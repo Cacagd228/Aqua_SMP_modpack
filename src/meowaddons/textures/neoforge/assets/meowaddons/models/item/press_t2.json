@@ -2,12 +2,10 @@
   "parent": "create:block/mechanical_press/item",
   "textures": {
     "8": "meowaddons:block/press_side_t2",
-    "gearbox": "meowaddons:block/press_gearbox_t2",
-    "gearbox_top": "meowaddons:block/press_gearbox_top_t2",
+    "gearbox": "create:block/brass_gearbox",
+    "gearbox_top": "create:block/brass_casing",
     "mechanical_press_top": "meowaddons:block/press_top_t2",
     "mechanical_press_bottom": "meowaddons:block/press_bottom_t2",
-    "particle": "meowaddons:block/press_side_t2",
-    "0": "create:block/axis",
-    "1": "create:block/axis_top"
+    "particle": "create:block/brass_casing"
   }
 }

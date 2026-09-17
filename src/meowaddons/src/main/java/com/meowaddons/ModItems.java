@@ -1,5 +1,6 @@
 package com.meowaddons;
 import com.meowaddons.tier.Tier;
+import com.meowaddons.tier.TieredMachineItem;
 import com.meowaddons.tier.TieredPressItem;
 import net.minecraft.world.item.BlockItem;
 import net.neoforged.bus.api.IEventBus;
@@ -20,5 +21,41 @@ public class ModItems{
  public static final DeferredItem<BlockItem> PRESS_T4=ITEMS.register("press_t4",()->new TieredPressItem(ModBlocks.PRESS_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
  public static final DeferredItem<BlockItem> PRESS_T5=ITEMS.register("press_t5",()->new TieredPressItem(ModBlocks.PRESS_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
  public static final DeferredItem<BlockItem> PRESS_T6=ITEMS.register("press_t6",()->new TieredPressItem(ModBlocks.PRESS_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> MIXER_T1=ITEMS.register("mixer_t1",()->new TieredMachineItem(ModBlocks.MIXER_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> MIXER_T2=ITEMS.register("mixer_t2",()->new TieredMachineItem(ModBlocks.MIXER_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> MIXER_T3=ITEMS.register("mixer_t3",()->new TieredMachineItem(ModBlocks.MIXER_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> MIXER_T4=ITEMS.register("mixer_t4",()->new TieredMachineItem(ModBlocks.MIXER_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> MIXER_T5=ITEMS.register("mixer_t5",()->new TieredMachineItem(ModBlocks.MIXER_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> MIXER_T6=ITEMS.register("mixer_t6",()->new TieredMachineItem(ModBlocks.MIXER_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> SAW_T1=ITEMS.register("saw_t1",()->new TieredMachineItem(ModBlocks.SAW_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> SAW_T2=ITEMS.register("saw_t2",()->new TieredMachineItem(ModBlocks.SAW_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> SAW_T3=ITEMS.register("saw_t3",()->new TieredMachineItem(ModBlocks.SAW_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> SAW_T4=ITEMS.register("saw_t4",()->new TieredMachineItem(ModBlocks.SAW_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> SAW_T5=ITEMS.register("saw_t5",()->new TieredMachineItem(ModBlocks.SAW_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> SAW_T6=ITEMS.register("saw_t6",()->new TieredMachineItem(ModBlocks.SAW_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> MILLSTONE_T1=ITEMS.register("millstone_t1",()->new TieredMachineItem(ModBlocks.MILLSTONE_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> MILLSTONE_T2=ITEMS.register("millstone_t2",()->new TieredMachineItem(ModBlocks.MILLSTONE_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> MILLSTONE_T3=ITEMS.register("millstone_t3",()->new TieredMachineItem(ModBlocks.MILLSTONE_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> MILLSTONE_T4=ITEMS.register("millstone_t4",()->new TieredMachineItem(ModBlocks.MILLSTONE_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> MILLSTONE_T5=ITEMS.register("millstone_t5",()->new TieredMachineItem(ModBlocks.MILLSTONE_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> MILLSTONE_T6=ITEMS.register("millstone_t6",()->new TieredMachineItem(ModBlocks.MILLSTONE_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> CRUSHER_T1=ITEMS.register("crusher_t1",()->new TieredMachineItem(ModBlocks.CRUSHER_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> CRUSHER_T2=ITEMS.register("crusher_t2",()->new TieredMachineItem(ModBlocks.CRUSHER_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> CRUSHER_T3=ITEMS.register("crusher_t3",()->new TieredMachineItem(ModBlocks.CRUSHER_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> CRUSHER_T4=ITEMS.register("crusher_t4",()->new TieredMachineItem(ModBlocks.CRUSHER_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> CRUSHER_T5=ITEMS.register("crusher_t5",()->new TieredMachineItem(ModBlocks.CRUSHER_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> CRUSHER_T6=ITEMS.register("crusher_t6",()->new TieredMachineItem(ModBlocks.CRUSHER_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> DEPLOYER_T1=ITEMS.register("deployer_t1",()->new TieredMachineItem(ModBlocks.DEPLOYER_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> DEPLOYER_T2=ITEMS.register("deployer_t2",()->new TieredMachineItem(ModBlocks.DEPLOYER_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> DEPLOYER_T3=ITEMS.register("deployer_t3",()->new TieredMachineItem(ModBlocks.DEPLOYER_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> DEPLOYER_T4=ITEMS.register("deployer_t4",()->new TieredMachineItem(ModBlocks.DEPLOYER_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> DEPLOYER_T5=ITEMS.register("deployer_t5",()->new TieredMachineItem(ModBlocks.DEPLOYER_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> DEPLOYER_T6=ITEMS.register("deployer_t6",()->new TieredMachineItem(ModBlocks.DEPLOYER_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
+ public static final DeferredItem<BlockItem> FAN_T1=ITEMS.register("fan_t1",()->new TieredMachineItem(ModBlocks.FAN_T1.get(), new net.minecraft.world.item.Item.Properties(), Tier.ANDESITE));
+ public static final DeferredItem<BlockItem> FAN_T2=ITEMS.register("fan_t2",()->new TieredMachineItem(ModBlocks.FAN_T2.get(), new net.minecraft.world.item.Item.Properties(), Tier.BRASS));
+ public static final DeferredItem<BlockItem> FAN_T3=ITEMS.register("fan_t3",()->new TieredMachineItem(ModBlocks.FAN_T3.get(), new net.minecraft.world.item.Item.Properties(), Tier.STEEL));
+ public static final DeferredItem<BlockItem> FAN_T4=ITEMS.register("fan_t4",()->new TieredMachineItem(ModBlocks.FAN_T4.get(), new net.minecraft.world.item.Item.Properties(), Tier.SHADOW_STEEL));
+ public static final DeferredItem<BlockItem> FAN_T5=ITEMS.register("fan_t5",()->new TieredMachineItem(ModBlocks.FAN_T5.get(), new net.minecraft.world.item.Item.Properties(), Tier.REFINED_RADIANCE));
+ public static final DeferredItem<BlockItem> FAN_T6=ITEMS.register("fan_t6",()->new TieredMachineItem(ModBlocks.FAN_T6.get(), new net.minecraft.world.item.Item.Properties(), Tier.CHROMATIC));
  public static void register(IEventBus b){ITEMS.register(b);}
 }

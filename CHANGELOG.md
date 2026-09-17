@@ -4,6 +4,8 @@
 
 - `lineage_core` 2.0.1 (сборка из исходников `src/linage_core`): пофикшена раса Лудоман.
 - Убран `create_parachute` (jar, конфиг, записи packwiz).
+- `powergrid` 0.6.1 → 0.6.2 (PR #1 от MrPe4henika; дочинен `index.toml`).
+- `meowaddons` 1.0.0 пересобран из исходников: тирные mixer/saw/millstone/crusher/deployer/fan (T1–T6).
 
 ## v1.1.0-beta.1
 

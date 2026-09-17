@@ -1,6 +1,11 @@
 {
   "parent": "create:block/mechanical_press/block",
   "textures": {
+    "4": "create:block/mechanical_press_side",
+    "gearbox": "create:block/gearbox",
+    "gearbox_top": "create:block/gearbox_top",
+    "mechanical_press_top": "create:block/mechanical_press_top",
+    "mechanical_press_bottom": "create:block/mechanical_press_bottom",
     "particle": "create:block/andesite_casing"
   }
 }

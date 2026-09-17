@@ -1,0 +1,9 @@
+{
+  "parent": "create:block/mechanical_mixer/block",
+  "textures": {
+    "11": "meowaddons:block/press_top_t2",
+    "2": "create:block/brass_casing",
+    "4": "meowaddons:block/mixer_side_t2",
+    "particle": "create:block/brass_casing"
+  }
+}

@@ -3,9 +3,9 @@
   "textures": {
     "4": "meowaddons:block/press_side_t4",
     "gearbox": "meowaddons:block/press_gearbox_t4",
-    "gearbox_top": "meowaddons:block/press_gearbox_top_t4",
+    "gearbox_top": "create:block/shadow_steel_casing",
     "mechanical_press_top": "meowaddons:block/press_top_t4",
     "mechanical_press_bottom": "meowaddons:block/press_bottom_t4",
-    "particle": "meowaddons:block/press_side_t4"
+    "particle": "create:block/shadow_steel_casing"
   }
 }
