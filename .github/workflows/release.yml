@@ -41,7 +41,7 @@ jobs:
 
       - name: Export server pack
         run: |
-          packwiz export server -o "AquaSMP-server-${GITHUB_REF_NAME}.zip"
+          packwiz curseforge export --side server -o "AquaSMP-server-${GITHUB_REF_NAME}.zip"
 
       - name: Publish to Releases
         uses: softprops/action-gh-release@v2
