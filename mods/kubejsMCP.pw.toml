@@ -1,8 +1,0 @@
-name = "KubeJS MCP (pinned)"
-filename = "kubejsMCP-1.21.1-1.0.0.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/kubejsMCP-1.21.1-1.0.0.jar"
-hash-format = "sha512"
-hash = "PLACEHOLDER_HASH_WILL_BE_UPDATED"

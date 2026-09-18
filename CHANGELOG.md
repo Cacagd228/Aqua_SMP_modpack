@@ -3,7 +3,6 @@
 ## v1.1.1-beta.3
 
 - Fix: `biolith` side=both (теперь на клиенте и сервере)
-- Добавлен `kubejsMCP` в исходники (pinned jar)
 - Добавлен `fmm_worldgen` в исходники (pinned jar)
 - Добавлен `fmm_teams` в исходники (pinned jar)
 - Удалены kubejs скрипты HexJS (haste_cast, haste_register, haste_scroll, ovid_test)
