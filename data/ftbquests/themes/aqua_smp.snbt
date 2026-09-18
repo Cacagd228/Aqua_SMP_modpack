@@ -1,0 +1,10 @@
+{
+  "name": "Aqua SMP",
+  "description": "Default theme for Aqua SMP",
+  "icon": "minecraft:book",
+  "background": "minecraft:textures/block/blue_concrete.png",
+  "titleColor": 0x00AAFF,
+  "descriptionColor": 0xAAAAAA,
+  "progressBarColor": 0x00FF00,
+  "progressBarBackground": 0x333333
+}

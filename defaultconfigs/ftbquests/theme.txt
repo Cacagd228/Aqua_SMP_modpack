@@ -1,0 +1,13 @@
+# Minimal theme to prevent FTB Quests crash on startup
+# This prevents NoSuchElementException in QuestShape.reload
+
+{
+  "name": "Default",
+  "description": "Default theme for Aqua SMP",
+  "icon": "minecraft:book",
+  "background": "minecraft:textures/block/white_concrete.png",
+  "titleColor": 0xFFFFFF,
+  "descriptionColor": 0xAAAAAA,
+  "progressBarColor": 0x00FF00,
+  "progressBarBackground": 0x333333
+}
