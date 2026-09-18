@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.1.1-beta.3
+
+- Fix: `biolith` side=both (теперь на клиенте и сервере)
+- Добавлен `kubejsMCP` в исходники (pinned jar)
+- Добавлен `fmm_worldgen` в исходники (pinned jar)
+- Добавлен `fmm_teams` в исходники (pinned jar)
+- Удалены kubejs скрипты HexJS (haste_cast, haste_register, haste_scroll, ovid_test)
+
+## v1.1.1-beta.2
+
+- Fix: `biolith` side=both (теперь на клиенте и сервере)
+- Добавлены минимальные файлы FTB Quests (тема, глава квестов) для предотвращения краша
+- NeoForge installer включён в server pack
+- Force-add PonderJS в server pack
+- Exclude UIQuest из server pack
+
 ## v1.1.1-beta.1
 
 - `lineage_core` 2.0.1 (сборка из исходников `src/linage_core`): пофикшена раса Лудоман.
