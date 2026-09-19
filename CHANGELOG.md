@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.1-beta.4
+
+- `meowaddons` 1.0.0 пересобран из исходников (`src/meowaddons`):
+  - Вырезан спавн структур/мобов из мода (глушится kubejs-датапаком:
+    `kubejs/data` no_op-оверрайды + `kubejs/server_scripts/disable_mobs.js`).
+  - Новое зачарование лука «Мульти выстрел» (`meowaddons:triple_shot`): залп из 3 стрел.
+  - Новое зачарование лука «Авто выстрел» (`meowaddons:auto_shot`): автоспуск тетивы на полном натяге.
+
 ## v1.1.1-beta.3
 
 - Fix: `biolith` side=both (теперь на клиенте и сервере)

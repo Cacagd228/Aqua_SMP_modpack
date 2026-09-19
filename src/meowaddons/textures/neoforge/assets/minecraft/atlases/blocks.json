@@ -1,0 +1,10 @@
+{
+  "sources": [
+    { "type": "single", "resource": "meowaddons:block/millstone_t1" },
+    { "type": "single", "resource": "meowaddons:block/millstone_t2" },
+    { "type": "single", "resource": "meowaddons:block/millstone_t3" },
+    { "type": "single", "resource": "meowaddons:block/millstone_t4" },
+    { "type": "single", "resource": "meowaddons:block/millstone_t5" },
+    { "type": "single", "resource": "meowaddons:block/millstone_t6" }
+  ]
+}

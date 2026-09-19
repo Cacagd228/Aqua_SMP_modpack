@@ -1,0 +1,15 @@
+{
+  "type": "meowaddons:milling_t3",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:flour",
+      "count": 1
+    }
+  ],
+  "processingTime": 100
+}

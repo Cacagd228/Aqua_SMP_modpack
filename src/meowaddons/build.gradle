@@ -18,6 +18,10 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+    maven {
+        name = "KubeJS"
+        url = "https://maven.latvian.dev/releases"
+    }
 }
 
 neoForge {
@@ -47,6 +51,8 @@ dependencies {
     runtimeOnly("mezz.jei:jei-1.21.1-neoforge:19.43.0.393")
 
     compileOnly files('run/mods/geckolib-neoforge-1.21.1-4.9.2.jar')
+
+    compileOnly("dev.latvian.mods:kubejs-neoforge:2101.7.2-build.374")
 
 
     compileOnly files('devmods/ponder-neoforge-1.0.82.jar')

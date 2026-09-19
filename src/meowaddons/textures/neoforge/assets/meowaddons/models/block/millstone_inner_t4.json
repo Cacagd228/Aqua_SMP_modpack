@@ -1,0 +1,6 @@
+﻿{
+  "parent": "create:block/millstone/inner",
+  "textures": {
+    "5": "meowaddons:block/millstone_t4"
+  }
+}

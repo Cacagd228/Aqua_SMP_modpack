@@ -1,0 +1,11 @@
+﻿{
+  "parent": "create:block/mechanical_saw/horizontal",
+  "textures": {
+    "slit": "meowaddons:block/saw_top_no_slot_t2",
+    "particle": "meowaddons:block/saw_gearbox_top_t2",
+    "gearbox_top": "meowaddons:block/saw_gearbox_top_t2",
+    "gearbox": "meowaddons:block/saw_gearbox_t2",
+    "encased_belt": "meowaddons:block/saw_belt_t2",
+    "andesite_casing_short": "meowaddons:block/saw_casing_t2"
+  }
+}

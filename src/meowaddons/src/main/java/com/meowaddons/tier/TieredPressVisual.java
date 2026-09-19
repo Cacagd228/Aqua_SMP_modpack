@@ -1,26 +1,35 @@
 package com.meowaddons.tier;
 
+import com.meowaddons.MeowAddons;
 import com.mojang.math.Axis;
 import com.simibubi.create.content.kinetics.base.ShaftVisual;
 import dev.engine_room.flywheel.api.visualization.VisualizationContext;
 import dev.engine_room.flywheel.api.model.Model;
 import dev.engine_room.flywheel.lib.instance.OrientedInstance;
 import dev.engine_room.flywheel.lib.model.Models;
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+import dev.engine_room.flywheel.api.instance.InstanceType;
 import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import net.createmod.catnip.math.AngleHelper;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 
 /**
- * Flywheel visual для tiered пресса — по образцу Create PressVisual и
- * Create Encased (общая ванильная голова): вал через ShaftVisual, молот -
- * OrientedInstance с AllPartialModels.MECHANICAL_PRESS_HEAD.
+ * Flywheel visual для tiered пресса: вал через ShaftVisual, молот - OrientedInstance с tiered моделью.
+ * Модель молота выбирается по Tier из BlockEntity, использует текстуры press_head_tX / press_pole_tX.
  */
 public class TieredPressVisual extends ShaftVisual<TieredPressBlockEntity> implements dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual {
     private final OrientedInstance pressHead;
+    private final Tier tier;
+
+    private static PartialModel headModel(Tier tier) {
+        return com.simibubi.create.AllPartialModels.MECHANICAL_PRESS_HEAD;
+    }
 
     public TieredPressVisual(VisualizationContext ctx, TieredPressBlockEntity be, float partialTick) {
         super(ctx, be, partialTick);
-        Model model = Models.partial(com.simibubi.create.AllPartialModels.MECHANICAL_PRESS_HEAD);
+        this.tier = be.getTier();
+        Model model = Models.partial(headModel(tier));
         this.pressHead = instancerProvider().instancer(InstanceTypes.ORIENTED, model).createInstance();
         Direction dir = blockState.getValue(com.simibubi.create.content.kinetics.press.MechanicalPressBlock.HORIZONTAL_FACING);
         pressHead.rotation(Axis.YP.rotationDegrees(AngleHelper.horizontalAngle(dir)));

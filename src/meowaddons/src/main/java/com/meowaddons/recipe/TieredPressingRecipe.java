@@ -8,7 +8,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-public class TieredPressingRecipe extends PressingRecipe {
+public class TieredPressingRecipe extends PressingRecipe implements TieredRecipe {
  private final Tier tier;
  public TieredPressingRecipe(ProcessingRecipeParams params, Tier tier){ super(params); this.tier=tier; }
  public Tier getTier(){ return tier; }

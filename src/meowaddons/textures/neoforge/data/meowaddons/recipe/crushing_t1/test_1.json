@@ -1,0 +1,15 @@
+{
+  "type": "meowaddons:crushing_t1",
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:gravel",
+      "count": 1
+    }
+  ],
+  "processingTime": 100
+}

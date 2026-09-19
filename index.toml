@@ -6,7 +6,7 @@ hash = "3e9edd77131e0dd023d987b562b7c7e70439786cce4ed0fda950858f40c1bdab"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "4b25f548e2fd66e332dd7a9a0e9a04330fa25ce538623c04e9d6b317cb334383"
+hash = "c60f09df9caa6445d26a70be643a8dc9bcd233f2cf434503d50aed6cfd76d738"
 
 [[files]]
 file = "LICENSE"
@@ -1453,6 +1453,82 @@ file = "kubejs/config/web_server.json"
 hash = "1fb568e4539aec5f72c29cd7efdea107ecea0cff7c5f9f3c4b7c0f2820151123"
 
 [[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_coal.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_copper.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_gold.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_iron.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_lapis.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_lead.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_nether_cobalt.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_nether_gold.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_nether_quartz.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_nether_wolframite.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_nickel.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_osmium.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_platinum.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_redstone.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_silver.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_thorium.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_tin.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_uranium.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/create_rns/worldgen/configured_feature/deposit_zinc.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
 file = "kubejs/data/curios/tags/item/face.json"
 hash = "913dbf577fa858a60b844e42f187914b8f3c1b348c239efff3b7f30c4b17f7af"
 
@@ -1465,20 +1541,80 @@ file = "kubejs/data/kubejs/curios/slots/shared.json"
 hash = "473b91ba4277016fba260e58f58dc1a86a8e8263129f7a43db31e2c805326706"
 
 [[files]]
-file = "kubejs/server_scripts/hexjs_haste_cast.js"
-hash = "d2023d43d8f153f3e9d2b5efedb308d0a3544a754f52e649ae0ed05423b80438"
+file = "kubejs/data/minecraft/worldgen/structure/monument.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
 [[files]]
-file = "kubejs/server_scripts/hexjs_haste_register.js"
-hash = "721a19cf1dd985b57fabe262a4aa32dbc885d9a77a3ae35fea86795a4d2d9528"
+file = "kubejs/data/minecraft/worldgen/structure/stronghold.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
 [[files]]
-file = "kubejs/server_scripts/hexjs_haste_scroll.js"
-hash = "b1be6db6c8a041a6aa628389bfe87d95dc6acc1dffb1e74b4fbe5d3e01be50f8"
+file = "kubejs/data/minecraft/worldgen/structure/trial_chambers.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
 [[files]]
-file = "kubejs/server_scripts/hexjs_ovid_test.js"
-hash = "9f3192421436a5bcc374e392c250f6cb1ae3ed54e86898012e172b2534ca64bb"
+file = "kubejs/data/minecraft/worldgen/structure_set/monument.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/minecraft/worldgen/structure_set/stronghold.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/minecraft/worldgen/structure_set/trial_chambers.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/asgharian_citadel.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/asgharian_tower.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/cog_chambers.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/osgood_lab.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/osgood_lab_outpost.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure/trench.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/asgharian_citadel.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/asgharian_tower.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/cog_chambers.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/osgood_lab.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/osgood_lab_outpost.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/data/scguns/worldgen/structure_set/trench.json"
+hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+
+[[files]]
+file = "kubejs/server_scripts/disable_mobs.js"
+hash = "fadfc45d967198b9e3010bc7ff7aa44a8bec5e65a2e8a07f3420913bd8fdda24"
 
 [[files]]
 file = "kubejs/server_scripts/main.js"
@@ -2899,12 +3035,12 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-0.pw.toml"
-hash = "bcca36a044bf353d87df536c0111c4deb743d1f77fa2adeff49364f653590ccc"
+hash = "3905caedcad52e729e52687974b9f3405d71a46534e220438408f25120f260ba"
 metafile = true
 
 [[files]]
 file = "mods/meowaddons-1.0.0.jar"
-hash = "1a8eb448b7f01e564a3ea4e338b70a11010a7013d484b9778acc220c07408da2"
+hash = "43360409f9df000f86aae867a10ed2ab480cee0253386dbeb6ba13e0d9de4c8d"
 
 [[files]]
 file = "mods/meowhex.jar"

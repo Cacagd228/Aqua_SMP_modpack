@@ -1,0 +1,10 @@
+﻿{
+  "parent": "create:block/mechanical_saw/vertical",
+  "textures": {
+    "mechanical_saw_top": "meowaddons:block/saw_top_t1",
+    "particle": "meowaddons:block/saw_top_t1",
+    "gearbox_top": "meowaddons:block/saw_gearbox_top_t1",
+    "gearbox": "meowaddons:block/saw_gearbox_t1",
+    "andesite_casing_short": "meowaddons:block/saw_casing_t1"
+  }
+}

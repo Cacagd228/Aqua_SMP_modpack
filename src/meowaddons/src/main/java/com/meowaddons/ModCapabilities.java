@@ -1,8 +1,8 @@
 package com.meowaddons;
-import com.meowaddons.tier.millstone.TieredMillstoneBlockEntity;
-import com.meowaddons.tier.saw.TieredSawBlockEntity;
+import com.meowaddons.tier.TieredCrushingWheelControllerBlockEntity;
+import com.meowaddons.tier.TieredDeployerBlockEntity;
 import com.meowaddons.transmitter.TransmitterBlockEntity;
-import net.minecraft.core.Direction;
+import com.simibubi.create.content.kinetics.deployer.DeployerItemHandler;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -11,19 +11,13 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 public class ModCapabilities{
  @SubscribeEvent public static void onRegisterCapabilities(RegisterCapabilitiesEvent e){
   e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.INTERDIMENSIONAL_TRANSMITTER.get(),(TransmitterBlockEntity be,net.minecraft.core.Direction s)->be.getExposedInventory());
-  // Пилы: как ванильный SawBlockEntity.registerCapabilities (всё кроме низа)
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T1.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T2.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T3.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T4.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T5.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_SAW_T6.get(),(TieredSawBlockEntity be,Direction s)->s!=Direction.DOWN?be.inventory:null);
-  // Жернова: как ванильный MillstoneBlockEntity.registerCapabilities
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T1.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T2.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T3.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T4.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T5.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
-  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_MILLSTONE_T6.get(),(TieredMillstoneBlockEntity be,Direction s)->be.capability);
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_CRUSHING_WHEEL_CONTROLLER.get(),(TieredCrushingWheelControllerBlockEntity be,net.minecraft.core.Direction s)->be.inventory);
+  //DeployerItemHandler public — оборачивает фейк-игрока так же, как ванильный деплойер
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T1.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T2.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T3.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T4.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T5.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T6.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
  }
 }

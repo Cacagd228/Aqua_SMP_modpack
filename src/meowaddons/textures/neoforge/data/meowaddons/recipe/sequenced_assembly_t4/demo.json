@@ -1,0 +1,54 @@
+{
+  "type": "meowaddons:sequenced_assembly_t4",
+  "ingredient": {
+    "item": "create:golden_sheet"
+  },
+  "transitional_item": {
+    "id": "create:polished_rose_quartz"
+  },
+  "sequence": [
+    {
+      "type": "meowaddons:pressing_t3",
+      "ingredients": [
+        { "item": "create:polished_rose_quartz" }
+      ],
+      "results": [
+        { "id": "create:polished_rose_quartz" }
+      ]
+    },
+    {
+      "type": "meowaddons:pressing_t3",
+      "ingredients": [
+        { "item": "create:polished_rose_quartz" }
+      ],
+      "results": [
+        { "id": "create:polished_rose_quartz" }
+      ]
+    },
+    {
+      "type": "meowaddons:pressing_t3",
+      "ingredients": [
+        { "item": "create:polished_rose_quartz" }
+      ],
+      "results": [
+        { "id": "create:polished_rose_quartz" }
+      ]
+    },
+    {
+      "type": "meowaddons:deploying_t4",
+      "ingredients": [
+        { "item": "create:polished_rose_quartz" },
+        { "item": "create:cogwheel" }
+      ],
+      "results": [
+        { "id": "create:polished_rose_quartz" }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "create:brass_sheet"
+    }
+  ],
+  "loops": 1
+}

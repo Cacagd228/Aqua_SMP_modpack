@@ -16,12 +16,10 @@ public class TieredPressClient {
   e.registerBlockEntityRenderer(ModBlockEntities.TIERED_PRESS_T5.get(), TieredPressRenderer::new);
   e.registerBlockEntityRenderer(ModBlockEntities.TIERED_PRESS_T6.get(), TieredPressRenderer::new);
  }
-  // Flywheel visual: tiered головка + вал. Без регистрации молот не рендерится (BER early-return при supportsVisualization).
-  @SubscribeEvent public static void onClientSetup(FMLClientSetupEvent e){
-   e.enqueueWork(() -> {
-    // Форсируем статическую инициализацию PartialModel голов до запекания моделей (стек Create Encased)
-    TieredPressModels.init();
-    SimpleBlockEntityVisualizer.builder(ModBlockEntities.TIERED_PRESS_T1.get()).factory(TieredPressVisual::new).apply();
+ // Flywheel visual: tiered головка + вал. Без регистрации молот не рендерится (BER early-return при supportsVisualization).
+ @SubscribeEvent public static void onClientSetup(FMLClientSetupEvent e){
+  e.enqueueWork(() -> {
+   SimpleBlockEntityVisualizer.builder(ModBlockEntities.TIERED_PRESS_T1.get()).factory(TieredPressVisual::new).apply();
    SimpleBlockEntityVisualizer.builder(ModBlockEntities.TIERED_PRESS_T2.get()).factory(TieredPressVisual::new).apply();
    SimpleBlockEntityVisualizer.builder(ModBlockEntities.TIERED_PRESS_T3.get()).factory(TieredPressVisual::new).apply();
    SimpleBlockEntityVisualizer.builder(ModBlockEntities.TIERED_PRESS_T4.get()).factory(TieredPressVisual::new).apply();
