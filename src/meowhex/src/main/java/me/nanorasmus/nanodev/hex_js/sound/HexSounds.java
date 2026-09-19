@@ -27,6 +27,19 @@ public class HexSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_UNSTOPPABLE = announcer("unstoppable");
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_WICKED_SICK = announcer("wicked_sick");
 
+    // ---- Meepo announcer (commentator_meepo curio): one event per phrase,
+    // variants are picked by the client from sounds.json ----
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_DOMINATING = announcer("meepo_dominating");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_FIRST_BLOOD = announcer("meepo_first_blood");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_GODLIKE = announcer("meepo_godlike");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_HOLY_SHIT = announcer("meepo_holy_shit");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_KILLING_SPREE = announcer("meepo_killing_spree");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_MONSTER_KILL = announcer("meepo_monster_kill");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_DOUBLE_KILL = announcer("meepo_double_kill");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_RAMPAGE = announcer("meepo_rampage");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_UNSTOPPABLE = announcer("meepo_unstoppable");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_WICKED_SICK = announcer("meepo_wicked_sick");
+
     private static DeferredHolder<SoundEvent, SoundEvent> announcer(String id) {
         return REGISTER.register("announcer_" + id,
                 () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(HexJS.MOD_ID, "announcer_" + id)));

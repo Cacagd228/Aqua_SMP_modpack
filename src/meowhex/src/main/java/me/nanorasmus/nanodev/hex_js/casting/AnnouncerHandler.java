@@ -23,14 +23,18 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 /**
  * Комментатор в стиле Доты: если убийца носит {@code meowhex:commentator}
+ * (Qween of Pain) или {@code meowhex:commentator_meepo} (Meepo)
  * в Curios-слоте necklace, PvP-убийство анонсируется звуком, боссбаром
- * и красной вспышкой виньетки у убийцы.
+ * и красной вспышкой виньетки у убийцы. Если надеты оба — играет Meepo.
  *
  * <ul>
  *   <li>Только PvP: жертва и убийца — игроки, суициды не анонсируются
  *       (стрик жертвы при этом сгорает).</li>
  *   <li>Только стрик без смертей: spree/dominating/unstoppable/wicked/
  *       monster/godlike/rampage/holy_shit (+ first blood за первый фраг).</li>
+ *   <li>Meepo дополнительно играет double_kill за 2-й фраг серии;
+ *       у каждого события Meepo несколько вариантов фразы (#1, #2...),
+ *       случайный выбирает клиент из sounds.json.</li>
  *   <li>В чат не пишется ничего; уровень рампаги и выше показывает
  *       наверх «Killer Буйствует!», остальные анонсы — просто текстом
  *       на месте боссбара (верх экрана, без полосы, на ~3 секунды).</li>
@@ -45,9 +49,9 @@ public final class AnnouncerHandler {
     public static final long MULTI_WINDOW_TICKS = 200L;
     /** Приоритет названия в тексте (на случай совпадений). */
     private static final List<String> DISPLAY_PRIORITY = List.of(
-            "rampage", "holy_shit", "godlike",
+            "holy_shit", "rampage", "godlike",
             "monster_kill", "wicked_sick", "unstoppable", "dominating",
-            "killing_spree", "first_blood");
+            "killing_spree", "first_blood", "double_kill");
 
     private static final ConcurrentHashMap<UUID, Integer> STREAK = new ConcurrentHashMap<>();
     private static boolean firstBloodDone = false;
@@ -83,9 +87,11 @@ public final class AnnouncerHandler {
 
         UUID killerId = killer.getUUID();
 
-        // Без надетого комментатора — тишина.
+        // Без надетого комментатора — тишина. Если надеты оба — играет Meepo.
+        final boolean meepo;
         try {
-            if (!CurioHelper.hasCurio(killer, HexArtifactsItems.COMMENTATOR.get())) return;
+            meepo = CurioHelper.hasCurio(killer, HexArtifactsItems.COMMENTATOR_MEEPO.get());
+            if (!meepo && !CurioHelper.hasCurio(killer, HexArtifactsItems.COMMENTATOR.get())) return;
         } catch (Throwable ignored) {
             return;
         }
@@ -98,6 +104,9 @@ public final class AnnouncerHandler {
         if (!firstBloodDone) {
             firstBloodDone = true;
             ids.add("first_blood");
+        } else if (streak == 2) {
+            // Double kill — только у Meepo, у QoP на 2-м фраге тишина.
+            if (meepo) ids.add("double_kill");
         } else if (streak == 3) {
             ids.add("killing_spree");
         } else if (streak == 4) {
@@ -109,17 +118,17 @@ public final class AnnouncerHandler {
         } else if (streak == 7) {
             ids.add("monster_kill");
         } else if (streak == 8) {
-            ids.add("rampage");
+            ids.add("holy_shit");
         } else if (streak == 9) {
             ids.add("godlike");
         } else if (streak >= 10) {
-            ids.add("holy_shit");
+            ids.add("rampage");
         }
         boolean global = ids.contains("rampage") || ids.contains("holy_shit") || ids.contains("godlike");
 
         List<SoundEvent> sounds = new ArrayList<>();
         for (String id : ids) {
-            sounds.add(soundFor(id));
+            sounds.add(soundFor(id, meepo));
         }
 
         MinecraftServer server = level.getServer();
@@ -137,8 +146,8 @@ public final class AnnouncerHandler {
         String victimName = victim.getGameProfile().getName();
         String shutName = victimStreak > 3 ? victimName : "";
         int shutStreak = victimStreak > 3 ? victimStreak : 0;
-        // HOLLY SHIT! X2, X3... с 11-го фрага (10-й — без множителя).
-        int mult = "holy_shit".equals(displayId) ? streak - 9 : 0;
+        // RAMPAGE! X2, X3... с 11-го фрага (10-й — без множителя).
+        int mult = "rampage".equals(displayId) ? streak - 9 : 0;
         var xplat = at.petrak.hexcasting.xplat.IXplatAbstractions.INSTANCE;
         for (ServerPlayer listener : audience) {
             try {
@@ -162,7 +171,22 @@ public final class AnnouncerHandler {
         }
     }
 
-    private static SoundEvent soundFor(String eventId) {
+    private static SoundEvent soundFor(String eventId, boolean meepo) {
+        if (meepo) {
+            return switch (eventId) {
+                case "dominating" -> HexSounds.ANNOUNCER_MEEPO_DOMINATING.get();
+                case "first_blood" -> HexSounds.ANNOUNCER_MEEPO_FIRST_BLOOD.get();
+                case "godlike" -> HexSounds.ANNOUNCER_MEEPO_GODLIKE.get();
+                case "holy_shit" -> HexSounds.ANNOUNCER_MEEPO_HOLY_SHIT.get();
+                case "killing_spree" -> HexSounds.ANNOUNCER_MEEPO_KILLING_SPREE.get();
+                case "monster_kill" -> HexSounds.ANNOUNCER_MEEPO_MONSTER_KILL.get();
+                case "double_kill" -> HexSounds.ANNOUNCER_MEEPO_DOUBLE_KILL.get();
+                case "rampage" -> HexSounds.ANNOUNCER_MEEPO_RAMPAGE.get();
+                case "unstoppable" -> HexSounds.ANNOUNCER_MEEPO_UNSTOPPABLE.get();
+                case "wicked_sick" -> HexSounds.ANNOUNCER_MEEPO_WICKED_SICK.get();
+                default -> throw new IllegalArgumentException("Unknown announcer event: " + eventId);
+            };
+        }
         return switch (eventId) {
             case "dominating" -> HexSounds.ANNOUNCER_DOMINATING.get();
             case "first_blood" -> HexSounds.ANNOUNCER_FIRST_BLOOD.get();

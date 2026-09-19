@@ -55,6 +55,11 @@ public final class HexArtifactsItems {
             ITEMS.register("commentator", () -> new ItemCommentator(
                     new Item.Properties().stacksTo(1)));
 
+    // ---- meepo commentator (necklace curio, second announcer voice) ----
+    public static final DeferredHolder<Item, ? extends Item> COMMENTATOR_MEEPO =
+            ITEMS.register("commentator_meepo", () -> new ItemCommentator(
+                    new Item.Properties().stacksTo(1), "item.meowhex.commentator_meepo.tooltip"));
+
     // ---- sniper's scope (dedicated scope curio) ----
     public static final DeferredHolder<Item, ? extends Item> SNIPER_SCOPE =
             ITEMS.register("sniper_scope", () -> new ItemSniperScope(
@@ -69,6 +74,7 @@ public final class HexArtifactsItems {
                         out.accept(PATTERN_READER.get());
                         out.accept(SNIPER_SCOPE.get());
                         out.accept(COMMENTATOR.get());
+                        out.accept(COMMENTATOR_MEEPO.get());
                         out.accept(HextendedItems.CHARGED_AMETHYST_DIADEM.get());
                         out.accept(HexFoodItems.MANA_BERRY.get());
                         out.accept(HexFoodItems.MANA_PIE_SLICE.get());

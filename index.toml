@@ -6,7 +6,7 @@ hash = "3e9edd77131e0dd023d987b562b7c7e70439786cce4ed0fda950858f40c1bdab"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "ff952c603dc2f2e67f66fe0c9bfa1f362aca4d786376a21e5c6e782a81f7fce7"
+hash = "25786c43ceaa954156fad4680865d11364198e4102dd23e04846c3cad0875137"
 
 [[files]]
 file = "LICENSE"
@@ -1540,9 +1540,6 @@ hash = "d7b3fd78016e3bdcef02413420ddfda43100c4265936de3fea42f241c0b49951"
 file = "kubejs/data/kubejs/curios/slots/shared.json"
 hash = "473b91ba4277016fba260e58f58dc1a86a8e8263129f7a43db31e2c805326706"
 
-
-
-
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/monument.json"
 hash = "b9d3bc0c0cac08cc09daad3eb90a326f5df4356dd8e7185fac24838f45532951"
@@ -1554,12 +1551,6 @@ hash = "bcdbde0139e33e466cce88a246068e39b6619fc50ffcc00c9eacc8b539ec1d4b"
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/trial_chambers.json"
 hash = "5c4cd297539961411986408ba919227ca281cac5a371f0ade3fb1fe9a1d08aa3"
-
-
-
-
-
-
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/asgharian_citadel.json"
@@ -3017,11 +3008,11 @@ hash = "43360409f9df000f86aae867a10ed2ab480cee0253386dbeb6ba13e0d9de4c8d"
 
 [[files]]
 file = "mods/meowhex.jar"
-hash = "3531b8de7ab2cfc451b98ae469ee84287001cdec4576f348d2a2eaa27a4a4fab"
+hash = "81bde0a41fc85a33fba2d2ead8906d6bbf31569f0c4c3bed81b446eb31342646"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "6bb74f7b77db10756263e5de5f527eb696077d4b845ad46372c879a328dc9097"
+hash = "653c97c9b274e548385db831946100c13c040d0a5093bcb8a01eb45d9e61b7e9"
 metafile = true
 
 [[files]]

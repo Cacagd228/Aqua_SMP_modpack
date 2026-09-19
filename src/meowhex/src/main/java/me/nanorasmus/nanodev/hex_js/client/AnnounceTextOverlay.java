@@ -53,13 +53,13 @@ public class AnnounceTextOverlay {
         int mainRgb = 0xFFC845; // золото как баннер
         String killWordStr = shutStreak > 0 ? killWord(shutStreak) : "";
         if (!eventId.isEmpty() && !"first_blood".equals(eventId)) {
-            if ("holy_shit".equals(eventId) && mult >= 2) {
-                // HOLLY SHIT! X2, X3... — буквально, без перевода.
-                main = net.minecraft.network.chat.Component.literal("HOLLY SHIT! X" + mult);
+            if ("rampage".equals(eventId) && mult >= 2) {
+                // RAMPAGE! X2, X3... — буквально, без перевода.
+                main = net.minecraft.network.chat.Component.literal("RAMPAGE! X" + mult);
             } else {
                 main = Component.translatable("meowhex.announcer.top_" + eventId, killer);
             }
-            if ("holy_shit".equals(eventId)) {
+            if ("rampage".equals(eventId)) {
                 mainRgb = 0xFF3333;
             }
             if (!killer.isEmpty()) {

@@ -20,8 +20,15 @@ import java.util.List;
  */
 public class ItemCommentator extends Item implements HexBaubleItem {
 
+    private final String tooltipKey;
+
     public ItemCommentator(Properties properties) {
+        this(properties, "item.meowhex.commentator.tooltip");
+    }
+
+    public ItemCommentator(Properties properties, String tooltipKey) {
         super(properties);
+        this.tooltipKey = tooltipKey;
     }
 
     @Override
@@ -31,6 +38,6 @@ public class ItemCommentator extends Item implements HexBaubleItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("item.meowhex.commentator.tooltip"));
+        tooltipComponents.add(Component.translatable(tooltipKey));
     }
 }

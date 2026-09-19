@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.2-beta.2
+
+- `meowhex` обновлён.
+- meepo RAMPAGE.
+
 ## v1.1.2-beta
 
 - `meowhex`: новые версии + все обновлённые моды.

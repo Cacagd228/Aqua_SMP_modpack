@@ -51,5 +51,64 @@
   "announcer_wicked_sick": {
     "sounds": [{ "name": "meowhex:announcer/wicked_sick", "stream": false }],
     "subtitle": "sound.meowhex.announcer_wicked_sick"
+  },
+  "announcer_meepo_dominating": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/dominating_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/dominating_2", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_dominating"
+  },
+  "announcer_meepo_first_blood": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/first_blood_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/first_blood_2", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_first_blood"
+  },
+  "announcer_meepo_godlike": {
+    "sounds": [{ "name": "meowhex:announcer_meepo/godlike_1", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_godlike"
+  },
+  "announcer_meepo_holy_shit": {
+    "sounds": [{ "name": "meowhex:announcer_meepo/holy_shit_1", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_holy_shit"
+  },
+  "announcer_meepo_killing_spree": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/killing_spree_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/killing_spree_2", "stream": false },
+      { "name": "meowhex:announcer_meepo/killing_spree_3", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_killing_spree"
+  },
+  "announcer_meepo_monster_kill": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/monster_kill_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/monster_kill_2", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_monster_kill"
+  },
+  "announcer_meepo_double_kill": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/double_kill_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/double_kill_2", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_double_kill"
+  },
+  "announcer_meepo_rampage": {
+    "sounds": [{ "name": "meowhex:announcer_meepo/rampage_1", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_rampage"
+  },
+  "announcer_meepo_unstoppable": {
+    "sounds": [
+      { "name": "meowhex:announcer_meepo/unstoppable_1", "stream": false },
+      { "name": "meowhex:announcer_meepo/unstoppable_2", "stream": false }
+    ],
+    "subtitle": "sound.meowhex.announcer_unstoppable"
+  },
+  "announcer_meepo_wicked_sick": {
+    "sounds": [{ "name": "meowhex:announcer_meepo/wicked_sick_1", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_wicked_sick"
   }
 }
