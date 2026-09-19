@@ -72,6 +72,7 @@ public class HexJS {
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.addon.item.ItemManaBerry.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.entity.SummonAgroHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ErebusChainHandler.class);
+        NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.AnnouncerHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.UtgardHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.PingPongHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ChronosHandler.class);

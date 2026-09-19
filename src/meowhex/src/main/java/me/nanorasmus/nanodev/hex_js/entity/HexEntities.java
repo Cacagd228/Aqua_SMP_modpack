@@ -48,6 +48,13 @@ public class HexEntities {
                     .updateInterval(1)
                     .build("sniper_shot"));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<EntitySunBeam>> SUN_BEAM = REGISTER.register("sun_beam",
+            () -> EntityType.Builder.<EntitySunBeam>of(EntitySunBeam::new, MobCategory.MISC)
+                    .sized(2.0f, EntitySunBeam.HEIGHT)
+                    .clientTrackingRange(10)
+                    .updateInterval(1)
+                    .build("sun_beam"));
+
     public static void init(IEventBus modBus) {
         REGISTER.register(modBus);
         modBus.addListener(HexEntities::onAttributeCreate);

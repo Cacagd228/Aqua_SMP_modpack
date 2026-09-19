@@ -134,6 +134,10 @@ public class ForgeHexConfig implements HexConfig.CommonConfigAccess {
 
         private static ModConfigSpec.BooleanValue explosionDestroysBlocks;
 
+        private static ModConfigSpec.DoubleValue explosionBlockDamageMultiplier;
+
+        private static ModConfigSpec.DoubleValue knockbackNonPlayerMultiplier;
+
         private static ModConfigSpec.ConfigValue<List<? extends String>> tpDimDenyList;
 
         private static ModConfigSpec.ConfigValue<List<? extends String>> fewScrollTables;
@@ -174,6 +178,14 @@ public class ForgeHexConfig implements HexConfig.CommonConfigAccess {
                     "Whether the Explosion spell should destroy blocks (true = TNT-like grief, false = only damage + fire)")
                 .define("explosionDestroysBlocks", HexConfig.ServerConfigAccess.DEFAULT_EXPLOSION_DESTROYS_BLOCKS);
 
+            explosionBlockDamageMultiplier = builder.comment(
+                    "Multiplier for how many blocks the explosion destroys (0.25 = 4x fewer blocks destroyed)")
+                .defineInRange("explosionBlockDamageMultiplier", HexConfig.ServerConfigAccess.DEFAULT_EXPLOSION_BLOCK_DAMAGE_MULTIPLIER, 0.0, 1.0);
+
+            knockbackNonPlayerMultiplier = builder.comment(
+                    "Multiplier for knockback on non-player entities (0.5 = 2x weaker knockback on non-players)")
+                .defineInRange("knockbackNonPlayerMultiplier", HexConfig.ServerConfigAccess.DEFAULT_KNOCKBACK_NON_PLAYER_MULTIPLIER, 0.0, 1.0);
+
             tpDimDenyList = builder.comment("Resource locations of dimensions you can't Blink or Greater Teleport in.")
                 .defineList("tpDimDenyList", DEFAULT_DIM_TP_DENYLIST, Server::isValidReslocArg);
         }
@@ -211,6 +223,16 @@ public class ForgeHexConfig implements HexConfig.CommonConfigAccess {
         @Override
         public boolean explosionDestroysBlocks() {
             return explosionDestroysBlocks.get();
+        }
+
+        @Override
+        public double explosionBlockDamageMultiplier() {
+            return explosionBlockDamageMultiplier.get();
+        }
+
+        @Override
+        public double knockbackNonPlayerMultiplier() {
+            return knockbackNonPlayerMultiplier.get();
         }
 
         @Override

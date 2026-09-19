@@ -9,8 +9,13 @@ import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
+import at.petrak.hexcasting.api.mod.HexConfig
+import me.nanorasmus.nanodev.hex_js.effect.HexEffects
 import net.minecraft.nbt.CompoundTag
+import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.LivingEntity
+import net.minecraft.world.entity.player.Player
 import net.minecraft.world.phys.Vec3
 
 object OpAddMotion : SpellAction {
@@ -57,8 +62,19 @@ object OpAddMotion : SpellAction {
 
     private data class Spell(val target: Entity, val motion: Vec3) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
-            target.push(motion.x, motion.y, motion.z)
+            val finalMotion = if (target is Player) {
+                motion
+            } else {
+                motion.scale(HexConfig.server().knockbackNonPlayerMultiplier())
+            }
+            target.push(finalMotion.x, finalMotion.y, finalMotion.z)
             target.hurtMarked = true // Whyyyyy
+
+            // Apply silence to caster
+            val caster = env.caster
+            if (caster is LivingEntity) {
+                caster.addEffect(MobEffectInstance(HexEffects.SILENCE, 100, 0, false, true, true))
+            }
         }
     }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.2-beta
+
+- `meowhex`: новые версии + все обновлённые моды.
+- Небольшие балансные правки hexcasting.
+- Починка клиента.
+- Sun strike.
+
 ## v1.1.1-beta.4
 
 - `meowaddons` 1.0.0 пересобран из исходников (`src/meowaddons`):

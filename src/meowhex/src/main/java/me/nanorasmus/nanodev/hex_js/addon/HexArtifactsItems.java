@@ -1,6 +1,7 @@
 package me.nanorasmus.nanodev.hex_js.addon;
 
 import me.nanorasmus.nanodev.hex_js.HexJS;
+import me.nanorasmus.nanodev.hex_js.addon.item.ItemCommentator;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemHexAmulet;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemPatternReader;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemSniperScope;
@@ -49,6 +50,11 @@ public final class HexArtifactsItems {
             ITEMS.register("pattern_reader", () -> new ItemPatternReader(
                     new Item.Properties().stacksTo(1)));
 
+    // ---- commentator (necklace curio, dota-style PvP announcer) ----
+    public static final DeferredHolder<Item, ? extends Item> COMMENTATOR =
+            ITEMS.register("commentator", () -> new ItemCommentator(
+                    new Item.Properties().stacksTo(1)));
+
     // ---- sniper's scope (dedicated scope curio) ----
     public static final DeferredHolder<Item, ? extends Item> SNIPER_SCOPE =
             ITEMS.register("sniper_scope", () -> new ItemSniperScope(
@@ -62,6 +68,7 @@ public final class HexArtifactsItems {
                         ALL.forEach(h -> out.accept(h.get()));
                         out.accept(PATTERN_READER.get());
                         out.accept(SNIPER_SCOPE.get());
+                        out.accept(COMMENTATOR.get());
                         out.accept(HextendedItems.CHARGED_AMETHYST_DIADEM.get());
                         out.accept(HexFoodItems.MANA_BERRY.get());
                         out.accept(HexFoodItems.MANA_PIE_SLICE.get());

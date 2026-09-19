@@ -6,7 +6,7 @@ hash = "3e9edd77131e0dd023d987b562b7c7e70439786cce4ed0fda950858f40c1bdab"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "c60f09df9caa6445d26a70be643a8dc9bcd233f2cf434503d50aed6cfd76d738"
+hash = "ff952c603dc2f2e67f66fe0c9bfa1f362aca4d786376a21e5c6e782a81f7fce7"
 
 [[files]]
 file = "LICENSE"
@@ -1540,77 +1540,50 @@ hash = "d7b3fd78016e3bdcef02413420ddfda43100c4265936de3fea42f241c0b49951"
 file = "kubejs/data/kubejs/curios/slots/shared.json"
 hash = "473b91ba4277016fba260e58f58dc1a86a8e8263129f7a43db31e2c805326706"
 
-[[files]]
-file = "kubejs/data/minecraft/worldgen/structure/monument.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/minecraft/worldgen/structure/stronghold.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/minecraft/worldgen/structure/trial_chambers.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/monument.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "b9d3bc0c0cac08cc09daad3eb90a326f5df4356dd8e7185fac24838f45532951"
 
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/stronghold.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "bcdbde0139e33e466cce88a246068e39b6619fc50ffcc00c9eacc8b539ec1d4b"
 
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/trial_chambers.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "5c4cd297539961411986408ba919227ca281cac5a371f0ade3fb1fe9a1d08aa3"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/asgharian_citadel.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/asgharian_tower.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/cog_chambers.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/osgood_lab.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/osgood_lab_outpost.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
-[[files]]
-file = "kubejs/data/scguns/worldgen/structure/trench.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/asgharian_citadel.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "a4eede49c0fb626b0173df7d757540c2f1768d99a2c882a902ab996f07f5c136"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/asgharian_tower.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "4174bfae5296eebcfd6ec4beb42629a02cfdcc54529a15236c582f73ee1295db"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/cog_chambers.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "d02c239c44c9cc0c031178c77c2baf2250c475c49e92671b5a33d2672668abc1"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/osgood_lab.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "b231fa1d74c8d922c33ab88f5d13589d49bfb71403769793c7e7e171a997e64f"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/osgood_lab_outpost.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "f0e07f9023797800ea6d9c94fac8f923271963ea5bfbfee7c651f2be26573d22"
 
 [[files]]
 file = "kubejs/data/scguns/worldgen/structure_set/trench.json"
-hash = "ede5ba00abb2d575a26d00481c9a6a8dde37d21ec71e258a71867faa300bc2be"
+hash = "bde92d4d265548c9eaec3bce9fea93fd3bc42a886bbadff2014b0c694f3324d4"
 
 [[files]]
 file = "kubejs/server_scripts/disable_mobs.js"
@@ -3044,11 +3017,11 @@ hash = "43360409f9df000f86aae867a10ed2ab480cee0253386dbeb6ba13e0d9de4c8d"
 
 [[files]]
 file = "mods/meowhex.jar"
-hash = "3869f3459ebccac0f0de163df9c92d11d975d899f0b1a6c30e774c51b77f72e8"
+hash = "3531b8de7ab2cfc451b98ae469ee84287001cdec4576f348d2a2eaa27a4a4fab"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "c4cc73207709763c806eb43193b3ff7a4c045325115cf3a526f30bbfb2b865ce"
+hash = "6bb74f7b77db10756263e5de5f527eb696077d4b845ad46372c879a328dc9097"
 metafile = true
 
 [[files]]

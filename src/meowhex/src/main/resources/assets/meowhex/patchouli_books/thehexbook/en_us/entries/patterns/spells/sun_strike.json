@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.hexcasting:sun_strike",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:sunflower",
+  "sortnum": 91,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexcasting:sun_strike",
+      "anchor": "hexcasting:sun_strike",
+      "input": "vector",
+      "output": "",
+      "text": "meowhex.page.sun_strike.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.sun_strike.2"
+    }
+  ]
+}

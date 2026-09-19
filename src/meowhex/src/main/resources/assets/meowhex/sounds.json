@@ -7,5 +7,49 @@
       }
     ],
     "subtitle": "sound.meowhex.silence"
+  },
+  "announcer_dominating": {
+    "sounds": [{ "name": "meowhex:announcer/dominating", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_dominating"
+  },
+  "announcer_first_blood": {
+    "sounds": [{ "name": "meowhex:announcer/first_blood", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_first_blood"
+  },
+  "announcer_godlike": {
+    "sounds": [{ "name": "meowhex:announcer/godlike", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_godlike"
+  },
+  "announcer_holy_shit": {
+    "sounds": [{ "name": "meowhex:announcer/holy_shit", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_holy_shit"
+  },
+  "announcer_killing_spree": {
+    "sounds": [{ "name": "meowhex:announcer/killing_spree", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_killing_spree"
+  },
+  "announcer_monster_kill": {
+    "sounds": [{ "name": "meowhex:announcer/monster_kill", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_monster_kill"
+  },
+  "announcer_multi_kill": {
+    "sounds": [{ "name": "meowhex:announcer/multi_kill", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_multi_kill"
+  },
+  "announcer_rampage": {
+    "sounds": [{ "name": "meowhex:announcer/rampage", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_rampage"
+  },
+  "announcer_ultra_kill": {
+    "sounds": [{ "name": "meowhex:announcer/ultra_kill", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_ultra_kill"
+  },
+  "announcer_unstoppable": {
+    "sounds": [{ "name": "meowhex:announcer/unstoppable", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_unstoppable"
+  },
+  "announcer_wicked_sick": {
+    "sounds": [{ "name": "meowhex:announcer/wicked_sick", "stream": false }],
+    "subtitle": "sound.meowhex.announcer_wicked_sick"
   }
 }

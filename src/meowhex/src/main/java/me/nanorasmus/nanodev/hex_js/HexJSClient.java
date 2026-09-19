@@ -47,6 +47,10 @@ public final class HexJSClient {
         modBus.addListener(HexJSClient::onRegisterRenderers);
         // Silence purple border
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.client.SilenceOverlay.class);
+        // Red kill-flash vignette (worldborder-like, no visible walls)
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.client.KillFlashOverlay.class);
+        // Kill announcement text at the bossbar spot (top center, no bar)
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.client.AnnounceTextOverlay.class);
         // Strip hexcasting "Can be worn in:" duplicates and backfill the Curios "Slot:" line
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(me.nanorasmus.nanodev.hex_js.client.CurioTooltipHandler::onTooltip);
     }
@@ -88,6 +92,7 @@ public final class HexJSClient {
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.DECEPTION.get(), me.nanorasmus.nanodev.hex_js.client.DeceptionRenderer::new);
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.APOLLO_ARROW.get(), me.nanorasmus.nanodev.hex_js.client.ApolloArrowRenderer::new);
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.SNIPER_SHOT.get(), me.nanorasmus.nanodev.hex_js.client.SniperShotRenderer::new);
+        event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.SUN_BEAM.get(), me.nanorasmus.nanodev.hex_js.client.SunBeamRenderer::new);
         // EntityHadesSummon extends Zombie — без рендера EntityRenderDispatcher.getRenderer
         // возвращает null и игра падает с NPE в shouldRender при первом кадре с саммоном.
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.HADES_SUMMON.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);

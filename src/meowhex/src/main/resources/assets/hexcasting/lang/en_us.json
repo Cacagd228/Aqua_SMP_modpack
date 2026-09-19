@@ -479,6 +479,7 @@
 	"hexcasting.action.hexcasting:potion/strength": "Green Sun's Zenith",
 	"hexcasting.action.hexcasting:flight": "Altiora",
 	"hexcasting.action.hexcasting:lightning": "Summon Lightning",
+	"hexcasting.action.hexcasting:sun_strike": "Sun Strike",
 	"hexcasting.action.hexcasting:summon_rain": "Summon Rain",
 	"hexcasting.action.hexcasting:dispel_rain": "Dispel Rain",
 	"hexcasting.action.hexcasting:create_lava": "Create Lava",

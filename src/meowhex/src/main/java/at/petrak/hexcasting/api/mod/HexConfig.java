@@ -68,6 +68,10 @@ public class HexConfig {
 
         boolean explosionDestroysBlocks();
 
+        double explosionBlockDamageMultiplier();
+
+        double knockbackNonPlayerMultiplier();
+
         // fun fact, although dimension keys are a RegistryHolder, they aren't a registry, so i can't do tags
         boolean canTeleportInThisDimension(ResourceKey<Level> dimension);
 
@@ -78,6 +82,10 @@ public class HexConfig {
         boolean DEFAULT_VILLAGERS_DISLIKE_MIND_MURDER = true;
 
         boolean DEFAULT_EXPLOSION_DESTROYS_BLOCKS = false;
+
+        double DEFAULT_EXPLOSION_BLOCK_DAMAGE_MULTIPLIER = 0.25;
+
+        double DEFAULT_KNOCKBACK_NON_PLAYER_MULTIPLIER = 0.5;
 
         List<String> DEFAULT_DIM_TP_DENYLIST = List.of("twilightforest:twilight_forest");
 

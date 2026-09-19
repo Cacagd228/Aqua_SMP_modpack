@@ -1,8 +1,10 @@
 package at.petrak.hexcasting.forge.network;
 
 import at.petrak.hexcasting.common.msgs.*;
+import me.nanorasmus.nanodev.hex_js.network.MsgAnnounceTextS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgAnnouncementS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgCopyPatternC2S;
+import me.nanorasmus.nanodev.hex_js.network.MsgKillFlashS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgSilenceDenyS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgUnworthyS2C;
 import net.minecraft.network.FriendlyByteBuf;
@@ -48,6 +50,8 @@ public class ForgePacketHandler {
         client(registrar, MsgNewSpiralPatternsS2C.ID, MsgNewSpiralPatternsS2C::deserialize, MsgNewSpiralPatternsS2C::handle);
         client(registrar, MsgClearSpiralPatternsS2C.ID, MsgClearSpiralPatternsS2C::deserialize, MsgClearSpiralPatternsS2C::handle);
         client(registrar, MsgAnnouncementS2C.ID, MsgAnnouncementS2C::deserialize, MsgAnnouncementS2C::handle);
+        client(registrar, MsgAnnounceTextS2C.ID, MsgAnnounceTextS2C::deserialize, MsgAnnounceTextS2C::handle);
+        client(registrar, MsgKillFlashS2C.ID, MsgKillFlashS2C::deserialize, MsgKillFlashS2C::handle);
         client(registrar, MsgSilenceDenyS2C.ID, MsgSilenceDenyS2C::deserialize, MsgSilenceDenyS2C::handle);
         client(registrar, MsgUnworthyS2C.ID, MsgUnworthyS2C::deserialize, MsgUnworthyS2C::handle);
     }

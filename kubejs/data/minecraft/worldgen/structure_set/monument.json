@@ -1,4 +1,9 @@
 {
-  "type": "minecraft:no_op",
-  "config": {}
+  "structures": [],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 5,
+    "salt": 10387313
+  }
 }

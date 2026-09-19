@@ -8,6 +8,7 @@ import at.petrak.hexcasting.api.casting.getPositiveDoubleUnderInclusive
 import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
+import at.petrak.hexcasting.api.mod.HexConfig
 import net.minecraft.core.BlockPos
 import net.minecraft.util.Mth
 import net.minecraft.world.level.Level
@@ -45,12 +46,18 @@ class OpExplode(val fire: Boolean, val destroyBlocks: Boolean) : SpellAction {
             else
                 Level.ExplosionInteraction.NONE
 
+            val effectiveStrength = if (this.destroyBlocks) {
+                strength * HexConfig.server().explosionBlockDamageMultiplier()
+            } else {
+                strength
+            }
+
             env.world.explode(
                 env.caster,
                 pos.x,
                 pos.y,
                 pos.z,
-                strength.toFloat(),
+                effectiveStrength.toFloat(),
                 this.fire,
                 interaction
             )
