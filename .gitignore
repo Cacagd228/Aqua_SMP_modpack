@@ -39,3 +39,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.iml
+
+# kubejsMCP: зависимости и секреты не коммитим (dist/ нужен для запуска без сборки)
+src/kubejsMCP/node_modules/
+src/kubejsMCP/.env
