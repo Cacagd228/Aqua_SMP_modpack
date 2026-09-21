@@ -35,10 +35,10 @@ class OpFlight(val type: Type) : SpellAction {
         val theArg = args.getPositiveDouble(1, argc)
         env.assertEntityInRange(target)
 
+        // Правка баланса: радиусный 100 маны/блок, временный 200 маны/сек (1 мана = 1000 media).
         val cost = when (this.type) {
-            Type.LimitRange -> theArg * MediaConstants.DUST_UNIT
-            // A second of flight should cost 1 shard
-            Type.LimitTime -> theArg * MediaConstants.SHARD_UNIT
+            Type.LimitRange -> theArg * 100_000.0
+            Type.LimitTime -> theArg * 200_000.0
         }.roundToLong()
 
         // Convert to ticks

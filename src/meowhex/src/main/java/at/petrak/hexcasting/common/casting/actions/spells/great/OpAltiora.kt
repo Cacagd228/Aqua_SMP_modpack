@@ -25,7 +25,7 @@ object OpAltiora : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            MediaConstants.CRYSTAL_UNIT,
+            10_000_000L, // 10000 маны (правка баланса)
             listOf(
                 ParticleSpray.burst(target.position(), 0.5),
                 ParticleSpray(target.position(), Vec3(0.0, 2.0, 0.0), 0.0, 0.1)

@@ -34,7 +34,7 @@ object OpExtinguish : SpellAction {
 
         return SpellAction.Result(
             Spell(pos),
-            MediaConstants.DUST_UNIT * 6,
+            500_000L, // 500 маны (правка баланса)
             listOf(ParticleSpray.burst(Vec3.atCenterOf(pos), 1.0))
         )
     }

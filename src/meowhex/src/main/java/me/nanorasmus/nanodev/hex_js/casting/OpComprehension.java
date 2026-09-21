@@ -30,8 +30,8 @@ public class OpComprehension implements SpellAction {
 
     public static final OpComprehension INSTANCE = new OpComprehension();
 
-    /** 100 маны = 100_000 media (1 мана = 1000 media). */
-    private static final long COST_PER_IOTA = 100_000L;
+    /** 20 маны = 20_000 media (правка баланса; 1 мана = 1000 media). */
+    private static final long COST_PER_IOTA = 20_000L;
 
     /**
      * Гуаралти-валидный паттерн — зеркало узора Оглашения ({@code wqeqeq} ->

@@ -26,7 +26,7 @@ import java.util.List;
  * <p>
  * Arguments: [destination_depot_vec, source_depot_vec] (top is destination, below is source).
  * Both must be create:depot blocks. Destination depot must be empty (slot 0).
- * Cost: 1/8 dust unit.
+ * Cost: правка баланса — 10 маны за блок расстояния (1 мана = 1000 media).
  */
 public class OpWingsOfIrida implements SpellAction {
 
@@ -117,7 +117,11 @@ public class OpWingsOfIrida implements SpellAction {
                 ParticleSpray.burst(destCenter, 1.0, 20)
         );
 
-        return new Result(new Spell(srcPos, destPos), MediaConstants.DUST_UNIT / 8, particles, 0);
+        // Правка баланса: 10 маны за блок расстояния между депо.
+        double dist = Math.sqrt(srcPos.distSqr(destPos));
+        if (dist < 1.0) dist = 1.0;
+        long mediaCost = (long) (dist * 10L * 1000L);
+        return new Result(new Spell(srcPos, destPos), mediaCost, particles, 0);
     }
 
     private boolean isDepotAt(Level world, BlockPos pos) {

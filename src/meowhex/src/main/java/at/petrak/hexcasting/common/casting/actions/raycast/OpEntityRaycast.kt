@@ -17,7 +17,7 @@ import java.util.function.Predicate
 
 object OpEntityRaycast : ConstMediaAction {
     override val argc = 2
-    override val mediaCost: Long = MediaConstants.DUST_UNIT / 100
+    override val mediaCost: Long = 20_000L // 20 маны (правка баланса)
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val origin = args.getVec3(0, argc)
         val look = args.getVec3(1, argc)

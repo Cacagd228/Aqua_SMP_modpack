@@ -60,7 +60,7 @@ object OpBrainsweep : SpellAction {
 
         return SpellAction.Result(
             Spell(pos, state, sacrifice, recipe),
-            recipe.mediaCost,
+            10_000_000L, // 10000 маны фикс (правка баланса, вместо recipe.mediaCost)
             listOf(ParticleSpray.cloud(sacrifice.position(), 1.0), ParticleSpray.burst(Vec3.atCenterOf(pos), 0.3, 100))
         )
     }

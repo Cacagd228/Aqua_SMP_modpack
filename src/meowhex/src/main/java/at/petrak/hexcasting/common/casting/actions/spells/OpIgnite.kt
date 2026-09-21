@@ -29,7 +29,7 @@ object OpIgnite : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            MediaConstants.DUST_UNIT,
+            1_500_000L, // 1500 маны (правка баланса)
             listOf(ParticleSpray.burst(Vec3.atCenterOf(BlockPos(target)), 1.0))
         )
     }

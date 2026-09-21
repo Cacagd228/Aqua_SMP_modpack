@@ -6,7 +6,7 @@ hash = "3e9edd77131e0dd023d987b562b7c7e70439786cce4ed0fda950858f40c1bdab"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "25786c43ceaa954156fad4680865d11364198e4102dd23e04846c3cad0875137"
+hash = "08d391d8bc6714bfa305018f3e872c614850d6c87b79ffc5c0d52a6e43268133"
 
 [[files]]
 file = "LICENSE"
@@ -1859,6 +1859,15 @@ hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
 metafile = true
 
 [[files]]
+file = "mods/better-combat.pw.toml"
+hash = "438170e7e704a1b8ed67bf0521dc5d77cdeeaabf6f729dba9f8dfdad75330acf"
+metafile = true
+
+[[files]]
+file = "mods/bettercombat-neoforge-2.4.0+1.21.1.jar"
+hash = "0446e9faa98b764ba010ac31e337d14ac96bbb2fbfeff9b599e1efd510dfde5a"
+
+[[files]]
 file = "mods/biolith-neoforge-3.0.14.jar"
 hash = "ded9169efb903198046cf44cf91a290ec836ed83a28e29179087eb860e0e6ce9"
 
@@ -3008,11 +3017,11 @@ hash = "43360409f9df000f86aae867a10ed2ab480cee0253386dbeb6ba13e0d9de4c8d"
 
 [[files]]
 file = "mods/meowhex.jar"
-hash = "81bde0a41fc85a33fba2d2ead8906d6bbf31569f0c4c3bed81b446eb31342646"
+hash = "7ffaea786867d36fbcc4ec8851c1f465addf0b75d8a5b2303bf0682f0b0befec"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "653c97c9b274e548385db831946100c13c040d0a5093bcb8a01eb45d9e61b7e9"
+hash = "7e2ca10743435b245f49e95cc8af424a95a6bd8deef6216733007f4db6e891c1"
 metafile = true
 
 [[files]]

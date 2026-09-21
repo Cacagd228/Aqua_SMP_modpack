@@ -28,13 +28,11 @@ import static at.petrak.hexcasting.api.casting.OperatorUtils.getEntity;
  * Стек: [entity, entity] — две сущности (порядок не важен, свап симметричен).
  * Обе должны быть в ambit/диапазоне каста, не иметь тега cannot_teleport,
  * быть в одном измерении и в измерении где телепорт разрешён.
- * Стоимость — 5 пыли (5 * 10000 = 50000 media), фиксированная.
+ * Стоимость — 10 маны × дистанция в блоках × scale сущности (1 мана = 1000 media).
  */
 public class OpLokisGambit implements SpellAction {
 
     public static final OpLokisGambit INSTANCE = new OpLokisGambit();
-
-    private static final long COST = 5L * 10000L; // 5 dust
 
     private OpLokisGambit() {
     }
@@ -155,7 +153,13 @@ public class OpLokisGambit implements SpellAction {
                 ParticleSpray.burst(bEye, 2.0, 80)
         );
 
-        return new SpellAction.Result(new Spell(a, b), COST, particles, 0);
+        // Правка баланса: 10 маны × блоки × scale (средний рост обеих сущностей, мин. 0.5).
+        double dist = posA.distanceTo(posB);
+        double scale = (a.getBbHeight() + b.getBbHeight()) * 0.5;
+        if (scale < 0.5) scale = 0.5;
+        long cost = (long) (dist * scale * 10L * 1000L);
+        if (cost < 10_000L) cost = 10_000L;
+        return new SpellAction.Result(new Spell(a, b), cost, particles, 0);
     }
 
     private static boolean hasImmunePassenger(Entity e) {

@@ -9,11 +9,12 @@ import net.minecraft.world.effect.MobEffect
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.LivingEntity
 
-class OpPotionEffect(
+class OpPotionEffect @JvmOverloads constructor(
     val effect: Holder<MobEffect>,
     val baseCost: Long,
     val allowPotency: Boolean,
     val potencyCubic: Boolean,
+    val potencyLinear: Boolean = false,
 ) : SpellAction {
     override val argc: Int
         get() = if (this.allowPotency) 3 else 2
@@ -30,7 +31,10 @@ class OpPotionEffect(
         env.assertEntityInRange(target)
 
 
-        val cost = this.baseCost * duration * if (potencyCubic) {
+        // Правка баланса: linear -> ×сила, иначе cubic -> ×сила³, иначе ×сила².
+        val cost = this.baseCost * duration * if (potencyLinear) {
+            potency
+        } else if (potencyCubic) {
             potency * potency * potency
         } else {
             potency * potency

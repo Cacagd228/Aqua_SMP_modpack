@@ -28,7 +28,7 @@ object OpLightning : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            3 * MediaConstants.SHARD_UNIT,
+            1_000_000L, // 1000 маны (правка баланса)
             listOf(ParticleSpray(target.add(0.0, 2.0, 0.0), Vec3(0.0, -1.0, 0.0), 0.5, 0.1))
         )
     }

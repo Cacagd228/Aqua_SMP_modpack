@@ -28,7 +28,7 @@ object OpTheOnlyReasonAnyoneDownloadedPsi : SpellAction {
 
         return SpellAction.Result(
             Spell(target),
-            (MediaConstants.DUST_UNIT * 1.125).toLong(),
+            200_000L, // 200 маны (правка баланса)
             listOf(ParticleSpray.burst(Vec3.atCenterOf(BlockPos(target)), 1.0))
         )
     }

@@ -31,7 +31,7 @@ object OpEdifySapling : SpellAction {
 
         return SpellAction.Result(
             Spell(pos),
-            MediaConstants.CRYSTAL_UNIT,
+            5_000_000L, // 5000 маны (правка баланса)
             listOf(ParticleSpray(Vec3.atCenterOf(pos), Vec3(0.0, 2.0, 0.0), 0.1, Math.PI / 4, 100))
         )
     }

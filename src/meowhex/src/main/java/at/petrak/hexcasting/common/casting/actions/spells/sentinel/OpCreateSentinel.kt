@@ -21,9 +21,10 @@ class OpCreateSentinel(val extendsRange: Boolean) : SpellAction {
         val target = args.getVec3(0, argc)
         env.assertVecInRange(target)
 
+        // Правка баланса: часовой 100 маны, великий 1000 маны.
         return SpellAction.Result(
             Spell(target, this.extendsRange),
-            MediaConstants.DUST_UNIT * if (extendsRange) 2 else 1,
+            if (extendsRange) 1_000_000L else 100_000L,
             listOf(ParticleSpray.burst(target, 2.0))
         )
     }

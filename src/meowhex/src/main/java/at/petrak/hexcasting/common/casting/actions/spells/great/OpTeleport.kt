@@ -51,9 +51,11 @@ object OpTeleport : SpellAction {
 
         val targetMiddlePos = teleportee.position().add(0.0, teleportee.eyeHeight / 2.0, 0.0)
 
+        // Правка баланса: великое перемещение = 10 маны за блок (1 мана = 1000 media).
+        val cost = (delta.length() * 10L * 1000L).toLong()
         return SpellAction.Result(
             Spell(teleportee, delta),
-            10 * MediaConstants.CRYSTAL_UNIT,
+            cost,
             listOf(ParticleSpray.cloud(targetMiddlePos, 2.0), ParticleSpray.burst(targetMiddlePos.add(delta), 2.0))
         )
     }

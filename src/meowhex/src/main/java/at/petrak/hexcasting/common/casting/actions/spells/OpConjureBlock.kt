@@ -33,9 +33,12 @@ class OpConjureBlock(val light: Boolean) : SpellAction {
         if (!worldState.canBeReplaced(placeContext))
             throw MishapBadBlock.of(pos, "replaceable")
 
+        // Правка баланса: барьер 100 маны (+ обслуживание 10/с — через тик блока, см. BlockConjured),
+        // свет 100 маны без обслуживания. 1 мана = 1000 media.
+        val cost = 100_000L
         return SpellAction.Result(
             Spell(pos, light),
-            MediaConstants.DUST_UNIT,
+            cost,
             listOf(ParticleSpray.cloud(Vec3.atCenterOf(pos), 1.0))
         )
     }

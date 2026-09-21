@@ -49,7 +49,7 @@ object OpPlaceBlock : SpellAction {
 
         return SpellAction.Result(
             Spell(pos),
-            MediaConstants.DUST_UNIT / 8,
+            70_000L, // 70 маны (правка баланса)
             listOf(ParticleSpray.cloud(Vec3.atCenterOf(pos), 1.0))
         )
     }

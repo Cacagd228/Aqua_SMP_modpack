@@ -46,7 +46,8 @@ object OpBlink : SpellAction {
 
         return SpellAction.Result(
             Spell(target, delta),
-            (MediaConstants.SHARD_UNIT * delta.absoluteValue * 0.5).roundToLong(),
+            // Правка баланса: перенос = 25 маны × дистанция² (1 мана = 1000 media).
+            (25L * 1000L * delta.absoluteValue * delta.absoluteValue).roundToLong(),
             listOf(
                 ParticleSpray.cloud(targetMiddlePos, 2.0, 50),
                 ParticleSpray.burst(targetMiddlePos.add(dvec), 2.0, 100)

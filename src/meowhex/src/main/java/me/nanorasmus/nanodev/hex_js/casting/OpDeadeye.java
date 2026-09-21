@@ -46,8 +46,8 @@ public class OpDeadeye implements SpellAction {
 
     /** Max horizontal distance from caster to target (blocks). */
     public static final double MAX_RANGE = 200.0;
-    /** ~40 dust / 400 mana per the project's 1000 media = 1 mana scale (fits amulet pools). */
-    public static final long COST_MEDIA = 400_000L;
+    /** 4000 маны (правка баланса; 1 мана = 1000 media). */
+    public static final long COST_MEDIA = 4_000_000L;
     /** Reload time after a shot (seconds / ticks) — the scope cannot fire while it lasts. */
     public static final int COOLDOWN_SECONDS = 5 * 60;
     public static final int COOLDOWN_TICKS = COOLDOWN_SECONDS * 20;

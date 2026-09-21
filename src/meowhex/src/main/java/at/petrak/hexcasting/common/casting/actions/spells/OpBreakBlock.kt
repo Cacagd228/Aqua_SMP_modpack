@@ -26,7 +26,7 @@ object OpBreakBlock : SpellAction {
 
         return SpellAction.Result(
             Spell(pos),
-            MediaConstants.DUST_UNIT / 8,
+            100_000L, // 100 маны (правка баланса)
             listOf(ParticleSpray.burst(Vec3.atCenterOf(pos), 1.0))
         )
     }

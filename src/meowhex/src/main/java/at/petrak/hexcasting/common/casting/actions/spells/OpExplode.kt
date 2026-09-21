@@ -27,7 +27,10 @@ class OpExplode(val fire: Boolean, val destroyBlocks: Boolean) : SpellAction {
         env.assertVecInRange(pos)
 
         val clampedStrength = Mth.clamp(strength, 0.0, 10.0)
-        val cost = MediaConstants.DUST_UNIT * (3 * clampedStrength + if (fire) 1.0 else 0.125)
+        // Правка баланса: взрыв = 100 маны × мощь + 100 маны; безопасный (без разрушения блоков) в 2 раза дешевле.
+        // 1 мана = 1000 media.
+        var cost = (100L * 1000L * clampedStrength + 100L * 1000L).toLong()
+        if (!destroyBlocks) cost /= 2
         return SpellAction.Result(
             Spell(pos, strength, this.fire, this.destroyBlocks),
             cost.toLong(),

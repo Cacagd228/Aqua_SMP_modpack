@@ -54,9 +54,12 @@ object OpTransferToDepot : SpellAction {
             throw MishapDepotOccupied(destPos)
         }
 
+        // Правка баланса: крылья Ириды (ванилла) = 100 маны за блок расстояния (1 мана = 1000 media).
+        val dist = Math.sqrt(srcPos.distSqr(destPos).toDouble()).coerceAtLeast(1.0)
+        val cost = (dist * 100L * 1000L).toLong()
         return SpellAction.Result(
             Spell(srcPos, destPos),
-            MediaConstants.DUST_UNIT / 8,
+            cost,
             listOf(
                 ParticleSpray.burst(Vec3.atCenterOf(srcPos), 1.0),
                 ParticleSpray.burst(Vec3.atCenterOf(destPos), 1.0)

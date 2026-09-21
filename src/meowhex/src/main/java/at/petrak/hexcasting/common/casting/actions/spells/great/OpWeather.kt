@@ -15,7 +15,7 @@ class OpWeather(val rain: Boolean) : SpellAction {
     ): SpellAction.Result {
         return SpellAction.Result(
             Spell(rain),
-            if (this.rain) MediaConstants.CRYSTAL_UNIT else MediaConstants.SHARD_UNIT,
+            25_000_000L, // 25000 маны и на призыв, и на разгон (правка баланса)
             listOf()
         )
     }

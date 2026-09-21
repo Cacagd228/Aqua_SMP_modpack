@@ -211,7 +211,7 @@ public class HexActions {
     public static final ActionRegistryEntry EXPLODE = make("explode",
         new ActionRegistryEntry(HexPattern.fromAngles("aawaawaa", HexDir.EAST), new OpExplode(false, true)));
     public static final ActionRegistryEntry EXPLODE$FIRE = make("explode/fire",
-        new ActionRegistryEntry(HexPattern.fromAngles("ddwddwdd", HexDir.EAST), new OpExplode(true, true)));
+        new ActionRegistryEntry(HexPattern.fromAngles("ddwddwdd", HexDir.EAST), new OpExplode(true, true))); // ОТКЛЮЧЁН правкой баланса: пропуск в register() ниже
     public static final ActionRegistryEntry EXPLODE$SAFE = make("explode/safe",
         new ActionRegistryEntry(HexPattern.fromAngles("aawaawa", HexDir.EAST), new OpExplode(false, false)));
     public static final ActionRegistryEntry ADD_MOTION = make("add_motion",
@@ -230,7 +230,7 @@ public class HexActions {
             new ActionRegistryEntry(HexPattern.fromAngles("dwaawedwewdwe", HexDir.WEST), OpCycleVariant.INSTANCE));
     public static final ActionRegistryEntry CREATE_WATER = make("create_water",
         new ActionRegistryEntry(HexPattern.fromAngles("aqawqadaq", HexDir.SOUTH_EAST), new OpCreateFluid(
-            MediaConstants.DUST_UNIT,
+            1_000_000L, // 1000 маны (правка баланса)
             Items.WATER_BUCKET,
             Blocks.WATER_CAULDRON.defaultBlockState()
                 .setValue(LayeredCauldronBlock.LEVEL, LayeredCauldronBlock.MAX_FILL_LEVEL),
@@ -272,44 +272,44 @@ public class HexActions {
     ));
     public static final ActionRegistryEntry POTION$WEAKNESS = make("potion/weakness", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqqaqwawaw", HexDir.NORTH_WEST), new OpPotionEffect(MobEffects.WEAKNESS,
-        MediaConstants.DUST_UNIT / 10, true, false)
+        50_000L, true, false) // 50 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$LEVITATION = make("potion/levitation", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqqawwawawd", HexDir.WEST), new OpPotionEffect(MobEffects.LEVITATION,
-        MediaConstants.DUST_UNIT / 5, false, false)
+        100_000L, false, false) // 100 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$WITHER = make("potion/wither", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqqaewawawe", HexDir.SOUTH_WEST), new OpPotionEffect(MobEffects.WITHER,
-        MediaConstants.DUST_UNIT, true, false)
+        1_000_000L, true, false) // 1000 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$POISON = make("potion/poison", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqqadwawaww", HexDir.SOUTH_EAST), new OpPotionEffect(MobEffects.POISON,
-        MediaConstants.DUST_UNIT / 3, true, false)
+        50_000L, true, false) // 50 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$SLOWNESS = make("potion/slowness", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqqadwawaw", HexDir.SOUTH_EAST), new OpPotionEffect(MobEffects.MOVEMENT_SLOWDOWN,
-        MediaConstants.DUST_UNIT / 3, true, false)
+        100_000L, true, false) // 100 маны (правка баланса)
     ));
 
     public static final ActionRegistryEntry POTION$REGENERATION = make("potion/regeneration", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqqaawawaedd", HexDir.NORTH_WEST), new OpPotionEffect(MobEffects.REGENERATION,
-        MediaConstants.DUST_UNIT, true, true)
+        100_000L, true, true) // 100 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$NIGHT_VISION = make("potion/night_vision", new ActionRegistryEntry(
         HexPattern.fromAngles("qqqaawawaeqdd", HexDir.WEST), new OpPotionEffect(MobEffects.NIGHT_VISION,
-        MediaConstants.DUST_UNIT / 5, false, true)
+        10_000L, false, false) // 10 маны × длительность, без силы (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$ABSORPTION = make("potion/absorption", new ActionRegistryEntry(
         HexPattern.fromAngles("qqaawawaeqqdd", HexDir.SOUTH_WEST), new OpPotionEffect(MobEffects.ABSORPTION,
-        MediaConstants.DUST_UNIT, true, true)
+        150_000L, true, false, true) // 150 маны ×сила линейно (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$HASTE = make("potion/haste", new ActionRegistryEntry(
         HexPattern.fromAngles("qaawawaeqqqdd", HexDir.SOUTH_EAST), new OpPotionEffect(MobEffects.DIG_SPEED,
-        MediaConstants.DUST_UNIT / 3, true, true)
+        50_000L, true, true) // 50 маны (правка баланса)
     ));
     public static final ActionRegistryEntry POTION$STRENGTH = make("potion/strength", new ActionRegistryEntry(
         HexPattern.fromAngles("aawawaeqqqqdd", HexDir.EAST), new OpPotionEffect(MobEffects.DAMAGE_BOOST,
-        MediaConstants.DUST_UNIT / 3, true, true)
+        100_000L, true, true) // 100 маны (правка баланса)
     ));
 
     public static final ActionRegistryEntry FLIGHT$RANGE = make("flight/range",
@@ -337,7 +337,7 @@ public class HexActions {
 
     public static final ActionRegistryEntry CREATE_LAVA = make("create_lava",
         new ActionRegistryEntry(HexPattern.fromAngles("eaqawqadaqd", HexDir.EAST), new OpCreateFluid(
-            MediaConstants.CRYSTAL_UNIT,
+            5_000_000L, // 5000 маны (правка баланса)
             Items.LAVA_BUCKET,
             Blocks.LAVA_CAULDRON.defaultBlockState(),
             Fluids.LAVA)));
@@ -558,6 +558,8 @@ public class HexActions {
 
     public static void register(BiConsumer<ActionRegistryEntry, ResourceLocation> r) {
         for (var e : ACTIONS.entrySet()) {
+            // Правка баланса: огненный шар отключён
+            if (e.getKey().equals(modLoc("explode/fire"))) continue;
             r.accept(e.getValue(), e.getKey());
         }
     }
