@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.3-beta-2
+
+- `meowhex` 1.3.0 -> 1.3.1: оптимизация `MixinParsePatternFormatting` (рендер текста): fast-path по первому символу вместо substring + regex на каждый символ, `Matcher.region` + `lookingAt` без копий строк. Фикс просадки FPS на HUD/чате/тултипах.
+- Удален `Observable` 5.4.4: его оверлей съедал ~30% времени кадра (профайлер для игроков не нужен).
+- `DistantHorizons` по умолчанию выключен: `enableDistantGeneration=false`, `enableServerGeneration=false`, `enableAutoUpdater=false`, `enableCloudRendering=false` (фоновая генерация LOD грузила CPU даже в простое).
+
 ## v1.1.3-beta
 
 - `meowhex` 1.2.1 → 1.3.0: крупная балансная правка hex casting, новая связка мана-пейринга, фикс RAMPAGE (порядок вершины holy_shit/rampage у Meepo и QoP + счётчик X2, X3...), новые звуки анонсера.

@@ -52,20 +52,33 @@ public abstract class MixinParsePatternFormatting {
     }
 
     private static boolean tryParsePattern(String text, LocalIntRef jref, Style style, FormattedCharSink sink,
-                                           int index, char c, Operation<Boolean> original) {
+                                            int index, char c, Operation<Boolean> original) {
         int startishIndex = jref.get();
-        String remainingText = text.substring(startishIndex);
-        Matcher matcher = PATTERN_PATTERN_REGEX.matcher(remainingText);
-        if (!matcher.find()) {
+        // Fast path: the regex below is \A-anchored, so a marker can only
+        // begin with a bracket, a backslash (escape) or "HexPattern".
+        // Anything else can never match — skip the substring + regex entirely.
+        // This runs per character of EVERY rendered text, so it must stay trivial.
+        char first = text.charAt(startishIndex);
+        if (first != '<' && first != '(' && first != '[' && first != '{'
+                && first != 'H' && first != 'h' && first != '\\') {
+            return original.call(style, sink, index, c);
+        }
+        // No substring(): match the original string with a region, so a miss
+        // costs one Matcher allocation and zero copies. lookingAt() is
+        // equivalent to find() here because the pattern is \A-anchored.
+        // NB: with region(), matcher.end() is ABSOLUTE (= startishIndex + relative end).
+        Matcher matcher = PATTERN_PATTERN_REGEX.matcher(text);
+        matcher.region(startishIndex, text.length());
+        if (!matcher.lookingAt()) {
             return original.call(style, sink, index, c);
         }
         if (!matcher.group("escaped").isEmpty()) {
             // Escaped with a backslash — emit the marker as plain text, skipping the backslash.
             int endIndex = matcher.end();
-            for (int i = 1; i < endIndex; i++) {
-                sink.accept(startishIndex + i, style, text.charAt(startishIndex + i));
+            for (int i = startishIndex + 1; i < endIndex; i++) {
+                sink.accept(i, style, text.charAt(i));
             }
-            jref.set(startishIndex + matcher.end() - 1);
+            jref.set(endIndex - 1);
             return jref.get() < text.length();
         }
         String dirString = matcher.group("direction").toLowerCase(Locale.ROOT).strip().replace("_", "");
@@ -80,8 +93,8 @@ public abstract class MixinParsePatternFormatting {
         }
         // Emit a single glyph character; the pattern lives in its style.
         sink.accept(startishIndex, ((PatternStyle) style).withPattern(pattern), '!');
-        jref.set(startishIndex + matcher.end() - 1);
-        return (startishIndex + matcher.end() - 1) < text.length();
+        jref.set(matcher.end() - 1);
+        return (matcher.end() - 1) < text.length();
     }
 
     @Nullable

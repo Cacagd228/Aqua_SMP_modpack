@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/meowhex.jar"
 hash-format = "sha512"
-hash = "7944a81c201f1de745a14aed704be189e4d6358bf0785bf654d831533a82327a73b797713f8e637302790f2627e2ecad0df6d63af0c0d4788c7b402090b22d69"
+hash = "bb3f3c87677401d7051423fe44350ad1bd4f9a1be2cf8838e2fdec9c17e1007a87d4c1c31eb39a4f21f27652c3e57f4f8cdd660ad2238cfb2cc60389bfe7d15d"
