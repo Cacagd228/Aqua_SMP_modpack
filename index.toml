@@ -1667,12 +1667,12 @@ hash = "d6a7a963f794501678113e2545d8b25c90e123ef6b9256bb5716907d059e1ef5"
 
 [[files]]
 file = "mods/FMMWorldgen-1-1-0.pw.toml"
-hash = "69a5a7b1788426cc33302a9e5fcccf01e847eda7e868a496bc9e0637cc644cde"
+hash = "8cac66a0689b21c3a134434622658f155d85b35c577f039911813a31dcb61385"
 metafile = true
 
 [[files]]
 file = "mods/FMMWorldgen-1.1.0.jar"
-hash = "2a604873f1f2ef2b98fd22d8fc1f86f172cbb01bee9d7f29f0b124dd6e432027"
+hash = "0c17adf7120475deb9cf8e69b326b3177e949fa9d8d576f3ad69e33f5a42f38d"
 
 [[files]]
 file = "mods/FTBQuestsOptimizer-neoforge-3.2.0-1.21.1.jar"

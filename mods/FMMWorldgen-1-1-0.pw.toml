@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/FMMWorldgen-1.1.0.jar"
 hash-format = "sha512"
-hash = "67d095a99a8214bc01cd10e463d97de267c4ef8c86c7cda2784ceff129455d9eafea09c32d1274ce6909ce2ffcc304c5fd3179f52832a0a4cb4260460e176a76"
+hash = "466ad44313fb94e5fd5ff12f240670a2649a504371995ad6b821ebdad7b2aa81280d2a94ec89f7179e3081c0411d45175fccb23a4ac418106d8fe5126320832c"
