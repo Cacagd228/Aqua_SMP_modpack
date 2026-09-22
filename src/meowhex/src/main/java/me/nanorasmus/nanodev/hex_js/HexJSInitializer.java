@@ -29,6 +29,8 @@ import me.nanorasmus.nanodev.hex_js.casting.OpTrueName;
 import me.nanorasmus.nanodev.hex_js.casting.OpUtgardSeal;
 import me.nanorasmus.nanodev.hex_js.casting.OpWhisperHermes;
 import me.nanorasmus.nanodev.hex_js.casting.OpRuneVisage;
+import me.nanorasmus.nanodev.hex_js.casting.OpManaPairing;
+import me.nanorasmus.nanodev.hex_js.casting.OpManaUnpair;
 import me.nanorasmus.nanodev.hex_js.casting.OpWingsOfIrida;
 import at.petrak.hexcasting.common.lib.HexBlockEntities;
 import com.simibubi.create.api.behaviour.display.DisplaySource;
@@ -198,6 +200,19 @@ public final class HexJSInitializer {
                 HexPattern visagePattern = HexPattern.fromAngles("ewqeewqe", HexDir.EAST);
                 ActionRegistryEntry visageEntry = new ActionRegistryEntry(visagePattern, OpRuneVisage.INSTANCE);
                 registry.register(HexJS.modLoc("rune_visage"), visageEntry);
+
+                // Мана-пейринг — объединение манапулов 2 игроков.
+                // Стек: [entity второго кастера]. Первый каст 500 маны, подтверждение бесплатно.
+                // Signature qaqwawaa (EAST).
+                HexPattern manaPairPattern = HexPattern.fromAngles("qaqwawaa", HexDir.EAST);
+                ActionRegistryEntry manaPairEntry = new ActionRegistryEntry(manaPairPattern, OpManaPairing.INSTANCE);
+                registry.register(HexJS.modLoc("mana_pairing"), manaPairEntry);
+
+                // Разрыв пейринга — отдельная руна без стека, бесплатно.
+                // Signature qaqwawaad (EAST).
+                HexPattern manaUnpairPattern = HexPattern.fromAngles("qaqwawaad", HexDir.EAST);
+                ActionRegistryEntry manaUnpairEntry = new ActionRegistryEntry(manaUnpairPattern, OpManaUnpair.INSTANCE);
+                registry.register(HexJS.modLoc("mana_unpair"), manaUnpairEntry);
             });
         }
     }

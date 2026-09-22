@@ -1234,5 +1234,7 @@
   "hexcasting.action.meowhex:true_name": "Истинное имя",
   "hexcasting.action.meowhex:chronos_delay": "Задержка Хроноса",
   "hexcasting.action.meowhex:rune_visage": "Облик рун",
+  "hexcasting.action.meowhex:mana_pairing": "Мана-пейринг",
+  "hexcasting.action.meowhex:mana_unpair": "Разрыв пейринга",
   "hexcasting.mishap.depot.occupied": "невозможно передать предмет: депо по координатам %s уже занято"
 }

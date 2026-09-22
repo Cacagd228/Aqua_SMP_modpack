@@ -1,0 +1,134 @@
+{
+  "name": "hexsable.entry.structures",
+  "category": "meowhex:patterns",
+  "icon": "minecraft:piston",
+  "sortnum": 13,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hexsable.page.structures.intro"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/get",
+      "anchor": "hexsable:sublevel/get",
+      "input": "vector | entity",
+      "output": "structure | null",
+      "text": "hexsable.page.structures.get"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/zone",
+      "anchor": "hexsable:sublevel/zone",
+      "input": "vector, number",
+      "output": "[structure]",
+      "text": "hexsable.page.structures.zone"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/pos",
+      "anchor": "hexsable:sublevel/pos",
+      "input": "structure",
+      "output": "vector",
+      "text": "hexsable.page.structures.pos"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/velocity",
+      "anchor": "hexsable:sublevel/velocity",
+      "input": "structure",
+      "output": "vector",
+      "text": "hexsable.page.structures.velocity"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/angular_velocity",
+      "anchor": "hexsable:sublevel/angular_velocity",
+      "input": "structure",
+      "output": "vector",
+      "text": "hexsable.page.structures.angular_velocity"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/mass",
+      "anchor": "hexsable:sublevel/mass",
+      "input": "structure",
+      "output": "number",
+      "text": "hexsable.page.structures.mass"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/bounds",
+      "anchor": "hexsable:sublevel/bounds",
+      "input": "structure",
+      "output": "vector, vector",
+      "text": "hexsable.page.structures.bounds"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/to_world",
+      "anchor": "hexsable:sublevel/to_world",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.structures.to_world"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/to_local",
+      "anchor": "hexsable:sublevel/to_local",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.structures.to_local"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/dir_to_world",
+      "anchor": "hexsable:sublevel/dir_to_world",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.structures.dir_to_world"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/dir_to_local",
+      "anchor": "hexsable:sublevel/dir_to_local",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.structures.dir_to_local"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/impulse",
+      "anchor": "hexsable:sublevel/impulse",
+      "input": "structure, vector",
+      "output": "",
+      "text": "hexsable.page.structures.impulse"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/impulse_at",
+      "anchor": "hexsable:sublevel/impulse_at",
+      "input": "structure, vector, vector",
+      "output": "",
+      "text": "hexsable.page.structures.impulse_at"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/spin",
+      "anchor": "hexsable:sublevel/spin",
+      "input": "structure, vector",
+      "output": "",
+      "text": "hexsable.page.structures.spin"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/blink",
+      "anchor": "hexsable:sublevel/blink",
+      "input": "structure, vector",
+      "output": "",
+      "text": "hexsable.page.structures.blink"
+    }
+  ]
+}

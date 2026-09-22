@@ -4,6 +4,8 @@
 build/
 bin/
 run/
+run2/
+oggs/
 patch_tmp/
 build_output.txt
 

@@ -191,6 +191,25 @@ public abstract class PlayerBasedCastEnv extends CastingEnvironment {
         var mana = ManaHelper.getMana(this.caster);
         double manaCost = ManaHelper.manaCostOfMedia(this.caster, costLeft);
 
+        // Мана-пейринг: траты идут из общего пула (сумма), сначала с кастера.
+        try {
+            if (me.nanorasmus.nanodev.hex_js.casting.ManaPairingHandler.isPaired(this.caster.getUUID())) {
+                double shared = me.nanorasmus.nanodev.hex_js.casting.ManaPairingHandler.getSharedMana(this.caster);
+                if (shared < manaCost) {
+                    this.caster.sendSystemMessage(Component.translatable("hexcasting.message.cant_overcast"));
+                    return costLeft;
+                }
+                if (me.nanorasmus.nanodev.hex_js.casting.ManaPairingHandler.spendShared(this.caster, manaCost)) {
+                    this.caster.awardStat(HexStatistics.MEDIA_USED, (int) costLeft);
+                    HexAdvancementTriggers.SPEND_MEDIA_TRIGGER.trigger(this.caster, (int) costLeft, 0);
+                    return 0;
+                }
+                this.caster.sendSystemMessage(Component.translatable("hexcasting.message.cant_overcast"));
+                return costLeft;
+            }
+        } catch (Throwable ignored) {
+        }
+
         if (mana < manaCost) {
             this.caster.sendSystemMessage(Component.translatable("hexcasting.message.cant_overcast"));
             return costLeft;

@@ -10,9 +10,11 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Server -> client: текстовый анонс фрага на месте боссбара
  * (верх экрана, просто текст без полосы). Пустые строки / 0 — отсутствие части.
+ * Флаг meepo нужен оверлею, чтобы красить красным пик каждого комментатора:
+ * у Meepo это rampage, у QoP — holy_shit.
  */
 public record MsgAnnounceTextS2C(String killer, String victim, String eventId,
-                                 String shutName, int shutStreak, int mult) implements IMessage {
+                                 String shutName, int shutStreak, int mult, boolean meepo) implements IMessage {
 
     public static final ResourceLocation ID = HexJS.modLoc("announce_text");
 
@@ -29,14 +31,15 @@ public record MsgAnnounceTextS2C(String killer, String victim, String eventId,
         buf.writeUtf(this.shutName);
         buf.writeInt(this.shutStreak);
         buf.writeInt(this.mult);
+        buf.writeBoolean(this.meepo);
     }
 
     public static MsgAnnounceTextS2C deserialize(ByteBuf buffer) {
         var buf = new FriendlyByteBuf(buffer);
-        return new MsgAnnounceTextS2C(buf.readUtf(), buf.readUtf(), buf.readUtf(), buf.readUtf(), buf.readInt(), buf.readInt());
+        return new MsgAnnounceTextS2C(buf.readUtf(), buf.readUtf(), buf.readUtf(), buf.readUtf(), buf.readInt(), buf.readInt(), buf.readBoolean());
     }
 
     public static void handle(MsgAnnounceTextS2C msg) {
-        AnnounceTextOverlay.show(msg.killer(), msg.victim(), msg.eventId(), msg.shutName(), msg.shutStreak(), msg.mult());
+        AnnounceTextOverlay.show(msg.killer(), msg.victim(), msg.eventId(), msg.shutName(), msg.shutStreak(), msg.mult(), msg.meepo());
     }
 }

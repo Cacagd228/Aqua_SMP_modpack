@@ -1235,5 +1235,7 @@
   "hexcasting.action.meowhex:true_name": "True Name",
   "hexcasting.action.meowhex:chronos_delay": "Chronos Delay",
   "hexcasting.action.meowhex:rune_visage": "Rune Visage",
+  "hexcasting.action.meowhex:mana_pairing": "Mana Pairing",
+  "hexcasting.action.meowhex:mana_unpair": "Sever Pairing",
   "hexcasting.mishap.depot.occupied": "cannot transfer the item: the depot at %s already has something in it"
 }

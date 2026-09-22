@@ -1,8 +1,0 @@
-name = "FMM Worldgen (custom)"
-filename = "FMMWorldgen-1.0.0.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/FMMWorldgen-1.0.0.jar"
-hash-format = "sha512"
-hash = "9e6218907ae60cc7869dbffdea01955c0d587fac5eabcf8551d19ecb18bc87d9b58873ad69a444ba5d7001f4ef0b1fe8549889e434805afb7263a4581bd16f90"

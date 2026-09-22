@@ -31,7 +31,8 @@ import java.util.concurrent.ConcurrentHashMap;
  *   <li>Только PvP: жертва и убийца — игроки, суициды не анонсируются
  *       (стрик жертвы при этом сгорает).</li>
  *   <li>Только стрик без смертей: spree/dominating/unstoppable/wicked/
- *       monster/godlike/rampage/holy_shit (+ first blood за первый фраг).</li>
+ *       monster/godlike + вершина: у Meepo holy_shit(8)/rampage(10+),
+ *       у QoP наоборот rampage(8)/holy_shit(10+); first blood за первый фраг.</li>
  *   <li>Meepo дополнительно играет double_kill за 2-й фраг серии;
  *       у каждого события Meepo несколько вариантов фразы (#1, #2...),
  *       случайный выбирает клиент из sounds.json.</li>
@@ -118,11 +119,12 @@ public final class AnnouncerHandler {
         } else if (streak == 7) {
             ids.add("monster_kill");
         } else if (streak == 8) {
-            ids.add("holy_shit");
+            // Порядок вершины разный: у Meepo holy_shit, у QoP rampage.
+            ids.add(meepo ? "holy_shit" : "rampage");
         } else if (streak == 9) {
             ids.add("godlike");
         } else if (streak >= 10) {
-            ids.add("rampage");
+            ids.add(meepo ? "rampage" : "holy_shit");
         }
         boolean global = ids.contains("rampage") || ids.contains("holy_shit") || ids.contains("godlike");
 
@@ -146,13 +148,22 @@ public final class AnnouncerHandler {
         String victimName = victim.getGameProfile().getName();
         String shutName = victimStreak > 3 ? victimName : "";
         int shutStreak = victimStreak > 3 ? victimStreak : 0;
-        // RAMPAGE! X2, X3... с 11-го фрага (10-й — без множителя).
-        int mult = "rampage".equals(displayId) ? streak - 9 : 0;
+        // Счётчик X2, X3...: событие-пик без суффикса на первом показе,
+        // дальше +1 за каждый фраг. Пик у каждого свой: rampage стартует
+        // на 10-м у Meepo и на 8-м у QoP; holy_shit — на 8-м у Meepo и на 10-м у QoP.
+        int mult;
+        if ("rampage".equals(displayId)) {
+            mult = streak - (meepo ? 9 : 7);
+        } else if ("holy_shit".equals(displayId)) {
+            mult = streak - (meepo ? 7 : 9);
+        } else {
+            mult = 0;
+        }
         var xplat = at.petrak.hexcasting.xplat.IXplatAbstractions.INSTANCE;
         for (ServerPlayer listener : audience) {
             try {
                 xplat.sendPacketToPlayer(listener, new MsgAnnounceTextS2C(
-                        killerName, victimName, displayId, shutName, shutStreak, mult));
+                        killerName, victimName, displayId, shutName, shutStreak, mult, meepo));
             } catch (Throwable ignored) {
             }
         }
@@ -228,7 +239,7 @@ public final class AnnouncerHandler {
     private static void announceShutdown(ServerLevel level, ServerPlayer victim, int streak) {
         String victimName = victim.getGameProfile().getName();
         var xplat = at.petrak.hexcasting.xplat.IXplatAbstractions.INSTANCE;
-        var packet = new MsgAnnounceTextS2C("", "", "", victimName, streak, 0);
+        var packet = new MsgAnnounceTextS2C("", "", "", victimName, streak, 0, false);
         double r2 = BROADCAST_RADIUS * BROADCAST_RADIUS;
         for (ServerPlayer listener : level.players()) {
             if (listener.distanceToSqr(victim.getX(), victim.getY(), victim.getZ()) > r2) continue;

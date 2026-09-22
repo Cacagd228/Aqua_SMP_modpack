@@ -5,6 +5,7 @@ import me.nanorasmus.nanodev.hex_js.network.MsgAnnounceTextS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgAnnouncementS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgCopyPatternC2S;
 import me.nanorasmus.nanodev.hex_js.network.MsgKillFlashS2C;
+import me.nanorasmus.nanodev.hex_js.network.MsgManaPairS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgSilenceDenyS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgUnworthyS2C;
 import net.minecraft.network.FriendlyByteBuf;
@@ -54,6 +55,7 @@ public class ForgePacketHandler {
         client(registrar, MsgKillFlashS2C.ID, MsgKillFlashS2C::deserialize, MsgKillFlashS2C::handle);
         client(registrar, MsgSilenceDenyS2C.ID, MsgSilenceDenyS2C::deserialize, MsgSilenceDenyS2C::handle);
         client(registrar, MsgUnworthyS2C.ID, MsgUnworthyS2C::deserialize, MsgUnworthyS2C::handle);
+        client(registrar, MsgManaPairS2C.ID, MsgManaPairS2C::deserialize, MsgManaPairS2C::handle);
     }
 
     public static void sendToPlayer(ServerPlayer player, IMessage message) {

@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:mana_pairing",
+  "category": "meowhex:runes",
+  "icon": "minecraft:lapis_lazuli",
+  "sortnum": 95,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:mana_pairing",
+      "anchor": "meowhex:mana_pairing",
+      "input": "entity",
+      "output": "",
+      "text": "meowhex.page.mana_pairing.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.mana_pairing.2"
+    }
+  ]
+}

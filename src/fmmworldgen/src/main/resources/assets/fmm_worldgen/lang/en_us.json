@@ -1,0 +1,6 @@
+{
+  "key.categories.fmm_worldgen": "FMM World Generation",
+  "key.fmm_worldgen.toggle_zone": "Toggle 3D Island Zone Boundaries",
+  "fmm_worldgen.message.borders_on": "§a3D Island Zone Boundaries: SHOWN (F3 + Z)",
+  "fmm_worldgen.message.borders_off": "§c3D Island Zone Boundaries: HIDDEN (F3 + Z)"
+}

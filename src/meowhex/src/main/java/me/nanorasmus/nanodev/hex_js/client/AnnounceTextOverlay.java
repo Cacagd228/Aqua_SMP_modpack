@@ -27,16 +27,18 @@ public class AnnounceTextOverlay {
     private static String shutName = "";
     private static int shutStreak = 0;
     private static int mult = 0;
+    private static boolean meepoAnnouncer = false;
     private static long untilMs = 0L;
 
     public static void show(String killerName, String victimName, String event,
-            String shutdownName, int shutdownStreak, int multCount) {
+            String shutdownName, int shutdownStreak, int multCount, boolean meepo) {
         killer = killerName;
         victim = victimName;
         eventId = event;
         shutName = shutdownName;
         shutStreak = shutdownStreak;
         mult = multCount;
+        meepoAnnouncer = meepo;
         untilMs = System.currentTimeMillis() + DURATION_MS;
     }
 
@@ -53,13 +55,16 @@ public class AnnounceTextOverlay {
         int mainRgb = 0xFFC845; // золото как баннер
         String killWordStr = shutStreak > 0 ? killWord(shutStreak) : "";
         if (!eventId.isEmpty() && !"first_blood".equals(eventId)) {
-            if ("rampage".equals(eventId) && mult >= 2) {
-                // RAMPAGE! X2, X3... — буквально, без перевода.
-                main = net.minecraft.network.chat.Component.literal("RAMPAGE! X" + mult);
+            if (("rampage".equals(eventId) || "holy_shit".equals(eventId)) && mult >= 2) {
+                // RAMPAGE! X2 / HOLLY SHIT! X2 — буквально, без перевода.
+                main = net.minecraft.network.chat.Component.literal(
+                        ("holy_shit".equals(eventId) ? "HOLLY SHIT! X" : "RAMPAGE! X") + mult);
             } else {
                 main = Component.translatable("meowhex.announcer.top_" + eventId, killer);
             }
-            if ("rampage".equals(eventId)) {
+            // Красным — пик комментатора: у Meepo rampage, у QoP holy_shit.
+            boolean isPeak = meepoAnnouncer ? "rampage".equals(eventId) : "holy_shit".equals(eventId);
+            if (isPeak) {
                 mainRgb = 0xFF3333;
             }
             if (!killer.isEmpty()) {

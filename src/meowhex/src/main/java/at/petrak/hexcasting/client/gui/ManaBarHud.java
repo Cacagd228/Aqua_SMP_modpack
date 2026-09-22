@@ -34,6 +34,8 @@ public final class ManaBarHud {
     private static final int COLOR_MANA_GREEN_BRIGHT = 0xFF8BFF8B;
     private static final int COLOR_MANA_PINK = 0xFFFF5FA8;
     private static final int COLOR_MANA_PINK_BRIGHT = 0xFFFFA8D0;
+    private static final int COLOR_MANA_BLUE = 0xFF3F8FFF;
+    private static final int COLOR_MANA_BLUE_BRIGHT = 0xFF8FC5FF;
 
     private ManaBarHud() {}
 
@@ -85,13 +87,34 @@ public final class ManaBarHud {
                 graphics.fill(x + i, y, x + i + 1, y + BAR_HEIGHT, 0xFF000000 | col);
             }
         } else {
+            // Общий пул: синяя полоска + суммарные значения с сервера (пакет MsgManaPairS2C).
+            // Фолбэк: если пакет ещё не пришёл, но маркер MANA_PAIRED уже есть — синим личным.
+            boolean pairedHud = false;
+            try {
+                pairedHud = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.isPaired()
+                        || player.hasEffect(HexEffects.MANA_PAIRED);
+            } catch (Throwable ignored) {
+            }
+            if (pairedHud) {
+                try {
+                    if (me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.isPaired()) {
+                        mana = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.shared();
+                        maxMana = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.sharedMax();
+                    }
+                } catch (Throwable ignored) {
+                }
+            }
             var w = (int) Math.ceil(mana / maxMana * BAR_WIDTH);
             var fill = COLOR_MANA;
             var bright = COLOR_MANA_BRIGHT;
             // Breathing bar: green while paying deception upkeep (more clones = faster pulse),
             // pink while the mana-regen effect is active. Deception blink takes priority.
+            // Paired pool: solid blue, takes priority over both.
             var period = deceptionCount > 0 ? Mth.clamp(20 / deceptionCount, 4, 20) : 20;
-            if (deceptionCount > 0 || manaRegenActive) {
+            if (pairedHud) {
+                fill = COLOR_MANA_BLUE;
+                bright = COLOR_MANA_BLUE_BRIGHT;
+            } else if (deceptionCount > 0 || manaRegenActive) {
                 var phase = ((mc.level.getGameTime() + mc.getTimer().getGameTimeDeltaPartialTick(false)) % period) / (double) period;
                 var blend = 0.5 - 0.5 * Math.cos(phase * Math.PI * 2.0);
                 if (deceptionCount > 0) {

@@ -1,0 +1,6 @@
+{
+  "key.categories.fmm_worldgen": "FMM Генерация мира",
+  "key.fmm_worldgen.toggle_zone": "Вкл/Выкл 3D-границы зоны острова",
+  "fmm_worldgen.message.borders_on": "§a3D-границы зоны острова: ПОКАЗАНЫ (F3 + Z)",
+  "fmm_worldgen.message.borders_off": "§c3D-границы зоны острова: СКРЫТЫ (F3 + Z)"
+}

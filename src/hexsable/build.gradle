@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.140'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+}
+
+neoForge {
+    version = project.neo_version
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+// Положи в папку libs/ (см. libs/README.txt) JAR-файлы, против которых мы компилируемся.
+// Они нужны ТОЛЬКО на этапе компиляции (compileOnly) — в итоговый мод не попадают.
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    // Hex Casting написан на Kotlin, его сигнатуры ссылаются на kotlin-stdlib
+    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+        mod_id: mod_id, mod_name: mod_name, mod_version: mod_version,
+        mod_license: mod_license, mod_authors: mod_authors, mod_description: mod_description,
+    ]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

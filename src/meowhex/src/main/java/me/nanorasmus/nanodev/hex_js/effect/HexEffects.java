@@ -14,6 +14,8 @@ public class HexEffects {
     public static final DeferredHolder<MobEffect, MobEffect> MANA_REGEN = REGISTER.register("mana_regen", ManaRegenEffect::new);
     public static final DeferredHolder<MobEffect, MobEffect> EREBUS_BIND = REGISTER.register("erebus_bind", ErebusBindEffect::new);
     public static final DeferredHolder<MobEffect, MobEffect> PING_PONG = REGISTER.register("ping_pong", PingPongEffect::new);
+    public static final DeferredHolder<MobEffect, MobEffect> MANA_PAIRING = REGISTER.register("mana_pairing", ManaPairingEffect::new);
+    public static final DeferredHolder<MobEffect, MobEffect> MANA_PAIRED = REGISTER.register("mana_paired", ManaPairedEffect::new);
 
     public static void init(IEventBus modBus) {
         REGISTER.register(modBus);

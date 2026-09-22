@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:flat_cache",
+  "argument": {
+    "type": "fmm_worldgen:island_math"
+  }
+}

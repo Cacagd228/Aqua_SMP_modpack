@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.meowhex:mana_unpair",
+  "category": "meowhex:runes",
+  "icon": "minecraft:milk_bucket",
+  "sortnum": 96,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:mana_unpair",
+      "anchor": "meowhex:mana_unpair",
+      "input": "",
+      "output": "",
+      "text": "meowhex.page.mana_unpair.1"
+    }
+  ]
+}

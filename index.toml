@@ -1666,13 +1666,13 @@ file = "mods/DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar"
 hash = "d6a7a963f794501678113e2545d8b25c90e123ef6b9256bb5716907d059e1ef5"
 
 [[files]]
-file = "mods/FMMWorldgen-1-0-0.pw.toml"
-hash = "1306efea82354811f3604caa35737412b6e016a26b8ad64f619fed986cb1dbf6"
+file = "mods/FMMWorldgen-1-1-0.pw.toml"
+hash = "69a5a7b1788426cc33302a9e5fcccf01e847eda7e868a496bc9e0637cc644cde"
 metafile = true
 
 [[files]]
-file = "mods/FMMWorldgen-1.0.0.jar"
-hash = "0457a10e6746d8d1d654efe1a0dbf8f94d088a08487f4baa616718b1c0170a69"
+file = "mods/FMMWorldgen-1.1.0.jar"
+hash = "2a604873f1f2ef2b98fd22d8fc1f86f172cbb01bee9d7f29f0b124dd6e432027"
 
 [[files]]
 file = "mods/FTBQuestsOptimizer-neoforge-3.2.0-1.21.1.jar"
@@ -1973,6 +1973,15 @@ metafile = true
 [[files]]
 file = "mods/cmparallelpipes-neoforge-2.0.2.jar"
 hash = "da852ea8c3588bd775ec038743bb3c8332a68e84fd969d56947f62cbf9fc3e11"
+
+[[files]]
+file = "mods/colonycard-1-0-0.pw.toml"
+hash = "fc67da2895424e47a84df39f62af0ce07237f32fe690d35e828ec14c68d90d85"
+metafile = true
+
+[[files]]
+file = "mods/colonycard-1.0.0.jar"
+hash = "68d23b0d687dc045d61217fa9ccdfbdda419425a922a6846878c429ca7163fa7"
 
 [[files]]
 file = "mods/colorful-catalysts.pw.toml"
@@ -2771,6 +2780,15 @@ file = "mods/harderdiesel-1.4.0.jar"
 hash = "924d059f3165fb7db5166c8516c23dea330ec457194b2ecc0ef2e8582f6d413a"
 
 [[files]]
+file = "mods/hexsable-1-0-1.pw.toml"
+hash = "ee7a34b5bb28174b713f3c943d74805c779604c6ccd4aaf2b29b10562f95eeab"
+metafile = true
+
+[[files]]
+file = "mods/hexsable-1.0.1.jar"
+hash = "00eeabee0bba8362ef192947dbbb228a4b69f1e08aa4d4a2c5894ebef2452ab9"
+
+[[files]]
 file = "mods/hots-aerostuff.pw.toml"
 hash = "a7e9187482cf225fbdb3769e860989040d41508106c4672c49439ed4f0d94af1"
 metafile = true
@@ -3008,20 +3026,20 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-0.pw.toml"
-hash = "3905caedcad52e729e52687974b9f3405d71a46534e220438408f25120f260ba"
+hash = "2c793d12d8059c9cd7819bc4358fac7f2f598285ad6c5d885afc55c5407aeac1"
 metafile = true
 
 [[files]]
 file = "mods/meowaddons-1.0.0.jar"
-hash = "43360409f9df000f86aae867a10ed2ab480cee0253386dbeb6ba13e0d9de4c8d"
+hash = "32944342dc3f5ee8d37d97932790495cda9e6741bf1a7dc1b8ebae96139c4e43"
 
 [[files]]
 file = "mods/meowhex.jar"
-hash = "7ffaea786867d36fbcc4ec8851c1f465addf0b75d8a5b2303bf0682f0b0befec"
+hash = "4711e8ac7b549f9e9ff6394d68c6b45c7cc3f576a5312fcce83d0ac2d5d9cd6d"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "7e2ca10743435b245f49e95cc8af424a95a6bd8deef6216733007f4db6e891c1"
+hash = "73d6d1ec666c0736e6a589fda010e3edb45155240f479699caf49124d06fbaa4"
 metafile = true
 
 [[files]]

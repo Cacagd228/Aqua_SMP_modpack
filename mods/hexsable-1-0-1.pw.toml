@@ -1,0 +1,8 @@
+name = "HexSable (custom)"
+filename = "hexsable-1.0.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/hexsable-1.0.1.jar"
+hash-format = "sha512"
+hash = "496569c88895e49dec770376ef3afb4d59529ddc94272d4e196f721293b0a50773e5ec732997db8c024db12bd96b67d32ea9a080155d94b68ec6f594ec6d45ec"
