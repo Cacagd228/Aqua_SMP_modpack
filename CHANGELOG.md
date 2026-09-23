@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3-beta.3
+
+- `meowhex` 1.3.1 -> 1.3.2: фикс тегов (`craft/battery` убран из per-world great-заклинаний), чистка книги (`explode/fire` убран из basic).
+- `meowaddons` 1.0.0 -> 1.0.1: фикс JEI для тировых сборок — шаги pressing/cutting/deploying показывают иконки тировых механизмов (`TieredAssemblySteps`).
+
 ## v1.1.3-beta-2
 
 - `meowhex` 1.3.0 -> 1.3.1: оптимизация `MixinParsePatternFormatting` (рендер текста): fast-path по первому символу вместо substring + regex на каждый символ, `Matcher.region` + `lookingAt` без копий строк. Фикс просадки FPS на HUD/чате/тултипах.

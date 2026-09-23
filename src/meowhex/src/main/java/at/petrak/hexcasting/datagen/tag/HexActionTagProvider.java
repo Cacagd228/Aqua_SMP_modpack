@@ -23,7 +23,7 @@ public class HexActionTagProvider extends TagsProvider<ActionRegistryEntry> {
         // In-game almost all great spells are always per-world
         for (var normalGreat : new String[]{
             "lightning", "flight", "create_lava", "teleport/great", "sentinel/create/great",
-            "dispel_rain", "summon_rain", "brainsweep", "craft/battery",
+            "dispel_rain", "summon_rain", "brainsweep",
             "potion/regeneration", "potion/night_vision", "potion/absorption", "potion/haste", "potion/strength"
         }) {
             var loc = modLoc(normalGreat);

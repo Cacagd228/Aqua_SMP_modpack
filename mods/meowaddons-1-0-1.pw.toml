@@ -1,0 +1,8 @@
+name = "Meow Addons (custom)"
+filename = "meowaddons-1.0.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/meowaddons-1.0.1.jar"
+hash-format = "sha512"
+hash = "2847649927b9d6d35a87efa60ed2fcabd74411803c28c6b119383d911117882592d470ffbdb2fb3603ab0eb64e81bd84c0bf8bfc1f0c9e841032704fb0ae6b10"

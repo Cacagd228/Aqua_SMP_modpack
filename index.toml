@@ -6,7 +6,7 @@ hash = "f9696b796b01abd07ff6f78c612c05ee5979c88012b97bbee1ead1b0f9f56622"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "783a2e00d8d7623c5e16ab3d7cf6cf3292a8ce22282df0c91c4a257c73a397cb"
+hash = "3447efeb339ba8892a6592d610547b460a2c4225ace033ede1eb6085373bdb8d"
 
 [[files]]
 file = "LICENSE"
@@ -3049,21 +3049,21 @@ hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
 
 [[files]]
-file = "mods/meowaddons-1-0-0.pw.toml"
-hash = "2c793d12d8059c9cd7819bc4358fac7f2f598285ad6c5d885afc55c5407aeac1"
+file = "mods/meowaddons-1-0-1.pw.toml"
+hash = "8aac3e8d94e77ababb02ddd5cca743db8236fc0f6514a57b1e11c298ba6b03c9"
 metafile = true
 
 [[files]]
-file = "mods/meowaddons-1.0.0.jar"
-hash = "32944342dc3f5ee8d37d97932790495cda9e6741bf1a7dc1b8ebae96139c4e43"
+file = "mods/meowaddons-1.0.1.jar"
+hash = "02f4fe95c3006e12b664ef28a24bc63761c107c5c32f3aae453794da40244466"
 
 [[files]]
 file = "mods/meowhex.jar"
-hash = "0f96d33a22710315e99ee064873d528acc6d6c51cf680adae5fb0e54b6c6eebe"
+hash = "452e0ec89cdd3dcb860ff759aa1dc2d82121c879dbeeb0205efd8489e89283d3"
 
 [[files]]
 file = "mods/meowhex.pw.toml"
-hash = "53f1b6dcb0799533b66378fff3428625b7aa46a9f2f4dd0d40e754f2f68d59e1"
+hash = "323180a7591009242b94b2c55da4c0109c56a221d8cd4c5d50998def863a9962"
 metafile = true
 
 [[files]]
@@ -27063,7 +27063,7 @@ hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "src/meowaddons/build.gradle"
-hash = "a7f58f5defdb87f8762f09378524b1d0353adb30d580ceaeda659c0f51e081df"
+hash = "f614f8209fc67ef5b5e1b83b7512d79694824c45dc2090137373a56e95f54e73"
 
 [[files]]
 file = "src/meowaddons/build/classes/java/main/com/meowaddons/MeowAddons.class"
@@ -30211,7 +30211,11 @@ hash = "33d1d14a9fafc5793392a4d153239e49575fe7d4d132afb6d2deddd3eaa7ffa8"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/integration/jei/MeowJeiPlugin.java"
-hash = "9787fa6e790271728c9d1df284a1547a44468b1677593b5e41c1a7724c48778d"
+hash = "d516b3fd5e91a2feb09faf7b4eb149b832e7611841d87ff66672d6ce94824e74"
+
+[[files]]
+file = "src/meowaddons/src/main/java/com/meowaddons/integration/jei/TieredAssemblySteps.java"
+hash = "bc70055137417a4e987d744c7a72e86fa032a813685eadc84924421b76ff6d62"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/integration/kubejs/KubeCodecComponent.java"
@@ -30243,11 +30247,11 @@ hash = "42509f4288ed049a46f4c45ff4520a217604afd79efe1e9617b7eb43ffe267c1"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/recipe/TieredCuttingRecipe.java"
-hash = "412f9271ca2ae061a69bd2e78f3bbe0f5e3258da5c199530b71292bb6a1114d7"
+hash = "b3a60c62189e9d1a109c289ac63f5aa828ad378af357cd96d60b194d5361d5e0"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/recipe/TieredDeployerApplicationRecipe.java"
-hash = "8b0531f89c20adad2785dbc0da0c4753e1e56b225978092872afb0f0e25ed9aa"
+hash = "7b59f10e2169f6c572a3322350e047805bd3d906dd8848ea7fdb20619e95c93f"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/recipe/TieredMillingRecipe.java"
@@ -30259,7 +30263,7 @@ hash = "d1ff432018816182a310531ab70e40a009968babf0c3ffb865df690d445a2657"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/recipe/TieredPressingRecipe.java"
-hash = "19840a39c42790103a352b6047e89571d5d91f0784f29eb971ead032cd757e26"
+hash = "88965264a68dfc36c32b0aff2645338c661e4251c72202c7c184848964e4fb61"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/recipe/TieredRecipe.java"
@@ -30468,6 +30472,10 @@ hash = "0212f0fa5f4a32aae7dc575fd86f3326f8190c238d4ee46d5f9d3117bfe6fd53"
 [[files]]
 file = "src/meowaddons/src/main/resources/data/minecraft/tags/enchantment/tradeable.json"
 hash = "0212f0fa5f4a32aae7dc575fd86f3326f8190c238d4ee46d5f9d3117bfe6fd53"
+
+[[files]]
+file = "src/meowaddons/src/main/resources/kubejs.plugins.txt"
+hash = "6c83f9d458ca1795c1f72e2ba46a172f952b48d256dcbc6dd78dd8e500625cc3"
 
 [[files]]
 file = "src/meowaddons/src/main/resources/pack.mcmeta"
@@ -44479,7 +44487,7 @@ hash = "566ad1a80220026d05099562645ce968ff0e7c36cde22634332605bb34cc3eff"
 
 [[files]]
 file = "src/meowhex/gradle.properties"
-hash = "cd2861f9a0feef75f37a09518af5aee1c51af5cda28d8ab6b09c068c06cfd6e9"
+hash = "8521daf2a55a501b28c4f0802ebd7fa3a3be562ba872ecca2ada958405c7a106"
 
 [[files]]
 file = "src/meowhex/gradle/wrapper/gradle-wrapper.jar"
@@ -48727,15 +48735,15 @@ hash = "c987f42e6bc8ad030972463dffb36bb06e0216c4861a1b968932d9133077eebc"
 
 [[files]]
 file = "src/meowhex/src/generated/resources/data/hexcasting/tags/hexcasting/action/can_start_enlighten.json"
-hash = "d0e6b032d9f3c108d8aa1967aa192e01a2cbd8d960ceebefaad9c0c778e1c604"
+hash = "efc4017b1ef6e5a07a6dc616de1acdc53caa3d43a6ea7602bfc7af7ec6c2026b"
 
 [[files]]
 file = "src/meowhex/src/generated/resources/data/hexcasting/tags/hexcasting/action/per_world_pattern.json"
-hash = "d0e6b032d9f3c108d8aa1967aa192e01a2cbd8d960ceebefaad9c0c778e1c604"
+hash = "efc4017b1ef6e5a07a6dc616de1acdc53caa3d43a6ea7602bfc7af7ec6c2026b"
 
 [[files]]
 file = "src/meowhex/src/generated/resources/data/hexcasting/tags/hexcasting/action/requires_enlightenment.json"
-hash = "d0e6b032d9f3c108d8aa1967aa192e01a2cbd8d960ceebefaad9c0c778e1c604"
+hash = "efc4017b1ef6e5a07a6dc616de1acdc53caa3d43a6ea7602bfc7af7ec6c2026b"
 
 [[files]]
 file = "src/meowhex/src/generated/resources/data/hexcasting/tags/items/brainswept_circle_components.json"
@@ -50759,7 +50767,7 @@ hash = "a010f351c17fbab4690d7b5c4d44bc0ab4f3357eb3b2db1968393043b7d463ce"
 
 [[files]]
 file = "src/meowhex/src/main/java/at/petrak/hexcasting/datagen/tag/HexActionTagProvider.java"
-hash = "7b674e3543abfddb6c74df1b133818d30eea742d92939cb0bea51c77462fea7a"
+hash = "d77958fca5a41de9b36eb86fbc7b58527fc54253917749ebf6af8959db658bec"
 
 [[files]]
 file = "src/meowhex/src/main/java/at/petrak/hexcasting/datagen/tag/HexBlockTagProvider.java"
@@ -54663,7 +54671,7 @@ hash = "f930702155e561c67b1c789823c107ae29a213f07fad7b25f4aeb90e5486016b"
 
 [[files]]
 file = "src/meowhex/src/main/resources/assets/meowhex/patchouli_books/thehexbook/en_us/entries/patterns/spells/basic.json"
-hash = "e1285cde93b9d0db99cf4a8a815f01145347f9ea7a691b28e6c5ff3956f665de"
+hash = "814e6f7f0ff79c117dedaa845b4618d0b65313040d0149f891e4ee2d856f71be"
 
 [[files]]
 file = "src/meowhex/src/main/resources/assets/meowhex/patchouli_books/thehexbook/en_us/entries/patterns/spells/blockworks.json"

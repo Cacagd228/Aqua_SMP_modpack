@@ -20,18 +20,6 @@
     },
     {
       "type": "meowhex:pattern",
-      "op_id": "hexcasting:explode/fire",
-      "anchor": "hexcasting:explode/fire",
-      "input": "vector, number",
-      "output": "",
-      "text": "hexcasting.page.basic_spell.explode.fire.1"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "hexcasting.page.basic_spell.explode.fire.2"
-    },
-    {
-      "type": "meowhex:pattern",
       "op_id": "hexcasting:add_motion",
       "anchor": "hexcasting:add_motion",
       "input": "entity, vector",

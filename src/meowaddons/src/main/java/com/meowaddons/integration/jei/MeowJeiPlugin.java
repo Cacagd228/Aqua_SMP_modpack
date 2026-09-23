@@ -31,7 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 // Категории Create для тировых типов (title-ключ = meowaddons.recipe.<тип>_t<тир>, см. CreateRecipeCategory.Builder.build).
 // Тип сборки не регистрируется: TieredSequencedAssemblyRecipe extends SequencedAssemblyRecipe и уже
-// попадает в категорию create:sequenced_assembly.
+// попадает в категорию create:sequenced_assembly; шаги тировых рецептов рисуют иконки
+// тировых механизмов через TieredAssemblySteps (см. getJEISubCategory тировых рецептов).
 @JeiPlugin
 public class MeowJeiPlugin implements IModPlugin {
 	private final List<CreateRecipeCategory<?>> all = new ArrayList<>();
@@ -64,12 +65,12 @@ public class MeowJeiPlugin implements IModPlugin {
 				.emptyBackground(177, 70).build(id("deploying_t" + n), DeployingCategory::new);
 		}
 	}
-	private static Block press(Tier t){ return switch(t){ case ANDESITE->ModBlocks.PRESS_T1.get(); case BRASS->ModBlocks.PRESS_T2.get(); case STEEL->ModBlocks.PRESS_T3.get(); case SHADOW_STEEL->ModBlocks.PRESS_T4.get(); case REFINED_RADIANCE->ModBlocks.PRESS_T5.get(); case CHROMATIC->ModBlocks.PRESS_T6.get(); }; }
+	public static Block press(Tier t){ return switch(t){ case ANDESITE->ModBlocks.PRESS_T1.get(); case BRASS->ModBlocks.PRESS_T2.get(); case STEEL->ModBlocks.PRESS_T3.get(); case SHADOW_STEEL->ModBlocks.PRESS_T4.get(); case REFINED_RADIANCE->ModBlocks.PRESS_T5.get(); case CHROMATIC->ModBlocks.PRESS_T6.get(); }; }
 	private static Block crush(Tier t){ return switch(t){ case ANDESITE->ModBlocks.CRUSHING_WHEEL_T1.get(); case BRASS->ModBlocks.CRUSHING_WHEEL_T2.get(); case STEEL->ModBlocks.CRUSHING_WHEEL_T3.get(); case SHADOW_STEEL->ModBlocks.CRUSHING_WHEEL_T4.get(); case REFINED_RADIANCE->ModBlocks.CRUSHING_WHEEL_T5.get(); case CHROMATIC->ModBlocks.CRUSHING_WHEEL_T6.get(); }; }
 	private static Block mill(Tier t){ return switch(t){ case ANDESITE->ModBlocks.MILLSTONE_T1.get(); case BRASS->ModBlocks.MILLSTONE_T2.get(); case STEEL->ModBlocks.MILLSTONE_T3.get(); case SHADOW_STEEL->ModBlocks.MILLSTONE_T4.get(); case REFINED_RADIANCE->ModBlocks.MILLSTONE_T5.get(); case CHROMATIC->ModBlocks.MILLSTONE_T6.get(); }; }
 	private static Block mix(Tier t){ return switch(t){ case ANDESITE->ModBlocks.MIXER_T1.get(); case BRASS->ModBlocks.MIXER_T2.get(); case STEEL->ModBlocks.MIXER_T3.get(); case SHADOW_STEEL->ModBlocks.MIXER_T4.get(); case REFINED_RADIANCE->ModBlocks.MIXER_T5.get(); case CHROMATIC->ModBlocks.MIXER_T6.get(); }; }
-	private static Block saw(Tier t){ return switch(t){ case ANDESITE->ModBlocks.SAW_T1.get(); case BRASS->ModBlocks.SAW_T2.get(); case STEEL->ModBlocks.SAW_T3.get(); case SHADOW_STEEL->ModBlocks.SAW_T4.get(); case REFINED_RADIANCE->ModBlocks.SAW_T5.get(); case CHROMATIC->ModBlocks.SAW_T6.get(); }; }
-	private static Block deploy(Tier t){ return switch(t){ case ANDESITE->ModBlocks.DEPLOYER_T1.get(); case BRASS->ModBlocks.DEPLOYER_T2.get(); case STEEL->ModBlocks.DEPLOYER_T3.get(); case SHADOW_STEEL->ModBlocks.DEPLOYER_T4.get(); case REFINED_RADIANCE->ModBlocks.DEPLOYER_T5.get(); case CHROMATIC->ModBlocks.DEPLOYER_T6.get(); }; }
+	public static Block saw(Tier t){ return switch(t){ case ANDESITE->ModBlocks.SAW_T1.get(); case BRASS->ModBlocks.SAW_T2.get(); case STEEL->ModBlocks.SAW_T3.get(); case SHADOW_STEEL->ModBlocks.SAW_T4.get(); case REFINED_RADIANCE->ModBlocks.SAW_T5.get(); case CHROMATIC->ModBlocks.SAW_T6.get(); }; }
+	public static Block deploy(Tier t){ return switch(t){ case ANDESITE->ModBlocks.DEPLOYER_T1.get(); case BRASS->ModBlocks.DEPLOYER_T2.get(); case STEEL->ModBlocks.DEPLOYER_T3.get(); case SHADOW_STEEL->ModBlocks.DEPLOYER_T4.get(); case REFINED_RADIANCE->ModBlocks.DEPLOYER_T5.get(); case CHROMATIC->ModBlocks.DEPLOYER_T6.get(); }; }
 	private <T extends Recipe<? extends RecipeInput>> Builder<T> builder(Class<T> c){ return new CategoryBuilder<>(c); }
 	@SuppressWarnings({"rawtypes"})
 	private class CategoryBuilder<T extends Recipe<?>> extends Builder<T>{
