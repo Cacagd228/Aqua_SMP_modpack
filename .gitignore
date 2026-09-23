@@ -45,3 +45,11 @@ Thumbs.db
 # kubejsMCP: зависимости и секреты не коммитим (dist/ нужен для запуска без сборки)
 src/kubejsMCP/node_modules/
 src/kubejsMCP/.env
+
+# Локальная карта проекта для агента (не коммитить)
+PROJECT_MAP.md
+AGENT_MAP.md
+.project-map*.md
+
+!mods/Design-n-Decor-1.21.1-2.2b.jar
+!mods/colorwheel-neoforge-1.2.9+mc1.21.1.jar
