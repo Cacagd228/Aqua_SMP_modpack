@@ -18,7 +18,7 @@ hash = "09f31d183ab868791946f82853f028fa6fc6807a1269e8d151cd3448c26295f4"
 
 [[files]]
 file = "config/DistantHorizons.toml"
-hash = "c08361c12b7ed40bb3c3e881625f162b147700f37eb3e6e9dedd94e45c7c1fb3"
+hash = "6b5075cf946d9a4dd5c52b2c7a286479c8452e00730f9a24af8af1206cfc8ea8"
 
 [[files]]
 file = "config/advancementdisable.toml"
@@ -2060,7 +2060,7 @@ hash = "da852ea8c3588bd775ec038743bb3c8332a68e84fd969d56947f62cbf9fc3e11"
 
 [[files]]
 file = "mods/colonycard-1-0-0.pw.toml"
-hash = "fc67da2895424e47a84df39f62af0ce07237f32fe690d35e828ec14c68d90d85"
+hash = "7f28a142fe0ea579fb981f00beb691f932157194ee1a83361e79c8cb9437220f"
 metafile = true
 
 [[files]]
@@ -3083,7 +3083,7 @@ hash = "f5d4a870b46f2952b7a04dad663cc4bdf8faad75e8951ba1551e85fd72d14402"
 
 [[files]]
 file = "mods/lineage_core-2-0-1.pw.toml"
-hash = "11cdbff16103a74681020fc8992fefa140ad03d02450878370fceb8ad86387e5"
+hash = "ad67ca574e1efb891f7465647318b6d40a057094cad98cc197e3c0d7946fdbe2"
 metafile = true
 
 [[files]]
@@ -52236,7 +52236,7 @@ hash = "85f016507a3c3e844e898d7f27cfb48f8b27441c243f30a56fd6763c174d3948"
 
 [[files]]
 file = "src/meowhex/src/main/java/me/nanorasmus/nanodev/hex_js/mixin/patternstyle/MixinParsePatternFormatting.java"
-hash = "737ec354a8d1acfd411283d9d7ce9b5e1434678cbbb61ec765f08023e6993f26"
+hash = "54cdf19659b1f3a005c997f6c0c9a312d4b24bc825580bc8971567466366c041"
 
 [[files]]
 file = "src/meowhex/src/main/java/me/nanorasmus/nanodev/hex_js/mixin/patternstyle/MixinPatternStyle.java"
