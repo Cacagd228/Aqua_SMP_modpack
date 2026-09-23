@@ -5,6 +5,7 @@ import com.colonizer.colonycard.data.ColonistData;
 import com.colonizer.colonycard.data.ColonistPools;
 import com.colonizer.colonycard.data.ModAttachments;
 import com.colonizer.colonycard.network.SyncColonistDataPacket;
+import com.colonizer.colonycard.stage.CrownStageManager;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -52,6 +53,7 @@ public final class ServerEvents {
         }
 
         sync(player);
+        CrownStageManager.syncTo(player, false);
     }
 
     public static void sync(ServerPlayer player) {

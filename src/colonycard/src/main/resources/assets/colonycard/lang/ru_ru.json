@@ -75,5 +75,38 @@
   "colonycard.reward.name.6": "Регалии Короны",
 
   "commands.colonycard.set_loyalty": "Лояльность %s установлена: %s",
-  "commands.colonycard.set_contribution": "Вклад %s установлен: %s"
+  "commands.colonycard.set_contribution": "Вклад %s установлен: %s",
+  "commands.colonycard.give_gramota": "Грамота выдана: %s",
+
+  "item.colonycard.imperial_decree": "Имперский декрет о награждении",
+
+  "colonycard.decree.title": "Имперский декрет о награждении",
+  "colonycard.decree.body1": "Настоящим документом удостоверяется, что за выдающиеся заслуги, усердие и неоценимый вклад в процветание и развитие колоний Короны",
+  "colonycard.decree.body2": "награждается официальной грамотой признания. Государство помнит каждого, кто укрепляет его рубежи и возводит его величие на новых землях.",
+  "colonycard.decree.footer1": "Слава Французской империи!",
+  "colonycard.decree.footer2": "Слава Юлии второй!",
+
+  "block.colonycard.stage_block": "Запросы короны",
+
+  "colonycard.stage.title": "Запросы короны",
+  "colonycard.stage.empty": "Задач нет",
+  "colonycard.stage.done": "Этап завершён",
+  "colonycard.stage.progress_sub": "Выполнено: %s/%s",
+  "colonycard.stage.donate_prompt": "Сколько вы хотите пожертвовать",
+  "colonycard.stage.donate": "Пожертвовать",
+  "colonycard.stage.cancel": "Отмена",
+  "colonycard.stage.no_item": "Нет этого предмета в инвентаре",
+  "colonycard.stage.already": "Уже собрано",
+  "colonycard.stage.add_task": "Добавить задачу",
+  "colonycard.stage.add_title": "Новая задача",
+  "colonycard.stage.item_id": "ID предмета",
+  "colonycard.stage.add": "Добавить",
+  "colonycard.stage.bad_count": "Некорректное количество",
+  "colonycard.stage.count_required": "Укажите количество",
+  "colonycard.stage.count": "Количество",
+  "colonycard.stage.creative_only": "Только в креативе",
+  "colonycard.stage.pick.title": "Выбор предмета",
+  "colonycard.stage.pick.search": "Поиск...",
+  "colonycard.stage.pick.all": "Все",
+  "colonycard.stage.pick.empty": "Ничего не найдено"
 }
