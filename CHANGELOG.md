@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.4-pre-release
+
+- `colonycard` 1.0.0 пересобран: stage-система короны (StageBlock, указы-грамоты `/colonycard gramota`, донаты/таски, сеть, экраны, конфиг, Discord-вебхук).
+- `lineage_core` 2.0.1 пересобран: русские описания рас/трейтов переписаны на точные механики.
+- `meowhex` 1.3.2 и `meowaddons` 1.0.1 пересобраны из исходников.
+- Добавлен `PatPat` 1.3.1 (Modrinth).
+- KubeJS: замок прогрессии `00_tier_lockdown.js` + века `tier_andesite/iron/copper.js` + `scripts/01–08`, крафт корпусов переведён на `create:item_application` (JEI + деплоер).
+
 ## v1.1.3-beta.3
 
 - `meowhex` 1.3.1 -> 1.3.2: фикс тегов (`craft/battery` убран из per-world great-заклинаний), чистка книги (`explode/fire` убран из basic).

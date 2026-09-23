@@ -3,6 +3,7 @@ package com.colonizer.colonycard.event;
 import com.colonizer.colonycard.ColonyCardMod;
 import com.colonizer.colonycard.data.ColonistData;
 import com.colonizer.colonycard.data.ModAttachments;
+import com.colonizer.colonycard.item.ImperialDecreeItem;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -16,6 +17,7 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
  * /colonycard loyalty <player> <set|add> <value>   -- loyalty runs -100..100, matches the card's bar
  * /colonycard contribution <player> <set|add> <value>
  * /colonycard reward <player> <1-6> <lock|unlock>
+ * /colonycard gramota [<player>]                   -- выдать бумажную грамоту (имперский декрет)
  */
 @EventBusSubscriber(modid = ColonyCardMod.MODID)
 public final class ColonyCardCommands {
@@ -75,6 +77,10 @@ public final class ColonyCardCommands {
                                                 .executes(ctx -> setReward(ctx, true)))
                                         .then(Commands.literal("lock")
                                                 .executes(ctx -> setReward(ctx, false))))))
+                .then(Commands.literal("gramota")
+                        .then(Commands.argument("player", EntityArgument.player())
+                                .executes(ctx -> giveGramota(ctx, EntityArgument.getPlayer(ctx, "player"))))
+                        .executes(ctx -> giveGramota(ctx, ctx.getSource().getPlayerOrException())))
         );
     }
 
@@ -83,6 +89,16 @@ public final class ColonyCardCommands {
         int index = IntegerArgumentType.getInteger(ctx, "index") - 1;
         update(p, d -> d.withReward(index, unlocked));
         ctx.getSource().sendSuccess(() -> Component.literal((unlocked ? "Unlocked" : "Locked") + " reward #" + (index + 1) + " for " + p.getName().getString()), true);
+        return 1;
+    }
+
+    /** Выдать бумажную грамоту, выписанную на имя игрока. */
+    private static int giveGramota(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx, ServerPlayer target) {
+        var stack = ImperialDecreeItem.createFor(target.getGameProfile().getName());
+        if (!target.getInventory().add(stack)) {
+            target.drop(stack, false);
+        }
+        ctx.getSource().sendSuccess(() -> Component.translatable("commands.colonycard.give_gramota", target.getName()), true);
         return 1;
     }
 

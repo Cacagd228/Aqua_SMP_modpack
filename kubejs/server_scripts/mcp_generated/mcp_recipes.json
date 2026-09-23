@@ -1,0 +1,38 @@
+{
+  "added": [
+    {
+      "type": "meowaddons:mixing",
+      "tier": 1,
+      "input": {
+        "ingredients": [
+          {
+            "item": "minecraft:andesite",
+            "count": 2
+          }
+        ]
+      },
+      "output": [
+        {
+          "item": "minecraft:diorite"
+        }
+      ]
+    },
+    {
+      "type": "meowaddons:mixing",
+      "tier": 1,
+      "input": {
+        "ingredients": [
+          {
+            "item": "2x minecraft:andesite"
+          }
+        ]
+      },
+      "output": [
+        {
+          "item": "minecraft:diorite"
+        }
+      ]
+    }
+  ],
+  "removed": []
+}

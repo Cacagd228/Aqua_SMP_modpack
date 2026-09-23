@@ -75,5 +75,38 @@
   "colonycard.reward.name.6": "Crown Regalia",
 
   "commands.colonycard.set_loyalty": "Set %s's loyalty to %s",
-  "commands.colonycard.set_contribution": "Set %s's contribution to %s"
+  "commands.colonycard.set_contribution": "Set %s's contribution to %s",
+  "commands.colonycard.give_gramota": "Decree granted to %s",
+
+  "item.colonycard.imperial_decree": "Imperial Decree of Commendation",
+
+  "colonycard.decree.title": "Imperial Decree of Commendation",
+  "colonycard.decree.body1": "By this document it is certified that for outstanding merit, diligence and invaluable contribution to the prosperity and growth of the Crown's colonies",
+  "colonycard.decree.body2": "is hereby awarded this official letter of recognition. The state remembers all who fortify its frontiers and raise its glory upon new lands.",
+  "colonycard.decree.footer1": "Glory to the French Empire!",
+  "colonycard.decree.footer2": "Glory to Julia the Second!",
+
+  "block.colonycard.stage_block": "Crown Requests",
+
+  "colonycard.stage.title": "Crown Requests",
+  "colonycard.stage.empty": "No tasks",
+  "colonycard.stage.done": "Stage complete",
+  "colonycard.stage.progress_sub": "Done: %s/%s",
+  "colonycard.stage.donate_prompt": "How much do you want to donate",
+  "colonycard.stage.donate": "Donate",
+  "colonycard.stage.cancel": "Cancel",
+  "colonycard.stage.no_item": "You don't have this item",
+  "colonycard.stage.already": "Already collected",
+  "colonycard.stage.add_task": "Add task",
+  "colonycard.stage.add_title": "New task",
+  "colonycard.stage.item_id": "Item ID",
+  "colonycard.stage.add": "Add",
+  "colonycard.stage.bad_count": "Invalid count",
+  "colonycard.stage.count_required": "Count required",
+  "colonycard.stage.count": "Count",
+  "colonycard.stage.creative_only": "Creative only",
+  "colonycard.stage.pick.title": "Pick Item",
+  "colonycard.stage.pick.search": "Search...",
+  "colonycard.stage.pick.all": "All",
+  "colonycard.stage.pick.empty": "Nothing found"
 }

@@ -320,4 +320,24 @@ public final class CardStyle {
             g.fill(x + 2, y + 2, x + w - 2, y + h - 2, 0x6B5A4A3A);
         }
     }
+
+    /** Иконка лупы в поле поиска. */
+    public static void searchIcon(GuiGraphics g, int x, int y, int color) {
+        g.fill(x, y, x + 2, y + 8, color);
+        g.fill(x, y + 6, x + 8, y + 8, color);
+        g.fill(x + 6, y + 2, x + 8, y + 6, color);
+    }
+
+    /** Вертикальная полоса прокрутки. */
+    public static void scrollBar(GuiGraphics g, int x, int y1, int y2, int contentH, int scroll, boolean focused, int mx, int my) {
+        int trackH = y2 - y1;
+        if (contentH <= trackH) {
+            return;
+        }
+        int thumbH = Math.max(16, trackH * trackH / contentH);
+        int thumbY = y1 + (trackH - thumbH) * scroll / (contentH - trackH);
+        boolean hover = mx >= x - 1 && mx <= x + 4 && my >= y1 && my <= y2;
+        g.fill(x - 1, y1, x + 4, y2, hover || focused ? 0x30FFFFFF : 0x10FFFFFF);
+        g.fill(x, thumbY, x + 3, thumbY + thumbH, hover || focused ? 0x80FFFFFF : 0x40FFFFFF);
+    }
 }

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "colonycard:block/stage_block" }
+  }
+}
