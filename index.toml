@@ -6,7 +6,7 @@ hash = "f9696b796b01abd07ff6f78c612c05ee5979c88012b97bbee1ead1b0f9f56622"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "4b34f4a508779f30021403e339490b830570a007bb7b5f81438d0c61e94bd237"
+hash = "3036de9c7b851e9d30cab669dd609f112e660081f842f6e9099d0f0e3f51c2f5"
 
 [[files]]
 file = "LICENSE"
@@ -3630,6 +3630,15 @@ hash = "fb63732cfc9868c684524240ec022fea139326b7f66c66323f8e249e261f2014"
 [[files]]
 file = "mods/spell_power-neoforge-1.6.0+1.21.1.jar"
 hash = "a57cd041be1bee86640861588ad9b4a3a032d2dedff8d44abf5305136e2f5854"
+
+[[files]]
+file = "mods/structure-pool-api-neoforge-1-2-1-1-21-1.pw.toml"
+hash = "82094ea28eace37c244d206c7a3b7b23c554b96924e5e19cdfc0d2c679ef83a0"
+metafile = true
+
+[[files]]
+file = "mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar"
+hash = "c18460025b07bc05fdc95bf62621c6b56f45e4eeb1c319f12787f39eb9315ea9"
 
 [[files]]
 file = "mods/strut-your-stuff.pw.toml"

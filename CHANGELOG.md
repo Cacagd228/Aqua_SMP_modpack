@@ -16,7 +16,7 @@
   - Раса сосуда: `aether_mind` (игровая) и `arch_aether` (архетип вознесения: `EtherealVeil`, `EtherealFlesh`, `UnseenPresence`, `ManaExhaustion`).
   - Выдача рас админами: команды `/lineage set <игрок> <раса>` и `/lineage ascend <игрок>`.
   - Фикс арх-рас: `SeasonedPlayerWatcher` (`LivingChangeTargetEvent` — мобы теряют невидимую цель), `VeilRender` (аэфирный оттенок вуали), `ChronicleNetwork`.
-- Пак: RPG-серия (`archers`, `paladins-and-priests`, `rogues-and-warriors`, `armory/arsenal-rpg-series`, `relics-rpg`, `forcemaster-rpg-class`, `spell-engine/power`, `ranged-weapon-api`, `armor-model-api`, `more-rpg-library`, `archers-expansion`), `Design-n-Decor`, `colorwheel`, reinforced backpack, estrogen-твики.
+- Пак: RPG-серия (`archers`, `paladins-and-priests`, `rogues-and-warriors`, `armory/arsenal-rpg-series`, `relics-rpg`, `forcemaster-rpg-class`, `spell-engine/power`, `ranged-weapon-api`, `armor-model-api`, `more-rpg-library`, `archers-expansion`), `Structure Pool API` 1.2.1 (NeoForge, CurseForge-пин), `Design-n-Decor`, `colorwheel`, reinforced backpack, estrogen-твики.
 
 ## v1.1.4-pre-release
 
