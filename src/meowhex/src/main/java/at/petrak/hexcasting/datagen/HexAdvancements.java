@@ -6,7 +6,6 @@ import at.petrak.hexcasting.api.advancements.OvercastTrigger;
 import at.petrak.hexcasting.api.advancements.SpendMediaTrigger;
 import at.petrak.hexcasting.api.misc.MediaConstants;
 import at.petrak.hexcasting.api.mod.HexTags;
-import at.petrak.hexcasting.common.items.ItemLoreFragment;
 import at.petrak.hexcasting.common.lib.HexBlocks;
 import at.petrak.hexcasting.common.lib.HexItems;
 import at.petrak.paucal.api.datagen.PaucalAdvancementSubProvider;
@@ -95,23 +94,6 @@ public class HexAdvancements extends PaucalAdvancementSubProvider {
             .parent(opened_eyes)
             .addCriterion("health_used", ENLIGHTEN)
             .save(consumer, prefix("enlightenment"));
-
-        var loreRoot = Advancement.Builder.advancement()
-            .display(simpleDisplayWithBackground(HexBlocks.AKASHIC_LIGATURE, "lore", FrameType.GOAL,
-                modLoc("textures/block/slate.png")))
-            .addCriterion("used_item", new ConsumeItemTrigger.TriggerInstance(ContextAwarePredicate.ANY,
-                ItemPredicate.Builder.item().of(HexItems.LORE_FRAGMENT).build()))
-            .save(consumer, prefix("lore"));
-
-        for (var advId : ItemLoreFragment.NAMES) {
-            Advancement.Builder.advancement()
-                .display(new DisplayInfo(new ItemStack(HexItems.LORE_FRAGMENT),
-                    Component.translatable("advancement." + advId), Component.empty(),
-                    null, FrameType.TASK, true, true, true))
-                .parent(loreRoot)
-                .addCriterion(ItemLoreFragment.CRITEREON_KEY, new ImpossibleTrigger.TriggerInstance())
-                .save(consumer, advId.toString());
-        }
 
 //        super.registerAdvancements(consumer, fileHelper);
     }

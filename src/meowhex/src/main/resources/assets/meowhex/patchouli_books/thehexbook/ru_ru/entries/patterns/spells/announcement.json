@@ -3,8 +3,8 @@
   "category": "meowhex:patterns/spells",
   "icon": "minecraft:amethyst_shard",
   "sortnum": 88,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/hex_announcement",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

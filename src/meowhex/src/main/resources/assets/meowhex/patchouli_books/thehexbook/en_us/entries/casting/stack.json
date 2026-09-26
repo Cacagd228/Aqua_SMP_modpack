@@ -3,7 +3,7 @@
   "category": "meowhex:casting",
   "icon": "minecraft:piston",
   "sortnum": 0,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_stack",
   "pages": [
     {
       "type": "patchouli:text",
@@ -21,5 +21,6 @@
       "type": "patchouli:text",
       "text": "hexcasting.page.stack.4"
     }
-  ]
+  ],
+  "read_by_default": false
 }

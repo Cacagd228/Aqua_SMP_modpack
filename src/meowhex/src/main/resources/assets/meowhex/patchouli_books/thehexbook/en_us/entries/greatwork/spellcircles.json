@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.spellcircles",
   "category": "meowhex:greatwork",
   "icon": "minecraft:lodestone",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_spellcircles",
   "entry_color": "54398a",
   "sortnum": 1,
   "pages": [
@@ -36,9 +36,12 @@
     },
     {
       "type": "patchouli:image",
-      "images": ["hexcasting:textures/gui/entries/spell_circle.png"],
+      "images": [
+        "hexcasting:textures/gui/entries/spell_circle.png"
+      ],
       "border": true,
       "title": "hexcasting.page.spellcircles.teleport_circle.title"
     }
-  ]
+  ],
+  "read_by_default": false
 }

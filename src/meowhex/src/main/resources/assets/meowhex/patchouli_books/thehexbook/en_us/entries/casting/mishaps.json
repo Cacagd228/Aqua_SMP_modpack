@@ -4,7 +4,7 @@
   "icon": "minecraft:textures/mob_effect/poison.png",
   "priority": true,
   "sortnum": 2,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_mishaps",
   "pages": [
     {
       "type": "patchouli:text",
@@ -88,5 +88,6 @@
       "title": "hexcasting.page.mishaps.other.title",
       "text": "hexcasting.page.mishaps.other"
     }
-  ]
+  ],
+  "read_by_default": false
 }

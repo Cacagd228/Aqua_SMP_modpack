@@ -4,7 +4,7 @@
   "category": "meowhex:items",
   "sortnum": 4,
   "priority": true,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_thought_knot",
   "pages": [
     {
       "type": "patchouli:text",
@@ -23,5 +23,6 @@
       "recipe": "hexcasting:thought_knot",
       "text": "hexcasting.page.thought_knot.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

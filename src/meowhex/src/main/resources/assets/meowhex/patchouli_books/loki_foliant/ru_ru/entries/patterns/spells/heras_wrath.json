@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:amethyst_shard",
   "sortnum": 87,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_heras_wrath",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

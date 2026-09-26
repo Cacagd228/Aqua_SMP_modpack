@@ -1,8 +1,7 @@
 package me.nanorasmus.nanodev.hex_js.mixin.patternstyle;
 
 import at.petrak.hexcasting.api.casting.math.HexPattern;
-import at.petrak.hexcasting.client.render.RenderLib;
-import kotlin.Pair;
+import me.nanorasmus.nanodev.hex_js.client.render.PatternGlyphCache;
 import me.nanorasmus.nanodev.hex_js.client.render.PatternStyle;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.HoverEvent;
@@ -28,8 +27,6 @@ import java.util.Objects;
 @Mixin(Style.class)
 public abstract class MixinPatternStyle implements PatternStyle {
 
-    private static final float RENDER_SIZE = 128f;
-
     private HexPattern pattern = null;
     private List<Vec2> zappyPoints = null;
     private List<Vec2> pathfinderDots = null;
@@ -41,15 +38,14 @@ public abstract class MixinPatternStyle implements PatternStyle {
 
     @Override
     public Style setPattern(HexPattern pattern) {
+        if (Objects.equals(this.pattern, pattern) && (pattern == null || this.zappyPoints != null)) {
+            return (Style) (Object) this;
+        }
         this.pattern = pattern;
         if (pattern != null) {
-            Pair<Float, List<Vec2>> pair = RenderLib.getCenteredPattern(pattern, RENDER_SIZE, RENDER_SIZE, 16f);
-            List<Vec2> dots = pair.getSecond();
-            this.zappyPoints = RenderLib.makeZappy(
-                dots, RenderLib.findDupIndices(pattern.positions()),
-                10, 0.8f, 0f, 0f,
-                RenderLib.DEFAULT_READABILITY_OFFSET, RenderLib.DEFAULT_LAST_SEGMENT_LEN_PROP, 0.0);
-            this.pathfinderDots = dots;
+            PatternGlyphCache.Cached cached = PatternGlyphCache.get(pattern);
+            this.zappyPoints = cached.zappyStill;
+            this.pathfinderDots = cached.pathfinderDots;
         } else {
             this.zappyPoints = null;
             this.pathfinderDots = null;

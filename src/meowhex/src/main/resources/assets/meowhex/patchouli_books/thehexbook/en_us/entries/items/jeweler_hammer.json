@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:jeweler_hammer",
   "sortnum": 9,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_jeweler_hammer",
   "pages": [
     {
       "type": "patchouli:text",
@@ -14,5 +14,6 @@
       "recipe": "hexcasting:jeweler_hammer",
       "text": "hexcasting.page.jeweler_hammer.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

@@ -2,9 +2,9 @@
   "name": "hexcasting.entry.itempicking",
   "category": "meowhex:patterns/spells",
   "icon": "minecraft:item_frame",
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_itempicking",
   "priority": true,
-  "read_by_default": true,
+  "read_by_default": false,
   "pages": [
     {
       "type": "patchouli:text",

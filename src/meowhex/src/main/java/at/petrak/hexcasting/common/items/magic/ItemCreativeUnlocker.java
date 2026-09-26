@@ -6,7 +6,6 @@ import at.petrak.hexcasting.api.misc.DiscoveryHandlers;
 import at.petrak.hexcasting.api.misc.MediaConstants;
 import at.petrak.hexcasting.api.utils.NBTHelper;
 import at.petrak.hexcasting.common.items.HexBaubleItem;
-import at.petrak.hexcasting.common.items.ItemLoreFragment;
 import at.petrak.hexcasting.common.lib.HexAttributes;
 import at.petrak.hexcasting.common.lib.HexItems;
 import at.petrak.hexcasting.common.lib.HexSounds;
@@ -232,8 +231,7 @@ public class ItemCreativeUnlocker extends Item implements MediaHolderItem, HexBa
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
         if (level instanceof ServerLevel slevel && consumer instanceof ServerPlayer player) {
-            var names = new ArrayList<>(ItemLoreFragment.NAMES);
-            names.add(0, modLoc("root"));
+            var names = new ArrayList<>(List.of(modLoc("root")));
             for (var name : names) {
                 var rootAdv = slevel.getServer().getAdvancements().get(name);
                 if (rootAdv != null) {
@@ -258,9 +256,14 @@ public class ItemCreativeUnlocker extends Item implements MediaHolderItem, HexBa
                 }
             }
             // brute-force на случай отключённого AdvancementDisable или кастомных datapack'ов
+            // (плюс свитковые meowhex:scrolls/* — иначе мыслекуб не открывает
+            // закрытые свитками страницы книг и не снимает гейт каста ScrollGate)
             int extra = 0;
             for (var holder : slevel.getServer().getAdvancements().getAllAdvancements()) {
-                if (holder.id().getNamespace().equals("hexcasting")) {
+                boolean isHex = holder.id().getNamespace().equals("hexcasting");
+                boolean isScroll = holder.id().getNamespace().equals("meowhex")
+                        && holder.id().getPath().startsWith("scrolls/");
+                if (isHex || isScroll) {
                     var prog = player.getAdvancements().getOrStartProgress(holder);
                     if (!prog.isDone()) {
                         for (String crit : prog.getRemainingCriteria()) {

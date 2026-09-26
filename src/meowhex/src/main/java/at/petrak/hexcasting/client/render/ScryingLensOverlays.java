@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.casting.circles.BlockEntityAbstractImpetus;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.api.client.ScryingLensOverlayRegistry;
 import at.petrak.hexcasting.common.blocks.akashic.BlockEntityAkashicBookshelf;
+import at.petrak.hexcasting.common.blocks.circles.BlockManaVessel;
 import at.petrak.hexcasting.common.lib.HexBlocks;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
@@ -33,6 +34,14 @@ public class ScryingLensOverlays {
             (lines, state, pos, observer, world, direction) -> {
                 if (world.getBlockEntity(pos) instanceof BlockEntityAbstractImpetus beai) {
                     beai.applyScryingLensOverlay(lines, state, pos, observer, world, direction);
+                }
+            });
+
+        // Mana Vessel overlay
+        ScryingLensOverlayRegistry.addDisplayer(HexBlocks.MANA_VESSEL,
+            (lines, state, pos, observer, world, direction) -> {
+                if (world.getBlockEntity(pos) instanceof BlockManaVessel.BlockEntityManaVessel vessel) {
+                    vessel.applyScryingLensOverlay(lines, state, pos, observer, world, direction);
                 }
             });
 

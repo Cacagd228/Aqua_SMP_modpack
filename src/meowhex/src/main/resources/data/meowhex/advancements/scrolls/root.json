@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "hexcasting:scroll"
+    },
+    "title": {
+      "translate": "advancement.meowhex.scrolls_root.title"
+    },
+    "description": {
+      "translate": "advancement.meowhex.scrolls_root.desc"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

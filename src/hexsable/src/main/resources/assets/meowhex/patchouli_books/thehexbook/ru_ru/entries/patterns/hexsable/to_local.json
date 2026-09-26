@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.hexsable:sublevel/to_local",
+  "category": "meowhex:hexsable",
+  "icon": "minecraft:echo_shard",
+  "sortnum": 9,
+  "advancement": "hexsable:scrolls/sable_to_local",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/to_local",
+      "anchor": "hexsable:sublevel/to_local",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.to_local"
+    }
+  ]
+}

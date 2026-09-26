@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.hexsable.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SableScrollGateMixin",
+    "CreativeUnlockerSableMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

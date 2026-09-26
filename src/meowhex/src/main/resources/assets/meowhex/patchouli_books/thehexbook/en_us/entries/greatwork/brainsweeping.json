@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.brainsweeping",
   "category": "meowhex:greatwork",
   "icon": "minecraft:wither_skeleton_skull",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_brainsweeping",
   "sortnum": 0,
   "entry_color": "54398a",
   "pages": [
@@ -23,5 +23,6 @@
       "recipe": "hexcasting:brainsweep/budding_amethyst",
       "text": "hexcasting.page.brainsweeping.budding_amethyst"
     }
-  ]
+  ],
+  "read_by_default": false
 }

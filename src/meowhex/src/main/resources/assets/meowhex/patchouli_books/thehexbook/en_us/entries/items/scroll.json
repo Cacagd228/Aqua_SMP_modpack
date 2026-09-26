@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:scroll",
   "sortnum": 4,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_scroll",
   "pages": [
     "hexcasting.page.scroll.1",
     "hexcasting.page.scroll.2",
@@ -17,5 +17,6 @@
       "recipe": "hexcasting:scroll",
       "text": "hexcasting.page.scroll.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

@@ -10,6 +10,8 @@ import xyz.lineage.registry.SoulAttachments;
 public final class VeilRender {
     /** Dusk slate, mostly present. */
     public static final int VEIL_TINT = 0x9950505C;
+    /** Pale aether glass worn by the ascended mind. */
+    public static final int AETHER_TINT = 0x88A8C8E8;
     /** A held breath: crouching gloom all but vanishes. */
     public static final int VEIL_LOW_TINT = 0x0D50505C;
 
@@ -21,7 +23,8 @@ public final class VeilRender {
             return false;
         }
         SoulLedger ledger = player.getData(SoulAttachments.SOUL);
-        return ledger != null && LineageCatalog.SHADOW.equals(ledger.lineageId());
+        return ledger != null && (LineageCatalog.SHADOW.equals(ledger.lineageId())
+            || LineageCatalog.ARCH_AETHER.equals(ledger.lineageId()));
     }
 
     public static boolean drape(LivingEntity entity) {
@@ -29,6 +32,15 @@ public final class VeilRender {
     }
 
     public static int hue(LivingEntity entity) {
-        return entity.isCrouching() ? VEIL_LOW_TINT : VEIL_TINT;
+        if (entity.isCrouching()) {
+            return VEIL_LOW_TINT;
+        }
+        if (entity instanceof Player player) {
+            SoulLedger ledger = player.getData(SoulAttachments.SOUL);
+            if (ledger != null && LineageCatalog.ARCH_AETHER.equals(ledger.lineageId())) {
+                return AETHER_TINT;
+            }
+        }
+        return VEIL_TINT;
     }
 }

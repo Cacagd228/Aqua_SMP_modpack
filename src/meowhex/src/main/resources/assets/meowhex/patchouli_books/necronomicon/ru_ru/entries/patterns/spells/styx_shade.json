@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:vex_spawn_egg",
   "sortnum": 87,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/necro_styx_shade",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

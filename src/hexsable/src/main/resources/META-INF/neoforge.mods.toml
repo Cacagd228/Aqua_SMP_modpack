@@ -37,3 +37,6 @@ type = "required"
 versionRange = "[2.0.0,3.0.0)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[mixins]]
+config = "hexsable.mixins.json"

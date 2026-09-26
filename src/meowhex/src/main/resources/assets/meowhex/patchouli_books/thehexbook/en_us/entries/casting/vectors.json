@@ -4,7 +4,7 @@
   "icon": "minecraft:arrow",
   "priority": true,
   "sortnum": 1,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_vectors",
   "pages": [
     {
       "type": "patchouli:link",
@@ -22,5 +22,6 @@
       "link_text": "hexcasting.page.vectors.3.link_text",
       "url": "https://psi.vazkii.us/codex.php#vectorPrimer"
     }
-  ]
+  ],
+  "read_by_default": false
 }

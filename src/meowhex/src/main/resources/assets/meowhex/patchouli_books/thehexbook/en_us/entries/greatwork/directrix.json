@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.directrix",
   "category": "meowhex:greatwork",
   "icon": "hexcasting:directrix/redstone",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_directrix",
   "entry_color": "54398a",
   "sortnum": 3,
   "pages": [
@@ -24,5 +24,6 @@
       "recipe": "hexcasting:brainsweep/directrix_redstone",
       "text": "hexcasting.page.directrix.directrix_redstone"
     }
-  ]
+  ],
+  "read_by_default": false
 }

@@ -15,13 +15,16 @@ public final class HextendedAddon {
     public static void init(IEventBus modBus) {
         HextendedItems.init(modBus);
         HextendedRecipes.init(modBus);
-        HexArtifactsItems.init(modBus);
-        HexFoodItems.init(modBus);
+        me.nanorasmus.nanodev.hex_js.addon.scroll.ScrollItems.init(modBus);
+        HexArtifactsItems.init(modBus);        HexFoodItems.init(modBus);
         me.nanorasmus.nanodev.hex_js.addon.armor.HolyValkyrieArmorItems.init(modBus);
         me.nanorasmus.nanodev.hex_js.addon.armor.ScarletKnightArmorItems.init(modBus);
         // Attach the Drawing-Orb ambit component to every new casting environment,
         // the same way the original addon did.
         CastingEnvironment.addCreateEventListener(
                 (CastingEnvironment castenv) -> castenv.addExtension(new DrawingOrbAmbit(castenv)));
+        // Charged diadem: double the wearer's casting ambit (32 -> 64 blocks).
+        CastingEnvironment.addCreateEventListener(
+                (CastingEnvironment castenv) -> castenv.addExtension(new DiademAmbit(castenv)));
     }
 }

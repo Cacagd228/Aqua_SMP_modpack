@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.impetus",
   "category": "meowhex:greatwork",
   "icon": "hexcasting:impetus/rightclick",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_impetus",
   "entry_color": "54398a",
   "sortnum": 2,
   "pages": [
@@ -46,5 +46,6 @@
       "recipe": "hexcasting:brainsweep/impetus_look",
       "text": "hexcasting.page.impetus.impetus_look"
     }
-  ]
+  ],
+  "read_by_default": false
 }

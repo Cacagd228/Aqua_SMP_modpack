@@ -4,7 +4,7 @@
   "category": "meowhex:items",
   "priority": true,
   "sortnum": 1,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_staff",
   "pages": [
     {
       "type": "patchouli:text",
@@ -27,5 +27,6 @@
         "hexcasting:staff/edified"
       ]
     }
-  ]
+  ],
+  "read_by_default": false
 }

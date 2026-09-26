@@ -3,8 +3,8 @@
   "category": "meowhex:patterns/spells",
   "icon": "minecraft:clock",
   "sortnum": 95,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/hex_chronos_delay",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

@@ -19,6 +19,7 @@
   ],
   "client": [
     "SpellbookScrollableMixin",
+    "MorphHexChickenMixin",
     "patternstyle.MixinPatternStyle",
     "patternstyle.MixinTextDrawerPatSty",
     "patternstyle.MixinParsePatternFormatting",

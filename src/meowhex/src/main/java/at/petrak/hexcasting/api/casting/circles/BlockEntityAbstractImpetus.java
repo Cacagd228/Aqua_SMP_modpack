@@ -236,10 +236,10 @@ public abstract class BlockEntityAbstractImpetus extends HexBlockEntity implemen
 
     //endregion
 
-    //region media handling
+    //region media handling (deprecated - mana now comes from vessels)
 
     public long getMedia() {
-        return this.media;
+        return 0; // Impetus no longer stores mana
     }
 
     public long getStep() {
@@ -247,40 +247,34 @@ public abstract class BlockEntityAbstractImpetus extends HexBlockEntity implemen
     }
 
     public void setMedia(long media) {
-        this.media = media;
-        sync();
+        // no-op: impetus no longer stores mana
     }
 
     public long extractMediaFromInsertedItem(ItemStack stack, boolean simulate) {
-        if (this.media < 0) {
-            return 0;
-        }
-        return MediaHelper.extractMedia(stack, remainingMediaCapacity(), true, simulate);
+        return 0; // Cannot insert media into impetus anymore
     }
 
     public void insertMedia(ItemStack stack) {
-        if (getMedia() >= 0 && !stack.isEmpty() && stack.getItem() == HexItems.CREATIVE_UNLOCKER) {
-            setInfiniteMedia();
-            stack.shrink(1);
-        } else {
-            var mediamount = extractMediaFromInsertedItem(stack, false);
-            if (mediamount > 0) {
-                this.media = Math.min(mediamount + media, MAX_CAPACITY);
-                this.sync();
-            }
+        if (!stack.isEmpty() && (stack.getItem() == HexItems.AMETHYST_DUST ||
+            stack.getItem() == net.minecraft.world.item.Items.AMETHYST_BLOCK ||
+            stack.getItem() == net.minecraft.world.item.Items.AMETHYST_CLUSTER ||
+            stack.getItem() == net.minecraft.world.item.Items.SMALL_AMETHYST_BUD ||
+            stack.getItem() == net.minecraft.world.item.Items.MEDIUM_AMETHYST_BUD ||
+            stack.getItem() == net.minecraft.world.item.Items.LARGE_AMETHYST_BUD)) {
+            // Reject amethyst insertion with message
+            this.postDisplay(
+                Component.translatable("hexcasting.tooltip.impetus.no_media",
+                    Component.literal(this.getBlockPos().toShortString()).withStyle(ChatFormatting.RED)),
+                new ItemStack(Items.AMETHYST_SHARD));
         }
     }
 
     public void setInfiniteMedia() {
-        this.media = -1;
-        this.sync();
+        // no-op
     }
 
     public long remainingMediaCapacity() {
-        if (this.media < 0) {
-            return 0;
-        }
-        return Math.max(0, MAX_CAPACITY - this.media);
+        return 0;
     }
 
     //endregion
@@ -325,9 +319,6 @@ public abstract class BlockEntityAbstractImpetus extends HexBlockEntity implemen
             this.lazyExecutionState = null;
         }
 
-        if (tag.contains(TAG_MEDIA, Tag.TAG_LONG)) {
-            this.media = tag.getLong(TAG_MEDIA);
-        }
         if (tag.contains(TAG_STEP, Tag.TAG_LONG)) {
             this.step = tag.getLong(TAG_STEP);
         }
@@ -354,14 +345,6 @@ public abstract class BlockEntityAbstractImpetus extends HexBlockEntity implemen
     public void applyScryingLensOverlay(List<Pair<ItemStack, Component>> lines,
         BlockState state, BlockPos pos, Player observer, Level world, Direction hitFace) {
         if (world.getBlockEntity(pos) instanceof BlockEntityAbstractImpetus beai) {
-            if (beai.getMedia() < 0) {
-                lines.add(new Pair<>(new ItemStack(HexItems.AMETHYST_DUST), ItemCreativeUnlocker.infiniteMedia(world)));
-            } else {
-                var dustCount = (float) beai.getMedia() / (float) MediaConstants.DUST_UNIT;
-                var dustCmp = Component.translatable("hexcasting.tooltip.media",
-                    DUST_AMOUNT.format(dustCount));
-                lines.add(new Pair<>(new ItemStack(HexItems.AMETHYST_DUST), dustCmp));
-            }
 
             if (this.displayMsg != null && this.displayItem != null) {
                 lines.add(new Pair<>(this.displayItem, this.displayMsg));

@@ -3,7 +3,7 @@
   "category": "meowhex:basics",
   "icon": "minecraft:textures/mob_effect/nausea.png",
   "sortnum": 0,
-  "advancement": "hexcasting:y_u_no_cast_angy",
+  "advancement": "meowhex:scrolls/hex_couldnt_cast",
   "pages": [
     {
       "type": "patchouli:text",
@@ -21,5 +21,6 @@
       "type": "patchouli:text",
       "text": "hexcasting.page.couldnt_cast.4"
     }
-  ]
+  ],
+  "read_by_default": false
 }

@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:lapis_lazuli",
   "sortnum": 95,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_mana_pairing",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

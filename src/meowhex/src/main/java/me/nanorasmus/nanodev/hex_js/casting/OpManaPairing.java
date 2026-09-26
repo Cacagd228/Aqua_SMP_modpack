@@ -22,15 +22,16 @@ import java.util.UUID;
 import static at.petrak.hexcasting.api.casting.OperatorUtils.getEntity;
 
 /**
- * Мана-пейринг — объединение манапулов двух игроков.
+ * Мана-пейринг — общий манапул группы до 10 игроков.
  * <p>
  * Стек: [entity] — второй кастер (только ServerPlayer, не self).
  * <ul>
  *   <li>Первый каст (A на B): стоит 500 маны с A. Обоим вешается ожидание на 5с.</li>
- *   <li>Подтверждение (B на A в эти 5с): бесплатно. Пулы становятся общими
- *       (сумма current, сумма max), upkeep 10м/с с общего.</li>
- *   <li>Повторный каст своей же пары той же руной — разрыв (бесплатно).
- *       Отдельная руна разрыва — {@link OpManaUnpair}.</li>
+ *   <li>Подтверждение (в эти 5с): бесплатно. Соло-новичок подтверждает кастом на ЛЮБОГО
+ *       участника группы (или любой участник на новичка) — пулы сливаются в один,
+ *       upkeep (n-1)*10м/с с общего.</li>
+ *   <li>Повторный каст по своему (та же группа) — роспуск ВСЕЙ группы (бесплатно).
+ *       Отдельная руна разрыва — {@link OpManaUnpair} (тоже роспуск всей группы).</li>
  * </ul>
  * Сигнатура qaqwawaa (EAST).
  */
@@ -114,13 +115,26 @@ public class OpManaPairing implements SpellAction {
                 ParticleSpray.burst(eye, 1.5, 30),
                 ParticleSpray.cloud(eye, 1.0, 20));
 
-        // Уже спарены друг с другом — та же руна разрывает (бесплатно).
+        // Уже в одной группе — та же руна распускает ВСЮ группу (бесплатно).
         if (ManaPairingHandler.isPairedWith(a, b)) {
             return new SpellAction.Result(new UnpairSpell(a), 0, particles, 0);
         }
-        // Кто-то из двоих уже в чужом пуле — mishap.
-        if (ManaPairingHandler.isPaired(a) || ManaPairingHandler.isPaired(b)) {
-            sneakyThrow(new OvidMishap("Один из кастеров уже в общем пуле"));
+        boolean pairedA = ManaPairingHandler.isPaired(a);
+        boolean pairedB = ManaPairingHandler.isPaired(b);
+        // Оба уже в разных пулах — mishap (слияние групп запрещено).
+        if (pairedA && pairedB) {
+            sneakyThrow(new OvidMishap("Оба кастера уже в общих пулах"));
+            return null;
+        }
+        // Лимит 10: группа + новичок.
+        int effectiveSize = 2;
+        if (pairedA) {
+            effectiveSize = ManaPairingHandler.getGroupSize(a) + 1;
+        } else if (pairedB) {
+            effectiveSize = ManaPairingHandler.getGroupSize(b) + 1;
+        }
+        if (effectiveSize > ManaPairingHandler.MAX_GROUP_SIZE) {
+            sneakyThrow(new OvidMishap("Группа полная (макс 10)"));
             return null;
         }
 
@@ -133,6 +147,15 @@ public class OpManaPairing implements SpellAction {
                 // Подтверждение от второго — бесплатно, пулы общие.
                 return new SpellAction.Result(new CompleteSpell(a, b), 0, particles, 0);
             }
+        }
+        // Подтверждение / освежение через ЛЮБОГО участника группы.
+        var completable = ManaPairingHandler.findCompletablePending(a, b);
+        if (completable != null) {
+            return new SpellAction.Result(new CompleteSpell(a, b), 0, particles, 0);
+        }
+        var refreshable = ManaPairingHandler.findRefreshablePending(a, b);
+        if (refreshable != null) {
+            return new SpellAction.Result(new RefreshSpell(a, b), 0, particles, 0);
         }
 
         if (ManaPairingHandler.isInPending(a) || ManaPairingHandler.isInPending(b)) {
@@ -170,7 +193,30 @@ public class OpManaPairing implements SpellAction {
             if (pi == null || pt == null || !pi.isAlive() || !pt.isAlive()) {
                 return;
             }
-            if (ManaPairingHandler.isBusy(initiator) && ManaPairingHandler.getPendingBetween(initiator, target) == null) {
+            // Перепроверка к моменту каста: своя группа / полные / чужие пулы — не начинаем.
+            if (ManaPairingHandler.isPairedWith(initiator, target)) {
+                return;
+            }
+            boolean pairedA = ManaPairingHandler.isPaired(initiator);
+            boolean pairedB = ManaPairingHandler.isPaired(target);
+            if (pairedA && pairedB) {
+                return;
+            }
+            int eff = 2;
+            if (pairedA) {
+                eff = ManaPairingHandler.getGroupSize(initiator) + 1;
+            } else if (pairedB) {
+                eff = ManaPairingHandler.getGroupSize(target) + 1;
+            }
+            if (eff > ManaPairingHandler.MAX_GROUP_SIZE) {
+                return;
+            }
+            if (ManaPairingHandler.getPendingBetween(initiator, target) != null
+                    || ManaPairingHandler.findCompletablePending(initiator, target) != null
+                    || ManaPairingHandler.findRefreshablePending(initiator, target) != null) {
+                return;
+            }
+            if (ManaPairingHandler.isInPending(initiator) || ManaPairingHandler.isInPending(target)) {
                 return;
             }
             ManaPairingHandler.beginRequest(pi, pt);
@@ -198,9 +244,12 @@ public class OpManaPairing implements SpellAction {
             if (server == null) {
                 return;
             }
-            // Подтверждать может только второй (target исходного pending).
+            // Подтверждать может новичок на любого участника (и наоборот).
             // Если pending уже истёк/ушёл — ничего не делаем.
             var pending = ManaPairingHandler.getPendingBetween(a, b);
+            if (pending == null) {
+                pending = ManaPairingHandler.findCompletablePending(a, b);
+            }
             if (pending == null) {
                 return;
             }

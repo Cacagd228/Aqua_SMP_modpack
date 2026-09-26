@@ -5,6 +5,7 @@ import at.petrak.hexcasting.common.lib.HexRegistries;
 import com.mojang.logging.LogUtils;
 import dev.hexsable.casting.HexSableActions;
 import dev.hexsable.casting.SableRangeComponent;
+import dev.hexsable.scroll.SableScrollItems;
 import dev.hexsable.iota.SubLevelIota;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
@@ -21,6 +22,8 @@ public final class HexSable {
 
     public HexSable(IEventBus modEventBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.SERVER, HexSableConfig.SPEC);
+        SableScrollItems.init(modEventBus);
+        modEventBus.addListener(SableScrollItems::onBuildTabContents);
         modEventBus.addListener(HexSable::onRegister);
 
         // Каждому новому CastingEnvironment цепляем расширение проверки дальности (блоки внутри структур).
@@ -39,7 +42,7 @@ public final class HexSable {
             for (HexSableActions.Entry e : HexSableActions.all()) {
                 helper.register(id(e.path()), e.entry());
             }
+            LOGGER.info("Hex Sable Bridge: registered {} patterns", HexSableActions.all().size());
         });
-        LOGGER.info("Hex Sable Bridge: registered {} patterns", HexSableActions.all().size());
     }
 }

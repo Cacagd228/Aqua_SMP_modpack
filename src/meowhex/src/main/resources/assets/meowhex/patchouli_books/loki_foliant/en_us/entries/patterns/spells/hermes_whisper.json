@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:armor_stand",
   "sortnum": 86,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_hermes_whisper",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

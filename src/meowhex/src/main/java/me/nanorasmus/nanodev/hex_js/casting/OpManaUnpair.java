@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Разрыв мана-пейринга — отдельная руна без стека.
- * Рвёт активный общий пул кастера (бесплатно). Без пула — mishap.
+ * Рвёт ВЕСЬ активный общий пул кастера (все до 10 участников, бесплатно). Без пула — mishap.
  * Сигнатура qaqwawaad (EAST).
  */
 public class OpManaUnpair implements SpellAction {

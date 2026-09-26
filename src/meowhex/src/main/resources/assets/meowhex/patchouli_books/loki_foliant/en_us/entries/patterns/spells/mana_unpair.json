@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:milk_bucket",
   "sortnum": 96,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_mana_unpair",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

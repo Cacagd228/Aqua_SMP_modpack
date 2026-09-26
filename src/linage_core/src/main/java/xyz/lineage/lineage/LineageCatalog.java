@@ -22,12 +22,15 @@ import net.minecraft.world.item.component.DyedItemColor;
 import xyz.lineage.LineageCore;
 import xyz.lineage.stats.HeroStat;
 import xyz.lineage.trait.Beastcall;
+import xyz.lineage.trait.EtherealFlesh;
+import xyz.lineage.trait.EtherealVeil;
 import xyz.lineage.trait.FortuneFavor;
 import xyz.lineage.trait.FrailBlood;
 import xyz.lineage.trait.GloamMend;
 import xyz.lineage.trait.Graveward;
 import xyz.lineage.trait.HollowBelly;
 import xyz.lineage.trait.HomespunOnly;
+import xyz.lineage.trait.ManaExhaustion;
 import xyz.lineage.trait.MireFooted;
 import xyz.lineage.trait.MoonEye;
 import xyz.lineage.trait.NightProwess;
@@ -43,6 +46,7 @@ import xyz.lineage.trait.SunScorch;
 import xyz.lineage.trait.SwimmerBurden;
 import xyz.lineage.trait.Tidewise;
 import xyz.lineage.trait.Trait;
+import xyz.lineage.trait.UnseenPresence;
 import xyz.lineage.trait.WiltAura;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
@@ -63,6 +67,8 @@ public final class LineageCatalog {
     public static final ResourceLocation FELID = id("felid");
     public static final ResourceLocation HIGH_ELF = id("high_elf");
     public static final ResourceLocation ARCH_LICH = id("arch_lich");
+    public static final ResourceLocation AETHER_MIND = id("aether_mind");
+    public static final ResourceLocation ARCH_AETHER = id("arch_aether");
     public static final ResourceLocation VAMPIRE = id("vampire");
     public static final ResourceLocation GAMBLER = id("gambler");
 
@@ -198,6 +204,30 @@ public final class LineageCatalog {
             20.0, 1.0, 0.0, 1.0, 0.1, 1000.0, 2.2, 5.0, 0.05, 0.05, 1.5, 0.0, 0, 0.0, 0.0, 0.0));
 
         swear(castFate(RandomSource.create(FATE_SEED), GAMBLER));
+
+        swear(Lineage.classic(AETHER_MIND, Component.translatable("lineage.lineage_core.aether_mind"),
+            Component.translatable("lineage.lineage_core.aether_mind.desc"), new ItemStack(Items.AMETHYST_SHARD),
+            Map.of(HeroStat.STRENGTH, 4, HeroStat.AGILITY, 6, HeroStat.VITALITY, 5,
+                HeroStat.INTELLIGENCE, 9, HeroStat.WISDOM, 11, HeroStat.CHARISMA, 2),
+            List.of(new StaticGift("ailment", Attributes.MOVEMENT_SPEED, -0.15,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                new HomespunOnly("frail_skin"),
+                new ManaExhaustion("mana_exhaustion")),
+            ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY,
+            ItemStack.EMPTY, ItemStack.EMPTY, List.of(new ItemStack(Items.BREAD, 8)), 200.0, 1.8));
+
+        swear(new Lineage(ARCH_AETHER, Component.translatable("lineage.lineage_core.arch_aether"),
+            Component.translatable("lineage.lineage_core.arch_aether.desc"), new ItemStack(Items.AMETHYST_CLUSTER),
+            Map.of(HeroStat.STRENGTH, 7, HeroStat.AGILITY, 7, HeroStat.VITALITY, 13,
+                HeroStat.INTELLIGENCE, 20, HeroStat.WISDOM, 20, HeroStat.CHARISMA, 7),
+            List.of(new EtherealVeil("ethereal_veil"),
+                new RhythmicBlessing("gloom_eyes", MobEffects.NIGHT_VISION, 0, 300, 20,
+                    RhythmicBlessing.Occasion.DIM_GLOOM, false),
+                new EtherealFlesh("ethereal_flesh"),
+                new UnseenPresence("unseen_presence")),
+            ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY,
+            List.of(new ItemStack(Items.BREAD, 8)),
+            20.0, 1.0, 0.0, 1.0, 0.1, 200.0, 1.8, 1.5, 0.05, 0.05, 1.5, 0.0, 0, 0.0, 0.0, 0.0));
     }
 
     public static boolean isWaywardGamble(ResourceLocation id) {

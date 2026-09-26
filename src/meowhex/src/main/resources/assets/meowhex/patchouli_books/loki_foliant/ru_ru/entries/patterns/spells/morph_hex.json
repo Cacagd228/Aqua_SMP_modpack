@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:morph_hex",
+  "category": "meowhex:runes",
+  "icon": "minecraft:egg",
+  "sortnum": 96,
+  "advancement": "meowhex:scrolls/loki_morph_hex",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:morph_hex",
+      "anchor": "meowhex:morph_hex",
+      "input": "entity, number",
+      "output": "",
+      "text": "meowhex.page.morph_hex.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.morph_hex.2"
+    }
+  ]
+}

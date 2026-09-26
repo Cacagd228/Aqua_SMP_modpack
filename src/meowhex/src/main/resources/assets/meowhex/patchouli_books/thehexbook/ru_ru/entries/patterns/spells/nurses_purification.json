@@ -1,0 +1,21 @@
+{
+  "name": "hexcasting.action.meowhex:nurses_purification",
+  "category": "meowhex:patterns/spells",
+  "icon": "minecraft:glistering_melon_slice",
+  "sortnum": 96,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:nurses_purification",
+      "anchor": "meowhex:nurses_purification",
+      "input": "entity",
+      "output": "number",
+      "text": "meowhex.page.nurses_purification.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.nurses_purification.2"
+    }
+  ]
+}

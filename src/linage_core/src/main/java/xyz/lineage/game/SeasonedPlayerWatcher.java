@@ -22,6 +22,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.item.ItemStack;
@@ -34,6 +35,7 @@ import net.neoforged.neoforge.common.Tags.DamageTypes;
 import net.neoforged.neoforge.common.Tags.EntityTypes;
 import net.neoforged.neoforge.event.ServerChatEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent.Pre;
@@ -55,6 +57,7 @@ import xyz.lineage.registry.SoulAttachments;
 import xyz.lineage.stats.FacetEngine;
 import xyz.lineage.stats.HeroStat;
 import xyz.lineage.trait.Trait;
+import xyz.lineage.trait.UnseenPresence;
 
 /**
  * The chronicler's watch: applies lineage traits and facet thresholds
@@ -235,6 +238,20 @@ public class SeasonedPlayerWatcher {
             net.minecraft.sounds.SoundSource.PLAYERS, 1.5F, 0.6F);
         striker.displayClientMessage(Component.translatable("message." + LineageCore.MOD_ID + ".titan_fell")
             .withStyle(ChatFormatting.DARK_RED, ChatFormatting.BOLD), true);
+    }
+
+    @SubscribeEvent
+    public void lostScent(LivingChangeTargetEvent event) {
+        if (!(event.getNewAboutToBeSetTarget() instanceof ServerPlayer player)) {
+            return;
+        }
+        if (!UnseenPresence.isUnseen(player)) {
+            return;
+        }
+        if (!(event.getEntity() instanceof Mob mob) || !UnseenPresence.pacifiable(mob, player)) {
+            return;
+        }
+        event.setCanceled(true);
     }
 
     @SubscribeEvent

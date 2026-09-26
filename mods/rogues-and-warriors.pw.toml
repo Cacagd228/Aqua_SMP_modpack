@@ -1,0 +1,13 @@
+name = "Rogues & Warriors (RPG Series)"
+filename = "rogues-neoforge-3.1.1+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3MKqoGuP/versions/xnANhdPV/rogues-neoforge-3.1.1%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "7c9fab477cf4744ee354d122f71f02c69f75963d3cc584dd77789bfd1160d96985cb56c7740391ffc090a9494a2efef5f78fce3fca7870e1da7c1af1a9650e64"
+
+[update]
+[update.modrinth]
+mod-id = "3MKqoGuP"
+version = "xnANhdPV"

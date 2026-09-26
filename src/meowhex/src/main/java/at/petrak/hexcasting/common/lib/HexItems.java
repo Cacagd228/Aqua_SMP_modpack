@@ -2,7 +2,6 @@ package at.petrak.hexcasting.common.lib;
 
 import at.petrak.hexcasting.common.items.ItemJewelerHammer;
 import at.petrak.hexcasting.common.items.ItemLens;
-import at.petrak.hexcasting.common.items.ItemLoreFragment;
 import at.petrak.hexcasting.common.items.ItemStaff;
 import at.petrak.hexcasting.common.items.magic.*;
 import at.petrak.hexcasting.common.items.pigment.ItemAmethystAndCopperPigment;
@@ -106,10 +105,6 @@ public class HexItems {
     // BUFF SANDVICH
     public static final Item SUBMARINE_SANDWICH = make("sub_sandwich",
         new Item(props().food(new FoodProperties.Builder().nutrition(14).saturationModifier(1.2f).build())));
-
-    public static final ItemLoreFragment LORE_FRAGMENT = make("lore_fragment",
-        new ItemLoreFragment(unstackable()
-            .rarity(Rarity.RARE)));
 
     public static final ItemCreativeUnlocker CREATIVE_UNLOCKER = make("creative_unlocker",
         new ItemCreativeUnlocker(unstackable()

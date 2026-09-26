@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.casting.ParticleSpray;
 import at.petrak.hexcasting.api.casting.PatternShapeMatch;
 import at.petrak.hexcasting.api.casting.circles.BlockEntityAbstractImpetus;
 import at.petrak.hexcasting.api.casting.circles.CircleExecutionState;
+import at.petrak.hexcasting.common.blocks.circles.BlockManaVessel;
 import at.petrak.hexcasting.api.casting.eval.CastResult;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.eval.MishapEnvironment;
@@ -90,13 +91,54 @@ public class CircleCastEnv extends CastingEnvironment {
         if (imp != null) {
             for (var sideEffect : result.getSideEffects()) {
                 if (sideEffect instanceof OperatorSideEffect.DoMishap doMishap) {
-                    var msg = doMishap.getMishap().errorMessageWithName(this, doMishap.getErrorCtx());
-                    if (msg != null) {
-                        imp.postMishap(msg);
+                    postCircleMishap(imp, doMishap.getMishap(), doMishap.getErrorCtx());
+                } else if (sideEffect instanceof OperatorSideEffect.ConsumeMedia consume) {
+                    // ConsumeMedia failure does NOT produce DoMishap by itself:
+                    // the spell is silently skipped (AttemptSpell never runs) but the
+                    // resolution stays EVALUATED, so BlockSlate would Continue.
+                    // Turn it into a regular circle mishap (same display path,
+                    // same particles, same halt as every other circle error).
+                    var vessel = this.execState.currentVessel;
+                    long need = consume.getAmount();
+                    Mishap mishap;
+                    if (vessel == null) {
+                        mishap = new at.petrak.hexcasting.api.casting.mishaps.circle.MishapCircleNoVessel(
+                            this.execState.currentPos);
+                    } else if (vessel.getStoredMedia() < need) {
+                        var fmt = new java.text.DecimalFormat("###,###.##");
+                        mishap = new at.petrak.hexcasting.api.casting.mishaps.circle.MishapCircleVesselMedia(
+                            fmt.format(need / at.petrak.hexcasting.api.misc.ManaHelper.MEDIA_PER_MANA),
+                            fmt.format(vessel.getStoredMedia() / at.petrak.hexcasting.api.misc.ManaHelper.MEDIA_PER_MANA));
+                    } else {
+                        continue;
                     }
+                    at.petrak.hexcasting.api.casting.math.HexPattern pattern = null;
+                    if (result.getCast() instanceof at.petrak.hexcasting.api.casting.iota.PatternIota patternIota) {
+                        pattern = patternIota.getPattern();
+                    }
+                    postCircleMishap(imp, mishap, new Mishap.Context(pattern, null));
                 }
             }
         }
+    }
+
+    /**
+     * Single choke point for circle errors — the same thing DoMishap does:
+     * formatted message on the impetus, mishap particles, halt the execution.
+     */
+    private void postCircleMishap(BlockEntityAbstractImpetus imp, Mishap mishap, Mishap.Context errorCtx) {
+        var msg = mishap.errorMessageWithName(this, errorCtx);
+        if (msg != null) {
+            imp.postMishap(msg);
+        }
+        var spray = mishap.particleSpray(this);
+        var color = mishap.accentColor(this, errorCtx);
+        spray.sprayParticles(this.world, color);
+        spray.sprayParticles(this.world, new FrozenPigment(
+            new ItemStack(at.petrak.hexcasting.common.lib.HexItems.DYE_PIGMENTS.get(net.minecraft.world.item.DyeColor.RED)),
+            net.minecraft.Util.NIL_UUID));
+        // Signal the circle to halt on mishap
+        this.execState.mishapOccurred = true;
     }
 
     @Override
@@ -106,19 +148,22 @@ public class CircleCastEnv extends CastingEnvironment {
 
     @Override
     public long extractMediaEnvironment(long cost) {
-        var entity = this.getImpetus();
-        if (entity == null)
+        var execState = this.execState;
+        var vessel = execState.currentVessel;
+        if (vessel == null) {
+            // No vessel = mishap (cost not paid)
             return cost;
+        }
 
-        var mediaAvailable = entity.getMedia();
-        if (mediaAvailable < 0)
-            return 0;
+        long available = vessel.getStoredMedia();
+        if (available < cost) {
+            // All-or-nothing: don't drain the last drops for a spell that
+            // won't fire. postExecution already flagged mishap + halt.
+            return cost;
+        }
 
-        long mediaToTake = Math.min(cost, mediaAvailable);
-        cost -= mediaToTake;
-        entity.setMedia(mediaAvailable - mediaToTake);
-
-        return cost;
+        vessel.extractMedia(cost, false);
+        return 0;
     }
 
     @Override

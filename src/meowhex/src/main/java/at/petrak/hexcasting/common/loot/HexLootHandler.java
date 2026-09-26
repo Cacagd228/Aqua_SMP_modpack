@@ -13,48 +13,12 @@ import static at.petrak.hexcasting.api.HexAPI.modLoc;
 // - Amethyst drop fiddling is done with another loot mod; the shard delta is in the loot mod data and the rest of
 //   the stuff is loaded from TABLE_INJECT_AMETHYST_CLUSTER
 public class HexLootHandler {
-    public static final ImmutableList<ScrollInjection> DEFAULT_SCROLL_INJECTS = ImmutableList.of(
-        // TODO: not sure what the lore implications of scrolls and the nether/end are. adding scrolls
-        // there for now just to be nice to players.
+    // meowhex: vanilla scroll/lore chest injections removed entirely —
+    // pattern scrolls are granted by meowhex:scroll_pages instead, lore fragments
+    // no longer exist. Kept as empty lists so datagen never resurrects them.
+    public static final ImmutableList<ScrollInjection> DEFAULT_SCROLL_INJECTS = ImmutableList.of();
 
-        // In places where it doesn't really make sense to have them lore-wise just put them rarely anyways
-        // to make it less of a PITA for new players
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/simple_dungeon"), 1),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/abandoned_mineshaft"), 1),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/bastion_other"), 1),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/nether_bridge"), 1),
-
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/jungle_temple"), 2),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/desert_pyramid"), 2),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_cartographer"), 2),
-
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/shipwreck_map"), 3),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/bastion_treasure"), 3),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/end_city_treasure"), 3),
-
-        // ancient city chests have amethyst in them, thinking emoji
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/ancient_city"), 4),
-        // wonder what those pillagers are up to with those scrolls
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/pillager_outpost"), 4),
-
-        // if you manage to find one of these things you deserve a lot of scrolls
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/woodland_mansion"), 5),
-        new ScrollInjection(ResourceLocation.fromNamespaceAndPath("minecraft", "chests/stronghold_library"), 5)
-    );
-
-    public static final ImmutableList<ResourceLocation> DEFAULT_LORE_INJECTS = ImmutableList.of(
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/simple_dungeon"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/abandoned_mineshaft"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/pillager_outpost"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/woodland_mansion"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/stronghold_library"),
-        // >:)
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_desert_house"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_plains_house"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_savanna_house"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_snowy_house"),
-        ResourceLocation.fromNamespaceAndPath("minecraft", "chests/village/village_taiga_house")
-    );
+    public static final ImmutableList<ResourceLocation> DEFAULT_LORE_INJECTS = ImmutableList.of();
 
     public static int getScrollCount(int range, RandomSource random) {
         return Math.max(random.nextIntBetweenInclusive(-range, range), 0);

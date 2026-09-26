@@ -4,11 +4,15 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.arguments.ResourceLocationArgument;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import xyz.lineage.LineageCore;
 import xyz.lineage.data.SoulLedger;
+import xyz.lineage.game.AetherAscension;
+import xyz.lineage.game.LineageRites;
 import xyz.lineage.lineage.Lineage;
 import xyz.lineage.lineage.LineageCatalog;
 import xyz.lineage.net.ChronicleNetwork;
@@ -68,6 +72,59 @@ public final class HeritageCommands {
                     ChronicleNetwork.send(target, new OpenChroniclePayload(OpenChroniclePayload.Kind.OATH));
                     ctx.getSource().sendSuccess(
                         () -> Component.translatable("command." + LineageCore.MOD_ID + ".oath_broken", target.getScoreboardName()), true);
+                    return 1;
+                })))
+            .then(Commands.literal("set").requires(src -> src.hasPermission(2))
+                .then(Commands.argument("target", EntityArgument.player())
+                    .then(Commands.argument("lineage", ResourceLocationArgument.id())
+                        .suggests((ctx, builder) -> {
+                            for (Lineage lineage : LineageCatalog.all()) {
+                                if (!LineageCatalog.isWaywardGamble(lineage.id())) {
+                                    builder.suggest(lineage.id().toString());
+                                }
+                            }
+                            return builder.buildFuture();
+                        })
+                        .executes(ctx -> {
+                            ServerPlayer target = EntityArgument.getPlayer(ctx, "target");
+                            ResourceLocation lineageId = ResourceLocationArgument.getId(ctx, "lineage");
+                            if (LineageCatalog.find(lineageId) == null
+                                && !LineageCatalog.isWaywardGamble(lineageId)
+                                && LineageCatalog.resolve(lineageId, 0L) == null) {
+                                ctx.getSource().sendFailure(Component.translatable(
+                                    "command." + LineageCore.MOD_ID + ".unknown_lineage", lineageId.toString()));
+                                return 0;
+                            }
+                            Lineage applied = LineageRites.apply(target, lineageId, true);
+                            if (applied == null) {
+                                return 0;
+                            }
+                            ctx.getSource().sendSuccess(
+                                () -> Component.translatable("command." + LineageCore.MOD_ID + ".lineage_set",
+                                    target.getScoreboardName(), applied.title()), true);
+                            target.sendSystemMessage(Component.translatable(
+                                "command." + LineageCore.MOD_ID + ".lineage_set_self", applied.title()));
+                            return 1;
+                        }))))
+            .then(Commands.literal("ascend").requires(src -> src.hasPermission(2))
+                .then(Commands.argument("target", EntityArgument.player()).executes(ctx -> {
+                    ServerPlayer target = EntityArgument.getPlayer(ctx, "target");
+                    if (AetherAscension.isAscended(target)) {
+                        ctx.getSource().sendFailure(Component.translatable(
+                            "command." + LineageCore.MOD_ID + ".already_ascended", target.getScoreboardName()));
+                        return 0;
+                    }
+                    Lineage applied = AetherAscension.ascend(target);
+                    if (applied == null) {
+                        ctx.getSource().sendFailure(Component.translatable(
+                            "command." + LineageCore.MOD_ID + ".ascend_denied", target.getScoreboardName()));
+                        return 0;
+                    }
+                    ctx.getSource().sendSuccess(
+                        () -> Component.translatable("command." + LineageCore.MOD_ID + ".lineage_ascended",
+                            target.getScoreboardName(), applied.title()), true);
+                    target.sendSystemMessage(Component.translatable(
+                        "command." + LineageCore.MOD_ID + ".lineage_ascended_self", applied.title()));
                     return 1;
                 })))
             .then(Commands.literal("heritage").executes(ctx -> {

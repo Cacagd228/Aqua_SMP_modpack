@@ -31,13 +31,17 @@ public class HexJS {
 
     private static MinecraftServer server;
 
-    public HexJS(IEventBus modBus) {
+    public HexJS(IEventBus modBus, net.neoforged.fml.ModContainer modContainer) {
         HexJSInitializer.init(modBus);
         HextendedAddon.init(modBus);
         me.nanorasmus.nanodev.hex_js.entity.HexEntities.init(modBus);
         me.nanorasmus.nanodev.hex_js.effect.HexEffects.init(modBus);
         me.nanorasmus.nanodev.hex_js.sound.HexSounds.init(modBus);
         if (FMLEnvironment.dist.isClient()) {
+            modContainer.registerConfig(
+                net.neoforged.fml.config.ModConfig.Type.CLIENT,
+                me.nanorasmus.nanodev.hex_js.client.HexJsClientConfig.SPEC,
+                "meowhex-glyphs-client.toml");
             HexJSClient.init(modBus);
         }
         if (net.neoforged.fml.ModList.get().isLoaded("curios")) {
@@ -78,6 +82,7 @@ public class HexJS {
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ManaPairingHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ChronosHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.RuneVisageHandler.class);
+        NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.MorphHexHandler.class);
     }
 
     private static void onServerStarting(ServerStartingEvent event) {

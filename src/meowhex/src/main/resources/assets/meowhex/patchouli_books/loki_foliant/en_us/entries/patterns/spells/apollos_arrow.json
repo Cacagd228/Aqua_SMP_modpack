@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:arrow",
   "sortnum": 85,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_apollos_arrow",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

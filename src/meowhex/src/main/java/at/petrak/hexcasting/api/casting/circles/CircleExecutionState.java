@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
+import at.petrak.hexcasting.common.blocks.circles.BlockManaVessel;
 
 import java.util.*;
 
@@ -38,7 +39,8 @@ public class CircleExecutionState {
         TAG_ENTERED_FROM = "entered_from",
         TAG_IMAGE = "image",
         TAG_CASTER = "caster",
-        TAG_PIGMENT = "pigment";
+        TAG_PIGMENT = "pigment",
+        TAG_CURRENT_VESSEL = "current_vessel";
 
     public final BlockPos impetusPos;
     public final Direction impetusDir;
@@ -52,6 +54,13 @@ public class CircleExecutionState {
     public @Nullable FrozenPigment casterPigment;
 
     public final boolean hasSconce;
+
+    // Current mana vessel in the circuit; null means "no vessel, next rune without vessel mishaps"
+    @Nullable
+    public BlockManaVessel.BlockEntityManaVessel currentVessel;
+
+    // Set to true when a mishap occurs during circle execution
+    public boolean mishapOccurred = false;
 
     public final AABB bounds;
 
@@ -78,7 +87,7 @@ public class CircleExecutionState {
         this.bounds = BlockEntityAbstractImpetus.getBounds(new ArrayList<>(this.knownPositions));
     }
 
-    public @Nullable ServerPlayer getCaster(ServerLevel world) {
+public @Nullable ServerPlayer getCaster(ServerLevel world) {
         if (this.caster == null) {
             return null;
         }
@@ -86,8 +95,11 @@ public class CircleExecutionState {
         if (entity instanceof ServerPlayer serverPlayer) {
             return serverPlayer;
         }
-        // there's a problem if this branch is reached
         return null;
+    }
+
+    public void setCurrentVessel(@Nullable BlockManaVessel.BlockEntityManaVessel vessel) {
+        this.currentVessel = vessel;
     }
 
     // Return OK if it succeeded; returns Err if it didn't close and the location
@@ -192,6 +204,12 @@ public class CircleExecutionState {
 
         out.putBoolean("has_sconce", this.hasSconce);
 
+        out.putBoolean("mishap_occurred", this.mishapOccurred);
+
+        if (this.currentVessel != null) {
+            out.put(TAG_CURRENT_VESSEL, NbtUtils.writeBlockPos(this.currentVessel.getBlockPos()));
+        }
+
         return out;
     }
 
@@ -224,8 +242,22 @@ public class CircleExecutionState {
         if (nbt.contains(TAG_PIGMENT, Tag.TAG_COMPOUND))
             pigment = FrozenPigment.fromNBT(nbt.getCompound(TAG_PIGMENT));
 
-        return new CircleExecutionState(startPos, startDir, knownPositions, reachedPositions, currentPos,
+        BlockManaVessel.BlockEntityManaVessel currentVessel = null;
+        if (nbt.contains(TAG_CURRENT_VESSEL, Tag.TAG_INT_ARRAY)) {
+            var vesselPos = NbtUtils.readBlockPos(nbt, TAG_CURRENT_VESSEL).orElse(null);
+            if (vesselPos != null) {
+                var be = world.getBlockEntity(vesselPos);
+                if (be instanceof BlockManaVessel.BlockEntityManaVessel vessel) {
+                    currentVessel = vessel;
+                }
+            }
+        }
+
+        var state = new CircleExecutionState(startPos, startDir, knownPositions, reachedPositions, currentPos,
             enteredFrom, image, caster, pigment, nbt.getBoolean("has_sconce"));
+        state.currentVessel = currentVessel;
+        state.mishapOccurred = nbt.getBoolean("mishap_occurred");
+        return state;
     }
 
     /**
@@ -239,6 +271,11 @@ public class CircleExecutionState {
         if (world == null)
             return true; // if the world is null, try again next tick.
 
+        // If a mishap occurred in the previous tick, stop the circle
+        if (this.mishapOccurred) {
+            return false;
+        }
+
         var env = new CircleCastEnv(world, this);
 
         var executorBlockState = world.getBlockState(this.currentPos);
@@ -247,12 +284,6 @@ public class CircleExecutionState {
             ICircleComponent.sfx(this.currentPos, executorBlockState, world,
                 Objects.requireNonNull(env.getImpetus()), false);
             return false;
-        }
-
-        // Overload (sconce): each step costs 0.1 dust
-        if (this.hasSconce && impetus.getMedia() > 0) {
-            long cost = at.petrak.hexcasting.api.misc.MediaConstants.DUST_UNIT / 10; // 0.1 dust
-            impetus.setMedia(Math.max(0, impetus.getMedia() - cost));
         }
 
         executorBlockState = executor.startEnergized(this.currentPos, executorBlockState, world);

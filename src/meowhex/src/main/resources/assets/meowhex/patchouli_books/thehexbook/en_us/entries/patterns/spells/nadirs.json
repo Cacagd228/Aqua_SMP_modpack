@@ -2,9 +2,9 @@
   "name": "hexcasting.entry.nadirs",
   "category": "meowhex:patterns/spells",
   "icon": "minecraft:potion{Potion:'minecraft:poison'}",
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_nadirs",
   "sortnum": 2,
-  "read_by_default": true,
+  "read_by_default": false,
   "pages": [
     {
       "type": "patchouli:text",

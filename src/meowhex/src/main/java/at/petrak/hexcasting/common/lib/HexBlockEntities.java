@@ -4,6 +4,7 @@ import at.petrak.hexcasting.api.HexAPI;
 import at.petrak.hexcasting.common.blocks.BlockQuenchedAllay;
 import at.petrak.hexcasting.common.blocks.akashic.BlockEntityAkashicBookshelf;
 import at.petrak.hexcasting.common.blocks.circles.BlockEntitySlate;
+import at.petrak.hexcasting.common.blocks.circles.BlockManaVessel;
 import at.petrak.hexcasting.common.blocks.circles.impetuses.BlockEntityLookingImpetus;
 import at.petrak.hexcasting.common.blocks.circles.impetuses.BlockEntityRedstoneImpetus;
 import at.petrak.hexcasting.common.blocks.circles.impetuses.BlockEntityRightClickImpetus;
@@ -52,6 +53,10 @@ public class HexBlockEntities {
     public static final BlockEntityType<BlockEntitySlate> SLATE_TILE = register(
         "slate",
         BlockEntitySlate::new, HexBlocks.SLATE);
+
+    public static final BlockEntityType<BlockManaVessel.BlockEntityManaVessel> MANA_VESSEL_TILE = register(
+        "mana_vessel",
+        BlockManaVessel.BlockEntityManaVessel::new, HexBlocks.MANA_VESSEL);
 
     public static final BlockEntityType<BlockEntityQuenchedAllay> QUENCHED_ALLAY_TILE = register(
         "quenched_allay", BlockEntityQuenchedAllay.fromKnownBlock(HexBlocks.QUENCHED_ALLAY), HexBlocks.QUENCHED_ALLAY);

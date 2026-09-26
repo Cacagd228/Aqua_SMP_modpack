@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:artifact",
   "sortnum": 6,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_items_hexcasting",
   "pages": [
     {
       "type": "patchouli:text",
@@ -37,5 +37,6 @@
       "recipe": "hexcasting:artifact",
       "text": "hexcasting.page.hexcasting.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

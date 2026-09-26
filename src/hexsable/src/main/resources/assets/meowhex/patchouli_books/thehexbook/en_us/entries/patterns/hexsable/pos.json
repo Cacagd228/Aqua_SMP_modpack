@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.hexsable:sublevel/pos",
+  "category": "meowhex:hexsable",
+  "icon": "minecraft:compass",
+  "sortnum": 3,
+  "advancement": "hexsable:scrolls/sable_pos",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/pos",
+      "anchor": "hexsable:sublevel/pos",
+      "input": "structure",
+      "output": "vector",
+      "text": "hexsable.page.pos"
+    }
+  ]
+}

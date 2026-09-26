@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.hexsable:sublevel/mass",
+  "category": "meowhex:hexsable",
+  "icon": "minecraft:anvil",
+  "sortnum": 6,
+  "advancement": "hexsable:scrolls/sable_mass",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/mass",
+      "anchor": "hexsable:sublevel/mass",
+      "input": "structure",
+      "output": "number",
+      "text": "hexsable.page.mass"
+    }
+  ]
+}

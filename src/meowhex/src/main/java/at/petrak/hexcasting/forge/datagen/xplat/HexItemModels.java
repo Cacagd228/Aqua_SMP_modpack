@@ -49,7 +49,6 @@ public class HexItemModels extends PaucalItemModelProvider {
         simpleItem(HexItems.ABACUS);
         brandishedItem(HexItems.JEWELER_HAMMER);
         simpleItem(HexItems.CREATIVE_UNLOCKER);
-        simpleItem(HexItems.LORE_FRAGMENT);
 
         singleTexture(getPath(HexBlocks.CONJURED_BLOCK),
             ResourceLocation.parse("item/generated"),

@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.hexsable:sublevel/dir_to_local",
+  "category": "meowhex:hexsable",
+  "icon": "minecraft:spectral_arrow",
+  "sortnum": 11,
+  "advancement": "hexsable:scrolls/sable_dir_to_local",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/dir_to_local",
+      "anchor": "hexsable:sublevel/dir_to_local",
+      "input": "structure, vector",
+      "output": "vector",
+      "text": "hexsable.page.dir_to_local"
+    }
+  ]
+}

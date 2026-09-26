@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.quenching_allays",
   "category": "meowhex:greatwork",
   "icon": "hexcasting:quenched_allay",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_quenching_allays",
   "entry_color": "54398a",
   "sortnum": 5,
   "pages": [
@@ -35,5 +35,6 @@
       "recipe": "hexcasting:decompose_quenched_shard/shard",
       "recipe2": "hexcasting:decompose_quenched_shard/charged"
     }
-  ]
+  ],
+  "read_by_default": false
 }

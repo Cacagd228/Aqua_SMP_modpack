@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:fermented_spider_eye",
   "sortnum": 90,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_gerd_substitution",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

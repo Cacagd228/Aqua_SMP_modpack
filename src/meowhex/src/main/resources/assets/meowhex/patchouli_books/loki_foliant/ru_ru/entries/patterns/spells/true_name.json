@@ -3,8 +3,8 @@
   "category": "meowhex:runes",
   "icon": "minecraft:name_tag",
   "sortnum": 94,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/loki_true_name",
+  "read_by_default": false,
   "pages": [
     {
       "type": "meowhex:pattern",

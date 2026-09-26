@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.akashiclib",
   "category": "meowhex:greatwork",
   "icon": "hexcasting:akashic_record",
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_akashiclib",
   "entry_color": "54398a",
   "sortnum": 4,
   "pages": [
@@ -28,5 +28,6 @@
       "type": "patchouli:text",
       "text": "hexcasting.page.akashiclib.3"
     }
-  ]
+  ],
+  "read_by_default": false
 }

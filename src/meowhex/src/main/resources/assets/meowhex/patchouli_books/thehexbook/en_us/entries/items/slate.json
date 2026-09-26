@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:slate",
   "sortnum": 5,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_slate",
   "pages": [
     {
       "type": "patchouli:text",
@@ -22,5 +22,6 @@
       "type": "patchouli:text",
       "text": "hexcasting.page.slate.3"
     }
-  ]
+  ],
+  "read_by_default": false
 }

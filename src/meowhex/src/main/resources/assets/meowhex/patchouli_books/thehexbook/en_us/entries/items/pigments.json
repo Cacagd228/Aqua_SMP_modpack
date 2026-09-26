@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:uuid_colorizer",
   "sortnum": 8,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_pigments",
   "pages": [
     "hexcasting.page.pigments.1",
     "hexcasting.page.pigments.2",
@@ -75,5 +75,6 @@
       "recipe": "hexcasting:uuid_colorizer",
       "recipe2": "hexcasting:default_colorizer"
     }
-  ]
+  ],
+  "read_by_default": false
 }

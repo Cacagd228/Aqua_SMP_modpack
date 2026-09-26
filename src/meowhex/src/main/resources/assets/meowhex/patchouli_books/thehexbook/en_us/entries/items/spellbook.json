@@ -3,7 +3,7 @@
   "category": "meowhex:items",
   "icon": "hexcasting:spellbook",
   "sortnum": 3,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_spellbook",
   "pages": [
     {
       "type": "patchouli:text",
@@ -18,5 +18,6 @@
       "recipe": "hexcasting:spellbook",
       "text": "hexcasting.page.spellbook.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

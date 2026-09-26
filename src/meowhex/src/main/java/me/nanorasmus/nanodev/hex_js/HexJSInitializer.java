@@ -31,7 +31,9 @@ import me.nanorasmus.nanodev.hex_js.casting.OpWhisperHermes;
 import me.nanorasmus.nanodev.hex_js.casting.OpRuneVisage;
 import me.nanorasmus.nanodev.hex_js.casting.OpManaPairing;
 import me.nanorasmus.nanodev.hex_js.casting.OpManaUnpair;
-import me.nanorasmus.nanodev.hex_js.casting.OpWingsOfIrida;
+import me.nanorasmus.nanodev.hex_js.casting.OpMorphHex;
+import me.nanorasmus.nanodev.hex_js.casting.OpChargeVessel;
+import me.nanorasmus.nanodev.hex_js.casting.OpNursesPurification;
 import at.petrak.hexcasting.common.lib.HexBlockEntities;
 import com.simibubi.create.api.behaviour.display.DisplaySource;
 import me.nanorasmus.nanodev.hex_js.display_link.ImpetusStackSource;
@@ -73,10 +75,13 @@ public final class HexJSInitializer {
                 ActionRegistryEntry ovidEntry = new ActionRegistryEntry(ovidPattern, OpOvidsDistillation.INSTANCE);
                 registry.register(HexJS.modLoc("ovids_distillation"), ovidEntry);
 
-                // Wings of Irida — transfer item stack between Create Depots. Signature aawaqde (EAST), cost 1/8 dust.
-                HexPattern wingsPattern = HexPattern.fromAngles("aawaqde", HexDir.EAST);
-                ActionRegistryEntry wingsEntry = new ActionRegistryEntry(wingsPattern, OpWingsOfIrida.INSTANCE);
-                registry.register(HexJS.modLoc("wings_of_irida"), wingsEntry);
+                // NOTE: Wings of Irida intentionally NOT registered here: vanilla
+                // hexcasting:transfer_to_depot already owns signature aawaqde (EAST).
+                // A duplicate registration silently fought over the same signature
+                // (last-put-wins in the pattern lookup) with INVERTED arg order,
+                // causing flaky "expected depot" mishaps. Scroll/book/gate now
+                // point at hexcasting:transfer_to_depot; its inventory IO was
+                // hardened via DepotHelper (see OpTransferToDepot).
 
                 // Daphne's Purification — random sapling/flower transmute. Signature qaqwede (EAST), cost 20 dust. (was qwaqde->aqwedeq but both invalid/collided; qaqwede is valid)
                 HexPattern daphnePattern = HexPattern.fromAngles("qaqwede", HexDir.EAST);
@@ -213,6 +218,25 @@ public final class HexJSInitializer {
                 HexPattern manaUnpairPattern = HexPattern.fromAngles("qaqwawaad", HexDir.EAST);
                 ActionRegistryEntry manaUnpairEntry = new ActionRegistryEntry(manaUnpairPattern, OpManaUnpair.INSTANCE);
                 registry.register(HexJS.modLoc("mana_unpair"), manaUnpairEntry);
+
+                // Морф-хекс — превращает чужого игрока в курицу (урон x0.2, локдаун).
+                // Стек: [entity игрока, секунды 1-5]. Цена 2500 маны/сек.
+                // Signature qaqwawdq (EAST).
+                HexPattern morphPattern = HexPattern.fromAngles("qaqwawdq", HexDir.EAST);
+                ActionRegistryEntry morphEntry = new ActionRegistryEntry(morphPattern, OpMorphHex.INSTANCE);
+                registry.register(HexJS.modLoc("morph_hex"), morphEntry);
+
+                // Зарядка сосуда маны.
+                // Стек: [Vec3 (координаты), Number (мана 1..10000)].
+                // Комиссия 10%, макс 10000 маны за каст. Signature qaqwawad (EAST), стоимость 0.
+                HexPattern chargeVesselPattern = HexPattern.fromAngles("qaqwawad", HexDir.EAST);
+                ActionRegistryEntry chargeVesselEntry = new ActionRegistryEntry(chargeVesselPattern, OpChargeVessel.INSTANCE);
+                registry.register(HexJS.modLoc("charge_vessel"), chargeVesselEntry);
+
+                // Nurse's Purification — порт руны health из Hexal (entity -> num).
+                // Стек: [Entity] -> текущее HP числом. Оригинальная сигнатура aqwawqa (NORTH_WEST), стоимость 0.
+                ActionRegistryEntry nursesEntry = new ActionRegistryEntry(OpNursesPurification.PATTERN, OpNursesPurification.INSTANCE);
+                registry.register(HexJS.modLoc("nurses_purification"), nursesEntry);
             });
         }
     }

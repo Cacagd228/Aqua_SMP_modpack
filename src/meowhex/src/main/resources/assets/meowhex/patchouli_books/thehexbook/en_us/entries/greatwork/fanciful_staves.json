@@ -3,7 +3,7 @@
   "category": "meowhex:greatwork",
   "icon": "hexcasting:staff/mindsplice",
   "sortnum": 6,
-  "advancement": "hexcasting:enlightenment",
+  "advancement": "meowhex:scrolls/hex_fanciful_staves",
   "entry_color": "54398a",
   "pages": [
     {
@@ -15,5 +15,6 @@
       "recipe": "hexcasting:staff/quenched",
       "recipe2": "hexcasting:staff/mindsplice"
     }
-  ]
+  ],
+  "read_by_default": false
 }

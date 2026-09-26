@@ -1,0 +1,18 @@
+{
+  "name": "hexcasting.action.hexsable:sublevel/get",
+  "category": "meowhex:hexsable",
+  "icon": "minecraft:piston",
+  "sortnum": 1,
+  "advancement": "hexsable:scrolls/sable_get",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "hexsable:sublevel/get",
+      "anchor": "hexsable:sublevel/get",
+      "input": "vector | entity",
+      "output": "structure | null",
+      "text": "hexsable.page.get"
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "category": "meowhex:patterns/spells",
   "icon": "minecraft:purple_candle",
   "sortnum": 4,
-  "advancement": "hexcasting:root",
-  "read_by_default": true,
+  "advancement": "meowhex:scrolls/hex_sentinels",
+  "read_by_default": false,
   "pages": [
     {
       "type": "patchouli:text",

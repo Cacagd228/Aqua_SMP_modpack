@@ -9,6 +9,7 @@ import at.petrak.hexcasting.common.blocks.akashic.BlockAkashicBookshelf;
 import at.petrak.hexcasting.common.blocks.akashic.BlockAkashicLigature;
 import at.petrak.hexcasting.common.blocks.akashic.BlockAkashicRecord;
 import at.petrak.hexcasting.common.blocks.circles.BlockEmptyImpetus;
+import at.petrak.hexcasting.common.blocks.circles.BlockManaVessel;
 import at.petrak.hexcasting.common.blocks.circles.BlockSlate;
 import at.petrak.hexcasting.common.blocks.circles.directrix.BlockBooleanDirectrix;
 import at.petrak.hexcasting.common.blocks.circles.directrix.BlockEmptyDirectrix;
@@ -184,6 +185,12 @@ public class HexBlocks {
     public static final BlockBooleanDirectrix DIRECTRIX_BOOLEAN = blockItem("directrix/boolean",
         new BlockBooleanDirectrix(slateish()
             .pushReaction(PushReaction.BLOCK)));
+
+    public static final BlockManaVessel MANA_VESSEL = blockItem("mana_vessel",
+        new BlockManaVessel(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GOLD_BLOCK)
+            .strength(3f, 6f)
+            .sound(SoundType.METAL)
+            .lightLevel($ -> 2)));
 
     public static final BlockAkashicRecord AKASHIC_RECORD = blockItem("akashic_record",
         new BlockAkashicRecord(akashicWoodyHard().lightLevel(bs -> 15)));

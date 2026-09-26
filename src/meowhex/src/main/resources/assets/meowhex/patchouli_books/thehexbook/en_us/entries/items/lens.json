@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.lens",
   "icon": "hexcasting:lens",
   "category": "meowhex:items",
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_lens",
   "priority": true,
   "sortnum": 2,
   "pages": [
@@ -19,5 +19,6 @@
       "recipe": "hexcasting:lens",
       "text": "hexcasting.page.lens.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

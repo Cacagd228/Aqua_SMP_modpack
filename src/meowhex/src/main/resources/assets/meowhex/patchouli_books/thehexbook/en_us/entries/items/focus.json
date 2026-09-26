@@ -3,7 +3,7 @@
   "icon": "hexcasting:focus",
   "category": "meowhex:items",
   "sortnum": 1,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_focus",
   "pages": [
     {
       "type": "patchouli:text",
@@ -22,5 +22,6 @@
       "recipe": "hexcasting:focus",
       "text": "hexcasting.page.focus.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

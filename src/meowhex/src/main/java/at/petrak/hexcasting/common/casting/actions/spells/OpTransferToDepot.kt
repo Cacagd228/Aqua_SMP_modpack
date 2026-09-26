@@ -12,10 +12,8 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.Container
-import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.phys.Vec3
+import me.nanorasmus.nanodev.hex_js.casting.DepotHelper
 
 /**
  * "Wings of Irida" — whisk one whole item stack from one Create Depot to another.
@@ -48,9 +46,13 @@ object OpTransferToDepot : SpellAction {
         if (!isDepotAt(env.world, destPos)) {
             throw MishapBadBlock.of(destPos, "depot")
         }
-        val srcInv = depotInventory(srcPos, env) ?: throw MishapBadBlock.of(srcPos, "depot")
-        val destInv = depotInventory(destPos, env) ?: throw MishapBadBlock.of(destPos, "depot")
-        if (!destInv.getItem(0).isEmpty) {
+        // Inventory IO goes through DepotHelper (getHeldItem reflection +
+        // ItemHandler capability fallback): raw Container-field reflection misses
+        // the depot inventory on current Create versions and used to throw a
+        // misleading "expected depot" mishap on perfectly good depots.
+        val srcStack = DepotHelper.getStack(env.world, srcPos) ?: throw MishapBadBlock.of(srcPos, "depot")
+        val destStack = DepotHelper.getStack(env.world, destPos) ?: throw MishapBadBlock.of(destPos, "depot")
+        if (!destStack.isEmpty) {
             throw MishapDepotOccupied(destPos)
         }
 
@@ -69,53 +71,20 @@ object OpTransferToDepot : SpellAction {
 
     private data class Spell(val srcPos: BlockPos, val destPos: BlockPos) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
-            val srcInv = depotInventory(srcPos, env) ?: return
-            val destInv = depotInventory(destPos, env) ?: return
+            val srcStack = DepotHelper.getStack(env.world, srcPos) ?: return
+            if (srcStack.isEmpty) return
+            val destStack = DepotHelper.getStack(env.world, destPos) ?: return
+            if (!destStack.isEmpty) return
 
-            val stack = srcInv.getItem(0)
-            if (stack.isEmpty) return
-            if (!destInv.getItem(0).isEmpty) return
-
-            destInv.setItem(0, stack)
-            srcInv.setItem(0, ItemStack.EMPTY)
-
-            // Make sure the world knows both depots changed.
-            env.world.getBlockEntity(srcPos)?.setChanged()
-            env.world.getBlockEntity(destPos)?.setChanged()
+            if (!DepotHelper.clearStack(env.world, srcPos)) return
+            if (!DepotHelper.setStack(env.world, destPos, srcStack)) {
+                // Destination write failed: put the stack back where it was.
+                DepotHelper.setStack(env.world, srcPos, srcStack)
+            }
         }
     }
 
     /** True if the block at [pos] is a (pre-registered-id) Create Depot. */
     private fun isDepotAt(world: net.minecraft.world.level.Level, pos: BlockPos): Boolean =
         BuiltInRegistries.BLOCK.getKey(world.getBlockState(pos).block) == DEPOT_ID
-
-    private fun depotInventory(pos: BlockPos, env: CastingEnvironment): Container? {
-        val be = env.world.getBlockEntity(pos) ?: return null
-        return reflectDepotInventory(be)
-    }
-
-    /**
-     * Soft-dependency on Create: peek by reflection for a field that is a
-     * `net.minecraft.world.Container` on the Depot block entity (Create's `inventory`).
-     * Falls back up the class hierarchy so it keeps working across Create versions.
-     */
-    private fun reflectDepotInventory(be: BlockEntity): Container? {
-        if (be is Container) return be
-        var clazz: Class<*>? = be.javaClass
-        while (clazz != null && clazz != Any::class.java) {
-            for (field in clazz.declaredFields) {
-                if (Container::class.java.isAssignableFrom(field.type)) {
-                    try {
-                        field.isAccessible = true
-                        val value = field.get(be)
-                        if (value is Container) return value
-                    } catch (_: IllegalAccessException) {
-                        // keep walking up
-                    }
-                }
-            }
-            clazz = clazz.superclass
-        }
-        return null
-    }
 }

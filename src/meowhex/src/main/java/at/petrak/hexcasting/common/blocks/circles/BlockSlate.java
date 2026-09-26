@@ -96,6 +96,12 @@ public class BlockSlate extends BlockCircleComponent implements EntityBlock, Sim
         var vm = new CastingVM(imageIn, env);
 
         var result = vm.queueExecuteAndWrapIota(new PatternIota(pattern), world);
+        // Circle media failure (empty vessel) leaves resolution EVALUATED
+        // (spell silently skipped) but flags mishapOccurred in postExecution —
+        // must halt here, otherwise the circle walks on to the next slate.
+        if (env.circleState().mishapOccurred) {
+            return new ControlFlow.Stop();
+        }
         if (result.getResolutionType().getSuccess()) {
             return new ControlFlow.Continue(vm.getImage(), exitDirs.toList());
         } else {

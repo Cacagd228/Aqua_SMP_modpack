@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.1.5-pre-release
+
+- `meowhex` 1.3.2 → 1.4.0 (сборка из исходников `src/meowhex`):
+  - Фикс критической уязвимости Hex Cast: круги больше не продолжают выполнение после мишапа (`mishapOccurred` останавливает цепь), провал оплаты маны в круге превращается в обычный мишап круга вместо тихого пропуска заклинания.
+  - Сосуды маны: новый блок `mana_vessel` — мана для кругов теперь берётся из сосудов (`OpChargeVessel`, `currentVessel`), импетус больше не хранит ману; убран `lore_fragment` и его лут/ачивки.
+  - Баланс Hex Cast: правки стоимости маны, `OpTransferToDepot`, скrying-линза и HUD маны.
+  - Фикс крыльев Ириды: ванильный `OpWingsOfIrida` больше не регистрируется в `HexJSInitializer` (крылья теперь только через свитки/прогрессию).
+  - Увеличение дальности каста с короной: `DiademAmbit` — заряженная аметистовая диадема в слоте Curios удваивает радиус каста (32 → 64 блока).
+  - Руна медсестры: `nurses_purification` (`aqwawqa`) — аналог `hexal:health`, лечит сущность за ману.
+  - Новое заклинание `morph_hex` + `MorphHexEffect`/`MorphHexChickenMixin`.
+- `hexsable` 1.0.1 → 1.1.0 (сборка из исходников `src/hexsable`):
+  - Улучшенная интеграция с Sable Hex: свитки Sable (`SableScrollItems`, лут-модификатор, тиры сундуков), гейт рун за свитками (`SableScrollGateMixin`, `hexsable.mixins.json`), миксин креативного анлокера.
+- `lineage_core` 2.0.1 → 2.1.0 (сборка из исходников `src/linage_core`):
+  - Раса сосуда: `aether_mind` (игровая) и `arch_aether` (архетип вознесения: `EtherealVeil`, `EtherealFlesh`, `UnseenPresence`, `ManaExhaustion`).
+  - Выдача рас админами: команды `/lineage set <игрок> <раса>` и `/lineage ascend <игрок>`.
+  - Фикс арх-рас: `SeasonedPlayerWatcher` (`LivingChangeTargetEvent` — мобы теряют невидимую цель), `VeilRender` (аэфирный оттенок вуали), `ChronicleNetwork`.
+- Пак: RPG-серия (`archers`, `paladins-and-priests`, `rogues-and-warriors`, `armory/arsenal-rpg-series`, `relics-rpg`, `forcemaster-rpg-class`, `spell-engine/power`, `ranged-weapon-api`, `armor-model-api`, `more-rpg-library`, `archers-expansion`), `Design-n-Decor`, `colorwheel`, reinforced backpack, estrogen-твики.
+
 ## v1.1.4-pre-release
 
 - `colonycard` 1.0.0 пересобран: stage-система короны (StageBlock, указы-грамоты `/colonycard gramota`, донаты/таски, сеть, экраны, конфиг, Discord-вебхук).

@@ -2,9 +2,9 @@
   "name": "hexcasting.entry.zeniths",
   "category": "meowhex:patterns/great_spells",
   "icon": "minecraft:potion{Potion:'minecraft:regeneration'}",
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_zeniths",
   "sort_num": 4,
-  "read_by_default": true,
+  "read_by_default": false,
   "pages": [
     {
       "type": "patchouli:text",

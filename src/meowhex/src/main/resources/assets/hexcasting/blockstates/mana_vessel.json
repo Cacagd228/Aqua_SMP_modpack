@@ -1,0 +1,122 @@
+﻿{
+    "variants":  {
+                     "face=floor,facing=north,waterlogged=false":  {
+                                                                       "model":  "hexcasting:block/mana_vessel",
+                                                                       "uvlock":  true
+                                                                   },
+                     "face=floor,facing=north,waterlogged=true":  {
+                                                                      "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                      "uvlock":  true
+                                                                  },
+                     "face=floor,facing=east,waterlogged=false":  {
+                                                                      "model":  "hexcasting:block/mana_vessel",
+                                                                      "uvlock":  true
+                                                                  },
+                     "face=floor,facing=east,waterlogged=true":  {
+                                                                     "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                     "uvlock":  true
+                                                                 },
+                     "face=floor,facing=south,waterlogged=false":  {
+                                                                       "model":  "hexcasting:block/mana_vessel",
+                                                                       "uvlock":  true
+                                                                   },
+                     "face=floor,facing=south,waterlogged=true":  {
+                                                                      "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                      "uvlock":  true
+                                                                  },
+                     "face=floor,facing=west,waterlogged=false":  {
+                                                                      "model":  "hexcasting:block/mana_vessel",
+                                                                      "uvlock":  true
+                                                                  },
+                     "face=floor,facing=west,waterlogged=true":  {
+                                                                     "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                     "uvlock":  true
+                                                                 },
+                     "face=ceiling,facing=north,waterlogged=false":  {
+                                                                         "model":  "hexcasting:block/mana_vessel",
+                                                                         "uvlock":  true,
+                                                                         "x":  180
+                                                                     },
+                     "face=ceiling,facing=north,waterlogged=true":  {
+                                                                        "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                        "uvlock":  true,
+                                                                        "x":  180
+                                                                    },
+                     "face=ceiling,facing=east,waterlogged=false":  {
+                                                                        "model":  "hexcasting:block/mana_vessel",
+                                                                        "uvlock":  true,
+                                                                        "x":  180
+                                                                    },
+                     "face=ceiling,facing=east,waterlogged=true":  {
+                                                                       "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                       "uvlock":  true,
+                                                                       "x":  180
+                                                                   },
+                     "face=ceiling,facing=south,waterlogged=false":  {
+                                                                         "model":  "hexcasting:block/mana_vessel",
+                                                                         "uvlock":  true,
+                                                                         "x":  180
+                                                                     },
+                     "face=ceiling,facing=south,waterlogged=true":  {
+                                                                        "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                        "uvlock":  true,
+                                                                        "x":  180
+                                                                    },
+                     "face=ceiling,facing=west,waterlogged=false":  {
+                                                                        "model":  "hexcasting:block/mana_vessel",
+                                                                        "uvlock":  true,
+                                                                        "x":  180
+                                                                    },
+                     "face=ceiling,facing=west,waterlogged=true":  {
+                                                                       "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                       "uvlock":  true,
+                                                                       "x":  180
+                                                                   },
+                     "face=wall,facing=north,waterlogged=false":  {
+                                                                      "model":  "hexcasting:block/mana_vessel",
+                                                                      "uvlock":  true,
+                                                                      "x":  90
+                                                                  },
+                     "face=wall,facing=north,waterlogged=true":  {
+                                                                     "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                     "uvlock":  true,
+                                                                     "x":  90
+                                                                 },
+                     "face=wall,facing=east,waterlogged=false":  {
+                                                                     "model":  "hexcasting:block/mana_vessel",
+                                                                     "uvlock":  true,
+                                                                     "x":  90,
+                                                                     "y":  90
+                                                                 },
+                     "face=wall,facing=east,waterlogged=true":  {
+                                                                    "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                    "uvlock":  true,
+                                                                    "x":  90,
+                                                                    "y":  90
+                                                                },
+                     "face=wall,facing=south,waterlogged=false":  {
+                                                                      "model":  "hexcasting:block/mana_vessel",
+                                                                      "uvlock":  true,
+                                                                      "x":  90,
+                                                                      "y":  180
+                                                                  },
+                     "face=wall,facing=south,waterlogged=true":  {
+                                                                     "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                     "uvlock":  true,
+                                                                     "x":  90,
+                                                                     "y":  180
+                                                                 },
+                     "face=wall,facing=west,waterlogged=false":  {
+                                                                     "model":  "hexcasting:block/mana_vessel",
+                                                                     "uvlock":  true,
+                                                                     "x":  90,
+                                                                     "y":  270
+                                                                 },
+                     "face=wall,facing=west,waterlogged=true":  {
+                                                                    "model":  "hexcasting:block/mana_vessel_waterlogged",
+                                                                    "uvlock":  true,
+                                                                    "x":  90,
+                                                                    "y":  270
+                                                                }
+                 }
+}

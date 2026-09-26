@@ -2,7 +2,7 @@
   "name": "hexcasting.entry.101",
   "category": "meowhex:casting",
   "icon": "hexcasting:staff/edified",
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_101",
   "priority": true,
   "pages": [
     {
@@ -79,5 +79,6 @@
       "type": "patchouli:text",
       "text": "hexcasting.page.101.15"
     }
-  ]
+  ],
+  "read_by_default": false
 }

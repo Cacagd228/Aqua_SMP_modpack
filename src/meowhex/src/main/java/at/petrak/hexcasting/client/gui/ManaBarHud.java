@@ -37,6 +37,10 @@ public final class ManaBarHud {
     private static final int COLOR_MANA_BLUE = 0xFF3F8FFF;
     private static final int COLOR_MANA_BLUE_BRIGHT = 0xFF8FC5FF;
 
+    /** Сглаженное отображение общего пула: пакеты идут 4 раза в секунду, между ними полоска долетает сама. */
+    private static double displayShared = -1;
+    private static double displaySharedMax = 1;
+
     private ManaBarHud() {}
 
     public static boolean shouldRender() {
@@ -98,11 +102,28 @@ public final class ManaBarHud {
             if (pairedHud) {
                 try {
                     if (me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.isPaired()) {
-                        mana = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.shared();
-                        maxMana = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.sharedMax();
+                        var target = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.shared();
+                        var targetMax = me.nanorasmus.nanodev.hex_js.client.ManaPairClientCache.sharedMax();
+                        if (displayShared < 0) {
+                            displayShared = target;
+                            displaySharedMax = targetMax;
+                        } else {
+                            // Экспоненциальное сглаживание к серверному значению (~0.25с до сходимости).
+                            displayShared += (target - displayShared) * 0.25;
+                            if (Math.abs(target - displayShared) < Math.max(1.0, targetMax * 0.002)) {
+                                displayShared = target;
+                            }
+                            displaySharedMax = targetMax;
+                        }
+                        mana = displayShared;
+                        maxMana = displaySharedMax;
+                    } else {
+                        displayShared = -1;
                     }
                 } catch (Throwable ignored) {
                 }
+            } else {
+                displayShared = -1;
             }
             var w = (int) Math.ceil(mana / maxMana * BAR_WIDTH);
             var fill = COLOR_MANA;

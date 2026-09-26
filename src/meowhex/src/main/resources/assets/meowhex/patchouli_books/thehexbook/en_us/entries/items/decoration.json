@@ -3,7 +3,7 @@
   "icon": "hexcasting:ancient_scroll_paper",
   "category": "meowhex:items",
   "sortnum": 10,
-  "advancement": "hexcasting:root",
+  "advancement": "meowhex:scrolls/hex_decoration",
   "pages": [
     {
       "type": "patchouli:text",
@@ -44,5 +44,6 @@
       "recipe": "hexcasting:amethyst_sconce",
       "text": "hexcasting.page.decoration.sconce.crafting.desc"
     }
-  ]
+  ],
+  "read_by_default": false
 }

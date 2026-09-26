@@ -1,8 +1,11 @@
 package me.nanorasmus.nanodev.hex_js.mixin;
 
 import at.petrak.hexcasting.api.casting.math.HexPattern;
+import at.petrak.hexcasting.api.casting.PatternShapeMatch;
+import at.petrak.hexcasting.common.casting.PatternRegistryManifest;
 import at.petrak.hexcasting.common.msgs.MsgNewSpellPatternC2S;
 import me.nanorasmus.nanodev.hex_js.PatternGate;
+import me.nanorasmus.nanodev.hex_js.addon.scroll.ScrollGate;
 import me.nanorasmus.nanodev.hex_js.addon.HexArtifactsItems;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemSniperScope;
 import me.nanorasmus.nanodev.hex_js.casting.OpDeadeye;
@@ -10,6 +13,7 @@ import me.nanorasmus.nanodev.hex_js.helpers.CurioHelper;
 import me.nanorasmus.nanodev.hex_js.storage.HexJsData;
 import me.nanorasmus.nanodev.hex_js.storage.PatternList;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -67,6 +71,23 @@ public class SpellPatternInterceptor {
         }
         PatternList perPlayer = data.playerOrNull(sender.getUUID());
         PatternList perPlayerSafe = perPlayer != null ? perPlayer : new PatternList();
+        // Scroll-gated patterns: drawing a pattern whose book page is still locked
+        // (no matching scroll found yet) is denied, so pages can't be bypassed
+        // with patterns peeked from outside the game. Base runes and always-open
+        // pages are absent from the gate map and pass through untouched.
+        var shapeMatch = PatternRegistryManifest.matchPattern(pattern, server.overworld(), false);
+        ResourceLocation drawnOpId = null;
+        if (shapeMatch instanceof PatternShapeMatch.Normal normal) {
+            drawnOpId = normal.key.location();
+        } else if (shapeMatch instanceof PatternShapeMatch.PerWorld perWorld && perWorld.certain) {
+            // Great spells and other per-world patterns resolve here, not as Normal.
+            drawnOpId = perWorld.key.location();
+        }
+        if (drawnOpId != null && !ScrollGate.canCast(sender, drawnOpId)) {
+            sender.sendSystemMessage(Component.translatable("meowhex.message.scroll_locked"));
+            ci.cancel();
+            return;
+        }
         PatternGate.Verdict verdict = PatternGate.decide(pattern, perPlayerSafe, data.global());
 
         switch (verdict.kind()) {

@@ -1,0 +1,12 @@
+{
+  "type": "meowhex:enchanted_books",
+  "conditions": [],
+  "books": [
+    "meowhex:mana_break",
+    "meowhex:magic_protection"
+  ],
+  "chest_common_chance": 0.02,
+  "chest_rich_chance": 0.05,
+  "chest_treasure_chance": 0.1,
+  "fishing_chance": 0.1
+}

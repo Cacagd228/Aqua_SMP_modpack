@@ -1,12 +1,9 @@
 package me.nanorasmus.nanodev.hex_js.client.render;
 
 import at.petrak.hexcasting.api.casting.math.HexPattern;
-import at.petrak.hexcasting.client.render.RenderLib;
-import kotlin.Pair;
 import me.nanorasmus.nanodev.hex_js.helpers.PatternTextUtils;
 import me.nanorasmus.nanodev.hex_js.helpers.PatternTextUtils.MarkedSpan;
 import net.minecraft.client.gui.Font;
-import net.minecraft.world.phys.Vec2;
 
 import java.util.List;
 
@@ -28,29 +25,7 @@ public final class PatternGlyphMetrics {
 
     /** Advance the drawer applies per glyph (drawer: {@code x += patWidth * scale + 1}). */
     public static float advanceOf(HexPattern pattern) {
-        Pair<Float, List<Vec2>> pair = RenderLib.getCenteredPattern(pattern, 128f, 128f, 16f);
-        List<Vec2> dots = pair.getSecond();
-        List<Vec2> zappy = RenderLib.makeZappy(
-            dots, RenderLib.findDupIndices(pattern.positions()),
-            10, 0.8f, 0f, 0f,
-            RenderLib.DEFAULT_READABILITY_OFFSET, RenderLib.DEFAULT_LAST_SEGMENT_LEN_PROP, 0.0);
-        if (zappy.isEmpty()) {
-            return 1f;
-        }
-        float minY = 1000000f;
-        float maxY = -1000000f;
-        float minX = 1000000f;
-        float maxX = -1000000f;
-        for (Vec2 p : zappy) {
-            minY = Math.min(minY, p.y);
-            maxY = Math.max(maxY, p.y);
-            minX = Math.min(minX, p.x);
-            maxX = Math.max(maxX, p.x);
-        }
-        float patWidth = maxX - minX;
-        float patHeight = maxY - minY;
-        float scale = (9f - (1.8f * 0.75f)) / Math.max(patHeight, 48);
-        return patWidth * scale + 1f;
+        return PatternGlyphCache.advanceOf(pattern);
     }
 
     /** Width as rendered: plain runs measured normally, markers by glyph advance. */
