@@ -6,7 +6,7 @@ hash = "f9696b796b01abd07ff6f78c612c05ee5979c88012b97bbee1ead1b0f9f56622"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "12d940ccc63d67e34ebaebb7b40aba40d11a333d5a59c8d33d5fbc98fa1fe454"
+hash = "4b34f4a508779f30021403e339490b830570a007bb7b5f81438d0c61e94bd237"
 
 [[files]]
 file = "LICENSE"
@@ -3196,12 +3196,12 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-1.pw.toml"
-hash = "8aac3e8d94e77ababb02ddd5cca743db8236fc0f6514a57b1e11c298ba6b03c9"
+hash = "d12e3ab66e19c3521a2d52e4516c9ce6d72f852183b01dbdaa8f8a08155e19f0"
 metafile = true
 
 [[files]]
 file = "mods/meowaddons-1.0.1.jar"
-hash = "4e4232060b2f30b22b05dbb3abbbccff3d0726e7b7c5743100b56be5bda5d617"
+hash = "ce0ade44809883d56cf33bbeda1a74cf608522d6fa55a01ceb917e8cb52dc758"
 
 [[files]]
 file = "mods/meowhex.jar"
@@ -28110,11 +28110,11 @@ hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/executionHistory/executionHistory.bin"
-hash = "ebc4fdc717ebf40b1f1856581ed85ff9d55931caab855780ffbe9931902023d5"
+hash = "31a557542c8924ef14a42778c776ec95ec596dde264262e398eaf054f2691bd4"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/executionHistory/executionHistory.lock"
-hash = "dde36e9cc6740fa7508c3921ad4e430db445987235ca502d1a138f538a0c5376"
+hash = "cd46e8b70e4695fbfa0f683d98da5504104e7d898adc6a1441e229ec190ae29f"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/fileChanges/last-build.bin"
@@ -28122,15 +28122,15 @@ hash = "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/fileHashes/fileHashes.bin"
-hash = "e67c72caf2a5b639b1bf5907132b47356e836a1f2f70289411dd0bf0c9d99b37"
+hash = "a7e6c24f0cffa1eca73c75ac82048663d14b454d33c1233d73c491f45c5cd3f5"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/fileHashes/fileHashes.lock"
-hash = "255ee76cb5797462af24625d60c21f594dffb100d25a4ecb1d517fc6a3a0e538"
+hash = "e8ad3f4f3b0ea22d30f568c97324b7552c94a4a90727a84b5e3108d67b792342"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/fileHashes/resourceHashesCache.bin"
-hash = "b8084214228fca04016f569b48bfe50a2339cf86ba81338cc18a06c6d5f6c580"
+hash = "51ac41d12aa735d8db7ed97e7f72f24f5a69689a1d72b86a893da32ca2bb65b0"
 
 [[files]]
 file = "src/meowaddons/.gradle/8.10.2/gc.properties"
@@ -28138,7 +28138,7 @@ hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "src/meowaddons/.gradle/buildOutputCleanup/buildOutputCleanup.lock"
-hash = "12cbbd56449157df6ffe86eb5623bfbc0a442d497f19a715da19cfb1d1a751d4"
+hash = "d7e8133c0c4a1da202aca76d1eaa4309c05af8347445a4fcd52ae51f61014f44"
 
 [[files]]
 file = "src/meowaddons/.gradle/buildOutputCleanup/cache.properties"
@@ -28150,7 +28150,7 @@ hash = "d1d38add4ba3615118cc526350f9d0c7043f4fc2d5c821548f64b1f4a82ab80f"
 
 [[files]]
 file = "src/meowaddons/.gradle/file-system.probe"
-hash = "5ebbfa7af8913f9ca1daff004e509a40d23c4292658673876ba5e83ae53f83e2"
+hash = "2614a32f4504486191e9e880ddb6c6374ccf6036318f1b57aad6e25b5e3e871d"
 
 [[files]]
 file = "src/meowaddons/.gradle/vcs-1/gc.properties"
@@ -28585,16 +28585,12 @@ file = "src/meowaddons/build/classes/java/main/com/meowaddons/transmitter/Transm
 hash = "1dc37ea13c2797f8a6f9b95af70cdb528be835e3962b26c7944afdb9bd4c05ae"
 
 [[files]]
-file = "src/meowaddons/build/libs/meowaddons-1.0.0.jar"
-hash = "dd03597626f013fd4407e4983ee69ae25c290c8a2637dd765d9d7827e5f13c10"
-
-[[files]]
 file = "src/meowaddons/build/libs/meowaddons-1.0.1.jar"
-hash = "02f4fe95c3006e12b664ef28a24bc63761c107c5c32f3aae453794da40244466"
+hash = "ce0ade44809883d56cf33bbeda1a74cf608522d6fa55a01ceb917e8cb52dc758"
 
 [[files]]
 file = "src/meowaddons/build/moddev/artifacts/neoforge-21.1.248-minecraft-merged.jar"
-hash = "57964de10fb047198f83fa49fb902a9fb010a8c719b25fa3cf2413a5e972dc1c"
+hash = "7c7aa5a180390f58294e03b4b10fc5edeb729b5a3f269480aed3300a3a1608a6"
 
 [[files]]
 file = "src/meowaddons/build/moddev/artifacts/neoforge-21.1.248-minecraft-resources-aka-client-extra.jar"
@@ -28606,11 +28602,11 @@ hash = "9970170ed130db74d9f25f315fc4bdd363cceff4ad5927a6f2d9fcddd459981c"
 
 [[files]]
 file = "src/meowaddons/build/moddev/artifacts/neoforge-21.1.248-minecraft.jar"
-hash = "3048534ee4f8a78d7f3a8c1a674da2e65039124d2bcb0570830ecab3f131c9a7"
+hash = "0ff987b906a65a1a23f6c7b5dec690aa59b45aab2a52c03ed833fdecf776030a"
 
 [[files]]
 file = "src/meowaddons/build/moddev/nfrt_artifact_manifest.properties"
-hash = "52f071c90b0d11baff2550af2295d96eaf04f54ce3300573e2040714419ed660"
+hash = "ab35831a99b0b2b1f2a6de294897626226a47a6d2e91eae813cc7823340d7655"
 
 [[files]]
 file = "src/meowaddons/build/resources/main/META-INF/neoforge.mods.toml"
@@ -30685,176 +30681,8 @@ file = "src/meowaddons/build/resources/main/pack.mcmeta"
 hash = "8f0ae041cad295fe1d396aed7a1dfa77dc2630f5b55ad6eef7d93cc4fee95e78"
 
 [[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/MeowAddons.class.uniqueId12"
-hash = "1158618a8917d035291e803f37ed35bad8c1ae5d523f1cd36caafb954a14170e"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/MeowJeiPlugin$1.class.uniqueId39"
-hash = "34674bbf230e9143049a602b29ee3ec5aab4970c400d9f2a90183d79cecc2976"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/MeowJeiPlugin$CategoryBuilder.class.uniqueId2"
-hash = "54ead3984f1e1a5da8679ac48ac16f5083fe3ae2a4b428d110cc540cd8bcfab6"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/MeowJeiPlugin.class.uniqueId32"
-hash = "ccf73a3b460a757bdcf8eae810fd4c1b7da6cfdaac9e6dc15384081776bf0b9f"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$1.class.uniqueId19"
-hash = "cc32c79cff47ef653a77619a9eed1ded55e013c3fae840088729776a49e1aceb"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredCrushingSerializer.class.uniqueId38"
-hash = "057315f438de3773b544b64f4c17b7676fc8481be2f0d521e98091fd1ad868f1"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredCuttingSerializer.class.uniqueId37"
-hash = "3069434991b792fab7d3230f9bb2b3927547b1868534eaaf7ba66e4d28eb7ec0"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredDeployingSerializer.class.uniqueId16"
-hash = "33b6ae496e88dea8d1164c1c1df6c7b6dae6de7019d7d0863d3b145f73cca48f"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredMillingSerializer.class.uniqueId36"
-hash = "48565d987f27d98fc976da01a251e3861335818ef2f52bf4d7846cc59d307972"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredMixingSerializer.class.uniqueId22"
-hash = "1a4f5ff8df6d668e3be10a64e183dd82aa080cd666827f39baa8ed6ffff0c1c6"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers$TieredPressingSerializer.class.uniqueId0"
-hash = "c56bfb251ad160165bfbfe126755d11ae780237bb698bf5a6d72ae7acffc389c"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeSerializers.class.uniqueId3"
-hash = "82ddd8abd0ab37181a5f6d28514b5ea04b561b2f1705d2e1049d2c0cf2805c74"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeTypes$1.class.uniqueId35"
-hash = "180c0b4c7f1cf9b6e17c33922012c40cfa28552307a964c7395e345ba8daa058"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/ModRecipeTypes.class.uniqueId10"
-hash = "3d918f03ca6e7f2c000c9acf614bda583fca501f15a07283bbf361bbf1203191"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingRecipe.class.uniqueId30"
-hash = "2f406e75b090df735b5426ca212d1eeb47f6ad95d73b397b4df540429031c6d6"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingWheelBlockEntity$1.class.uniqueId40"
-hash = "c190015eea8e78e16bb7e258095a2e9682f73572df82fb5dcc44ff1137e413f0"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingWheelBlockEntity$2.class.uniqueId23"
-hash = "b41fc0025bc18846afa6834af72dce2a583df4ee59afb7ad4e4c2c2c45ecb011"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingWheelBlockEntity$3.class.uniqueId4"
-hash = "df52dd0e36a444ee845773deab70d637bed2d47df4655b8c11d245d382b17576"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingWheelBlockEntity.class.uniqueId21"
-hash = "5f90900e006b8f195c4376df332a787700a13c5f434de441e44ac62cf4f9b26e"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCrushingWheelControllerBlockEntity.class.uniqueId27"
-hash = "82dfb2fbf860099b41476e5e530a30258fd21596a39130a1b260d8f9e3c91898"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredCuttingRecipe.class.uniqueId11"
-hash = "35f777ee6fa01690ae67fcca3b47d32768fd9ae881b11b9fb3894509f86bde47"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredDeployerApplicationRecipe.class.uniqueId17"
-hash = "6fb7597d68987d9d4e27e4502dc1c93dd034c04ca831428a1b091e0370f19386"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredDeployerBlockEntity$1.class.uniqueId41"
-hash = "cc9e755335f01dee2ca946be4ae23bae14d4463656a7c1be0c49d849039610f7"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredDeployerBlockEntity.class.uniqueId29"
-hash = "fa96d51d02df8b983e40c6c0815f2f72fafbc1e8147599f668c6637cf648a814"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMillingRecipe.class.uniqueId26"
-hash = "6879205f053270b66054951442da4637bca215475c83d6ba4d40b1c77d0e3dea"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMillstoneBlockEntity$1.class.uniqueId18"
-hash = "99e6511f5bea63dad8b65db83d2acac17345f1d7f186f177d887b6094f0f56f0"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMillstoneBlockEntity$2.class.uniqueId7"
-hash = "060de4e3ee38b1a0c3cebd84547f1e1b13e4b3006eabf46c9f6184b6cf74f4d8"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMillstoneBlockEntity$3.class.uniqueId28"
-hash = "fd0813cf7ba3fd1ecc3c9b36462fcb6fa78949a5439b6c6479bec204841f8988"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMillstoneBlockEntity.class.uniqueId9"
-hash = "a6b3892c4687df860f1b72b6ae40cdb57938dca82536ed4e2395dcb8b2f8a9ed"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMixerBlockEntity$1.class.uniqueId6"
-hash = "5c37e1266e8722f686d2b24d2eaa78fc4c24459a776b772d734765ab88a71217"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMixerBlockEntity$2.class.uniqueId25"
-hash = "1793c8c5536a8c371ab090b66fbfdb3fa0b2c438d93cf9d013cf3d54a3e8c8d4"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMixerBlockEntity$3.class.uniqueId20"
-hash = "8c6b19838d27aab152115f9461ada02c646b66c3152ceb32405cb55d2ddb2331"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMixerBlockEntity.class.uniqueId24"
-hash = "ea1847109b023953c9888c957399d2278a2daae95972a7cb7ab56b283ff9cb50"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredMixingRecipe.class.uniqueId5"
-hash = "e17c3745d2bc5a25047763748ca31061c8945cdadb668cba7cbe3aab04d4fc2f"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredPressBlockEntity$1.class.uniqueId13"
-hash = "29e1ce66e7a0be4cd1269ed2c9bc74e7f99bd72e9adb63d9e5d1f668a6148f9f"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredPressBlockEntity.class.uniqueId34"
-hash = "7f482577023ac84165858048da77c8a73c07fcafb6f4530974be5921dff96a49"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredPressingRecipe.class.uniqueId33"
-hash = "c19e001edfcddaf13a57b28af142f5765fc84919a15de373e68a5742e3be66fb"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredSawBlockEntity$1.class.uniqueId15"
-hash = "7c85d85c31fb9a8ab09506bef301a48ce79a325b8bb647a9b3a9ffd77ee7e46f"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredSawBlockEntity$2.class.uniqueId31"
-hash = "56d4b3d38bfe2200c27de71f95b32fecb1c4b9ce1598d22f387c7f1ffdcbd8fb"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredSawBlockEntity$3.class.uniqueId1"
-hash = "fbe42afd279d7747fa5081d11c750f158f34aac3067039d3b91a33f12d932fed"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredSawBlockEntity.class.uniqueId8"
-hash = "766bc5d4721cd9e2fa13ad9cb59f902dda357bff5202a04fd4f779a36c6b17a4"
-
-[[files]]
-file = "src/meowaddons/build/tmp/compileJava/compileTransaction/stash-dir/TieredSequencedAssemblyRecipe.class.uniqueId14"
-hash = "366edbaff03b41e0d33b4d0f5ad7e4953e09a88f75771c5ee2bd30d2f97a1c66"
-
-[[files]]
 file = "src/meowaddons/build/tmp/compileJava/previous-compilation-data.bin"
-hash = "3933f71b83ffc3dcbdda9b3f1ffd8719ee0a28721506da8d499ab3a74d2f3248"
+hash = "482fabbec8f3a30cf001dde3f6c1240282d379f5daae037fd10caa72b081a116"
 
 [[files]]
 file = "src/meowaddons/build/tmp/jar/MANIFEST.MF"

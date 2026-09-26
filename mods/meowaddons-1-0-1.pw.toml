@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/meowaddons-1.0.1.jar"
 hash-format = "sha512"
-hash = "2847649927b9d6d35a87efa60ed2fcabd74411803c28c6b119383d911117882592d470ffbdb2fb3603ab0eb64e81bd84c0bf8bfc1f0c9e841032704fb0ae6b10"
+hash = "c14ab3b37e05a9d8257f18925de438a8ff05ad3a0e3a80255f45a48d67060db64e871ad394afdc62a8ffb6190330537a656385dfd31f22586a3a5c661fea0eeb"
