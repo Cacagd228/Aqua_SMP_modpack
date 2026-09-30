@@ -105,6 +105,19 @@
 		# Default: 30.0
 		# Range: 0.0 ~ 500.0
 		warm_ocean_min_radius = 30.0
+
+	[general.island_deposits]
+		#Guaranteed Create: Rock & Stone ore vein on EVERY island (no exceptions).
+		#Vein size scales with island radius. Default: true
+		enable_island_deposits = true
+		#Scales the guaranteed vein size (radius multiplier).
+		#Default: 1.0
+		# Default: 1.0
+		# Range: 0.25 ~ 4.0
+		vein_size_multiplier = 1.0
+		#Spawn island gets a second bonus vein (copper next to iron) for early progression.
+		#Default: true
+		extra_spawn_vein = true
 		#Maximum radius/width of the shallow reef lagoon (10-15 blocks depth) around islands.
 		#Default: 120.0 blocks
 		# Default: 120.0

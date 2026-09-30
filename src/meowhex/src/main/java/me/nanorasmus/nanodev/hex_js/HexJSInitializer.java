@@ -34,8 +34,32 @@ import me.nanorasmus.nanodev.hex_js.casting.OpManaUnpair;
 import me.nanorasmus.nanodev.hex_js.casting.OpMorphHex;
 import me.nanorasmus.nanodev.hex_js.casting.OpChargeVessel;
 import me.nanorasmus.nanodev.hex_js.casting.OpNursesPurification;
+import me.nanorasmus.nanodev.hex_js.casting.OpAssemblyStep;
+import me.nanorasmus.nanodev.hex_js.casting.OpInfuseAether;
+import me.nanorasmus.nanodev.hex_js.assembly.AssemblyRecipes;
+import me.nanorasmus.nanodev.hex_js.assembly.AssemblyRecipeReloadListener;
 import at.petrak.hexcasting.common.lib.HexBlockEntities;
+import at.petrak.hexcasting.common.casting.actions.items.OpGetHeldItem;
+import at.petrak.hexcasting.common.casting.actions.strings.OpActionString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpCaseString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpGetBlockString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpIotaString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpNameGet;
+import at.petrak.hexcasting.common.casting.actions.strings.OpNameSet;
+import at.petrak.hexcasting.common.casting.actions.strings.OpParseString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpSetBlockString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpSplitString;
+import at.petrak.hexcasting.common.casting.actions.strings.OpStringComma;
+import at.petrak.hexcasting.common.casting.actions.strings.OpStringEmpty;
+import at.petrak.hexcasting.common.casting.actions.strings.OpStringNewline;
+import at.petrak.hexcasting.common.casting.actions.strings.OpStringSpace;
+import at.petrak.hexcasting.common.casting.actions.types.OpGetEntitiesByDyn;
+import at.petrak.hexcasting.common.casting.actions.types.OpGetEntityAtDyn;
+import at.petrak.hexcasting.common.casting.actions.types.OpTypeEntity;
+import at.petrak.hexcasting.common.casting.actions.types.OpTypeIota;
+import at.petrak.hexcasting.common.casting.actions.types.OpTypeItemHeld;
 import com.simibubi.create.api.behaviour.display.DisplaySource;
+import net.minecraft.world.InteractionHand;
 import me.nanorasmus.nanodev.hex_js.display_link.ImpetusStackSource;
 import me.nanorasmus.nanodev.hex_js.display_link.ImpetusDustSource;
 import me.nanorasmus.nanodev.hex_js.display_link.ImpetusStepSource;
@@ -60,6 +84,13 @@ public final class HexJSInitializer {
         System.out.println("[MeowHex DisplayLink] HexJSInitializer.init called");
         modBus.addListener(HexJSInitializer::onRegister);
         modBus.addListener(HexJSInitializer::onClientSetup);
+        // The "meowhex:assembly" recipe serializer. Without this the recipes
+        // below would not load at all, so it is not optional plumbing.
+        AssemblyRecipes.init(modBus);
+        // Re-read the recipe list on every datapack reload, so a KubeJS edit
+        // followed by /reload is enough. See the class for why this is a tick
+        // hook rather than a reload listener.
+        AssemblyRecipeReloadListener.init();
     }
 
     private static void onRegister(RegisterEvent event) {
@@ -237,8 +268,147 @@ public final class HexJSInitializer {
                 // Стек: [Entity] -> текущее HP числом. Оригинальная сигнатура aqwawqa (NORTH_WEST), стоимость 0.
                 ActionRegistryEntry nursesEntry = new ActionRegistryEntry(OpNursesPurification.PATTERN, OpNursesPurification.INSTANCE);
                 registry.register(HexJS.modLoc("nurses_purification"), nursesEntry);
+
+                registerAssemblyRunes(registry);
+
+                registerMoreIotas(registry);
             });
         }
+    }
+
+    /**
+     * The five sequenced-assembly runes — Create's Sequenced Assembly, rebuilt on
+     * hexcasting depots.
+     *
+     * <p>The first four are four instances of <em>one</em> op
+     * ({@link OpAssemblyStep}) and differ only in the step id they append to the
+     * workpiece's NBT; the fifth pours aether. A rune never decides an outcome:
+     * it appends a symbol, and {@code AssemblyRecipes} decides whether that
+     * symbol leads anywhere. That is what lets a pack author invent new recipes
+     * from data alone.
+     *
+     * <p>Every signature here is verified by {@code tools/check_patterns.py},
+     * which reimplements {@link at.petrak.hexcasting.api.casting.math.HexPattern#tryAppendDir}.
+     * It catches two things that eyeballing does not:
+     *
+     * <ul>
+     *   <li><b>Self-intersection.</b> A pattern that loops back on itself makes
+     *       {@code fromAngles} throw, and that throw aborts the whole
+     *       {@code RegisterEvent} — one bad rune takes the other four down with
+     *       it and the mod rolls back to vanilla, so the recipes become
+     *       unreachable and nothing looks merely "not implemented". The first
+     *       draft of these four shared the prefix {@code qaqwawa} and differed
+     *       only in the last letter; all four of those throw at index 7.</li>
+     *   <li><b>Collisions.</b> The lookup keys on the angle word alone and is
+     *       last-put-wins, so a duplicate silently steals the older rune.</li>
+     * </ul>
+     *
+     * <p>Run {@code python tools/check_patterns.py --collide} after touching
+     * any of these. The four activators were chosen to be visually distinct from
+     * each other, since they sit next to one another in the book — they used to
+     * be near-identical shapes differing by one stroke.
+     */
+    private static void registerAssemblyRunes(RegisterEvent.RegisterHelper<ActionRegistryEntry> registry) {
+        // Слияние Сущности — шаг "merge". Стек: [Vec3 B (расходник), Vec3 A (заготовка)].
+        registry.register(HexJS.modLoc("merge_entities"),
+                new ActionRegistryEntry(HexPattern.fromAngles("qeqqeqew", HexDir.EAST), OpAssemblyStep.MERGE));
+
+        // Поглощение Даров — шаг "absorb".
+        registry.register(HexJS.modLoc("absorb_gifts"),
+                new ActionRegistryEntry(HexPattern.fromAngles("adadqqew", HexDir.EAST), OpAssemblyStep.ABSORB));
+
+        // Пощищение Сути — шаг "purify".
+        registry.register(HexJS.modLoc("purify_essence"),
+                new ActionRegistryEntry(HexPattern.fromAngles("adaeeaew", HexDir.EAST), OpAssemblyStep.PURIFY));
+
+        // Вбирание Жертвы — шаг "sacrifice".
+        registry.register(HexJS.modLoc("draw_sacrifice"),
+                new ActionRegistryEntry(HexPattern.fromAngles("qqeqeeqw", HexDir.EAST), OpAssemblyStep.SACRIFICE));
+
+        // Вливание Эфира — Стек: [Vec3 A (заготовка), Number (мана)]. Шаг не пишет:
+        // сколько маны влить игрок решает в момент каста, поэтому это количество,
+        // а не символ, и рецепт проверяет его полем "mana".
+        registry.register(HexJS.modLoc("infuse_aether"),
+                new ActionRegistryEntry(OpInfuseAether.PATTERN, OpInfuseAether.INSTANCE));
+    }
+
+    /**
+     * The string, type and item runes ported from the MoreIotas addon (MIT,
+     * Talia-12). Signatures and start directions are upstream's, unchanged, so a
+     * pattern copied from that addon still works here.
+     *
+     * <p>Every signature was checked against this fork's existing runes with
+     * {@code tools/check_upstream.py}: none collides. The lookup is keyed on
+     * {@code anglesSignature()}, the relative-angle word alone -- the start
+     * direction is not part of it -- so the bar is that no ported rune shares
+     * that word, and none does. Four do share a <em>shape</em> (one is a rotation
+     * of the other) with an existing rune, which is harmless: the lookup never
+     * looks at the shape.
+     *
+     * <p>Deliberately absent: the {@code string/chat/*} runes (a hidden chat
+     * channel is out of scope), {@code item/make} and the
+     * {@code item/inventory/*} runes (this fork ships items read-only), and the
+     * whole {@code matrix/*} and {@code alt*} family (matrices are skipped
+     * entirely; string concatenation rides the stock {@code add} pattern via
+     * StringArithmetic instead).
+     */
+    private static void registerMoreIotas(RegisterEvent.RegisterHelper<ActionRegistryEntry> registry) {
+        // ---- strings -------------------------------------------------------
+        registry.register(HexJS.modLoc("string_empty"),
+            new ActionRegistryEntry(HexPattern.fromAngles("awdwa", HexDir.SOUTH_EAST), OpStringEmpty.INSTANCE));
+        registry.register(HexJS.modLoc("string_space"),
+            new ActionRegistryEntry(HexPattern.fromAngles("awdwaaww", HexDir.SOUTH_EAST), OpStringSpace.INSTANCE));
+        registry.register(HexJS.modLoc("string_comma"),
+            new ActionRegistryEntry(HexPattern.fromAngles("qa", HexDir.EAST), OpStringComma.INSTANCE));
+        registry.register(HexJS.modLoc("string_newline"),
+            new ActionRegistryEntry(HexPattern.fromAngles("waawaw", HexDir.EAST), OpStringNewline.INSTANCE));
+
+        registry.register(HexJS.modLoc("string_split"),
+            new ActionRegistryEntry(HexPattern.fromAngles("aqwaqa", HexDir.EAST), OpSplitString.INSTANCE));
+        registry.register(HexJS.modLoc("string_parse"),
+            new ActionRegistryEntry(HexPattern.fromAngles("aqwaq", HexDir.EAST), OpParseString.INSTANCE));
+        registry.register(HexJS.modLoc("string_case"),
+            new ActionRegistryEntry(HexPattern.fromAngles("dwwdwwdwdd", HexDir.WEST), OpCaseString.INSTANCE));
+        registry.register(HexJS.modLoc("string_iota"),
+            new ActionRegistryEntry(HexPattern.fromAngles("wawqwawaw", HexDir.EAST), OpIotaString.INSTANCE));
+        registry.register(HexJS.modLoc("string_action"),
+            new ActionRegistryEntry(HexPattern.fromAngles("wdwewdwdw", HexDir.NORTH_WEST), OpActionString.INSTANCE));
+
+        // Name reads/writes. name/set is [string, entity]: the name goes on the
+        // bottom of the stack, the entity to rename on top.
+        registry.register(HexJS.modLoc("string_name_get"),
+            new ActionRegistryEntry(HexPattern.fromAngles("deqqeddqwqqqwq", HexDir.SOUTH_EAST), OpNameGet.INSTANCE));
+        registry.register(HexJS.modLoc("string_name_set"),
+            new ActionRegistryEntry(HexPattern.fromAngles("aqeeqaaeweeewe", HexDir.SOUTH_WEST), OpNameSet.INSTANCE));
+
+        // Sign and lectern text. block/set is [pos, string-or-list].
+        registry.register(HexJS.modLoc("string_block_get"),
+            new ActionRegistryEntry(HexPattern.fromAngles("awqwawqe", HexDir.EAST), OpGetBlockString.INSTANCE));
+        registry.register(HexJS.modLoc("string_block_set"),
+            new ActionRegistryEntry(HexPattern.fromAngles("dwewdweq", HexDir.WEST), OpSetBlockString.INSTANCE));
+
+        // ---- types ---------------------------------------------------------
+        registry.register(HexJS.modLoc("type_entity"),
+            new ActionRegistryEntry(HexPattern.fromAngles("qawde", HexDir.SOUTH_WEST), OpTypeEntity.INSTANCE));
+        registry.register(HexJS.modLoc("type_iota"),
+            new ActionRegistryEntry(HexPattern.fromAngles("awd", HexDir.SOUTH_WEST), OpTypeIota.INSTANCE));
+        registry.register(HexJS.modLoc("type_item_held"),
+            new ActionRegistryEntry(HexPattern.fromAngles("edeedqd", HexDir.SOUTH_WEST), OpTypeItemHeld.INSTANCE));
+
+        // Nearest entity of a type, then the two zone selectors. The zone pair
+        // differs only in whether a type mismatch excludes or includes.
+        registry.register(HexJS.modLoc("get_entity_type"),
+            new ActionRegistryEntry(HexPattern.fromAngles("dadqqqqqdad", HexDir.NORTH_EAST), OpGetEntityAtDyn.INSTANCE));
+        registry.register(HexJS.modLoc("zone_entity_type"),
+            new ActionRegistryEntry(HexPattern.fromAngles("waweeeeewaw", HexDir.SOUTH_EAST), new OpGetEntitiesByDyn(false)));
+        registry.register(HexJS.modLoc("zone_entity_not_type"),
+            new ActionRegistryEntry(HexPattern.fromAngles("wdwqqqqqwdw", HexDir.NORTH_EAST), new OpGetEntitiesByDyn(true)));
+
+        // ---- items (read-only) ---------------------------------------------
+        registry.register(HexJS.modLoc("item_main_hand"),
+            new ActionRegistryEntry(HexPattern.fromAngles("adeq", HexDir.EAST), new OpGetHeldItem(InteractionHand.MAIN_HAND)));
+        registry.register(HexJS.modLoc("item_off_hand"),
+            new ActionRegistryEntry(HexPattern.fromAngles("qeda", HexDir.EAST), new OpGetHeldItem(InteractionHand.OFF_HAND)));
     }
 
     private static void onClientSetup(FMLClientSetupEvent event) {

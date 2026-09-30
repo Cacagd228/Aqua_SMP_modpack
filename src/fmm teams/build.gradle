@@ -50,7 +50,7 @@ neoForge {
 }
 
 dependencies {
-    implementation 'com.fmm.worldgen:fmmworldgen:1.0.0'
+    implementation 'com.fmm.worldgen:fmmworldgen:1.1.0'
 }
 
 tasks.named('processResources', ProcessResources).configure {

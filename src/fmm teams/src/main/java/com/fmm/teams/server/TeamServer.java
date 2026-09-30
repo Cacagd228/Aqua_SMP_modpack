@@ -8,6 +8,9 @@ import com.fmm.teams.net.TeamNet;
 import com.fmm.teams.team.Role;
 import com.fmm.teams.team.Team;
 import com.fmm.teams.team.TeamManager;
+import com.fmm.worldgen.IslandData;
+import com.fmm.worldgen.IslandHelper;
+import com.fmm.worldgen.IslandTier;
 import com.mojang.authlib.GameProfile;
 
 import net.minecraft.network.chat.Component;
@@ -80,6 +83,8 @@ public final class TeamServer {
                     if (online != null) pushTo(online, mgr);
                 }
             }
+            case "claim" -> err = handleClaim(player, mgr);
+            case "unclaim" -> err = handleUnclaim(player, mgr, action);
             default -> err = "msg.fmm_teams.err.unknown";
         }
 
@@ -102,6 +107,30 @@ public final class TeamServer {
         pushTo(player, mgr);
     }
 
+    /** Claims the island under the player's feet. Returns error key or null on success. */
+    private static String handleClaim(ServerPlayer player, TeamManager mgr) {
+        IslandData island = IslandHelper.getZoneInfo(player.getX(), player.getZ()).island();
+        if (island.tier() == IslandTier.SPAWN) return "msg.fmm_teams.err.island_spawn";
+        return mgr.claimIsland(player.getUUID(), island.zoneId(), island.tier().getCost(),
+                island.tier().name(), island.centerX(), island.centerZ());
+    }
+
+    /** Releases an island. Target comes from the packet text (zoneId as string) or, if absent, the island underfoot. */
+    private static String handleUnclaim(ServerPlayer player, TeamManager mgr, TeamNet.ServerboundTeamAction action) {
+        long zoneId;
+        String text = action.text();
+        if (text == null || text.isBlank()) {
+            zoneId = IslandHelper.getZoneInfo(player.getX(), player.getZ()).island().zoneId();
+        } else {
+            try {
+                zoneId = Long.parseLong(text.trim());
+            } catch (NumberFormatException e) {
+                return "msg.fmm_teams.err.unknown";
+            }
+        }
+        return mgr.unclaimIsland(player.getUUID(), zoneId);
+    }
+
     public static void pushTo(ServerPlayer player, TeamManager mgr) {
         PacketDistributor.sendToPlayer(player, buildSync(player, mgr));
     }
@@ -120,7 +149,8 @@ public final class TeamServer {
             invites.add(new TeamNet.InviteEntry(t.id(), t.name(), t.nameOf(t.owner())));
         }
         if (team == null) {
-            return new TeamNet.ClientboundTeamSync(false, null, "", "", null, "private", 0L, List.of(), invites);
+            return new TeamNet.ClientboundTeamSync(false, null, "", "", null, "private", 0L,
+                    List.of(), invites, 0, 0, List.of(), null);
         }
         List<TeamNet.MemberEntry> members = new ArrayList<>();
         for (UUID m : team.sortedMembers()) {
@@ -128,9 +158,37 @@ public final class TeamServer {
             members.add(new TeamNet.MemberEntry(m, team.nameOf(m), team.roleOf(m), online));
         }
         Role yourRole = team.roleOf(uuid);
+
+        // Islands: everything this team owns, plus the island under the player's feet
+        // (so the GUI can show what a claim here would cost even if unclaimed).
+        List<TeamNet.IslandEntry> islands = new ArrayList<>();
+        for (var claim : mgr.allClaims()) {
+            if (!claim.teamId().equals(team.id())) continue;
+            islands.add(describeIsland(claim));
+        }
+        islands.sort((a, b) -> Long.compare(b.cost(), a.cost()));
+        TeamNet.IslandEntry here = describeHere(player, mgr, team.id());
+
         return new TeamNet.ClientboundTeamSync(true, team.id(), team.name(),
                 team.nameOf(team.owner()), team.owner(),
-                yourRole == null ? "private" : yourRole.id(), team.createdAt(), members, invites);
+                yourRole == null ? "private" : yourRole.id(), team.createdAt(), members, invites,
+                mgr.teamPoints(team.id()), mgr.teamClaimedCost(team.id()), islands, here);
+    }
+
+    /** Turns a stored claim into a client entry. Tier name is localised on the client. */
+    private static TeamNet.IslandEntry describeIsland(TeamManager.IslandClaim claim) {
+        return new TeamNet.IslandEntry(claim.zoneId(), claim.tierId(),
+                claim.cost(), claim.centerX(), claim.centerZ(), true);
+    }
+
+    /** Island under the player's current position, or null if the lookup fails. */
+    private static TeamNet.IslandEntry describeHere(ServerPlayer player, TeamManager mgr, UUID teamId) {
+        IslandData data = IslandHelper.getZoneInfo(player.getX(), player.getZ()).island();
+        if (data == null) return null;
+        TeamManager.IslandClaim claim = mgr.getClaim(data.zoneId());
+        boolean mine = claim != null && claim.teamId().equals(teamId);
+        return new TeamNet.IslandEntry(data.zoneId(), data.tier().name(),
+                data.tier().getCost(), data.centerX(), data.centerZ(), mine);
     }
 
     private record Target(UUID uuid, String name) {}

@@ -1,0 +1,30 @@
+{
+  "name": "hexcasting.entry.items",
+  "category": "meowhex:patterns",
+  "icon": "minecraft:book",
+  "sortnum": 17,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.items.intro"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:item_main_hand",
+      "anchor": "meowhex:item_main_hand",
+      "input": "",
+      "output": "any",
+      "text": "hexcasting.page.items.item_main_hand"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:item_off_hand",
+      "anchor": "meowhex:item_off_hand",
+      "input": "",
+      "output": "any",
+      "text": "hexcasting.page.items.item_off_hand"
+    }
+  ]
+}

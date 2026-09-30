@@ -1,0 +1,66 @@
+{
+  "name": "hexcasting.entry.types",
+  "category": "meowhex:patterns",
+  "icon": "minecraft:book",
+  "sortnum": 16,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.types.intro"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.types.iota_types"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:type_entity",
+      "anchor": "meowhex:type_entity",
+      "input": "entity",
+      "output": "any",
+      "text": "hexcasting.page.types.type_entity"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:type_iota",
+      "anchor": "meowhex:type_iota",
+      "input": "any",
+      "output": "any",
+      "text": "hexcasting.page.types.type_iota"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:type_item_held",
+      "anchor": "meowhex:type_item_held",
+      "input": "",
+      "output": "any",
+      "text": "hexcasting.page.types.type_item_held"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:get_entity_type",
+      "anchor": "meowhex:get_entity_type",
+      "input": "any, vec",
+      "output": "entity",
+      "text": "hexcasting.page.types.get_entity_type"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:zone_entity_type",
+      "anchor": "meowhex:zone_entity_type",
+      "input": "any, vec, num",
+      "output": "list",
+      "text": "hexcasting.page.types.zone_entity_type"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:zone_entity_not_type",
+      "anchor": "meowhex:zone_entity_not_type",
+      "input": "any, vec, num",
+      "output": "list",
+      "text": "hexcasting.page.types.zone_entity_not_type"
+    }
+  ]
+}

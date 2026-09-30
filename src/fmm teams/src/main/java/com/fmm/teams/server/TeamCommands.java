@@ -238,19 +238,20 @@ public final class TeamCommands {
         var island = zoneInfo.island();
 
         if (island.tier() == IslandTier.SPAWN) {
-            return err(ctx, "msg.fmm_teams.err.island_claimed"); // spawn can't be claimed
+            return err(ctx, "msg.fmm_teams.err.island_spawn"); // spawn can't be claimed
         }
 
         int cost = island.tier().getCost();
         long zoneId = island.zoneId();
 
-        String e = mgr.claimIsland(p.getUUID(), zoneId, cost);
+        String e = mgr.claimIsland(p.getUUID(), zoneId, cost,
+                island.tier().name(), island.centerX(), island.centerZ());
         if (e != null) {
             if (e.equals("msg.fmm_teams.err.insufficient_points")) {
                 Team team = mgr.teamOf(p.getUUID());
                 int points = team != null ? team.size() : 0;
-                int spent = mgr.teamClaimedCost(team != null ? team.id() : UUID.randomUUID());
-                return err(ctx, e, cost, points - spent);
+                int spent = team != null ? mgr.teamClaimedCost(team.id()) : 0;
+                return err(ctx, e, cost, Math.max(0, points - spent));
             }
             return err(ctx, e);
         }
@@ -291,7 +292,13 @@ public final class TeamCommands {
         int cost = island.tier().getCost();
         String tierName = island.tier().getDisplayName();
         UUID ownerId = mgr.islandOwner(zoneId);
-        String ownerName = ownerId == null ? "Unclaimed" : (mgr.byId(ownerId) != null ? mgr.byId(ownerId).name() : "Unknown");
+        Team ownerTeam = ownerId == null ? null : mgr.byId(ownerId);
+        String ownerName;
+        if (ownerTeam == null) {
+            ownerName = Component.translatable("msg.fmm_teams.island_unclaimed_label").getString();
+        } else {
+            ownerName = ownerTeam.name();
+        }
 
         ctx.getSource().sendSuccess(() -> Component.translatable("msg.fmm_teams.island_info", tierName, cost, ownerName), false);
         return 1;

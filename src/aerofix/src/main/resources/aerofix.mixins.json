@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aerofix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SteeringWheelPacketMixin",
+    "SteeringWheelBlockEntityMixin",
+    "SwivelBearingBlockEntityMixin"
+  ],
+  "client": [
+    "ClientBalloonEffectRendererMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

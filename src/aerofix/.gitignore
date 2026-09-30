@@ -1,0 +1,31 @@
+### Gradle ###
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/**/build/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/**/out/
+
+### Eclipse ###
+.classpath
+.project
+.settings
+bin/
+
+### VS Code ###
+.vscode/
+
+### Minecraft Modding ###
+run/
+!**/src/**/run/
+**/src/generated/**/.cache/
+
+### Local compile-only deps ###
+libs/*.jar
+!libs/README.txt

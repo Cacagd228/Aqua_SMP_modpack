@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:purify_essence",
+  "category": "meowhex:assembly",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 100,
+  "advancement": "meowhex:scrolls/loki_purify_essence",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:purify_essence",
+      "anchor": "meowhex:purify_essence",
+      "input": "vector,vector",
+      "output": "",
+      "text": "meowhex.page.purify_essence.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.purify_essence.2"
+    }
+  ]
+}

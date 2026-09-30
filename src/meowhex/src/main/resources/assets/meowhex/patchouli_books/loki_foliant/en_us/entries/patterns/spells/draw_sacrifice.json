@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:draw_sacrifice",
+  "category": "meowhex:assembly",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 101,
+  "advancement": "meowhex:scrolls/loki_draw_sacrifice",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:draw_sacrifice",
+      "anchor": "meowhex:draw_sacrifice",
+      "input": "vector,vector",
+      "output": "",
+      "text": "meowhex.page.draw_sacrifice.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.draw_sacrifice.2"
+    }
+  ]
+}

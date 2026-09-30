@@ -2,8 +2,10 @@ package com.fmm.teams;
 
 import com.fmm.teams.client.TeamClient;
 import com.fmm.teams.net.TeamNet;
+import com.fmm.teams.server.AdminCommands;
 import com.fmm.teams.server.TeamCommands;
 import com.fmm.teams.server.TeamServer;
+import com.fmm.teams.server.TerritoryTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.IEventBus;
@@ -22,6 +24,8 @@ public class FmmTeams {
     public FmmTeams(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::registerPayloads);
         NeoForge.EVENT_BUS.register(TeamCommands.class);
+        NeoForge.EVENT_BUS.register(AdminCommands.class);
+        NeoForge.EVENT_BUS.register(TerritoryTracker.class);
         NeoForge.EVENT_BUS.addListener((PlayerEvent.PlayerLoggedInEvent e) -> {
             if (e.getEntity() instanceof ServerPlayer sp) {
                 TeamServer.pushTo(sp, com.fmm.teams.team.TeamManager.get(sp.server));

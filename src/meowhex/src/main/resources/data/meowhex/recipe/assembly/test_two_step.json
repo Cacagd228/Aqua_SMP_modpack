@@ -1,0 +1,10 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:iron_block"
+  },
+  "steps": ["merge", "purify"],
+  "output": {
+    "id": "minecraft:diamond_block"
+  }
+}

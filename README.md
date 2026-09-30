@@ -25,25 +25,37 @@
 
 ## Состав
 
-- **196 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
-- **16 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
-- кастомные: `FMMWorldgen`, `lineage_core`, `meowaddons`, `meowhex`, `apofix`,
-  `fmm_teams`;
-  - CurseForge-only, запинены: `ftb-library`, `ftb-quests`, `ftb-teams`,
-    `framework`, `harderdiesel`, `waterwheelbearing`, `UIQuest`;
-  - приватные/репаки: `create-aeronautics-bundled-*-FIXED`,
-    `panoptic_recipe_builder`, `sablexaeromaps`.
+- **215 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
+- **12 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
+- кастомные из `src/`: `aerofix`, `FMMWorldgen`, `lineage_core`, `meowaddons`,
+    `meowhex`, `apofix`, `fmm_teams`, `hexsable`, `colonycard`;
+  - CurseForge-only, запинены: `framework`, `harderdiesel`;
+  - приватные/репаки: `panoptic_recipe_builder`, `Design-n-Decor`, `colorwheel`.
 - Убрано из старой сборки: `jeiexport` (дев-инструмент), дубль
   `moonlight-3.5.2`, `neoforge.mods.toml` из `mods/`.
+- Убрано в 1.1.6: вся линейка FTB (`ftb-library`, `ftb-quests`, `ftb-teams`,
+  `FTBQuestsOptimizer`, `UIQuest`), `waterwheelbearing`, `rogues-and-warriors`,
+  `Structure Pool API`, а также `Axiom`, `Create: Bits n' Bobs`,
+  `Create: Cyber Goggles`, `Create: Goggles`, `sablexaeromaps`, `Tree Physics`,
+  `Xaero's Minimap`, `Xaero's World Map`, `Xaero's Maps: Multiplayer+`.
+- Create Aeronautics теперь **стоковый** с Modrinth, а правки навешивает
+  отдельный мод `aerofix` — обновления больше не заблокированы.
+
+> Отдельно раздаётся ресурс-пак `AquaSMP-Sounds` (звуки комментаторов и тишина).
+> В моде `meowhex` аудио больше нет; пак собирается `tools/build-sounds-pack.py`
+> и кидается игрокам в `.minecraft/resourcepacks`.
 
 | Кастомный мод | mod_id | Версия | Что делает |
 |---|---|---|---|
-| FMM Worldgen | `fmm_worldgen` | 1.0.0 | Кастомная генерация мира-архипелага |
-| Lineage Core | `lineage_core` | 2.0.0 | Ядро: расы/происхождения, команды, статистика |
-| Meow Addons | `meowaddons` | 1.0.0 | Create-аддоны: блоки, передатчики, пондеры |
-| MeowHex | `meowhex` | 1.0.0 | Hex-магия: мана, паттерны, контент |
+| AeroFix | `aerofix` | 1.0.0 | Фикс Create Aeronautics поверх стокового bundle |
+| FMM Worldgen | `fmm_worldgen` | 1.1.0 | Кастомная генерация мира-архипелага |
+| Lineage Core | `lineage_core` | 2.1.0 | Ядро: расы/происхождения, команды, статистика |
+| Meow Addons | `meowaddons` | 1.0.1 | Create-аддоны: блоки, передатчики, пондеры |
+| MeowHex | `meowhex` | 1.4.0 | Hex-магия: мана, паттерны, assembly, контент |
+| HexSable | `hexsable` | 1.1.0 | Мост Hex Casting ↔ Sable |
+| Colony Card | `colonycard` | 1.0.0 | Карточки colony |
 | Apofix | `apofix` | 1.0.0 | Доп. атрибуты для Apothic Attributes |
-| FMM Teams | `fmm_teams` | 0.1.0 | Команды в стиле Panoptic (бета) |
+| FMM Teams | `fmm_teams` | 0.1.0 | Команды и клеймы островов в стиле Panoptic |
 
 ## Разработка
 
@@ -52,18 +64,27 @@
 
 ```sh
 packwiz refresh          # пересобрать index.toml, проверить хеши
+python tools/clean-index.py   # выкинуть из индекса build-артефакты (обязательно!)
 packwiz update --all     # проверить обновления модов (пины без [update] не трогает)
 packwiz mr export        # собрать .mrpack локально для теста
 ```
+
+> **Порядок важен.** `packwiz` индексирует модпак прямым обходом каталога и
+> `.gitignore` не читает, а `mr export` ещё и сам вызывает refresh. Если сборка
+> модов уже лежит в `src/*/build`, индекс раздувается на ~9 000 записей, а
+> `.mrpack` — с 70 МБ до 1.5 ГБ. `tools/clean-index.py` приводит индекс к
+> тому, что увидит CI (свежий checkout + скачанные `mods/*.jar`), и
+> пересчитывает хеш в `pack.toml`. Запускать его **после** `refresh` и
+> **до** коммита.
 
 Структура:
 
 ```
 Aqua_SMP_modpack/
 ├── pack.toml / index.toml   # манифест пака (MC 1.21.1, NeoForge 21.1.248)
-├── mods/*.pw.toml           # 196 модов с Modrinth (id версии запинен)
-├── mods/*.jar               # 15 пинов (см. выше), исключения в .gitignore
-├── config/                  # 345 файлов (рантайм-мусор вычищен, см. ниже)
+├── mods/*.pw.toml           # 215 модов с Modrinth (id версии запинен)
+├── mods/*.jar               # 12 пинов (см. выше), исключения в .gitignore
+├── config/                  # 364 файла (рантайм-мусор вычищен, см. ниже)
 ├── kubejs/                  # скрипты (server/client/startup)
 ├── defaultconfigs/
 ├── .github/workflows/release.yml

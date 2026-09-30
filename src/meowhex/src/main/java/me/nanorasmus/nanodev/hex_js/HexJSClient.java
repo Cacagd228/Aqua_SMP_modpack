@@ -5,7 +5,6 @@ import me.nanorasmus.nanodev.hex_js.addon.item.ItemDrawingOrb;
 import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.utils.NBTHelper;
 import at.petrak.hexcasting.client.RegisterClientStuff;
-import at.petrak.hexcasting.client.render.GaslightingTracker;
 import at.petrak.hexcasting.xplat.IClientXplatAbstractions;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -53,6 +52,12 @@ public final class HexJSClient {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.client.AnnounceTextOverlay.class);
         // Strip hexcasting "Can be worn in:" duplicates and backfill the Curios "Slot:" line
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(me.nanorasmus.nanodev.hex_js.client.CurioTooltipHandler::onTooltip);
+        // JEI's assembly page can only be filled once the server's recipes have
+        // actually been synced. LoggingIn is too early: the server sends the login
+        // packet before the recipe packet, so the manager is still empty there.
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(
+                (net.neoforged.neoforge.client.event.RecipesUpdatedEvent e) ->
+                        me.nanorasmus.nanodev.hex_js.jei.HexJsJeiPlugin.onRecipesUpdated(e.getRecipeManager()));
     }
 
     private static void onClientSetup(FMLClientSetupEvent event) {
@@ -70,12 +75,6 @@ public final class HexJSClient {
                             }
                             return 2;
                         });
-            }
-
-            if (HextendedItems.EXTENDED_QUENCHED_STAFF.isBound()) {
-                IClientXplatAbstractions.INSTANCE.registerItemProperty(
-                        HextendedItems.EXTENDED_QUENCHED_STAFF.get(), GaslightingTracker.GASLIGHTING_PRED,
-                        (stack, level, entity, seed) -> Math.abs(GaslightingTracker.getGaslightingAmount() % 4));
             }
         });
     }

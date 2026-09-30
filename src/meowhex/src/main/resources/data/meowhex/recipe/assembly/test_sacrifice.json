@@ -1,0 +1,10 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:gold_ingot"
+  },
+  "steps": ["sacrifice"],
+  "output": {
+    "id": "minecraft:netherite_scrap"
+  }
+}

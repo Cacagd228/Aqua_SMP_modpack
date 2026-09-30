@@ -1,0 +1,118 @@
+{
+  "name": "hexcasting.entry.strings",
+  "category": "meowhex:patterns",
+  "icon": "minecraft:book",
+  "sortnum": 15,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hexcasting.page.strings.intro"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_empty",
+      "anchor": "meowhex:string_empty",
+      "input": "",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_empty"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_space",
+      "anchor": "meowhex:string_space",
+      "input": "",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_space"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_comma",
+      "anchor": "meowhex:string_comma",
+      "input": "",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_comma"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_newline",
+      "anchor": "meowhex:string_newline",
+      "input": "",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_newline"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_split",
+      "anchor": "meowhex:string_split",
+      "input": "string",
+      "output": "list, string",
+      "text": "hexcasting.page.strings.string_split"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_parse",
+      "anchor": "meowhex:string_parse",
+      "input": "string",
+      "output": "any",
+      "text": "hexcasting.page.strings.string_parse"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_case",
+      "anchor": "meowhex:string_case",
+      "input": "string, bool",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_case"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_iota",
+      "anchor": "meowhex:string_iota",
+      "input": "any",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_iota"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_action",
+      "anchor": "meowhex:string_action",
+      "input": "pattern",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_action"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_name_get",
+      "anchor": "meowhex:string_name_get",
+      "input": "entity",
+      "output": "string",
+      "text": "hexcasting.page.strings.string_name_get"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_name_set",
+      "anchor": "meowhex:string_name_set",
+      "input": "string, entity",
+      "output": "",
+      "text": "hexcasting.page.strings.string_name_set"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_block_get",
+      "anchor": "meowhex:string_block_get",
+      "input": "vec",
+      "output": "any",
+      "text": "hexcasting.page.strings.string_block_get"
+    },
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:string_block_set",
+      "anchor": "meowhex:string_block_set",
+      "input": "vec, any",
+      "output": "",
+      "text": "hexcasting.page.strings.string_block_set"
+    }
+  ]
+}

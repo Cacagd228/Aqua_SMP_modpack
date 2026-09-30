@@ -1,0 +1,38 @@
+{
+  "overrideType": "meowhex:assembly",
+  "keys": [
+    {
+      "name": "input",
+      "role": "input",
+      "type": "ingredient"
+    },
+    {
+      "name": "steps",
+      "role": "other",
+      "type": {
+        "type": "list",
+        "component": "string"
+      }
+    },
+    {
+      "name": "output",
+      "role": "output",
+      "type": "item_stack"
+    },
+    {
+      "name": "mana",
+      "role": "other",
+      "type": "non_negative_long",
+      "optional": 0
+    }
+  ],
+  "constructors": [
+    {
+      "keys": ["input", "steps", "output", "mana"]
+    },
+    {
+      "keys": ["input", "steps", "output"]
+    }
+  ],
+  "unique": ["input", "steps", "output"]
+}

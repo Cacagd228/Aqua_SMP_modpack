@@ -4,6 +4,7 @@ import at.petrak.hexcasting.api.casting.SpellList
 import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.ListIota
+import at.petrak.hexcasting.api.casting.iota.StringIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import kotlin.math.abs
 import kotlin.math.roundToInt
@@ -15,6 +16,12 @@ fun Iterator<IndexedValue<Iota>>.nextList(argc: Int = 0): SpellList {
     } else {
         throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "list")
     }
+}
+
+fun Iterator<IndexedValue<Iota>>.nextString(argc: Int = 0): String {
+    val (idx, x) = this.next()
+    if (x is StringIota) return x.string
+    throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "string")
 }
 
 fun Iterator<IndexedValue<Iota>>.nextDouble(argc: Int = 0): Double {

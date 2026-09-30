@@ -37,6 +37,13 @@ public class HexJS {
         me.nanorasmus.nanodev.hex_js.entity.HexEntities.init(modBus);
         me.nanorasmus.nanodev.hex_js.effect.HexEffects.init(modBus);
         me.nanorasmus.nanodev.hex_js.sound.HexSounds.init(modBus);
+        // Common on both sides: the assembly gate is read by the server's runes
+        // and by the client's JEI plugin, so a CLIENT-type spec would leave the
+        // server reading a default it can never see.
+        modContainer.registerConfig(
+                net.neoforged.fml.config.ModConfig.Type.COMMON,
+                me.nanorasmus.nanodev.hex_js.HexJsCommonConfig.SPEC,
+                "meowhex-assembly.toml");
         if (FMLEnvironment.dist.isClient()) {
             modContainer.registerConfig(
                 net.neoforged.fml.config.ModConfig.Type.CLIENT,

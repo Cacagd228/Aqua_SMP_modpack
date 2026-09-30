@@ -2,6 +2,7 @@ package me.nanorasmus.nanodev.hex_js.addon.scroll;
 
 import com.mojang.serialization.MapCodec;
 import me.nanorasmus.nanodev.hex_js.HexJS;
+import me.nanorasmus.nanodev.hex_js.assembly.AssemblyGate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
@@ -15,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,9 +63,37 @@ public final class ScrollItems {
         LOOT_MODS.register(bus);
     }
 
+    /**
+     * The scrolls eligible to drop from a chest: every registered scroll, minus
+     * the assembly ones while that mechanic is switched off.
+     *
+     * <p>Cached per flag value rather than rebuilt per loot roll — a chest roll
+     * is a hot path and the list only changes when the config is edited.
+     */
+    private static volatile List<String> droppableCache = List.of();
+    private static volatile boolean droppableCacheForEnabled;
+
+    private static List<String> droppableScrolls() {
+        boolean on = AssemblyGate.enabled();
+        if (droppableCache.isEmpty() || droppableCacheForEnabled != on) {
+            droppableCache = ScrollDefs.SCROLLS.stream()
+                    .filter(id -> on || !AssemblyGate.isAssemblyScroll(id))
+                    .toList();
+            droppableCacheForEnabled = on;
+        }
+        return droppableCache;
+    }
+
     /** Uniformly picks one registered scroll item id (used by the loot modifier). */
     public static String randomScrollId(RandomSource random) {
-        return ScrollDefs.SCROLLS.get(random.nextInt(ScrollDefs.SCROLLS.size()));
+        List<String> pool = droppableScrolls();
+        // Every scroll is an assembly scroll only if the flag is off and the
+        // catalogue is nothing but assembly scrolls, which it never is. Guard
+        // anyway: nextInt(0) throws and this is loot generation.
+        if (pool.isEmpty()) {
+            return ScrollDefs.SCROLLS.get(random.nextInt(ScrollDefs.SCROLLS.size()));
+        }
+        return pool.get(random.nextInt(pool.size()));
     }
 
     /** Uniformly picks one registered scroll item (used by the loot modifier). */

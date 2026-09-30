@@ -1,0 +1,11 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "steps": ["absorb", "sacrifice"],
+  "mana": 5000,
+  "output": {
+    "id": "minecraft:amethyst_cluster"
+  }
+}

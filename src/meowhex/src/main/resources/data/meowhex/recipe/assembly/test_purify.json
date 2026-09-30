@@ -1,0 +1,10 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:copper_ingot"
+  },
+  "steps": ["purify"],
+  "output": {
+    "id": "minecraft:emerald"
+  }
+}

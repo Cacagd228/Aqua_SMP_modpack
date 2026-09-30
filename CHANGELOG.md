@@ -1,5 +1,43 @@
 # Changelog
 
+## v1.1.6-release
+
+- Фикс Create Aeronautics переписан в отдельный мод (`aerofix` 1.0.0, исходники в `src/aerofix`).
+  Раньше в паке лежал `create-aeronautics-bundled-1.21.1-1.3.2-FIXED.jar` — полная
+  пересборка оригинала с вшитыми правками, из-за чего апдейты Create Aeronautics были
+  заблокированы. Теперь стоит **стоковый** bundle 1.3.2 (с Modrinth, обновляется штатно),
+  а `aerofix` навешивает те же правки миксинами в рантайме, не трогая оригинал.
+- Звуки комментаторов (QoP + Meepo) и `silence` вынесены из мода `meowhex` в отдельный
+  ресурс-пак `AquaSMP-Sounds` (собирается скриптом `tools/build-sounds-pack.py`, раздаётся
+  игрокам отдельно). Аудио намеренно не лежит в репозитории.
+- Убраны моды FTB: `ftb-library`, `ftb-quests`, `ftb-teams`, `FTBQuestsOptimizer`,
+  `UIQuest`. Вместе с ними выпилены их конфиги и датапак `data/ftbquests`.
+- Убран `waterwheelbearing` 3.0.0.
+- Убраны `rogues-and-warriors` и `Structure Pool API` — последний тянул только `rogues`,
+  после его снятия зависимых не осталось.
+- Убраны моды, отключённые при тестах в инстансе: `Axiom`, `Create: Bits n' Bobs`,
+  `Create: Cyber Goggles`, `Create: Goggles`, `sablexaeromaps`, `Tree Physics`,
+  `Xaero's Minimap`, `Xaero's World Map`, `Xaero's Maps: Multiplayer+`.
+- Доделана система клеймов в `fmm_teams` 0.1.0: `TerritoryTracker` (захват островов) +
+  `AdminCommands`, остров спавна занимать нельзя.
+- Добавлены `Balm` 21.0.66 и `TrashSlot` 21.1.11 (+ их конфиги).
+- `meowhex` пересобран: система assembly (5 рун поверх Create Sequenced Assembly),
+  40+ рун из MoreIotas (строки / типы / предметы), `meowhex-assembly.toml`,
+  `ItemAmethystFishingRod`, `OpInfuseAether`. Из мода убраны lesser_battery- и
+  extended-посохи (модели, текстуры, рецепты) — остались только базовые посохи.
+- Конфиги подтянуты из тестового инстанса: гарантированная жила Create: Rock & Stone на
+  каждом острове (`fmm_worldgen-common.toml`), `explosionBlockDamageMultiplier` /
+  `knockbackNonPlayerMultiplier` (`meowhex-server.toml`), `motorMinimumLoad`
+  (`powergrid-server.toml`).
+- Тулзы: `tools/build-sounds-pack.py`, `tools/check_patterns.py` (валидация сигнатур рун
+  без запуска игры), `tools/check_sigs.py`, `tools/check_upstream.py`,
+  `tools/clean-index.py`.
+- `index.toml` почищен от ~9 000 записей с build-артефактами `src/*/build`,
+  `src/*/run`, `.gradle` и `.mcprobe2`. `packwiz` индексирует каталог напрямую и
+  `.gitignore` не читает, поэтому после локальной сборки модов индекс раздувался
+  (2.5 МБ), а `packwiz mr export` втягивал артефакты в `overrides` — локальный
+  `.mrpack` раздувался с 71 МБ до 1.5 ГБ.
+
 ## v1.1.5-pre-release
 
 - `meowhex` 1.3.2 → 1.4.0 (сборка из исходников `src/meowhex`):

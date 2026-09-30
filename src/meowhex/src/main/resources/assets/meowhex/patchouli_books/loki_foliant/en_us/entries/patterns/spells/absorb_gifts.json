@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:absorb_gifts",
+  "category": "meowhex:assembly",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 99,
+  "advancement": "meowhex:scrolls/loki_absorb_gifts",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:absorb_gifts",
+      "anchor": "meowhex:absorb_gifts",
+      "input": "vector,vector",
+      "output": "",
+      "text": "meowhex.page.absorb_gifts.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.absorb_gifts.2"
+    }
+  ]
+}

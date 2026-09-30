@@ -31,11 +31,21 @@ public class TeamsScreen extends Screen {
     private static final int H = 248;
     private static final int LEFT_W = 240;
     private static final int ROW_H = 16;
+    /** Island rows carry a second line with the centre coordinates, so they are taller. */
+    private static final int ISLAND_ROW_H = 26;
+    /** Text input strip, shared by the create/invite forms. */
+    private static final int INPUT_Y = -56;
+    private static final int INPUT_H = 18;
+    /** Tab strip sits below the input, never overlapping it. */
+    private static final int TAB_Y = -34;
+    private static final int TAB_H = 18;
 
     private EditBox input;
     private int selMember = -1;
     private int selInvite = -1;
     private int scroll = 0;
+    /** 0 = members, 1 = islands. */
+    private int tab = 0;
     private final List<Btn> buttons = new ArrayList<>();
     private String status = "";
 
@@ -48,7 +58,7 @@ public class TeamsScreen extends Screen {
         buttons.clear();
         int x1 = (width - W) / 2;
         int y1 = (height - H) / 2;
-        input = new EditBox(font, x1 + 12, y1 + H - 56, LEFT_W - 24, 18,
+        input = new EditBox(font, x1 + 12, y1 + H + INPUT_Y, LEFT_W - 24, INPUT_H,
                 Component.translatable("gui.fmm_teams.input_hint"));
         input.setMaxLength(24);
         addRenderableWidget(input);
@@ -77,23 +87,32 @@ public class TeamsScreen extends Screen {
         TeamNet.Snapshot s = snap();
         int rx = x1 + LEFT_W + 16;          // right column
         int rw = x2 - 8 - rx;               // right width
-        int by = y1 + H - 56;
+        int by = y1 + H + INPUT_Y;
+        // tab strip
+        int ty = y1 + H + TAB_Y;
+        buttons.add(new Btn("tab_members", x1 + 12, ty, x1 + 12 + 84, ty + TAB_H, true));
+        buttons.add(new Btn("tab_islands", x1 + 12 + 88, ty, x1 + 12 + 88 + 84, ty + TAB_H, s.hasTeam()));
         if (!s.hasTeam()) {
             // bottom: create button next to input
             buttons.add(new Btn("create", x1 + LEFT_W - 4, by - 22, x2 - 12, by - 2, true));
             // invite actions on the left list area bottom
-            int ly = y1 + H - 80;
+            int ly = actionRowY();
             int half = (LEFT_W - 28) / 2;
             boolean hasSel = selInvite >= 0 && selInvite < s.invites().size();
             buttons.add(new Btn("accept", x1 + 12, ly, x1 + 12 + half, ly + 20, hasSel));
             buttons.add(new Btn("decline", x1 + 16 + half, ly, x1 + 12 + LEFT_W - 24, ly + 20, hasSel));
             // keep right column info-only in no-team state
+        } else if (tab == 1) {
+            // Islands tab: claim the island underfoot, release the selected one.
+            // Left list is free, so the two buttons stack in the right column.
+            buttons.add(new Btn("claim", rx, actionRowY(), rx + rw, actionRowY() + 20, canClaim(s)));
+            buttons.add(new Btn("unclaim", rx, actionRowY() + 24, rx + rw, actionRowY() + 44, canRelease(s)));
         } else {
             boolean isOwner = s.yourRole() == Role.OWNER;
             boolean isOfficer = isOwner || s.yourRole() == Role.COMMANDER;
             // right column buttons
             buttons.add(new Btn("invite", rx, by - 22, rx + rw, by - 2, isOfficer));
-            int rowY = y1 + 150;
+            int rowY = actionRowY();
             // selection actions (left list bottom)
             TeamNet.MemberEntry sel = selectedMember();
             boolean canAct = sel != null && !sel.uuid().equals(Minecraft.getInstance().getUser().getProfileId());
@@ -117,6 +136,60 @@ public class TeamsScreen extends Screen {
         buttons.add(new Btn("close", x2 - 68, y1 + H - 24, x2 - 12, y1 + H - 6, true));
     }
 
+    /** Top of the selection-action row on the left list. */
+    private int actionRowY() {
+        return y1() + H - 98;
+    }
+
+    private int y1() {
+        return (height - H) / 2;
+    }
+
+    private static int listTopY() {
+        return 52;
+    }
+
+    /**
+     * Rows the left list may show before it runs into the action buttons below it.
+     * Tabs without a left action row can use the full height.
+     */
+    private int visibleRows() {
+        TeamNet.Snapshot s = snap();
+        boolean islands = s.hasTeam() && tab == 1;
+        boolean hasActionRow = s.hasTeam() ? tab == 0 : true;
+        int room = (hasActionRow ? actionRowY() : y1() + H + INPUT_Y) - (y1() + listTopY()) - 4;
+        return Math.max(1, room / ((islands ? ISLAND_ROW_H : ROW_H) + 2));
+    }
+
+    /** Row pitch of the left list for the active tab. */
+    private int rowPitch() {
+        return (snap().hasTeam() && tab == 1 ? ISLAND_ROW_H : ROW_H) + 2;
+    }
+
+    /** Draws a row of the given height; returns its bottom edge. */
+    private int rowHeight() {
+        return snap().hasTeam() && tab == 1 ? ISLAND_ROW_H : ROW_H;
+    }
+
+    private boolean canClaim(TeamNet.Snapshot s) {
+        if (s.yourRole() != Role.OWNER && s.yourRole() != Role.COMMANDER) return false;
+        TeamNet.IslandEntry here = s.hereIsland();
+        if (here == null || here.tierId().equals("SPAWN")) return false;
+        if (here.yours()) return false;
+        return s.freePoints() >= here.cost();
+    }
+
+    private boolean canRelease(TeamNet.Snapshot s) {
+        if (s.yourRole() != Role.OWNER && s.yourRole() != Role.COMMANDER) return false;
+        return selectedIsland() != null && selectedIsland().yours();
+    }
+
+    private TeamNet.IslandEntry selectedIsland() {
+        TeamNet.Snapshot s = snap();
+        if (!s.hasTeam() || selMember < 0 || selMember >= s.islands().size()) return null;
+        return s.islands().get(selMember);
+    }
+
     private TeamNet.MemberEntry selectedMember() {
         TeamNet.Snapshot s = snap();
         if (!s.hasTeam() || selMember < 0 || selMember >= s.members().size()) return null;
@@ -135,6 +208,22 @@ public class TeamsScreen extends Screen {
         TeamNet.Snapshot s = snap();
         switch (id) {
             case "close" -> onClose();
+            case "tab_members" -> {
+                tab = 0;
+                selMember = -1;
+                scroll = 0;
+            }
+            case "tab_islands" -> {
+                if (!s.hasTeam()) return;
+                tab = 1;
+                selMember = -1;
+                scroll = 0;
+            }
+            case "claim" -> send("claim", "", null);
+            case "unclaim" -> {
+                TeamNet.IslandEntry isl = selectedIsland();
+                if (isl != null) send("unclaim", Long.toString(isl.zoneId()), null);
+            }
             case "create" -> {
                 send("create", input.getValue().trim(), null);
                 input.setValue("");
@@ -202,12 +291,14 @@ public class TeamsScreen extends Screen {
             TeamNet.Snapshot s = snap();
             int listX1 = x1 + 12;
             int listX2 = x1 + LEFT_W - 12;
-            int listY = y1 + 52;
-            int rows = s.hasTeam() ? s.members().size() : s.invites().size();
-            int visible = 8;
+            int listY = y1 + listTopY();
+            int rows = rowCount(s);
+            int visible = visibleRows();
+            int pitch = rowPitch();
+            int rh = rowHeight();
             for (int i = 0; i < Math.min(rows - scroll, visible); i++) {
-                int ry = listY + i * (ROW_H + 2);
-                if (mx >= listX1 && mx < listX2 && my >= ry && my < ry + ROW_H) {
+                int ry = listY + i * pitch;
+                if (mx >= listX1 && mx < listX2 && my >= ry && my < ry + rh) {
                     if (s.hasTeam()) selMember = scroll + i;
                     else selInvite = scroll + i;
                     return true;
@@ -217,11 +308,16 @@ public class TeamsScreen extends Screen {
         return super.mouseClicked(mx, my, button);
     }
 
+    /** Rows shown in the left list, which depends on the active tab. */
+    private int rowCount(TeamNet.Snapshot s) {
+        if (!s.hasTeam()) return s.invites().size();
+        return tab == 1 ? s.islands().size() : s.members().size();
+    }
+
     @Override
     public boolean mouseScrolled(double mx, double my, double dx, double dy) {
         TeamNet.Snapshot s = snap();
-        int rows = s.hasTeam() ? s.members().size() : s.invites().size();
-        int maxScroll = Math.max(0, rows - 8);
+        int maxScroll = Math.max(0, rowCount(s) - visibleRows());
         if (dy < 0) scroll = Math.min(maxScroll, scroll + 1);
         else if (dy > 0) scroll = Math.max(0, scroll - 1);
         return super.mouseScrolled(mx, my, dx, dy);
@@ -235,14 +331,18 @@ public class TeamsScreen extends Screen {
         TeamNet.Snapshot s = snap();
         // clamp selection
         if (s.hasTeam()) {
-            if (selMember >= s.members().size()) selMember = s.members().size() - 1;
+            if (tab == 1) {
+                if (selMember >= s.islands().size()) selMember = s.islands().size() - 1;
+            } else if (selMember >= s.members().size()) {
+                selMember = s.members().size() - 1;
+            }
             selInvite = -1;
         } else {
+            tab = 0;
             if (selInvite >= s.invites().size()) selInvite = s.invites().size() - 1;
             selMember = -1;
-            scroll = Math.max(0, Math.min(scroll, Math.max(0, s.invites().size() - 8)));
         }
-        scroll = Math.max(0, scroll);
+        scroll = Math.max(0, Math.min(scroll, Math.max(0, rowCount(s) - visibleRows())));
 
         int x1 = (width - W) / 2;
         int y1 = (height - H) / 2;
@@ -259,13 +359,15 @@ public class TeamsScreen extends Screen {
         g.fill(x1 + LEFT_W + 4, y1 + 20, x1 + LEFT_W + 5, y2 - 64, UiTheme.BORDER);
 
         if (!s.hasTeam()) renderNoTeam(g, x1, y1, x2, y2, mouseX, mouseY);
+        else if (tab == 1) renderIslands(g, x1, y1, x2, y2, mouseX, mouseY, s);
         else renderTeam(g, x1, y1, x2, y2, mouseX, mouseY, s);
 
         rebuildButtons(x1, y1, x2);
         for (Btn b : buttons) {
-            UiTheme.button(g, font, b.x1, b.y1, b.x2, b.y2,
-                    Component.translatable("gui.fmm_teams.btn." + b.id).getString(),
-                    b.hit(mouseX, mouseY), b.enabled, false);
+            String label = Component.translatable("gui.fmm_teams.btn." + b.id).getString();
+            UiTheme.button(g, font, b.x1, b.y1, b.x2, b.y2, label,
+                    b.hit(mouseX, mouseY), b.enabled,
+                    b.id.equals(tab == 0 ? "tab_members" : "tab_islands"));
         }
         if (!status.isEmpty()) {
             g.drawString(font, status, x1 + 12, y2 - 20, 0xFFE07A7A, false);
@@ -277,18 +379,20 @@ public class TeamsScreen extends Screen {
         g.drawString(font, Component.translatable("gui.fmm_teams.members", s.members().size()).getString(),
                 x1 + 12, y1 + 22, UiTheme.ACCENT, false);
         g.drawString(font, roleLegend(), x1 + 12, y1 + 34, UiTheme.DIM, false);
-        int listY = y1 + 52;
+        int listY = y1 + listTopY();
         int listX1 = x1 + 12;
         int listX2 = x1 + LEFT_W - 12;
-        int visible = 8;
+        int visible = visibleRows();
+        int pitch = rowPitch();
+        int rh = rowHeight();
         Role lastRole = null;
         for (int i = 0; i < Math.min(s.members().size() - scroll, visible); i++) {
             int idx = scroll + i;
             TeamNet.MemberEntry m = s.members().get(idx);
-            int ry = listY + i * (ROW_H + 2);
-            boolean hovered = mx >= listX1 && mx < listX2 && my >= ry && my < ry + ROW_H;
+            int ry = listY + i * pitch;
+            boolean hovered = mx >= listX1 && mx < listX2 && my >= ry && my < ry + rh;
             boolean selected = idx == selMember;
-            UiTheme.row(g, listX1, ry, listX2, ry + ROW_H, hovered, selected);
+            UiTheme.row(g, listX1, ry, listX2, ry + rh, hovered, selected);
             // group separator label when role changes (owner/commander/private blocks)
             if (lastRole != m.role()) {
                 lastRole = m.role();
@@ -332,19 +436,92 @@ public class TeamsScreen extends Screen {
         input.setHint(Component.translatable("gui.fmm_teams.invite_hint"));
     }
 
+    private void renderIslands(GuiGraphics g, int x1, int y1, int x2, int y2, int mx, int my, TeamNet.Snapshot s) {
+        // left: claimed islands
+        g.drawString(font, Component.translatable("gui.fmm_teams.islands", s.islands().size()).getString(),
+                x1 + 12, y1 + 22, UiTheme.ACCENT, false);
+        int listY = y1 + listTopY();
+        int listX1 = x1 + 12;
+        int listX2 = x1 + LEFT_W - 12;
+        int visible = visibleRows();
+        int pitch = rowPitch();
+        int rh = rowHeight();
+        for (int i = 0; i < Math.min(s.islands().size() - scroll, visible); i++) {
+            int idx = scroll + i;
+            TeamNet.IslandEntry isl = s.islands().get(idx);
+            int ry = listY + i * pitch;
+            boolean hovered = mx >= listX1 && mx < listX2 && my >= ry && my < ry + rh;
+            boolean selected = idx == selMember;
+            UiTheme.row(g, listX1, ry, listX2, ry + rh, hovered, selected);
+            g.fill(listX1 + 4, ry + 6, listX1 + 8, ry + 10, UiTheme.ACCENT);
+            String cost = "◆" + isl.cost();
+            String tier = font.plainSubstrByWidth(tierName(isl.tierId()), 80);
+            g.drawString(font, tier, listX1 + 12, ry + 4, UiTheme.TEXT, false);
+            g.drawString(font, cost, listX2 - 6 - font.width(cost), ry + 4, UiTheme.MUTED, false);
+            // centre coordinates, in the muted colour under the tier name
+            String coords = (long) Math.floor(isl.centerX()) + ", " + (long) Math.floor(isl.centerZ());
+            g.drawString(font, coords, listX1 + 12, ry + 4 + 8, UiTheme.DIM, false);
+        }
+        if (s.islands().isEmpty()) {
+            g.drawString(font, Component.translatable("gui.fmm_teams.no_islands").getString(),
+                    listX1, listY, UiTheme.MUTED, false);
+        }
+
+        // right: points budget + island underfoot
+        int rx = x1 + LEFT_W + 16;
+        int rw = x2 - 12 - rx;
+        g.drawString(font, Component.translatable("gui.fmm_teams.island_info_title").getString(), rx, y1 + 22, UiTheme.ACCENT, false);
+        int iy = y1 + 36;
+        iy = infoLine(g, rx, iy, rw, "gui.fmm_teams.points_total", String.valueOf(s.points()));
+        iy = infoLine(g, rx, iy, rw, "gui.fmm_teams.points_spent", String.valueOf(s.spent()));
+        iy = infoLine(g, rx, iy, rw, "gui.fmm_teams.points_free", String.valueOf(s.freePoints()));
+
+        TeamNet.IslandEntry here = s.hereIsland();
+        if (here == null) {
+            g.drawString(font, Component.translatable("gui.fmm_teams.here_none").getString(), rx, iy + 4, UiTheme.MUTED, false);
+        } else {
+            iy = infoLine(g, rx, iy, rw, "gui.fmm_teams.here_tier", tierName(here.tierId()));
+            iy = infoLine(g, rx, iy, rw, "gui.fmm_teams.here_cost", String.valueOf(here.cost()));
+            String statusKey;
+            int statusColor;
+            if (here.tierId().equals("SPAWN")) {
+                statusKey = "gui.fmm_teams.here_spawn";
+                statusColor = UiTheme.DIM;
+            } else if (here.yours()) {
+                statusKey = "gui.fmm_teams.here_yours";
+                statusColor = UiTheme.ACCENT;
+            } else if (s.freePoints() < here.cost()) {
+                statusKey = "gui.fmm_teams.here_too_expensive";
+                statusColor = 0xFFE07A7A;
+            } else {
+                statusKey = "gui.fmm_teams.here_free";
+                statusColor = UiTheme.TEXT;
+            }
+            g.drawString(font, Component.translatable(statusKey).getString(), rx, iy + 4, statusColor, false);
+        }
+    }
+
+    /** Human tier name, falling back to the raw id for claims from an older save. */
+    private String tierName(String tierId) {
+        if (tierId == null || tierId.isEmpty()) return "?";
+        return Component.translatable("tier.fmm_teams." + tierId.toLowerCase()).getString();
+    }
+
     private void renderNoTeam(GuiGraphics g, int x1, int y1, int x2, int y2, int mx, int my) {
         TeamNet.Snapshot s = snap();
         g.drawString(font, Component.translatable("gui.fmm_teams.invites", s.invites().size()).getString(),
                 x1 + 12, y1 + 22, UiTheme.ACCENT, false);
-        int listY = y1 + 52;
+        int listY = y1 + listTopY();
         int listX1 = x1 + 12;
         int listX2 = x1 + LEFT_W - 12;
-        int visible = 8;
+        int visible = visibleRows();
+        int pitch = rowPitch();
+        int rh = rowHeight();
         for (int i = 0; i < Math.min(s.invites().size() - scroll, visible); i++) {
             int idx = scroll + i;
             TeamNet.InviteEntry inv = s.invites().get(idx);
-            int ry = listY + i * (ROW_H + 2);
-            boolean hovered = mx >= listX1 && mx < listX2 && my >= ry && my < ry + ROW_H;
+            int ry = listY + i * pitch;
+            boolean hovered = mx >= listX1 && mx < listX2 && my >= ry && my < ry + rh;
             boolean selected = idx == selInvite;
             UiTheme.row(g, listX1, ry, listX2, ry + ROW_H, hovered, selected);
             g.drawString(font, font.plainSubstrByWidth(inv.teamName(), 130), listX1 + 6, ry + 4, UiTheme.TEXT, false);

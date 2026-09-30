@@ -65,10 +65,10 @@ public final class TeamManager extends SavedData {
 
     // ---------- island claims ----------
 
-    /** Returns team points = number of members (1 point per player). */
+    /** Returns team points = number of members (1 point per player) + admin bonus. */
     public synchronized int teamPoints(UUID teamId) {
         Team team = teams.get(teamId);
-        return team == null ? 0 : team.size();
+        return team == null ? 0 : team.size() + team.bonus();
     }
 
     /** Returns total cost of all islands claimed by this team. */
@@ -91,6 +91,12 @@ public final class TeamManager extends SavedData {
 
     /** Claim an island for a team. Returns error key or null on success. */
     public synchronized String claimIsland(UUID player, long zoneId, int islandCost) {
+        return claimIsland(player, zoneId, islandCost, "UNKNOWN", 0, 0);
+    }
+
+    /** Claim an island, recording its tier and centre so it can be listed without world lookups. */
+    public synchronized String claimIsland(UUID player, long zoneId, int islandCost,
+                                            String tierId, double centerX, double centerZ) {
         Team team = teamOf(player);
         if (team == null) return "msg.fmm_teams.err.no_team";
         Role role = team.roleOf(player);
@@ -106,7 +112,7 @@ public final class TeamManager extends SavedData {
         // Check team budget
         if (!canAfford(team.id(), islandCost)) return "msg.fmm_teams.err.insufficient_points";
 
-        islandClaims.put(zoneId, new IslandClaim(zoneId, team.id(), islandCost));
+        islandClaims.put(zoneId, new IslandClaim(zoneId, team.id(), islandCost, tierId, centerX, centerZ));
         setDirty();
         return null;
     }
@@ -150,6 +156,62 @@ public final class TeamManager extends SavedData {
     /** Get all claims. */
     public synchronized Collection<IslandClaim> allClaims() {
         return List.copyOf(islandClaims.values());
+    }
+
+    // ---------- admin operations (bypass role checks, still charge points) ----------
+
+    /**
+     * Admin island grant. Charges the team like a normal claim, but skips the role check
+     * and the "already claimed" error is still enforced. Returns error key or null on success.
+     */
+    public synchronized String adminClaimIsland(UUID teamId, long zoneId, int islandCost,
+                                               String tierId, double centerX, double centerZ) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        IslandClaim existing = islandClaims.get(zoneId);
+        if (existing != null) return "msg.fmm_teams.err.island_claimed";
+        if (!canAfford(team.id(), islandCost)) return "msg.fmm_teams.err.insufficient_points";
+        islandClaims.put(zoneId, new IslandClaim(zoneId, team.id(), islandCost, tierId, centerX, centerZ));
+        setDirty();
+        return null;
+    }
+
+    /** Admin island revoke, regardless of who owns it. Returns error key or null on success. */
+    public synchronized String adminUnclaimIsland(long zoneId) {
+        if (islandClaims.remove(zoneId) == null) return "msg.fmm_teams.err.island_not_claimed";
+        setDirty();
+        return null;
+    }
+
+    /** Adds (or with a negative delta, removes) admin bonus points. Clamped at 0. */
+    public synchronized String addBonus(UUID teamId, int delta) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        team.addBonus(delta);
+        setDirty();
+        return null;
+    }
+
+    /** Sets the admin bonus to an exact value. Clamped at 0. */
+    public synchronized String setBonus(UUID teamId, int bonus) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        team.setBonus(bonus);
+        setDirty();
+        return null;
+    }
+
+    /** Admin kick: removes a member without a role check and rebalances claims. */
+    public synchronized String adminKick(UUID teamId, UUID target) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (!team.isMember(target)) return "msg.fmm_teams.err.not_member";
+        if (target.equals(team.owner())) return "msg.fmm_teams.err.owner_leave";
+        team.removeMember(target);
+        memberIndex.remove(target);
+        rebalanceClaims(team.id());
+        setDirty();
+        return null;
     }
 
     // ---------- mutations, all return error key or null on success ----------
@@ -375,6 +437,8 @@ public final class TeamManager extends SavedData {
                 inv.add(m);
             }
             ct.put("invites", inv);
+            // bonus was added later; older saves simply load it as 0
+            ct.putInt("bonus", t.bonus());
             list.add(ct);
         }
         tag.put("teams", list);
@@ -386,6 +450,9 @@ public final class TeamManager extends SavedData {
             ct.putLong("zoneId", claim.zoneId());
             ct.putUUID("teamId", claim.teamId());
             ct.putInt("cost", claim.cost());
+            ct.putString("tier", claim.tierId());
+            ct.putDouble("cx", claim.centerX());
+            ct.putDouble("cz", claim.centerZ());
             claimsList.add(ct);
         }
         tag.put("islandClaims", claimsList);
@@ -420,6 +487,7 @@ public final class TeamManager extends SavedData {
                 team.addMember(u, m.getString("name"));
                 team.setRole(u, Role.fromId(m.getString("role")));
             }
+            if (ct.contains("bonus")) team.setBonus(ct.getInt("bonus"));
             // owner role could be stored as owner anyway
             ListTag inv = ct.getList("invites", Tag.TAG_COMPOUND);
             for (Tag it : inv) {
@@ -442,7 +510,11 @@ public final class TeamManager extends SavedData {
                 long zoneId = c.getLong("zoneId");
                 UUID teamId = c.getUUID("teamId");
                 int cost = c.getInt("cost");
-                mgr.islandClaims.put(zoneId, new IslandClaim(zoneId, teamId, cost));
+                // tier/centre were added after the first save format; older saves fall back to UNKNOWN
+                String tier = c.contains("tier") ? c.getString("tier") : "UNKNOWN";
+                double cx = c.contains("cx") ? c.getDouble("cx") : 0;
+                double cz = c.contains("cz") ? c.getDouble("cz") : 0;
+                mgr.islandClaims.put(zoneId, new IslandClaim(zoneId, teamId, cost, tier, cx, cz));
             }
         }
 
@@ -464,5 +536,15 @@ public final class TeamManager extends SavedData {
 
     // ---------- IslandClaim record ----------
 
-    public record IslandClaim(long zoneId, UUID teamId, int cost) {}
+    /**
+     * A claimed island. Tier id and centre are stored alongside the cost so the claim stays
+     * displayable without re-deriving the island from the world — zoneId is a hash of the
+     * worldgen grid cell and is not cheaply invertible.
+     */
+    public record IslandClaim(long zoneId, UUID teamId, int cost, String tierId, double centerX, double centerZ) {
+        /** Back-compatible constructor for saves written before tier/centre were persisted. */
+        public IslandClaim(long zoneId, UUID teamId, int cost) {
+            this(zoneId, teamId, cost, "UNKNOWN", 0, 0);
+        }
+    }
 }

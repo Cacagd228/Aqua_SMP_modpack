@@ -20,9 +20,7 @@ FORCE_SERVER_MODS = {
     "ponderjs-neoforge-1.21.1-2.4.0.jar",
 }
 
-EXCLUDE_FROM_SERVER = {
-    "UIQuest-neoforge-1.21.1-1.0.4.jar",
-}
+EXCLUDE_FROM_SERVER = set()
 
 def get_server_mods():
     """Get list of server-side mod files from .pw.toml files."""
@@ -69,10 +67,10 @@ def main():
             server_mods.append(mod)
             print(f"  Force-adding {mod} to server mods")
     
-    # Exclude UIQuest
+    # Exclude client-only pins (сейчас пусто: все оставшиеся пины нужны и серверу)
     server_mods = [m for m in server_mods if m not in EXCLUDE_FROM_SERVER]
-    if "UIQuest-neoforge-1.21.1-1.0.4.jar" in EXCLUDE_FROM_SERVER:
-        print("  Excluding UIQuest from server mods")
+    for mod in sorted(EXCLUDE_FROM_SERVER):
+        print(f"  Excluding {mod} from server mods")
     
     print(f"Found {len(server_mods)} server-side mods")
     

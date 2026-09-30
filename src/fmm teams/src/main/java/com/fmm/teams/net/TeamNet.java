@@ -19,13 +19,26 @@ import net.minecraft.resources.ResourceLocation;
 public final class TeamNet {
     private TeamNet() {}
 
-    public static final String PROTOCOL = "1";
+    public static final String PROTOCOL = "2";
 
     // ---------- snapshot model (client cache) ----------
 
     public record MemberEntry(UUID uuid, String name, Role role, boolean online) {}
 
     public record InviteEntry(UUID teamId, String teamName, String ownerName) {}
+
+    /**
+     * One claimed island as seen by the client.
+     * tierId is the fmm_worldgen IslandTier constant name; the client localises it.
+     * cost is what the team paid, yours = claimed by the team this snapshot belongs to.
+     */
+    public record IslandEntry(
+            long zoneId,
+            String tierId,
+            int cost,
+            double centerX,
+            double centerZ,
+            boolean yours) {}
 
     public record Snapshot(
             boolean hasTeam,
@@ -36,15 +49,25 @@ public final class TeamNet {
             Role yourRole,
             long createdAt,
             List<MemberEntry> members,
-            List<InviteEntry> invites) {
+            List<InviteEntry> invites,
+            int points,
+            int spent,
+            List<IslandEntry> islands,
+            IslandEntry hereIsland) {
         public static Snapshot empty(List<InviteEntry> invites) {
-            return new Snapshot(false, null, "", "", null, null, 0L, List.of(), List.copyOf(invites));
+            return new Snapshot(false, null, "", "", null, null, 0L, List.of(), List.copyOf(invites),
+                    0, 0, List.of(), null);
         }
 
         public int countRole(Role role) {
             int n = 0;
             for (MemberEntry m : members) if (m.role() == role) n++;
             return n;
+        }
+
+        /** Points still available for new claims. */
+        public int freePoints() {
+            return Math.max(0, points - spent);
         }
     }
 
@@ -59,7 +82,11 @@ public final class TeamNet {
             String yourRoleId,
             long createdAt,
             List<MemberEntry> members,
-            List<InviteEntry> invites) implements CustomPacketPayload {
+            List<InviteEntry> invites,
+            int points,
+            int spent,
+            List<IslandEntry> islands,
+            IslandEntry hereIsland) implements CustomPacketPayload {
         public static final Type<ClientboundTeamSync> TYPE =
                 new Type<>(ResourceLocation.fromNamespaceAndPath("fmm_teams", "team_sync"));
 
@@ -91,6 +118,25 @@ public final class TeamNet {
             ByteBufCodecs.STRING_UTF8.encode(buf, inv.ownerName());
         }
 
+        private static IslandEntry decodeIsland(ByteBuf buf) {
+            long zoneId = ByteBufCodecs.VAR_LONG.decode(buf);
+            String tierId = ByteBufCodecs.STRING_UTF8.decode(buf);
+            int cost = ByteBufCodecs.VAR_INT.decode(buf);
+            double centerX = ByteBufCodecs.DOUBLE.decode(buf);
+            double centerZ = ByteBufCodecs.DOUBLE.decode(buf);
+            boolean yours = ByteBufCodecs.BOOL.decode(buf);
+            return new IslandEntry(zoneId, tierId, cost, centerX, centerZ, yours);
+        }
+
+        private static void encodeIsland(ByteBuf buf, IslandEntry isl) {
+            ByteBufCodecs.VAR_LONG.encode(buf, isl.zoneId());
+            ByteBufCodecs.STRING_UTF8.encode(buf, isl.tierId());
+            ByteBufCodecs.VAR_INT.encode(buf, isl.cost());
+            ByteBufCodecs.DOUBLE.encode(buf, isl.centerX());
+            ByteBufCodecs.DOUBLE.encode(buf, isl.centerZ());
+            ByteBufCodecs.BOOL.encode(buf, isl.yours());
+        }
+
         public static final StreamCodec<ByteBuf, ClientboundTeamSync> STREAM_CODEC = new StreamCodec<>() {
             @Override
             public ClientboundTeamSync decode(ByteBuf buf) {
@@ -107,11 +153,18 @@ public final class TeamNet {
                 int iCount = ByteBufCodecs.VAR_INT.decode(buf);
                 List<InviteEntry> invites = new ArrayList<>(iCount);
                 for (int i = 0; i < iCount; i++) invites.add(decodeInvite(buf));
+                int points = ByteBufCodecs.VAR_INT.decode(buf);
+                int spent = ByteBufCodecs.VAR_INT.decode(buf);
+                int isCount = ByteBufCodecs.VAR_INT.decode(buf);
+                List<IslandEntry> islands = new ArrayList<>(isCount);
+                for (int i = 0; i < isCount; i++) islands.add(decodeIsland(buf));
+                boolean hasHere = ByteBufCodecs.BOOL.decode(buf);
+                IslandEntry here = hasHere ? decodeIsland(buf) : null;
                 return new ClientboundTeamSync(hasTeam,
                         teamIdStr.isEmpty() ? null : UUID.fromString(teamIdStr),
                         teamName, ownerName,
                         ownerUuidStr.isEmpty() ? null : UUID.fromString(ownerUuidStr),
-                        yourRoleId, createdAt, members, invites);
+                        yourRoleId, createdAt, members, invites, points, spent, islands, here);
             }
 
             @Override
@@ -127,6 +180,12 @@ public final class TeamNet {
                 for (MemberEntry m : p.members()) encodeMember(buf, m);
                 ByteBufCodecs.VAR_INT.encode(buf, p.invites().size());
                 for (InviteEntry inv : p.invites()) encodeInvite(buf, inv);
+                ByteBufCodecs.VAR_INT.encode(buf, p.points());
+                ByteBufCodecs.VAR_INT.encode(buf, p.spent());
+                ByteBufCodecs.VAR_INT.encode(buf, p.islands().size());
+                for (IslandEntry isl : p.islands()) encodeIsland(buf, isl);
+                ByteBufCodecs.BOOL.encode(buf, p.hereIsland() != null);
+                if (p.hereIsland() != null) encodeIsland(buf, p.hereIsland());
             }
         };
 
@@ -138,7 +197,8 @@ public final class TeamNet {
         public Snapshot toSnapshot() {
             Role role = hasTeam ? Role.fromId(yourRoleId) : null;
             return new Snapshot(hasTeam, teamId, teamName, ownerName, ownerUuid, role,
-                    createdAt, List.copyOf(members), List.copyOf(invites));
+                    createdAt, List.copyOf(members), List.copyOf(invites),
+                    points, spent, List.copyOf(islands), hereIsland);
         }
     }
 

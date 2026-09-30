@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "minecraft:fishing_rod"
+    }
+  },
+  "pattern": [
+    " AA",
+    "AFA",
+    " SF"
+  ],
+  "result": {
+    "item": "meowhex:amethyst_fishing_rod"
+  }
+}

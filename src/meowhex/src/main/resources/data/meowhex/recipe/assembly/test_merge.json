@@ -1,0 +1,10 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:iron_ingot"
+  },
+  "steps": ["merge"],
+  "output": {
+    "id": "minecraft:golden_apple"
+  }
+}

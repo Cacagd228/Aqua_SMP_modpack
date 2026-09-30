@@ -13,8 +13,11 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.Mob
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.decoration.ArmorStand
 import net.minecraft.world.entity.item.ItemEntity
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec3
 import org.joml.Vector3f
 import java.util.function.DoubleUnaryOperator
@@ -29,6 +32,28 @@ fun List<Iota>.getDouble(idx: Int, argc: Int = 0): Double {
     } else {
         // TODO: I'm not sure this calculation is correct
         throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "double")
+    }
+}
+
+fun List<Iota>.getString(idx: Int, argc: Int = 0): String {
+    val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
+    if (x is StringIota) {
+        return x.string
+    } else {
+        throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "string")
+    }
+}
+
+/**
+ * A boolean that may legitimately be absent: a [NullIota] (or a missing index)
+ * reads as null, which the case-conversion rune reads as "toggle".
+ */
+fun List<Iota>.getBoolOrNull(idx: Int, argc: Int = 0): Boolean? {
+    val x = this.getOrNull(idx) ?: return null
+    return when (x) {
+        is BooleanIota -> x.bool
+        is NullIota -> null
+        else -> throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "boolean")
     }
 }
 
@@ -244,6 +269,15 @@ fun List<Iota>.getBlockPos(idx: Int, argc: Int = 0): BlockPos {
     throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "vector")
 }
 
+fun List<Iota>.getEntityType(idx: Int, argc: Int = 0): EntityType<*> {
+    val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
+    if (x is EntityTypeIota) {
+        return x.entityType
+    } else {
+        throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "entity_type")
+    }
+}
+
 fun List<Iota>.getNumOrVec(idx: Int, argc: Int = 0): Either<Double, Vec3> {
     val datum = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
     return when (datum) {
@@ -309,3 +343,8 @@ inline val Vec3.asActionResult get() = listOf(Vec3Iota(this))
 
 inline val Entity?.asActionResult get() = listOf(if (this == null) NullIota() else EntityIota(this))
 inline val HexPattern.asActionResult get() = listOf(PatternIota(this))
+inline val String.asActionResult get() = listOf(StringIota(this))
+inline val ItemStack.asActionResult get() = listOf(ItemStackIota(this))
+inline val Item.asActionResult get() = listOf(ItemTypeIota(this))
+inline val EntityType<*>.asActionResult get() = listOf(EntityTypeIota(this))
+inline val IotaType<*>.asActionResult get() = listOf(IotaTypeIota(this))

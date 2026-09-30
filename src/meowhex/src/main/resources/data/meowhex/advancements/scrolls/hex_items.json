@@ -1,0 +1,43 @@
+{
+  "parent": "meowhex:scrolls/root",
+  "display": {
+    "icon": {
+      "id": "meowhex:scroll_hex_items"
+    },
+    "title": {
+      "translate": "advancement.meowhex.scroll_found.title",
+      "with": [
+        {
+          "translate": "hexcasting.entry.items"
+        }
+      ]
+    },
+    "description": {
+      "translate": "advancement.meowhex.scroll_found.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "found_scroll": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "meowhex:scroll_hex_items"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "found_scroll"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

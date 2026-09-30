@@ -6,6 +6,14 @@ villagersOffendedByMindMurder = true
 explosionDestroysBlocks = false
 #Resource locations of dimensions you can't Blink or Greater Teleport in.
 tpDimDenyList = ["twilightforest:twilight_forest"]
+#Multiplier for how many blocks the explosion destroys (0.25 = 4x fewer blocks destroyed)
+# Default: 0.25
+# Range: 0.0 ~ 1.0
+explosionBlockDamageMultiplier = 0.25
+#Multiplier for knockback on non-player entities (0.5 = 2x weaker knockback on non-players)
+# Default: 0.5
+# Range: 0.0 ~ 1.0
+knockbackNonPlayerMultiplier = 0.5
 
 [Spells]
 	#The maximum number of actions that can be executed in one tick, to avoid hanging the server.

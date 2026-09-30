@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:merge_entities",
+  "category": "meowhex:assembly",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 98,
+  "advancement": "meowhex:scrolls/loki_merge_entities",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:merge_entities",
+      "anchor": "meowhex:merge_entities",
+      "input": "vector,vector",
+      "output": "",
+      "text": "meowhex.page.merge_entities.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.merge_entities.2"
+    }
+  ]
+}

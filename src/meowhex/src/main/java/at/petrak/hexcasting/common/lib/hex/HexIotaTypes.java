@@ -43,6 +43,13 @@ public class HexIotaTypes {
     public static final IotaType<Vec3Iota> VEC3 = type("vec3", Vec3Iota.TYPE);
     public static final IotaType<ContinuationIota> CONTINUATION = type("continuation", ContinuationIota.TYPE);
 
+    // From the MoreIotas addon (MIT, Talia-12). The matrix iota is deliberately
+    // not ported: this fork skips matrices entirely.
+    public static final IotaType<StringIota> STRING = type("string", StringIota.TYPE);
+    public static final IotaType<ItemStackIota> ITEM_STACK = type("item_stack", ItemStackIota.TYPE);
+    public static final IotaType<EntityTypeIota> ENTITY_TYPE = type("entity_type", EntityTypeIota.TYPE);
+    public static final IotaType<IotaTypeIota> IOTA_TYPE = type("iota_type", IotaTypeIota.TYPE);
+    public static final IotaType<ItemTypeIota> ITEM_TYPE = type("item_type", ItemTypeIota.TYPE);
 
     private static <U extends Iota, T extends IotaType<U>> T type(String name, T type) {
         var old = TYPES.put(modLoc(name), type);

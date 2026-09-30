@@ -1,0 +1,22 @@
+{
+  "name": "hexcasting.action.meowhex:infuse_aether",
+  "category": "meowhex:assembly",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 102,
+  "advancement": "meowhex:scrolls/loki_infuse_aether",
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "meowhex:pattern",
+      "op_id": "meowhex:infuse_aether",
+      "anchor": "meowhex:infuse_aether",
+      "input": "vector,double",
+      "output": "",
+      "text": "meowhex.page.infuse_aether.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "meowhex.page.infuse_aether.2"
+    }
+  ]
+}

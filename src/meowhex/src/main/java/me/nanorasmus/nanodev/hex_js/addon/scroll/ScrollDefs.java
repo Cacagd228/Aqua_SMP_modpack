@@ -83,7 +83,15 @@ public final class ScrollDefs {
             "scroll_necro_hades_summon",
             "scroll_necro_morrigan_gambit",
             "scroll_necro_styx_shade",
-            "scroll_loki_charge_vessel"
+            "scroll_loki_charge_vessel",
+            "scroll_loki_merge_entities",
+            "scroll_loki_absorb_gifts",
+            "scroll_loki_purify_essence",
+            "scroll_loki_draw_sacrifice",
+            "scroll_loki_infuse_aether",
+            "scroll_hex_strings",
+            "scroll_hex_types",
+            "scroll_hex_items"
     );
 
     /** Scroll item id -&gt; advancement id granting its book page. */
@@ -159,7 +167,15 @@ public final class ScrollDefs {
             Map.entry("scroll_necro_hades_summon", "meowhex:scrolls/necro_hades_summon"),
             Map.entry("scroll_necro_morrigan_gambit", "meowhex:scrolls/necro_morrigan_gambit"),
             Map.entry("scroll_necro_styx_shade", "meowhex:scrolls/necro_styx_shade"),
-            Map.entry("scroll_loki_charge_vessel", "meowhex:scrolls/loki_charge_vessel")
+            Map.entry("scroll_loki_charge_vessel", "meowhex:scrolls/loki_charge_vessel"),
+            Map.entry("scroll_loki_merge_entities", "meowhex:scrolls/loki_merge_entities"),
+            Map.entry("scroll_loki_absorb_gifts", "meowhex:scrolls/loki_absorb_gifts"),
+            Map.entry("scroll_loki_purify_essence", "meowhex:scrolls/loki_purify_essence"),
+            Map.entry("scroll_loki_draw_sacrifice", "meowhex:scrolls/loki_draw_sacrifice"),
+            Map.entry("scroll_loki_infuse_aether", "meowhex:scrolls/loki_infuse_aether"),
+            Map.entry("scroll_hex_strings", "meowhex:scrolls/hex_strings"),
+            Map.entry("scroll_hex_types", "meowhex:scrolls/hex_types"),
+            Map.entry("scroll_hex_items", "meowhex:scrolls/hex_items")
     );
 
     /** Scroll item id -&gt; Patchouli entry name key (for tooltips). */
@@ -235,7 +251,15 @@ public final class ScrollDefs {
             Map.entry("scroll_necro_hades_summon", "hexcasting.action.meowhex:hades_summon"),
             Map.entry("scroll_necro_morrigan_gambit", "hexcasting.action.meowhex:morrigan_gambit"),
             Map.entry("scroll_necro_styx_shade", "hexcasting.action.meowhex:styx_shade"),
-            Map.entry("scroll_loki_charge_vessel", "hexcasting.action.meowhex:charge_vessel")
+            Map.entry("scroll_loki_charge_vessel", "hexcasting.action.meowhex:charge_vessel"),
+            Map.entry("scroll_loki_merge_entities", "hexcasting.action.meowhex:merge_entities"),
+            Map.entry("scroll_loki_absorb_gifts", "hexcasting.action.meowhex:absorb_gifts"),
+            Map.entry("scroll_loki_purify_essence", "hexcasting.action.meowhex:purify_essence"),
+            Map.entry("scroll_loki_draw_sacrifice", "hexcasting.action.meowhex:draw_sacrifice"),
+            Map.entry("scroll_loki_infuse_aether", "hexcasting.action.meowhex:infuse_aether"),
+            Map.entry("scroll_hex_strings", "hexcasting.entry.strings"),
+            Map.entry("scroll_hex_types", "hexcasting.entry.types"),
+            Map.entry("scroll_hex_items", "hexcasting.entry.items")
     );
 
     /** Scroll item id -&gt; owning book title key (for tooltips). */
@@ -311,7 +335,15 @@ public final class ScrollDefs {
             Map.entry("scroll_necro_hades_summon", "meowhex.book.necronomicon"),
             Map.entry("scroll_necro_morrigan_gambit", "meowhex.book.necronomicon"),
             Map.entry("scroll_necro_styx_shade", "meowhex.book.necronomicon"),
-            Map.entry("scroll_loki_charge_vessel", "meowhex.book.loki_foliant")
+            Map.entry("scroll_loki_charge_vessel", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_loki_merge_entities", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_loki_absorb_gifts", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_loki_purify_essence", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_loki_draw_sacrifice", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_loki_infuse_aether", "meowhex.book.loki_foliant"),
+            Map.entry("scroll_hex_strings", "item.hexcasting.book"),
+            Map.entry("scroll_hex_types", "item.hexcasting.book"),
+            Map.entry("scroll_hex_items", "item.hexcasting.book")
     );
 
     /** Scroll item id -&gt; op ids described on its page (for per-world stroke lookup). */
@@ -387,7 +419,15 @@ public final class ScrollDefs {
             Map.entry("scroll_necro_hades_summon", List.of("meowhex:hades_recall", "meowhex:hades_summon")),
             Map.entry("scroll_necro_morrigan_gambit", List.of("meowhex:morrigan_gambit")),
             Map.entry("scroll_necro_styx_shade", List.of("meowhex:styx_shade")),
-            Map.entry("scroll_loki_charge_vessel", List.of("meowhex:charge_vessel"))
+            Map.entry("scroll_loki_charge_vessel", List.of("meowhex:charge_vessel")),
+            Map.entry("scroll_loki_merge_entities", List.of("meowhex:merge_entities")),
+            Map.entry("scroll_loki_absorb_gifts", List.of("meowhex:absorb_gifts")),
+            Map.entry("scroll_loki_purify_essence", List.of("meowhex:purify_essence")),
+            Map.entry("scroll_loki_draw_sacrifice", List.of("meowhex:draw_sacrifice")),
+            Map.entry("scroll_loki_infuse_aether", List.of("meowhex:infuse_aether")),
+            Map.entry("scroll_hex_strings", List.of("meowhex:string_empty", "meowhex:string_space", "meowhex:string_comma", "meowhex:string_newline", "meowhex:string_split", "meowhex:string_parse", "meowhex:string_case", "meowhex:string_iota", "meowhex:string_action", "meowhex:string_name_get", "meowhex:string_name_set", "meowhex:string_block_get", "meowhex:string_block_set")),
+            Map.entry("scroll_hex_types", List.of("meowhex:type_entity", "meowhex:type_iota", "meowhex:type_item_held", "meowhex:get_entity_type", "meowhex:zone_entity_type", "meowhex:zone_entity_not_type")),
+            Map.entry("scroll_hex_items", List.of("meowhex:item_main_hand", "meowhex:item_off_hand"))
     );
 
     /** Op id -&gt; advancement ids, any one of which allows casting. */
@@ -465,6 +505,32 @@ public final class ScrollDefs {
             Map.entry("meowhex:true_name", List.of("meowhex:scrolls/loki_true_name")),
             Map.entry("meowhex:utgard_seal", List.of("meowhex:scrolls/loki_utgard_seal")),
             Map.entry("hexcasting:transfer_to_depot", List.of("meowhex:scrolls/loki_wings_of_irida")),
-            Map.entry("meowhex:charge_vessel", List.of("meowhex:scrolls/loki_charge_vessel"))
+            Map.entry("meowhex:charge_vessel", List.of("meowhex:scrolls/loki_charge_vessel")),
+            Map.entry("meowhex:merge_entities", List.of("meowhex:scrolls/loki_merge_entities")),
+            Map.entry("meowhex:absorb_gifts", List.of("meowhex:scrolls/loki_absorb_gifts")),
+            Map.entry("meowhex:purify_essence", List.of("meowhex:scrolls/loki_purify_essence")),
+            Map.entry("meowhex:draw_sacrifice", List.of("meowhex:scrolls/loki_draw_sacrifice")),
+            Map.entry("meowhex:infuse_aether", List.of("meowhex:scrolls/loki_infuse_aether")),
+            Map.entry("meowhex:string_empty", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_space", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_comma", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_newline", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_split", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_parse", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_case", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_iota", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_action", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_name_get", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_name_set", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_block_get", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:string_block_set", List.of("meowhex:scrolls/hex_strings")),
+            Map.entry("meowhex:type_entity", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:type_iota", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:type_item_held", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:get_entity_type", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:zone_entity_type", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:zone_entity_not_type", List.of("meowhex:scrolls/hex_types")),
+            Map.entry("meowhex:item_main_hand", List.of("meowhex:scrolls/hex_items")),
+            Map.entry("meowhex:item_off_hand", List.of("meowhex:scrolls/hex_items"))
     );
 }

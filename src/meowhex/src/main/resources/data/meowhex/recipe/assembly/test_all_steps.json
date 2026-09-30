@@ -1,0 +1,11 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "steps": ["merge", "absorb", "purify", "sacrifice"],
+  "mana": 2000,
+  "output": {
+    "id": "minecraft:netherite_block"
+  }
+}

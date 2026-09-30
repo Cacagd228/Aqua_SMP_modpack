@@ -87,6 +87,9 @@ public final class HexArtifactsItems {
                         out.accept(me.nanorasmus.nanodev.hex_js.addon.armor.ScarletKnightArmorItems.CUIRASS.get());
                         out.accept(me.nanorasmus.nanodev.hex_js.addon.armor.ScarletKnightArmorItems.LEGGINGS.get());
                         out.accept(me.nanorasmus.nanodev.hex_js.addon.armor.ScarletKnightArmorItems.BOOTS.get());
+                        // Staffs, the drawing orb, the spellbook and the amethyst rod
+                        // — moved in from the (now gone) "Hextended" tab.
+                        HextendedItems.ALL.forEach(h -> out.accept(h.get()));
                     })
                     .build());
 

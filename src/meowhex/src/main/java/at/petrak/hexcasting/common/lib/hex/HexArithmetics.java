@@ -38,6 +38,7 @@ public class HexArithmetics {
     public static DoubleArithmetic DOUBLE = make("double", DoubleArithmetic.INSTANCE);
     public static Vec3Arithmetic VEC3 = make("vec3", Vec3Arithmetic.INSTANCE);
     public static ListArithmetic LIST = make("list", ListArithmetic.INSTANCE);
+    public static StringArithmetic STRING = make("string", StringArithmetic.INSTANCE);
     public static BoolArithmetic BOOL = make("bool", BoolArithmetic.INSTANCE);
     public static ListSetArithmetic LIST_SET = make("list_set", ListSetArithmetic.INSTANCE);
     public static BitwiseSetArithmetic BITWISE_SET = make("bitwise_set", BitwiseSetArithmetic.INSTANCE);

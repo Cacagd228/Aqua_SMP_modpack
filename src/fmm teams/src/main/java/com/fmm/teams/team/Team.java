@@ -23,6 +23,8 @@ public final class Team {
     private final Set<UUID> invites = new LinkedHashSet<>();
     private final Map<UUID, String> inviteNames = new LinkedHashMap<>();
     private final long createdAt;
+    /** Admin-granted extra points on top of one point per member. */
+    private int bonusPoints;
 
     public Team(UUID id, String name, UUID owner, String ownerName, long createdAt) {
         this.id = id;
@@ -38,6 +40,10 @@ public final class Team {
     public void rename(String name) { this.name = name; }
     public UUID owner() { return owner; }
     public long createdAt() { return createdAt; }
+
+    public int bonus() { return bonusPoints; }
+    public void setBonus(int bonus) { this.bonusPoints = Math.max(0, bonus); }
+    public void addBonus(int delta) { setBonus(bonusPoints + delta); }
 
     public boolean isMember(UUID player) { return roles.containsKey(player); }
     public boolean isInvited(UUID player) { return invites.contains(player); }

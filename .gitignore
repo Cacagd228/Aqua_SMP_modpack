@@ -1,30 +1,30 @@
 # packwiz: скачанные лаунчером/командой `packwiz install` моды в гит не идут.
-# Исключение — 15 запиненных jar'ов ниже: их нет на Modrinth, они часть репы.
+# Исключение — 11 запиненных jar'ов ниже: их нет на Modrinth, они часть репы
+# (кастомные моды из src/ + CurseForge-only пины).
 mods/*.jar
+!mods/aerofix-1.0.0.jar
 !mods/Apofix-1.21.1-1.0.0.jar
 !mods/FMMWorldgen-1.1.0.jar
 !mods/colonycard-1.0.0.jar
 !mods/hexsable-1.1.0.jar
-!mods/UIQuest-neoforge-1.21.1-1.0.4.jar
-!mods/create-aeronautics-bundled-1.21.1-1.3.2-FIXED.jar
 !mods/framework-neoforge-1.21.1-0.13.11.jar
 !mods/fmm_teams-0.1.0.jar
-!mods/ftb-library-neoforge-2101.1.35.jar
-!mods/ftb-quests-neoforge-2101.1.34.jar
-!mods/ftb-teams-neoforge-2101.1.11.jar
 !mods/harderdiesel-1.4.0.jar
 !mods/lineage_core-2.1.0.jar
 !mods/meowaddons-1.0.1.jar
 !mods/meowhex.jar
 !mods/panoptic_recipe_builder-1.21.1-1.0.0.jar
-!mods/sablexaeromaps-1.21.1-1.4.0.jar
-!mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar
-!mods/waterwheelbearing-3.0.0.jar
 
 # Локальные экспортные артефакты (боевые лежат в GitHub Releases)
 *.mrpack
 AquaSMP-*.zip
 prism-stage/
+
+# Ресурс-пак со звуками комментаторов (QoP / Meepo) и тишины.
+# Аудио намеренно вне репозитория: в моде meowhex его больше нет,
+# пак собирается из распакованного каталога скриптом tools/build-sounds-pack.py
+# и раздаётся игрокам отдельно (кидается в .minecraft/resourcepacks).
+/resourcepacks/
 
 # Если пак случайно открывают как PrismLauncher-инстанс
 instance.cfg
@@ -43,9 +43,36 @@ Thumbs.db
 .vscode/
 *.iml
 
-# kubejsMCP: зависимости и секреты не коммитим (dist/ нужен для запуска без сборки)
-src/kubejsMCP/node_modules/
-src/kubejsMCP/.env
+# Python-инструменты
+__pycache__/
+*.pyc
+
+# Логи dev-запусков gradle runServer / runClient
+src/*/run_*.log
+
+# Обратный инжиниринг/зондирование классов meowhex (не собрано в jar)
+src/meowhex/.mcprobe*/
+
+# meow relics — в разработке, пока вне сборки и вне репозитория
+/src/meow relics/
+/src/meowrelics/
+
+# Дамп KubeJS-датагена рядом с проектом: build.gradle его не берёт
+# (рецепты лежат в src/main/resources/data), нужен только для локальной правки.
+src/meowhex/data/
+
+# Вывод dev-запусков и черновики. Пока отслеживались в git, packwiz на CI
+# затягивал их в индекс, а `mr export` — в overrides .mrpack.
+src/*/run2/
+src/*/run/
+src/meowhex/sosud/
+
+# Экспорт KubeJS-проекта, брошенный в корень mod-проекта. В сборку не идёт
+# (build.gradle берёт только src/main), лежит как черновик.
+src/meowhex/kubejs.mixins.json
+src/meowhex/kubejs.plugins.txt
+src/meowhex/kubejs.classfilter.txt
+src/meowhex/kubejs_logo.png
 
 # Локальная карта проекта для агента (не коммитить)
 PROJECT_MAP.md

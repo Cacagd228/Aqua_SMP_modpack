@@ -1,0 +1,10 @@
+{
+  "type": "meowhex:assembly",
+  "input": {
+    "item": "minecraft:iron_ingot"
+  },
+  "steps": ["absorb"],
+  "output": {
+    "id": "minecraft:golden_carrot"
+  }
+}
