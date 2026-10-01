@@ -14,4 +14,7 @@ public final class ModBlocks {
 
     public static final DeferredBlock<StageBlock> STAGE_BLOCK = BLOCKS.register(
             "stage_block", StageBlock::new);
+
+    public static final DeferredBlock<TradeTerminalBlock> TRADE_TERMINAL = BLOCKS.register(
+            "trade_terminal", TradeTerminalBlock::new);
 }

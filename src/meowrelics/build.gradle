@@ -1,0 +1,75 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://maven.neoforged.net/releases" }
+    maven { url = "https://maven.blamejared.com" }
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://jitpack.io" }
+    flatDir { dir "libs" }
+}
+
+dependencies {
+    // Relics — закрытый аддон, лежит только бинарником. Компилируемся против локального jar.
+    compileOnly files("libs/relics-1.21.1-0.12.8.jar")
+
+    // На момент разработки jar лежит в libs/, но в гит/сборку попадает как flatDir-зависимость.
+    // Если relics.jar положен в mods/ сборки — он подхватится оттуда в dev-ране.
+    runtimeOnly files("libs/relics-1.21.1-0.12.8.jar")
+
+    compileOnly "org.jetbrains:annotations:24.1.0"
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+neoForge {
+    version = neoforge_version
+    validateAccessTransformers = false
+
+    runs {
+        client {
+            client()
+            gameDirectory = file("run")
+            programArgument('--username')
+            programArgument('Dev1')
+        }
+        server {
+            server()
+            gameDirectory = file("run")
+        }
+        data {
+            data()
+            gameDirectory = file("run")
+        }
+    }
+
+    mods {
+        meowrelics {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+tasks.named("processResources").configure {
+    inputs.property "version", mod_version
+    inputs.property "neoforge_loader_range", neoforge_loader_range
+    inputs.property "minecraft_range", minecraft_range
+
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand "version": mod_version,
+               "neoforge_loader_range": neoforge_loader_range,
+               "minecraft_range": minecraft_range
+    }
+}

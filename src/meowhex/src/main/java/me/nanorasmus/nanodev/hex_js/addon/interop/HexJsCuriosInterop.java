@@ -32,8 +32,9 @@ public final class HexJsCuriosInterop {
         registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.CHARGED_AMETHYST_NECKLACE.get());
         registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.OVERLOADED_NECKLACE.get());
         registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.SELF_TORTURE_RING.get());
-        registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.PATTERN_READER.get());
         registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.SNIPER_SCOPE.get());
+        registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.LIGHTNING_ROD.get());
+        registerBauble((net.minecraft.world.item.Item) HexArtifactsItems.HOURGLASS.get());
     }
 
     private static void registerBauble(net.minecraft.world.item.Item item) {

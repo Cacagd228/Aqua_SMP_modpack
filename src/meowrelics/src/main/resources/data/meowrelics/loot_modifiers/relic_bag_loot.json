@@ -1,0 +1,7 @@
+{
+  "type": "meowrelics:relic_bag_loot",
+  "conditions": [],
+  "common_chance": 0.04,
+  "rare_chance": 0.01,
+  "hex_chance": 0.04
+}

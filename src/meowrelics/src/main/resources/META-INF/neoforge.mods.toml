@@ -1,0 +1,41 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "meowrelics"
+version = "${version}"
+displayName = "MeowRelics"
+authors = "cacagd22811"
+description = 'Addon for Relics: datapack-free rebalance of relic stats, leveling costs, ability limits and loot weights. Hot-reloadable via /meowrelics reload. Relics no longer drop from chests directly — three bags drop instead and each opens into something random (relic, rare relic, or a meowhex artifact).'
+
+[[dependencies.meowrelics]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoforge_loader_range}"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.meowrelics]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.meowrelics]]
+modId = "relics"
+type = "required"
+versionRange = "[0.12.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# Опционально: без него работают только два мешочка с реликвиями.
+# Мешочек HexCasting ищет артефакты по id и в отсутствие мода просто
+# не выдаёт начинку, вместо того чтобы ронять загрузку.
+[[dependencies.meowrelics]]
+modId = "meowhex"
+type = "optional"
+versionRange = "[1.4.0,)"
+ordering = "AFTER"
+side = "BOTH"

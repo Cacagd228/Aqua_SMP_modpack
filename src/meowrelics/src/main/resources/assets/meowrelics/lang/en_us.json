@@ -1,0 +1,14 @@
+{
+  "item.meowrelics.relic_bag": "Relic Bag",
+  "item.meowrelics.relic_bag_rare": "Rare Bag",
+  "item.meowrelics.relic_bag_hexcasting": "HexCasting Bag",
+  "itemGroup.meowrelics": "MeowRelics",
+
+  "tooltip.meowrelics.relic_bag": "Right-click to open and receive a random relic",
+  "tooltip.meowrelics.relic_bag_rare": "Right-click to open and receive a relic\n§7Increased chance for powerful relics",
+  "tooltip.meowrelics.relic_bag_hexcasting": "Right-click to open and receive a HexCasting artifact",
+
+  "message.meowrelics.relic_bag.empty": "The bag is empty - there are no relics in the game",
+  "message.meowrelics.relic_bag_rare.empty": "The bag is empty - there are no relics in the game",
+  "message.meowrelics.relic_bag_hexcasting.empty": "The bag is empty - no HexCasting artifact was found"
+}

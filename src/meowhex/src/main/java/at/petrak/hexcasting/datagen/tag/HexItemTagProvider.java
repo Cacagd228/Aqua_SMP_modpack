@@ -10,6 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
@@ -43,6 +44,11 @@ public class HexItemTagProvider extends PaucalItemTagProvider {
             HexItems.STAFF_CHERRY,HexItems.STAFF_BAMBOO,
             HexItems.STAFF_QUENCHED, HexItems.STAFF_MINDSPLICE);
 
+        // The hextended (meowhex) staves must be in hexcasting:staves too: the
+        // spell GUI's own tick() closes itself unless the held item is in this
+        // exact tag, so a meowhex-only tag leaves the GUI unusable.
+        add(tag(HexTags.Items.STAVES), hextendedStaves());
+
         add(tag(HexTags.Items.PHIAL_BASE),
             Items.GLASS_BOTTLE);
         add(tag(HexTags.Items.GRANTS_ROOT_ADVANCEMENT),
@@ -70,6 +76,26 @@ public class HexItemTagProvider extends PaucalItemTagProvider {
         this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
         this.copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
+    }
+
+    /**
+     * The hextended staff set, resolved from the live registry by id so this
+     * datagen class (which lives in the {@code at.petrak} package and must not
+     * import addon classes) stays decoupled from the addon itself.
+     */
+    private static Item[] hextendedStaves() {
+        String[] ids = {
+            "staff/moss", "staff/flowered_moss", "staff/prismarine",
+            "staff/dark_prismarine", "staff/obsidian", "staff/purpur",
+            "staff/livingwood", "staff/manasteel", "staff/terrasteel",
+            "staff/dreamwood", "staff/elementium", "staff/drawing_orb",
+        };
+        var out = new Item[ids.length];
+        for (int i = 0; i < ids.length; i++) {
+            out[i] = BuiltInRegistries.ITEM.get(
+                    ResourceLocation.fromNamespaceAndPath("meowhex", ids[i]));
+        }
+        return out;
     }
 
     void add(TagAppender<Item> appender, Item... items) {

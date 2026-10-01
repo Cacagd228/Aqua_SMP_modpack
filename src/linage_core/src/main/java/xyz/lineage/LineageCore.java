@@ -3,6 +3,7 @@ package xyz.lineage;
 import xyz.lineage.client.ChronicleKeys;
 import xyz.lineage.client.WhisperClientEvents;
 import xyz.lineage.command.HeritageCommands;
+import xyz.lineage.game.FrozenWaters;
 import xyz.lineage.game.SeasonedPlayerWatcher;
 import xyz.lineage.net.ChronicleNetwork;
 import xyz.lineage.registry.SoulAttachments;
@@ -28,6 +29,7 @@ public final class LineageCore {
         bus.addListener(this::attachVirtuesToPlayer);
         bus.addListener(ChronicleNetwork::register);
         NeoForge.EVENT_BUS.register(new SeasonedPlayerWatcher());
+        NeoForge.EVENT_BUS.register(new FrozenWaters());
         NeoForge.EVENT_BUS.addListener(HeritageCommands::register);
         if (FMLEnvironment.dist.isClient()) {
             ChronicleKeys.bind(bus);

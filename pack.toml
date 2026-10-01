@@ -1,12 +1,12 @@
 name = "Aqua SMP"
 author = "Cacagd228"
-version = "1.1.6-release"
+version = "1.1.7-release"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "b8554011403e4a483957d8ec3edc29bca3af1b4080c39b87ef05ae2bd2bc76e4"
+hash = "b1a1e84975736ca0cce26abacd9ccd7e8b16eb916a1b923e426fe45311350171"
 
 [versions]
 minecraft = "1.21.1"

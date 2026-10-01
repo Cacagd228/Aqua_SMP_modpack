@@ -7,6 +7,7 @@ import me.nanorasmus.nanodev.hex_js.addon.item.ItemBoundSpellbook;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemChargedDiadem;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemDrawingOrb;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemSpellbookCover;
+import me.nanorasmus.nanodev.hex_js.addon.item.ItemStellarTune;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -53,6 +54,10 @@ public final class HextendedItems {
     // ---- аметистовая удочка: два поплавка, поднимаются разом ----
     public static final DeferredHolder<Item, ? extends Item> AMETHYST_FISHING_ROD =
             register("amethyst_fishing_rod", ItemAmethystFishingRod::new, 1);
+
+    // ---- «Стеллар Тюн»: звёздная гитара, нота + звезда по курсору ----
+    public static final DeferredHolder<Item, ? extends Item> STELLAR_TUNE =
+            register("stellar_tune", ItemStellarTune::new, 1);
 
     // ---- книга заклинаний ----
     public static final DeferredHolder<Item, ? extends Item> SPELLBOOK_COVER = register("spellbook_cover", ItemSpellbookCover::new, 64);

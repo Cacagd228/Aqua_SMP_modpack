@@ -23,3 +23,11 @@ description='''${mod_description}'''
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+# Валюта торгового терминала. Опциональна: без неё цены остаются числами,
+# а комиссия за лот не взимается (см. trade/NumismaticsMoney).
+[[dependencies."${mod_id}"]]
+    modId="numismatics"
+    type="optional"
+    ordering="AFTER"
+    side="BOTH"

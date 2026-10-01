@@ -3,7 +3,6 @@ package at.petrak.hexcasting.forge.network;
 import at.petrak.hexcasting.common.msgs.*;
 import me.nanorasmus.nanodev.hex_js.network.MsgAnnounceTextS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgAnnouncementS2C;
-import me.nanorasmus.nanodev.hex_js.network.MsgCopyPatternC2S;
 import me.nanorasmus.nanodev.hex_js.network.MsgKillFlashS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgManaPairS2C;
 import me.nanorasmus.nanodev.hex_js.network.MsgSilenceDenyS2C;
@@ -35,7 +34,6 @@ public class ForgePacketHandler {
 
         server(registrar, MsgNewSpellPatternC2S.ID, MsgNewSpellPatternC2S::deserialize, MsgNewSpellPatternC2S::handle);
         server(registrar, MsgShiftScrollC2S.ID, MsgShiftScrollC2S::deserialize, MsgShiftScrollC2S::handle);
-        server(registrar, MsgCopyPatternC2S.ID, MsgCopyPatternC2S::deserialize, MsgCopyPatternC2S::handle);
 
         client(registrar, MsgNewSpellPatternS2C.ID, MsgNewSpellPatternS2C::deserialize, MsgNewSpellPatternS2C::handle);
         client(registrar, MsgBlinkS2C.ID, MsgBlinkS2C::deserialize, MsgBlinkS2C::handle);

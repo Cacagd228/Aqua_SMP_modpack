@@ -14,6 +14,7 @@
     "FreeCastChanceMixin",
     "HexCastTrackerMixin",
     "PingPongBounceMixin",
+    "LightningRodSilenceMixin",
     "patternstyle.MixinChangePatternDisplay",
     "patternstyle.MixinListIotaDisplay"
   ],
@@ -23,7 +24,6 @@
     "patternstyle.MixinPatternStyle",
     "patternstyle.MixinTextDrawerPatSty",
     "patternstyle.MixinParsePatternFormatting",
-    "patternstyle.MixinScreenChatClick",
     "patternstyle.MixinEditBoxAtomicMarkers"
   ],
   "injectors": { "defaultRequire": 1 }

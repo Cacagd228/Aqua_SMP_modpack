@@ -1,0 +1,14 @@
+{
+  "item.meowrelics.relic_bag": "Мешочек реликвии",
+  "item.meowrelics.relic_bag_rare": "Редкий мешочек",
+  "item.meowrelics.relic_bag_hexcasting": "Мешочек HexCasting",
+  "itemGroup.meowrelics": "MeowRelics",
+
+  "tooltip.meowrelics.relic_bag": "ПКМ: вскрыть и получить случайную реликвию",
+  "tooltip.meowrelics.relic_bag_rare": "ПКМ: вскрыть и получить реликвию\n§7Повышенный шанс на мощные реликвии",
+  "tooltip.meowrelics.relic_bag_hexcasting": "ПКМ: вскрыть и получить артефакт HexCasting",
+
+  "message.meowrelics.relic_bag.empty": "Мешочек пуст — в игре нет ни одной реликвии",
+  "message.meowrelics.relic_bag_rare.empty": "Мешочек пуст — в игре нет ни одной реликвии",
+  "message.meowrelics.relic_bag_hexcasting.empty": "Мешочек пуст — не найдено ни одного артефакта HexCasting"
+}

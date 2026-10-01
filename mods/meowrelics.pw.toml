@@ -1,0 +1,8 @@
+name = "MeowRelics (custom)"
+filename = "meowrelics.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/meowrelics.jar"
+hash-format = "sha512"
+hash = "9a0557d686268e166a3ef19e8733d6529c8561c8149af807d636cb0e8ca01472d7da2a0b3b73a7a4c19a3dd9408f5fb6cf1ed73296b9efa98d1485c5079c900d"

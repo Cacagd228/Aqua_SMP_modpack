@@ -238,6 +238,7 @@
   "message.lineage_core.titan_fell": "TITAN'S GRIP!",
   "message.lineage_core.second_wind": "Death blinks - and you endure.",
   "message.lineage_core.market_scorn": "The merchant waves you off.",
+  "message.lineage_core.cold_touch": "The cold water bites - only mermaid blood swims free here.",
 
   "command.lineage_core.oath_broken": "Lineage oath broken for %s.",
   "command.lineage_core.lineage_set": "Blood of %s reforged as %s.",

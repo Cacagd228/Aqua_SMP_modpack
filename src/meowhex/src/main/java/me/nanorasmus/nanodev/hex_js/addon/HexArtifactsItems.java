@@ -3,7 +3,8 @@ package me.nanorasmus.nanodev.hex_js.addon;
 import me.nanorasmus.nanodev.hex_js.HexJS;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemCommentator;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemHexAmulet;
-import me.nanorasmus.nanodev.hex_js.addon.item.ItemPatternReader;
+import me.nanorasmus.nanodev.hex_js.addon.item.ItemHourglass;
+import me.nanorasmus.nanodev.hex_js.addon.item.ItemLightningRod;
 import me.nanorasmus.nanodev.hex_js.addon.item.ItemSniperScope;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -45,11 +46,6 @@ public final class HexArtifactsItems {
             ITEMS.register("self_torture_ring", () -> new me.nanorasmus.nanodev.hex_js.addon.item.ItemSelfTortureRing(
                     new Item.Properties().stacksTo(1)));
 
-    // ---- lens of comprehension (necklace curio) ----
-    public static final DeferredHolder<Item, ? extends Item> PATTERN_READER =
-            ITEMS.register("pattern_reader", () -> new ItemPatternReader(
-                    new Item.Properties().stacksTo(1)));
-
     // ---- commentator (necklace curio, dota-style PvP announcer) ----
     public static final DeferredHolder<Item, ? extends Item> COMMENTATOR =
             ITEMS.register("commentator", () -> new ItemCommentator(
@@ -65,16 +61,27 @@ public final class HexArtifactsItems {
             ITEMS.register("sniper_scope", () -> new ItemSniperScope(
                     new Item.Properties().stacksTo(1)));
 
+    // ---- lightning rod (necklace curio, перехват «Безмолвия» из радиуса) ----
+    public static final DeferredHolder<Item, ? extends Item> LIGHTNING_ROD =
+            ITEMS.register("lightning_rod", () -> new ItemLightningRod(
+                    new Item.Properties().stacksTo(1)));
+
+    // ---- hourglass (necklace curio, реген маны только на месте) ----
+    public static final DeferredHolder<Item, ? extends Item> HOURGLASS =
+            ITEMS.register("hourglass", () -> new ItemHourglass(
+                    new Item.Properties().stacksTo(1)));
+
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("hexartifacts", () ->
             CreativeModeTab.builder()
                     .icon(() -> new ItemStack(AMETHYST_NECKLACE.get()))
                     .title(Component.translatable("itemGroup.meowhex_artifacts"))
                     .displayItems((params, out) -> {
                         ALL.forEach(h -> out.accept(h.get()));
-                        out.accept(PATTERN_READER.get());
                         out.accept(SNIPER_SCOPE.get());
                         out.accept(COMMENTATOR.get());
                         out.accept(COMMENTATOR_MEEPO.get());
+                        out.accept(LIGHTNING_ROD.get());
+                        out.accept(HOURGLASS.get());
                         out.accept(HextendedItems.CHARGED_AMETHYST_DIADEM.get());
                         out.accept(HexFoodItems.MANA_BERRY.get());
                         out.accept(HexFoodItems.MANA_PIE_SLICE.get());

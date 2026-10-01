@@ -28,6 +28,9 @@ public final class ModItems {
     public static final DeferredItem<?> STAGE_BLOCK_ITEM =
             ITEMS.registerSimpleBlockItem("stage_block", ModBlocks.STAGE_BLOCK);
 
+    public static final DeferredItem<?> TRADE_TERMINAL_ITEM =
+            ITEMS.registerSimpleBlockItem("trade_terminal", ModBlocks.TRADE_TERMINAL);
+
     /** Кладём грамоту в стандартную вкладку, чтобы была видна и без команды. */
     @EventBusSubscriber(modid = ColonyCardMod.MODID, bus = EventBusSubscriber.Bus.MOD)
     public static final class Tabs {
@@ -39,6 +42,7 @@ public final class ModItems {
             if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 event.accept(IMPERIAL_DECREE);
                 event.accept(STAGE_BLOCK_ITEM);
+                event.accept(TRADE_TERMINAL_ITEM);
             }
         }
     }

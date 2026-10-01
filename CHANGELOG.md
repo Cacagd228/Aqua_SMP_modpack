@@ -1,5 +1,35 @@
 # Changelog
 
+## v1.1.7-release
+
+- **Отключены структуры из генерации** через `structure_set`-оверрайды в kubejs-датапаке
+  (`kubejs/data/*/worldgen/structure_set/`). Прежние оверрайды были нерабочими: имена файлов
+  не совпадали с реальными наборами, поэтому настоящие наборы продолжали генерироваться.
+  - `minecraft`: `strongholds` (`minecraft:stronghold`), `ocean_monuments` (`minecraft:monument`),
+    `trial_chambers`.
+  - `scguns`: `aboveground_medium` (`asgharian_citadel`, `asgharian_tower`, `osgood_lab`,
+    `osgood_lab_outpost`), `cog_chambers`, `trench`.
+  - `create_rns`: `deposits` (15 оверворлд-депозитов) + `nether_deposits` (4 незер-депозита).
+    Прежние 19 файлов `configured_feature/deposit_*.json` с `minecraft:no_op` удалены —
+    депозиты у create_rns являются структурами, а не configured features, поэтому `no_op` на них
+    ничего не делал.
+- **Возвращён `Structure Pool API` 1.2.1** (CurseForge-пин, `structure_pool_api-neoforge-1.2.1+1.21.1.jar`).
+  Без него часть модов не запускается; пин был потерян при сборке v1.1.6.
+- **В сборку вошёл `meowrelics` 1.0.0** (исходники в `src/meowrelics`, раньше был вне репозитория):
+  генератор Relics-артефактов и сумки (`RelicRandomizer`, `ArtifactRandomizer`, `RelicBagItem`),
+  балансировщик конфига Relics (`RelicBalancer`, `BalanceLoader`), loot-модификаторы.
+  Пин: `mods/meowrelics.pw.toml`. Каталоги сборки/запуска закрыты `src/meowrelics/.gitignore`,
+  compile-only `relics-1.21.1-0.12.8.jar` в репозиторий не идёт (см. `src/meowrelics/libs/README.txt`).
+- Пересобраны из `src/` отставшие самописы:
+  - `colonycard` 1.0.0 — добавлен Trade Terminal (`TradeTerminalBlock`, `TradeTerminalScreen`,
+    `TradeTerminalCommands`, сеть `trade/`).
+  - `lineage_core` 2.1.0 — `FrozenWaters`.
+  - `meowhex` 1.4.0 — пересборка (Hourglass, LightningRod, StellarTune).
+- Инструменты: `tools/refresh-index-clean.py` — пересборка `index.toml` в чистом дереве.
+  packwiz не читает `.gitignore`, поэтому `packwiz refresh` в рабочем дереве с gradle-выводом
+  затягивал в индекс ~9 000 служебных файлов (`src/*/build`, `run`, `.gradle`). На CI этого
+  не происходило (свежий checkout = только tracked-файлы), из-за чего расхождение не было заметно.
+
 ## v1.1.6-release
 
 - Фикс Create Aeronautics переписан в отдельный мод (`aerofix` 1.0.0, исходники в `src/aerofix`).

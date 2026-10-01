@@ -81,6 +81,7 @@ public class HexJS {
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.command.SilenceCommand.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.command.AttrsDebugCommand.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.addon.item.ItemManaBerry.class);
+        NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.addon.item.ItemStellarTune.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.entity.SummonAgroHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ErebusChainHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.AnnouncerHandler.class);
@@ -90,6 +91,8 @@ public class HexJS {
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.ChronosHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.RuneVisageHandler.class);
         NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.MorphHexHandler.class);
+        NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.LightningRodHandler.class);
+        NeoForge.EVENT_BUS.register(me.nanorasmus.nanodev.hex_js.casting.HourglassHandler.class);
     }
 
     private static void onServerStarting(ServerStartingEvent event) {

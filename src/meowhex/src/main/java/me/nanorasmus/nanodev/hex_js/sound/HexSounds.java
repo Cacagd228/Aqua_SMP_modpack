@@ -14,6 +14,16 @@ public class HexSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> SILENCE = REGISTER.register("silence",
             () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(HexJS.MOD_ID, "silence")));
 
+    // ---- «Стеллар Тюн»: шесть аккордов акустической гитары из Terraria ----
+    // Порядок как в игре: от ближайшего к игроку к самому далёкому —
+    // соль мажор, ля минор, си минор, до мажор, ре мажор, ми минор.
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_1 = stellarTune(133);
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_2 = stellarTune(134);
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_3 = stellarTune(135);
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_4 = stellarTune(136);
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_5 = stellarTune(137);
+    public static final DeferredHolder<SoundEvent, SoundEvent> STELLAR_TUNE_6 = stellarTune(138);
+
     // ---- Dota-style PvP announcer (commentator curio) ----
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_DOMINATING = announcer("dominating");
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_FIRST_BLOOD = announcer("first_blood");
@@ -39,6 +49,12 @@ public class HexSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_RAMPAGE = announcer("meepo_rampage");
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_UNSTOPPABLE = announcer("meepo_unstoppable");
     public static final DeferredHolder<SoundEvent, SoundEvent> ANNOUNCER_MEEPO_WICKED_SICK = announcer("meepo_wicked_sick");
+
+    private static DeferredHolder<SoundEvent, SoundEvent> stellarTune(int terrariaId) {
+        return REGISTER.register("stellar_tune_" + terrariaId,
+                () -> SoundEvent.createVariableRangeEvent(
+                        ResourceLocation.fromNamespaceAndPath(HexJS.MOD_ID, "stellar_tune_" + terrariaId)));
+    }
 
     private static DeferredHolder<SoundEvent, SoundEvent> announcer(String id) {
         return REGISTER.register("announcer_" + id,

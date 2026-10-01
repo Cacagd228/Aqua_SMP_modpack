@@ -33,6 +33,10 @@
 /colonycard contribution <игрок> set <0..>
 /colonycard contribution <игрок> add <любое>
 /colonycard reward <игрок> <1-6> unlock|lock
+/tradeterminal fee set <0-100>
+/tradeterminal clear
+/tradeterminal remove <игрок>
+/tradeterminal block [<игрок>]
 ```
 
 Награды 1-3 — верхние именные строки (зоны 8-10), награды 4-6 — иконки-кружки
@@ -40,6 +44,34 @@
 лояльности/вклада — сейчас они переключаются только командой, логику выдачи
 проще всего повесить в `ColonyCardCommands`/`ServerEvents`, вызывая
 `player.setData(ModAttachments.COLONIST_DATA, data.withReward(index, true))`.
+
+## Торговый терминал
+
+Блок «Торговый терминал» — общая на сервер доска объявлений игроков.
+
+**Как пользоваться**
+
+- **ПКМ пустой рукой** (или с шифтом) — открыть доску товаров.
+- **ПКМ с предметом в руке** — открыть форму выставления лота: количество и цена.
+  Лот не эскроуится: товар продаётся вживую, по координатам продавца.
+- В доске сверху **поиск**, под ним список предметов (иконка, название, «Лотов: N»).
+  Клик по предмету открывает его лоты: продавец, цена и координаты терминала,
+  где товар выставлен. Клик по строке кладёт координаты в чат.
+- Вкладка **«Мои лоты»** — свои объявления, крестик справа снимает лот.
+
+**Деньги.** Цена хранится целым числом в базовых единицах Create: Numismatics
+(шпорах) и форматируется в монеты («2 коронки 5 шпор»). За размещение лота
+списывается комиссия — 10% от цены, меняется командой `/tradeterminal fee set`.
+Монеты берутся из инвентаря; если Create: Numismatics не установлен, цена
+остаётся обычным числом, а комиссия не взимается — `trade/NumismaticsMoney`
+ходит в мод рефлексией, жёсткой зависимости в сборке нет.
+
+**Ограничения** (константы в `SyncTradePacket`): до 12 лотов на игрока, до 1024
+лотов на сервер. Количество в лоте сверяется с инвентарём продавца, чтобы нельзя
+было выставить заведомо несуществующий товар.
+
+**Где лежат данные.** Лоты хранятся в SavedData оверворлда
+(`trade/TradeSavedData`, id `trade_terminal`) — это не блок с лут-таблицей.
 
 ## Сборка
 
@@ -66,10 +98,17 @@ src/main/java/com/colonizer/colonycard/
 │   ├── ColonistPools.java          — пулы черт/целей/наград
 │   └── ModAttachments.java         — data attachment (хранение на сервере)
 ├── network/
-│   └── SyncColonistDataPacket.java — S2C синхронизация данных
+│   ├── SyncColonistDataPacket.java — S2C синхронизация данных
+│   └── trade/                      — S2C список лотов, C2S создание/снятие
+├── trade/
+│   ├── TradeLot.java               — лот (record + Codec)
+│   ├── TradeSavedData.java         — лоты и комиссия в SavedData
+│   ├── TradeTerminalManager.java   — серверная логика и сбор комиссии
+│   └── NumismaticsMoney.java       — мост к Create: Numismatics (рефлексия)
 └── event/
     ├── ServerEvents.java           — генерация профиля при первом входе + синк
-    └── ColonyCardCommands.java     — /colonycard команды
+    ├── ColonyCardCommands.java     — /colonycard команды
+    └── TradeTerminalCommands.java  — /tradeterminal команды
 ```
 
 Изменить тексты (названия черт, целей, наград) — правь

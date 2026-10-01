@@ -1,0 +1,236 @@
+{
+  "_комментарий": [
+    "Баланс реликвий и артефактов — аддон MeowRelics.",
+    "Меняешь файл -> /meowrelics reload (без перезапуска).",
+    "Не указанное = ванильное значение, НЕ 0.",
+    "Сверить оригинал: /meowrelics dump -> config/meowrelics/current_balance.json"
+  ],
+
+  "relics": {
+    "artifacts:onion_ring": {
+      "abilities": {
+        "hunger_mining": {
+          "_комментарий": "Всё пополам",
+          "stats": {
+            "speed_per_hunger": { "initialMin": 0.005, "initialMax": 0.025, "targetValue": 0.050025 },
+            "food_boost": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.49994 },
+            "food_boost_duration": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 5.0025 },
+            "hunger_restore_chance": { "initialMin": 0.025, "initialMax": 0.05, "targetValue": 0.250025 }
+          }
+        }
+      }
+    },
+
+    "artifacts:withered_bracelet": {
+      "abilities": {
+        "withering": {
+          "_комментарий": "Шанс/длительность/уровень пополам. Уровень 5 -> 3 (стат округляется вниз до целого). Распространение 10 блоков / 10 сек. Вампиризм (ранг 5) не тронут",
+          "stats": {
+            "chance": { "initialMin": 0.025, "initialMax": 0.075, "targetValue": 0.499985 },
+            "wither_duration": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 15.00375 },
+            "wither_level": { "initialMin": 0.5, "initialMax": 0.5, "targetValue": 2.50025 },
+            "spread_radius": { "initialMin": 1.0, "initialMax": 1.67, "targetValue": 10.0 },
+            "spread_duration": { "initialMin": 3.0, "initialMax": 5.0, "targetValue": 10.0 }
+          }
+        }
+      }
+    },
+
+    "artifacts:flippers": {
+      "abilities": {
+        "swim": {
+          "_комментарий": "Скорость пополам; расход воздуха 25%. evasion не трогал",
+          "stats": {
+            "speed": { "initialMin": 0.25, "initialMax": 0.175, "targetValue": 0.50024 },
+            "air_loss_reduction": { "initialMin": 0.075, "initialMax": 0.1752, "targetValue": 0.25 }
+          }
+        }
+      }
+    },
+
+    "artifacts:running_shoes": {
+      "abilities": {
+        "runner": {
+          "_комментарий": "Разгон до 50% вместо 100%. Высота шага и прыжковый бонус не тронуты",
+          "stats": {
+            "max_speed_bonus": { "initialMin": 0.04, "initialMax": 0.175, "targetValue": 0.50024 }
+          }
+        }
+      }
+    },
+
+    "artifacts:villager_hat": {
+      "_комментарий": "Скидка = второй перк той же шляпы (trade_surge), отдельного предмета нет",
+      "abilities": {
+        "golem_guard": {
+          "_комментарий": "С первого ранга. 10% за голема, потолок 50% -> кап ровно на 5 големах",
+          "stats": {
+            "damage_reduction_per_golem": { "initialMin": 0.02002, "initialMax": 0.06006, "targetValue": 0.1 },
+            "radius": { "initialMin": 5.0, "initialMax": 10.0, "targetValue": 50.0 },
+            "max_damage_reduction": { "initialMin": 0.10004, "initialMax": 0.16674, "targetValue": 0.5 }
+          }
+        },
+        "trade_surge": {
+          "_комментарий": "Скидка пополам; multicast и preserve_chance не трогал",
+          "stats": {
+            "discount": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.374815 }
+          }
+        }
+      }
+    },
+
+    "artifacts:vampiric_glove": {
+      "abilities": {
+        "vampire": {
+          "_комментарий": "Вампиризм плоско 25%; остальное пополам",
+          "stats": {
+            "lifesteal": { "initialMin": 0.25, "initialMax": 0.25, "targetValue": 0.25 },
+            "streak_heal_bonus": { "initialMin": 0.005, "initialMax": 0.0125, "targetValue": 0.03748 },
+            "streak_window": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 2.4975 },
+            "max_streak_bonuses": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 2.4975 },
+            "kill_heal": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.250125 },
+            "overheal_absorption_cap": { "initialMin": 1.0, "initialMax": 3.0, "targetValue": 10.0035 }
+          }
+        }
+      }
+    },
+
+    "artifacts:golden_hook": {
+      "abilities": {
+        "hook": {
+          "_комментарий": "Опыт +100% макс; кража плоско 1%. Радиусы не трогал",
+          "stats": {
+            "experience_bonus": { "initialMin": 0.06, "initialMax": 0.14, "targetValue": 1.0 },
+            "steal_chance": { "initialMin": 0.01, "initialMax": 0.01, "targetValue": 0.01 }
+          }
+        }
+      }
+    },
+
+    "artifacts:pickaxe_heater": {
+      "abilities": {
+        "heating": {
+          "_комментарий": "Переплавка и удача пополам; поджигание 5 сек. stack_bonus не трогал",
+          "stats": {
+            "smelt_chance": { "initialMin": 0.075, "initialMax": 0.175, "targetValue": 0.50024 },
+            "ignite_duration": { "initialMin": 0.5, "initialMax": 0.833, "targetValue": 5.0 },
+            "fortune_chance": { "initialMin": 0.025, "initialMax": 0.05, "targetValue": 0.125075 },
+            "fortune_max_casts": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 3.0015 }
+          }
+        }
+      }
+    },
+
+    "artifacts:feral_claws": {
+      "abilities": {
+        "feral": {
+          "stats": {
+            "window": {
+              "initialMin": 0.5,
+              "initialMax": 1.25,
+              "targetValue": 2.50125
+            },
+            "max_charges": {
+              "initialMin": 1.5,
+              "initialMax": 2.5,
+              "targetValue": 12.50125
+            },
+            "attack_speed_per_charge": {
+              "initialMin": 0.0125,
+              "initialMax": 0.025,
+              "targetValue": 0.050025
+            },
+            "invulnerability_reduction": {
+              "initialMin": 0.025,
+              "initialMax": 0.05,
+              "targetValue": 0.125075
+            }
+          }
+        }
+      }
+    },
+
+    "artifacts:pocket_piston": {
+      "abilities": {
+        "piston": {
+          "stats": {
+            "empty_hand_knockback": {
+              "_комментарий": "Отбрасывание убрано полностью (и мобов, и игроков)",
+              "initialMin": 0.0,
+              "initialMax": 0.0,
+              "targetValue": 0.0
+            },
+            "range_bonus": {
+              "_комментарий": "Было 250% (2.50025) -> 70%. Тянет дальность и по блокам, и по сущностям",
+              "initialMin": 0.069995,
+              "initialMax": 0.13999,
+              "targetValue": 0.7
+            },
+            "stun_duration": {
+              "_комментарий": "Было макс 5 сек -> 2 сек, старт ужат пропорционально",
+              "initialMin": 0.39976,
+              "initialMax": 0.79952,
+              "targetValue": 2.0
+            }
+          }
+        }
+      }
+    },
+
+    "artifacts:fire_gauntlet": {
+      "abilities": {
+        "flame": {
+          "stats": {
+            "fire_duration": {
+              "_комментарий": "Было макс 30 сек -> 5 сек, старт ужат пропорционально",
+              "initialMin": 0.499926,
+              "initialMax": 0.83321,
+              "targetValue": 5.0
+            },
+            "burning_damage_bonus": {
+              "_комментарий": "+20% урона по горящим, плоско на любой редкости",
+              "initialMin": 0.2,
+              "initialMax": 0.2,
+              "targetValue": 0.2
+            },
+            "spark_count": {
+              "_комментарий": "Было макс 10 искр -> до 5, старт ужат пропорционально",
+              "initialMin": 0.49983,
+              "initialMax": 1.49948,
+              "targetValue": 5.0
+            }
+          }
+        }
+      }
+    },
+
+    "artifacts:digging_claws": {
+      "abilities": {
+        "digging": {
+          "stats": {
+            "speed": {
+              "initialMin": 0.075,
+              "initialMax": 0.175,
+              "targetValue": 1.249935
+            },
+            "bare_hands_speed": {
+              "initialMin": 0.175,
+              "initialMax": 0.25,
+              "targetValue": 1.250125
+            },
+            "momentum_per_block": {
+              "initialMin": 0.005,
+              "initialMax": 0.025,
+              "targetValue": 0.050025
+            },
+            "momentum_window": {
+              "initialMin": 1.5,
+              "initialMax": 2.5,
+              "targetValue": 5.0025
+            }
+          }
+        }
+      }
+    }
+  }
+}

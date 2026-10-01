@@ -1,5 +1,5 @@
 # packwiz: скачанные лаунчером/командой `packwiz install` моды в гит не идут.
-# Исключение — 11 запиненных jar'ов ниже: их нет на Modrinth, они часть репы
+# Исключение — 13 запиненных jar'ов ниже: их нет на Modrinth, они часть репы
 # (кастомные моды из src/ + CurseForge-only пины).
 mods/*.jar
 !mods/aerofix-1.0.0.jar
@@ -14,6 +14,8 @@ mods/*.jar
 !mods/meowaddons-1.0.1.jar
 !mods/meowhex.jar
 !mods/panoptic_recipe_builder-1.21.1-1.0.0.jar
+!mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar
+!mods/meowrelics.jar
 
 # Локальные экспортные артефакты (боевые лежат в GitHub Releases)
 *.mrpack
@@ -53,9 +55,9 @@ src/*/run_*.log
 # Обратный инжиниринг/зондирование классов meowhex (не собрано в jar)
 src/meowhex/.mcprobe*/
 
-# meow relics — в разработке, пока вне сборки и вне репозитория
-/src/meow relics/
-/src/meowrelics/
+# (meow relics) проект meowrelics больше не в игноре: вошёл в сборку 1.1.7.
+# Его каталоги сборки/запуска (build, run, .gradle, libs/*.jar) закрыты
+# собственным src/meowrelics/.gitignore.
 
 # Дамп KubeJS-датагена рядом с проектом: build.gradle его не берёт
 # (рецепты лежат в src/main/resources/data), нужен только для локальной правки.

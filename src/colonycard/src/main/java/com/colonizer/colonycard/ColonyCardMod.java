@@ -9,6 +9,9 @@ import com.colonizer.colonycard.network.stage.AddTaskPacket;
 import com.colonizer.colonycard.network.stage.DonatePacket;
 import com.colonizer.colonycard.network.stage.RemoveTaskPacket;
 import com.colonizer.colonycard.network.stage.SyncStagePacket;
+import com.colonizer.colonycard.network.trade.CreateLotPacket;
+import com.colonizer.colonycard.network.trade.RemoveLotPacket;
+import com.colonizer.colonycard.network.trade.SyncTradePacket;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -35,5 +38,8 @@ public class ColonyCardMod {
         r.playToServer(DonatePacket.TYPE, DonatePacket.STREAM_CODEC, DonatePacket::handle);
         r.playToServer(AddTaskPacket.TYPE, AddTaskPacket.STREAM_CODEC, AddTaskPacket::handle);
         r.playToServer(RemoveTaskPacket.TYPE, RemoveTaskPacket.STREAM_CODEC, RemoveTaskPacket::handle);
+        r.playToClient(SyncTradePacket.TYPE, SyncTradePacket.STREAM_CODEC, SyncTradePacket::handle);
+        r.playToServer(CreateLotPacket.TYPE, CreateLotPacket.STREAM_CODEC, CreateLotPacket::handle);
+        r.playToServer(RemoveLotPacket.TYPE, RemoveLotPacket.STREAM_CODEC, RemoveLotPacket::handle);
     }
 }

@@ -4,8 +4,9 @@
     "meowhex:amethyst_necklace",
     "meowhex:charged_amethyst_necklace",
     "meowhex:overloaded_necklace",
-    "meowhex:pattern_reader",
     "meowhex:commentator",
-    "meowhex:commentator_meepo"
+    "meowhex:commentator_meepo",
+    "meowhex:lightning_rod",
+    "meowhex:hourglass"
   ]
 }

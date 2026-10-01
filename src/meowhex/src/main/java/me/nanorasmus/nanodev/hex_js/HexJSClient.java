@@ -96,6 +96,9 @@ public final class HexJSClient {
         // возвращает null и игра падает с NPE в shouldRender при первом кадре с саммоном.
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.HADES_SUMMON.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.STYX_SHADE.get(), net.minecraft.client.renderer.entity.VexRenderer::new);
+        // Stellar Tune's star: без рендерера EntityRenderDispatcher отдаёт null
+        // и клиент падает с NPE в shouldRender на первом кадре со снарядом.
+        event.registerEntityRenderer(me.nanorasmus.nanodev.hex_js.entity.HexEntities.STELLAR_NOTE.get(), me.nanorasmus.nanodev.hex_js.client.StellarNoteRenderer::new);
     }
 
     private static boolean hasIota(ItemStack stack, ItemDrawingOrb orb) {

@@ -55,6 +55,13 @@ public class HexEntities {
                     .updateInterval(1)
                     .build("sun_beam"));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityStellarNote>> STELLAR_NOTE = REGISTER.register("stellar_note",
+            () -> EntityType.Builder.<EntityStellarNote>of(EntityStellarNote::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f)
+                    .clientTrackingRange(8)
+                    .updateInterval(1)
+                    .build("stellar_note"));
+
     public static void init(IEventBus modBus) {
         REGISTER.register(modBus);
         modBus.addListener(HexEntities::onAttributeCreate);

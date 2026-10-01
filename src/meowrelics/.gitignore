@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Dev-раны
+run/
+run2/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.kotlin/
+
+# Локальные бинарники модов (licenses/size — не для коммита)
+libs/*.jar
