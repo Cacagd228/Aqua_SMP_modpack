@@ -16,6 +16,13 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 repositories {
     mavenCentral()
+    maven { url = "https://maven.theillusivec4.top" }
+}
+
+dependencies {
+    // Тот же артефакт, что в паке (mods/curios.pw.toml, sha512 совпадает):
+    // maven.theillusivec4.top отсюда качается с таймаутами, поэтому локальный libs/.
+    implementation files("libs/curios-neoforge-9.5.1+1.21.1.jar")
 }
 
 neoForge {

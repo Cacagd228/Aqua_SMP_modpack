@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/colonycard-1.0.0.jar"
 hash-format = "sha512"
-hash = "379a9799f5f22b08ded768399ee52fd3886d73e3d5d0c7df1738d972e73125e91db22ebbea84ad00c87577284c55f89345cb20143647a8327278b60c5e22fc99"
+hash = "aa2c0cd0ed6b93e2e4fd51632f1b2e9c0fb6a1ea77e5ce13c6e5ba1061057e3e4713d800f888311dd7fd0f96ab456c2ff693807587482c4b6d7460339c7f2033"

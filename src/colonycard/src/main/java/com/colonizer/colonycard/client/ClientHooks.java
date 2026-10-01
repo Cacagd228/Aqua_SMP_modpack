@@ -16,4 +16,11 @@ public final class ClientHooks {
             mc.setScreen(new ImperialDecreeScreen(recipientName));
         }
     }
+
+    public static void openCardWithHeld(net.minecraft.world.item.ItemStack heldPassport) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player != null && mc.screen == null) {
+            mc.setScreen(new ColonistCardScreen(heldPassport));
+        }
+    }
 }

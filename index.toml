@@ -862,11 +862,11 @@ hash = "dc38be15cae51c0235f39c08d7055d09b5916234a7761270cc9035201d6cc788"
 
 [[files]]
 file = "config/estrogen/client.json5"
-hash = "064bfc5725bee3b9d458c11cc47274f957ec72d1cd54dfe9665f061034c0b2b0"
+hash = "b100f8cfcb9164144f16226ed0e22a170e7095f809830a647e9fe7c13b28362c"
 
 [[files]]
 file = "config/estrogen/common.json5"
-hash = "fcf7767612748f9b3629d0cb07f3d1abd467074fec01cd44f03400f3579dd5c5"
+hash = "0d9d55d48cfc6ca33c1616dc7d8230f7a59062f8c90cec827d27f48ef985334b"
 
 [[files]]
 file = "config/estrogen/server.json5"
@@ -1753,12 +1753,12 @@ metafile = true
 
 [[files]]
 file = "mods/colonycard-1-0-0.pw.toml"
-hash = "3adc939ac8709f2266191d697f8cb865ce11e844a0acd5026e76492e90709657"
+hash = "9c10b1fa75734dfd183a6e1114e37afa4dccc8ab57f68c89a74b42062bde9e46"
 metafile = true
 
 [[files]]
 file = "mods/colonycard-1.0.0.jar"
-hash = "bc658969a59b569cc77421af4786dd3d7156e6392308120901f90ef941aa670a"
+hash = "b7e9b67abdd3bcc9d2b3943851bf60545b7eb9bc8ccd70851b284a0b58f8f137"
 
 [[files]]
 file = "mods/colorful-catalysts.pw.toml"
@@ -2995,11 +2995,11 @@ hash = "8a4d30e1da4990ecf909e0aa5519c66572a34babf55b8cd78782d2f2d488c7e5"
 
 [[files]]
 file = "src/colonycard/build.gradle"
-hash = "b654f52be1b672b304838db73f2ded869c5e9cc786ff06ba6518330028b6bf3f"
+hash = "d1f76f7b131fcf1bae5bc21dc2ab25ec328cd68efec3e0fc0f2ae1e95ec1a6ed"
 
 [[files]]
 file = "src/colonycard/gradle.properties"
-hash = "744ebcd33d286b5437c2ee3cbcb6e04e0257d4d4a1640d7782154c5e43ff399d"
+hash = "47979d3151d84b0dd5b767c3bb4cbdeb10e1be3d1847d1b74860ea962f466c2b"
 
 [[files]]
 file = "src/colonycard/gradle/wrapper/gradle-wrapper.jar"
@@ -3018,12 +3018,16 @@ file = "src/colonycard/gradlew.bat"
 hash = "18774a0ac0203f6893bf1db3291a0d77f06cd1b4dca2a43b51e7009da3e28cfa"
 
 [[files]]
+file = "src/colonycard/libs/curios-neoforge-9.5.1+1.21.1.jar"
+hash = "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde"
+
+[[files]]
 file = "src/colonycard/settings.gradle"
 hash = "7f2b99db0abfe538b031de907f5b5a8743be013c19c8aa5585a1e17e968eaa1b"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/ColonyCardMod.java"
-hash = "fb168955eb04db576ed39d18dbc731cb400140acdb2320c6ffe9328820a87fa6"
+hash = "26bffaddb9cf92181b2cb075e747aed36169344c70868a83bda7ab19eeb6f4d2"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/block/ModBlocks.java"
@@ -3042,12 +3046,20 @@ file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientColon
 hash = "a1088f19854500c05fddfc12ab31ed6a102322e0ef37b4b6a7344a75c0c2d773"
 
 [[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientDebugIdentity.java"
+hash = "1b00d611460257e6e068dbdf28e4fe5075e6426b915ebb496d5ef342a2fc0080"
+
+[[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientHooks.java"
-hash = "14e667e14f84f21a71dbd5e5630284f8feb330e51c9e94c45a2cf36d1a14344f"
+hash = "be9a2a85d8bb6956d1160f11fa8a1a2642d9f3419426df8e67c82f2e9611e0f4"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientModEvents.java"
-hash = "d996046c2c3ed090d1c738e94a16925b6b08419eba4ff3ad0626e2afe59f03a9"
+hash = "bf5157dd97825caba2f66d0913d55e8a39a1caabf5c9174f41c3501d6717fd9e"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientNameplateCache.java"
+hash = "7f2f5018e36ae1f9cc9cb537652ac7c4564f2045bd5b9a2446b6e983764f7d12"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientStageCache.java"
@@ -3055,7 +3067,7 @@ hash = "173a2f11c2f19336c7af6331b96611a88ba8c2715c388a4d3475d9e61dbbd753"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientTickHandler.java"
-hash = "76efb938cabe52e92b7635393f8c8b3d3ce1229e5e4215039bc1e7e278c02108"
+hash = "9822a0c8d93f22e77662766e1631dccc11db0ed3adfde4dc99981229c3c0c8a2"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ClientTradeCache.java"
@@ -3063,11 +3075,19 @@ hash = "7f341ae0703a5a96e2ae0af7d5e670b01c8f911b5fdccca315f58d7c89f18ef3"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ColonistCardScreen.java"
-hash = "89c6c065f917a772d3919048a4116336cde477f344d4a8588cbb1b018a001889"
+hash = "3e60b45d4152c4b1d80c92a4492f9d91adfbdc9b4f11195e264606983abba828"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/IdentityChatMaskHandler.java"
+hash = "6ee3bb382ebaca48ad9a3501c1280bf8913c3df8265d315bab42f1dbb4c5b43c"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ImperialDecreeScreen.java"
 hash = "3f1bb4402bfeff9776559ef718e7d668ee69c980732c24106dc36eec0cbb0536"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/NameplateHandler.java"
+hash = "10a6bd6c953f8124141aa00c3d1f46fec8307cb9a357c7c1005398ee689fe69a"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/StageRequestsScreen.java"
@@ -3090,6 +3110,10 @@ file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ui/Disc.jav
 hash = "576295604a308c352e62ed21debae09b5bae8e111774060f955574a70e29a9d7"
 
 [[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/client/ui/DocButton.java"
+hash = "03bc78c4e8580d23420c50ca1ac80f2183f8d6f40c3ec9b7ab24e9330f9ad9a2"
+
+[[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/config/ModCommonConfig.java"
 hash = "740b877847595409336ca32631a7158dd07ff95e0dbde991838563c09604df98"
 
@@ -3106,8 +3130,20 @@ file = "src/colonycard/src/main/java/com/colonizer/colonycard/data/ModAttachment
 hash = "94ebe58299b28e47d7dcaac44fe7906661c922db6c9ae69418dff86b5c91e9bf"
 
 [[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/data/ModEffects.java"
+hash = "e02aebdf4fa30f2ba1eccb30edc06ce35e3223ee70aba8107e6cde371dec5a8a"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/data/ModEnchantments.java"
+hash = "526975d69c688e498a97fabaa7b24d0c5d34e44e98d1392d44d58fc764c191ec"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/effect/CoveredFaceEffect.java"
+hash = "74a175a511a56df19dd10061cd597998337167a2d26410859bce321e71984d68"
+
+[[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/event/ColonyCardCommands.java"
-hash = "35fab01084aec3e827e7e548478a0dc656acf9f864926f6f52c9806a4b6826d7"
+hash = "cf6e364595229044ad9ff9403e5c134c478cef8a8d5595d59fc9a7644a57aa65"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/event/CrownRequestCommands.java"
@@ -3115,11 +3151,19 @@ hash = "dc4029333287de3a49a3cf4606975b746dead7c2e01ab44ad7997588677e95cd"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/event/ServerEvents.java"
-hash = "b5c7baf5062e5ecd098a79fe234c80ecbc8fdda22bfb3f44711d0da3c708f535"
+hash = "1b741f7d7ba389abaa900ae6d6d1d0b15641c632b6e2b1add0bd919bfcb5e621"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/event/TradeTerminalCommands.java"
 hash = "569a1c23dcedc3391d060f965eeb12fb25412ee933bc60e4f36d49789e509618"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/identity/FaceCover.java"
+hash = "a5667534290dec50d981fb47926e742ba0db5e779307ca26541dcd19a846171e"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/item/BalaclavaItem.java"
+hash = "a92ea466767c43ef233f4054f866cd9ee0e132cf3c782c5b55a1e72c446de887"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/item/ImperialDecreeItem.java"
@@ -3127,11 +3171,23 @@ hash = "f61e13a990820fc2f65e3a991b13e7a89be5b50a41bde483cb8bf94502595d52"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/item/ModItems.java"
-hash = "c1a5740ca2dfa90929d7dc7a4db5009506ba28062b6ca7f2ad9cce03a7073c6b"
+hash = "49c560e43cc7cae25e0d0a8b9158e738fb9d3d04e485487fe4a2488b22d91ae5"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/item/PassportItem.java"
+hash = "deb067c7352e05a517850d7dee8baf9faa4c56ebe06e14abcb29f3728b2d3bac"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/network/SyncColonistDataPacket.java"
 hash = "d03b510d73ecbc2e23d41400589b1fde68e6522afb2ea5da4174068ec71ae4f9"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/network/SyncDebugIdentityPacket.java"
+hash = "65a6a6f0c62133855c257889e3ae0a442a134a37161617e5c1f9c13a6ca32484"
+
+[[files]]
+file = "src/colonycard/src/main/java/com/colonizer/colonycard/network/SyncNameplatePacket.java"
+hash = "4786a5accb3e1a02c4247dd7887775b4d860899c6fea6d2de9ab60fecf874b44"
 
 [[files]]
 file = "src/colonycard/src/main/java/com/colonizer/colonycard/network/stage/AddTaskPacket.java"
@@ -3207,11 +3263,11 @@ hash = "cd292e93964e17d938331bf867c328fe5b08d0400d1d522eda98a9e03bbae7d8"
 
 [[files]]
 file = "src/colonycard/src/main/resources/assets/colonycard/lang/en_us.json"
-hash = "4d095a88605ed85e27ee6b7b16f8d4a73b426e2e734cf420ac65337dd3c8a1d2"
+hash = "cbedfd4d85da6c8cd79575a773ad648b9ae7ed91d2efa17b3796e05e62b84492"
 
 [[files]]
 file = "src/colonycard/src/main/resources/assets/colonycard/lang/ru_ru.json"
-hash = "8fc67cc948e20a9b3a03f8fd6c53e4483d9c6649fa99335e7341e3f0d1976a03"
+hash = "87ded3fafefdc86f31e9a52817dbd85d096731e0fa3558d58bd78a0df3f89f2e"
 
 [[files]]
 file = "src/colonycard/src/main/resources/assets/colonycard/models/block/stage_block.json"
@@ -3222,8 +3278,16 @@ file = "src/colonycard/src/main/resources/assets/colonycard/models/block/trade_t
 hash = "5fed5bd69d64795172fe0243fee1a7be6f503f24d33a6630d81646745f394f6d"
 
 [[files]]
+file = "src/colonycard/src/main/resources/assets/colonycard/models/item/balaclava.json"
+hash = "32d072fb6979dc79fc50b7d81b9ab0fae513c348813fc5b9eb81dbe2e554fd28"
+
+[[files]]
 file = "src/colonycard/src/main/resources/assets/colonycard/models/item/imperial_decree.json"
 hash = "553e8695a1881deb6d51a235bd96c2b09c86b2e2d1dd7b1d746f5fa36f110756"
+
+[[files]]
+file = "src/colonycard/src/main/resources/assets/colonycard/models/item/passport.json"
+hash = "cd6ecc428de4534be9deb8b8ae2de885e48d6493792164f5368503e59a78d93e"
 
 [[files]]
 file = "src/colonycard/src/main/resources/assets/colonycard/models/item/stage_block.json"
@@ -3234,12 +3298,44 @@ file = "src/colonycard/src/main/resources/assets/colonycard/models/item/trade_te
 hash = "23d884640e018c46dab296d0b130b5849898f6dc99bb8e1bf048b882d763fb0a"
 
 [[files]]
+file = "src/colonycard/src/main/resources/assets/colonycard/textures/item/balaclava.png"
+hash = "b15be13d299711e65b87e5b972298fce1ebdee86b019239b71509b7e99095272"
+
+[[files]]
+file = "src/colonycard/src/main/resources/assets/colonycard/textures/item/passport.png"
+hash = "d02a0e1c3ee594d33e9caa558a2dee0aa8898e7f65e1c4133226ed4bb19e6942"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/colonycard/enchantment/stealth.json"
+hash = "60d4a02c25f10eebdbfe02896ae18527b92cb10ddaaedf7e8a3136c85f8e5098"
+
+[[files]]
 file = "src/colonycard/src/main/resources/data/colonycard/loot_table/blocks/stage_block.json"
 hash = "42cfeff888e9f068b8d7780be19b06a292cfd56e4f39e407fdc84f88476bdf18"
 
 [[files]]
 file = "src/colonycard/src/main/resources/data/colonycard/loot_table/blocks/trade_terminal.json"
 hash = "73638add18edc34d8802e42a433ff71aa8c8881b5280c42b9c396ca0fee6718b"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/create_enchantment_industry/tags/enchantment/blaze_enchanter/enchanting.json"
+hash = "7e0ca87807fba854a754ec3004f117a33bf689c5b463bfb3c080abe172356713"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/create_enchantment_industry/tags/enchantment/blaze_enchanter/super_enchanting.json"
+hash = "7e0ca87807fba854a754ec3004f117a33bf689c5b463bfb3c080abe172356713"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/create_enchantment_industry/tags/enchantment/printer/deny.json"
+hash = "5eccff46b6c93c788ca8c47078102da5b64a95b2e048eba9b39dc79c9300674c"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/curios/tags/item/face.json"
+hash = "bfd5f297ff576721857c787326ff5fc8c8d36df3a9519ff49fba7ebef692c1ad"
+
+[[files]]
+file = "src/colonycard/src/main/resources/data/minecraft/tags/enchantment/in_enchanting_table.json"
+hash = "5eccff46b6c93c788ca8c47078102da5b64a95b2e048eba9b39dc79c9300674c"
 
 [[files]]
 file = "src/colonycard/src/main/resources/pack.mcmeta"
@@ -17736,6 +17832,18 @@ hash = "5668a1b566528cb84f3476fcfbd31cc141da04ab1c3d357f3da8d0d420ade13d"
 [[files]]
 file = "tools/fetch-mods.py"
 hash = "b0215314feeafe35d3d0d0df0d4299ea79f478f1c52461adbd55292d68ce91a0"
+
+[[files]]
+file = "tools/make-balaclava-texture.py"
+hash = "fb75f91332e193fa4f3ee815b52170b0e1d144d64d00c54d8b0b8e642092cc08"
+
+[[files]]
+file = "tools/make-passport-book-icon.py"
+hash = "af87151c376441dc3f38cecef51b0f4cebf1daa4a698a0e21c2ae43f712b91bb"
+
+[[files]]
+file = "tools/make-passport-icons.py"
+hash = "9e6d85d585d4489504680f3ce08c6e459f895168295e1cbe67d420fe1606e3c5"
 
 [[files]]
 file = "tools/refresh-index-clean.py"

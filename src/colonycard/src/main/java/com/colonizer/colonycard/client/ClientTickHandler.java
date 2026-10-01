@@ -1,7 +1,9 @@
 package com.colonizer.colonycard.client;
 
 import com.colonizer.colonycard.ColonyCardMod;
+import com.colonizer.colonycard.identity.FaceCover;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,7 +20,8 @@ public final class ClientTickHandler {
         Minecraft mc = Minecraft.getInstance();
         while (ClientModEvents.OPEN_CARD.consumeClick()) {
             if (mc.player != null && mc.screen == null) {
-                mc.setScreen(new ColonistCardScreen());
+                ItemStack held = FaceCover.heldPassportStack(mc.player);
+                mc.setScreen(new ColonistCardScreen(held.isEmpty() ? null : held));
             }
         }
     }

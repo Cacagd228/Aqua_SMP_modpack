@@ -3,7 +3,7 @@
     Dash: {
         // Enable dash from the Effect of Estrogen
         // Default: true
-        enabled: true,
+        enabled: false,
         // The multiplier for the dash delta movement
         // Range: 0.0 ~ 100.0
         // Default: 2.0
