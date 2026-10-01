@@ -28,4 +28,5 @@ public final class ClientModEvents {
     public static void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
         event.register(OPEN_CARD);
     }
+
 }

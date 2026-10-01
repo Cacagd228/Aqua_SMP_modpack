@@ -77,8 +77,18 @@
   "commands.colonycard.set_loyalty": "Лояльность %s установлена: %s",
   "commands.colonycard.set_contribution": "Вклад %s установлен: %s",
   "commands.colonycard.give_gramota": "Грамота выдана: %s",
+  "commands.colonycard.give_passport": "Паспорт «%s» (досье: %s) выдан игроку %s",
+  "commands.colonycard.give_balaclava": "Балаклава выдана: %s",
+  "commands.colonycard.debug_on": "Отладка личности включена для %s: истинные ники красным, скрытые — точками",
+  "commands.colonycard.debug_off": "Отладка личности выключена для %s",
+  "commands.colonycard.cover_applied": "Лицо закрыто на %s сек: %s",
 
   "item.colonycard.imperial_decree": "Имперский декрет о награждении",
+  "item.colonycard.passport": "Паспорт колониста",
+  "item.colonycard.balaclava": "Балаклава (dev)",
+  "effect.colonycard.covered_face": "Лицо закрыто",
+  "colonycard.screen.view_held": "Смотреть: в руках",
+  "colonycard.screen.view_own": "Смотреть: своя",
 
   "colonycard.decree.title": "Имперский декрет о награждении",
   "colonycard.decree.body1": "Настоящим документом удостоверяется, что за выдающиеся заслуги, усердие и неоценимый вклад в процветание и развитие колоний Короны",
@@ -109,6 +119,7 @@
   "colonycard.stage.pick.search": "Поиск...",
   "colonycard.stage.pick.all": "Все",
   "colonycard.stage.pick.empty": "Ничего не найдено",
+  "enchantment.colonycard.stealth": "Скрытность",
 
   "block.colonycard.trade_terminal": "Торговый терминал",
 

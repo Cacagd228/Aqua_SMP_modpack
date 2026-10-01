@@ -3,7 +3,9 @@ package com.colonizer.colonycard.event;
 import com.colonizer.colonycard.ColonyCardMod;
 import com.colonizer.colonycard.data.ColonistData;
 import com.colonizer.colonycard.data.ModAttachments;
+import com.colonizer.colonycard.item.BalaclavaItem;
 import com.colonizer.colonycard.item.ImperialDecreeItem;
+import com.colonizer.colonycard.item.PassportItem;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -18,6 +20,11 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
  * /colonycard contribution <player> <set|add> <value>
  * /colonycard reward <player> <1-6> <lock|unlock>
  * /colonycard gramota [<player>]                   -- выдать бумажную грамоту (имперский декрет)
+ * /colonycard passport                              -- свой паспорт себе
+ * /colonycard passport <владелец>                    -- паспорт <владельца> выдать себе
+ * /colonycard passport <владелец> <получатель>       -- паспорт <владельца> выдать <получателю>
+ * /colonycard balaclava [<игрок>]                   -- DEV item, выдать балаклаву (hides_identity)
+ * /colonycard cover <seconds> [<player>]            -- debug face-cover effect (op, same logic as balaclava)
  */
 @EventBusSubscriber(modid = ColonyCardMod.MODID)
 public final class ColonyCardCommands {
@@ -81,6 +88,36 @@ public final class ColonyCardCommands {
                         .then(Commands.argument("player", EntityArgument.player())
                                 .executes(ctx -> giveGramota(ctx, EntityArgument.getPlayer(ctx, "player"))))
                         .executes(ctx -> giveGramota(ctx, ctx.getSource().getPlayerOrException())))
+                .then(Commands.literal("passport")
+                        // 0 арг. -> свой паспорт себе
+                        // 1 арг.  -> паспорт указанного игрока, выдаётся мне
+                        // 2 арг.  -> паспорт первого игрока, выдаётся второму
+                        .then(Commands.argument("owner", EntityArgument.player())
+                                .then(Commands.argument("target", EntityArgument.player())
+                                        .executes(ctx -> givePassport(ctx,
+                                                EntityArgument.getPlayer(ctx, "owner"),
+                                                EntityArgument.getPlayer(ctx, "target"))))
+                                .executes(ctx -> givePassport(ctx,
+                                        EntityArgument.getPlayer(ctx, "owner"),
+                                        ctx.getSource().getPlayerOrException())))
+                        .executes(ctx -> givePassport(ctx,
+                                ctx.getSource().getPlayerOrException(),
+                                ctx.getSource().getPlayerOrException())))
+                .then(Commands.literal("balaclava")
+                        .then(Commands.argument("player", EntityArgument.player())
+                                .executes(ctx -> giveBalaclava(ctx, EntityArgument.getPlayer(ctx, "player"))))
+                        .executes(ctx -> giveBalaclava(ctx, ctx.getSource().getPlayerOrException())))
+                .then(Commands.literal("debug_identity")
+                        .then(Commands.argument("player", EntityArgument.player())
+                                .executes(ctx -> toggleDebug(ctx, EntityArgument.getPlayer(ctx, "player"))))
+                        .executes(ctx -> toggleDebug(ctx, ctx.getSource().getPlayerOrException())))
+                .then(Commands.literal("cover")
+                        .then(Commands.argument("seconds", IntegerArgumentType.integer(1, 3600))
+                                .then(Commands.argument("player", EntityArgument.player())
+                                        .executes(ctx -> applyCover(ctx, EntityArgument.getPlayer(ctx, "player"),
+                                                IntegerArgumentType.getInteger(ctx, "seconds"))))
+                                .executes(ctx -> applyCover(ctx, ctx.getSource().getPlayerOrException(),
+                                        IntegerArgumentType.getInteger(ctx, "seconds")))))
         );
     }
 
@@ -99,6 +136,56 @@ public final class ColonyCardCommands {
             target.drop(stack, false);
         }
         ctx.getSource().sendSuccess(() -> Component.translatable("commands.colonycard.give_gramota", target.getName()), true);
+        return 1;
+    }
+
+    /**
+     * Выдать паспорт: слепок досье owner, вручить recipient.
+     * Имя в паспорте — ник owner'а; поменять его можно в GUI паспорта.
+     */
+    private static int givePassport(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx,
+                                    ServerPlayer owner, ServerPlayer recipient) {
+        ColonistData data = owner.getData(ModAttachments.COLONIST_DATA);
+        var stack = PassportItem.createFor(data, owner.getGameProfile().getName());
+        if (!recipient.getInventory().add(stack)) {
+            recipient.drop(stack, false);
+        }
+        ctx.getSource().sendSuccess(() -> Component.translatable("commands.colonycard.give_passport",
+                PassportItem.readPassportName(stack), owner.getName().getString(), recipient.getName().getString()), true);
+        return 1;
+    }
+
+    /** Выдать балаклаву с флагом hides_identity. */
+    private static int giveBalaclava(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx, ServerPlayer target) {
+        var stack = BalaclavaItem.create();
+        if (!target.getInventory().add(stack)) {
+            target.drop(stack, false);
+        }
+        ctx.getSource().sendSuccess(() -> Component.translatable("commands.colonycard.give_balaclava", target.getName()), true);
+        return 1;
+    }
+
+    /** Отладка личности: переключатель конкретному игроку (кто прописал — тому и выдаётся). */
+    private static int toggleDebug(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx, ServerPlayer target) {
+        boolean now = !ServerEvents.isDebugIdentity(target.getUUID());
+        ServerEvents.setDebugIdentity(target, now);
+        ctx.getSource().sendSuccess(() -> Component.translatable(
+                now ? "commands.colonycard.debug_on" : "commands.colonycard.debug_off", target.getName()), true);
+        return 1;
+    }
+
+    /**
+     * Дебаг-эффект балаклавы: лицо считается закрытым ровно так же, как от надетой
+     * балаклавы, — та же resolve-логика, что и для предмета.
+     */
+    private static int applyCover(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx,
+                                  ServerPlayer target, int seconds) {
+        var instance = new net.minecraft.world.effect.MobEffectInstance(
+                com.colonizer.colonycard.data.ModEffects.COVERED_FACE, seconds * 20, 0, false, false, true);
+        target.addEffect(instance);
+        ServerEvents.refreshDisplay(target);
+        ctx.getSource().sendSuccess(() -> Component.translatable("commands.colonycard.cover_applied",
+                seconds, target.getName()), true);
         return 1;
     }
 

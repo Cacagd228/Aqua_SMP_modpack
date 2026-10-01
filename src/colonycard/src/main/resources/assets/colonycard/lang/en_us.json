@@ -77,8 +77,18 @@
   "commands.colonycard.set_loyalty": "Set %s's loyalty to %s",
   "commands.colonycard.set_contribution": "Set %s's contribution to %s",
   "commands.colonycard.give_gramota": "Decree granted to %s",
+  "commands.colonycard.give_passport": "Passport '%s' (dossier of %s) issued to %s",
+  "commands.colonycard.give_balaclava": "Balaclava granted to %s",
+  "commands.colonycard.debug_on": "Identity debug on for %s: true names in red, hidden shown as dots",
+  "commands.colonycard.debug_off": "Identity debug off for %s",
+  "commands.colonycard.cover_applied": "Face covered for %ss: %s",
 
   "item.colonycard.imperial_decree": "Imperial Decree of Commendation",
+  "item.colonycard.passport": "Colonist Passport",
+  "item.colonycard.balaclava": "Balaclava (dev)",
+  "effect.colonycard.covered_face": "Face Covered",
+  "colonycard.screen.view_held": "View: held one",
+  "colonycard.screen.view_own": "View: own",
 
   "colonycard.decree.title": "Imperial Decree of Commendation",
   "colonycard.decree.body1": "By this document it is certified that for outstanding merit, diligence and invaluable contribution to the prosperity and growth of the Crown's colonies",
@@ -109,6 +119,7 @@
   "colonycard.stage.pick.search": "Search...",
   "colonycard.stage.pick.all": "All",
   "colonycard.stage.pick.empty": "Nothing found",
+  "enchantment.colonycard.stealth": "Stealth",
 
   "block.colonycard.trade_terminal": "Trade Terminal",
 

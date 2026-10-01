@@ -63,7 +63,7 @@
     UI: {
         // Enable dash overlay
         // Default: true
-        dashOverlay: true
+        dashOverlay: false
     },
     // Compatibility between other mods settings
     Compat: {

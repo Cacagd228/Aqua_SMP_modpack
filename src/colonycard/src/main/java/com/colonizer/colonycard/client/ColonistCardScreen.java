@@ -1,8 +1,10 @@
 package com.colonizer.colonycard.client;
 
 import com.colonizer.colonycard.client.ui.CardStyle;
+import com.colonizer.colonycard.client.ui.DocButton;
 import com.colonizer.colonycard.data.ColonistData;
 import com.colonizer.colonycard.data.ColonistPools;
+import com.colonizer.colonycard.item.PassportItem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.PlayerFaceRenderer;
 import net.minecraft.client.gui.screens.Screen;
@@ -49,17 +51,66 @@ public class ColonistCardScreen extends Screen {
 
     private ColonistData data = ClientColonistCache.get();
 
+    /** Паспорт в руках на момент открытия (null = нет). Карта колониста = паспорт. */
+    private final ItemStack heldPassport;
+    private ColonistData heldData;
+    private String heldName = "";
+    private boolean showHeld;
+    private DocButton toggleButton;
+
     public ColonistCardScreen() {
+        this(null);
+    }
+
+    public ColonistCardScreen(ItemStack heldPassport) {
         super(Component.translatable("colonycard.screen.title"));
+        this.heldPassport = heldPassport == null ? ItemStack.EMPTY : heldPassport;
     }
 
     @Override
     protected void init() {
         super.init();
         this.data = ClientColonistCache.get();
+        this.heldName = PassportItem.readPassportName(heldPassport);
+        this.heldData = PassportItem.readSnapshot(heldPassport);
         if (appearStart == 0) {
             appearStart = System.nanoTime();
         }
+        // Тумблер «Своя / В руках» чуть выше паспорта, в стиле документа.
+        if (!heldName.isEmpty() && heldData != null) {
+            int btnW = 190;
+            int btnH = 18;
+            int btnX = this.width / 2 - btnW / 2;
+            int spreadH = (int) (SPREAD_H * DOC_SCALE);
+            int btnY = Math.max(4, this.height / 2 - spreadH / 2 - btnH - 6);
+            this.toggleButton = new DocButton(btnX, btnY, btnW, btnH, viewLabel(), showHeld, () -> {
+                showHeld = !showHeld;
+                if (toggleButton != null) {
+                    toggleButton.setLabel(viewLabel());
+                    toggleButton.setActive(showHeld);
+                }
+            });
+            this.addRenderableWidget(toggleButton);
+        }
+    }
+
+    /**
+     * Подпись кнопки — состояние, а не действие: показывает, ЧТО сейчас открыто.
+     * Раньше было наоборот (куда переключишь), из-за этого текст спорил с
+     * сургучной точкой на кнопке и читался как перепутанный.
+     */
+    private Component viewLabel() {
+        return Component.translatable(showHeld
+                ? "colonycard.screen.view_held"
+                : "colonycard.screen.view_own");
+    }
+
+    /** Активное досье: свое или паспорта в руках. */
+    private ColonistData viewedData() {
+        if (showHeld && heldData != null) {
+            return heldData;
+        }
+        return data;
     }
 
     public void onDataUpdated(ColonistData newData) {
@@ -75,10 +126,14 @@ public class ColonistCardScreen extends Screen {
         return 1.0F - inv * inv * inv;
     }
 
+    /** Досье, используемое helpers при текущей отрисовке (свое или held-паспорта). */
+    private ColonistData renderData = ClientColonistCache.get();
+
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         this.renderTransparentBackground(g);
         hoverTip = null;
+        this.renderData = viewedData();
 
         float sc = (0.96F + 0.04F * appear()) * DOC_SCALE;
         float cx = this.width / 2.0F;
@@ -92,7 +147,7 @@ public class ColonistCardScreen extends Screen {
         g.pose().scale(sc, sc, 1.0F);
         g.pose().translate(-SPREAD_W / 2.0F, -SPREAD_H / 2.0F, 0);
 
-        if (data.initialized()) {
+        if (renderData.initialized()) {
             drawSpread(g, hx, hy);
         } else {
             g.drawCenteredString(this.font, "...", SPREAD_W / 2, SPREAD_H / 2, CardStyle.INK_FAINT);
@@ -124,7 +179,7 @@ public class ColonistCardScreen extends Screen {
     }
 
     private String fileNo() {
-        long n = 1000 + Math.abs((data.arrivalDate() / 1000) % 9000);
+        long n = 1000 + Math.abs((renderData.arrivalDate() / 1000) % 9000);
         return I18n.get("colonycard.page.file_no") + " " + n;
     }
 
@@ -154,12 +209,17 @@ public class ColonistCardScreen extends Screen {
 
         int fx = ix + PHOTO + 8;
         int fw = iw - PHOTO - 8;
-        String name = this.minecraft != null && this.minecraft.player != null
-                ? this.minecraft.player.getGameProfile().getName() : data.colonizerName();
-        String date = data.arrivalDate() > 0
-                ? new SimpleDateFormat("dd.MM.yyyy").format(new Date(data.arrivalDate()))
+        String name;
+        if (showHeld && !heldName.isEmpty()) {
+            name = heldName;
+        } else {
+            name = this.minecraft != null && this.minecraft.player != null
+                    ? this.minecraft.player.getGameProfile().getName() : renderData.colonizerName();
+        }
+        String date = renderData.arrivalDate() > 0
+                ? new SimpleDateFormat("dd.MM.yyyy").format(new Date(renderData.arrivalDate()))
                 : "-";
-        String goal = data.arrivalGoal().isEmpty() ? "-" : resolve(data.arrivalGoal());
+        String goal = renderData.arrivalGoal().isEmpty() ? "-" : resolve(renderData.arrivalGoal());
 
         int fy = y0;
         fy += CardStyle.docField(g, this.font, fx, fy, fw,
@@ -210,7 +270,7 @@ public class ColonistCardScreen extends Screen {
         int gy = py + 28;
         long unlocked = 0;
         for (int i = 0; i < ColonistData.REWARD_COUNT; i++) {
-            if (data.hasReward(i)) {
+            if (renderData.hasReward(i)) {
                 unlocked++;
             }
         }
@@ -233,7 +293,7 @@ public class ColonistCardScreen extends Screen {
 
     private void drawStamp(GuiGraphics g, float mouseX, float mouseY, int sx, int sy, int sw, int sh, int index) {
         var def = ColonistPools.REWARDS[index];
-        boolean unlocked = data.hasReward(index);
+        boolean unlocked = renderData.hasReward(index);
         boolean hover = hoverRect(mouseX, mouseY, sx, sy, sx + sw, sy + sh);
         CardStyle.stamp(g, sx, sy, sw, sh, unlocked, hover);
 
@@ -273,7 +333,7 @@ public class ColonistCardScreen extends Screen {
     private record Status(String key, int color) {}
 
     private Status status() {
-        int v = Mth.clamp(data.loyalty(), -100, 100);
+        int v = Mth.clamp(renderData.loyalty(), -100, 100);
         if (v >= 60) {
             return new Status("colonycard.status.devoted", 0xFF2F6B33);
         }
@@ -295,7 +355,7 @@ public class ColonistCardScreen extends Screen {
 
     /** Приметы одной строкой через запятую — для компактной ячейки левого разворота. */
     private String traitsSummary() {
-        List<String> traits = data.traits();
+        List<String> traits = renderData.traits();
         if (traits.isEmpty()) {
             return "-";
         }
