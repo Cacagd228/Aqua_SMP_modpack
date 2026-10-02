@@ -21,7 +21,7 @@ def check(cond, msg):
 pt = tomllib.load(open('pack.toml', 'rb'))
 idx_hash = hashlib.sha256(open('index.toml', 'rb').read()).hexdigest()
 check(pt['index']['hash'] == idx_hash, 'pack.toml hash matches index.toml')
-check(pt['version'] == '1.1.7-release', 'pack.toml version is 1.1.7-release (%s)' % pt['version'])
+check(pt['version'] == '1.1.7-release.2', 'pack.toml version is 1.1.7-release.2 (%s)' % pt['version'])
 
 # --- index.toml must not contain dev output ---------------------------
 idx_text = open('index.toml', encoding='utf-8', errors='ignore').read()
@@ -60,6 +60,9 @@ check(not bad, 'all %d pins match jars on disk %s' % (pins, bad or ''))
 required = [
     'mods/meowrelics.jar',
     'mods/meowrelics.pw.toml',
+    'mods/lineage_core-2.1.1.jar',
+    'mods/lineage_core-2-1-1.pw.toml',
+    'mods/create-aeronautics-burner-fuel.pw.toml',
     'mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
     'config/meowrelics/balance.json',
     'kubejs/data/create_rns/worldgen/structure_set/deposits.json',
@@ -84,7 +87,7 @@ check(not nonempty, '%d structure_set overrides, all empty %s' % (len(ss), nonem
 check(len(ss) == 8, 'expected 8 structure_set overrides, got %d' % len(ss))
 
 # --- mrpack ----------------------------------------------------------
-mrp = 'AquaSMP-v1.1.7-release.mrpack'
+mrp = 'AquaSMP-v1.1.7-release.2.mrpack'
 if os.path.isfile(mrp):
     z = zipfile.ZipFile(mrp)
     names = z.namelist()
@@ -93,7 +96,8 @@ if os.path.isfile(mrp):
     # Pinned custom/CurseForge-only jars travel as overrides (not manifest downloads),
     # same as the other 12 pins.
     for j in ('mods/meowrelics.jar', 'mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
-              'mods/meowhex.jar', 'mods/aerofix-1.0.0.jar'):
+              'mods/meowhex.jar', 'mods/aerofix-1.0.0.jar',
+              'mods/lineage_core-2.1.1.jar'):
         check(j in ov, 'mrpack carries pinned jar %s' % j)
     # The clean export must not inline gradle output. Tracked sources ARE expected:
     # CI has always shipped them (v1.1.6 index had 3645 src entries).
@@ -105,15 +109,17 @@ else:
     check(False, 'mrpack present')
 
 # --- prism zip -------------------------------------------------------
-pz = 'AquaSMP-v1.1.7-release-prism.zip'
+pz = 'AquaSMP-v1.1.7-release.2-prism.zip'
 if os.path.isfile(pz):
     z = zipfile.ZipFile(pz)
     names = z.namelist()
     for probe in ('minecraft/mods/meowrelics.jar',
                   'minecraft/mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
                   'minecraft/mods/colonycard-1.0.0.jar',
-                  'minecraft/mods/lineage_core-2.1.0.jar',
+                  'minecraft/mods/lineage_core-2.1.1.jar',
                   'minecraft/mods/meowhex.jar',
+                  'minecraft/mods/createburnerfuel-1.0.2.jar',
+                  'minecraft/mods/meowrelics.jar',
                   'minecraft/kubejs/data/create_rns/worldgen/structure_set/deposits.json',
                   'minecraft/kubejs/data/scguns/worldgen/structure_set/aboveground_medium.json',
                   'minecraft/kubejs/data/minecraft/worldgen/structure_set/strongholds.json',

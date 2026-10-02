@@ -24,6 +24,11 @@
     Новый джарник: `mods/lineage_core-2.1.1.jar` (пин `lineage_core-2-1-1.pw.toml`).
 - Конфиг `fmm_worldgen-common.toml` подтянут из инстанса: плотность островов
   сбалансирована (small 0.40→0.17, medium 0.35→0.29, large 0.30→0.29).
+- Инструменты: `tools/export-mrpack-clean.py` — экспорт `.mrpack` в чистом дереве
+  (`mr export` сам зовёт refresh и иначе тянет в overrides gradle-вывод, +400 МБ);
+  `tools/build-prism-pack.py` — сборка zip для PrismLauncher по шагам из workflow
+  (раньше это было возможно только на CI). `tools/verify_release.py` переведён
+  на 1.1.7-release.2 и проверяет новые артефакты.
 
 ## v1.1.7-release
 

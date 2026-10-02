@@ -2,8 +2,12 @@
 
 See refresh-index-clean.py for why this cannot run in the working tree:
 packwiz does not read .gitignore, so `mr export` would inline gradle build/
-run/.gradle output into overrides/ (~9k files). CI exports from a fresh
-checkout, so the published .mrpack never had those. This reproduces it.
+run/.gradle output into overrides/ (~8k files, +400 MB). CI exports from a
+fresh checkout, so the published .mrpack never had those. This reproduces it.
+
+The temp tree also gets an explicit `packwiz refresh` first: `mr export`
+re-reads the working tree rather than trusting the committed index, so
+without it the export picks up whatever is on disk in the temp dir.
 
 Usage: python tools/export-mrpack-clean.py <output.mrpack>
 """
@@ -34,11 +38,13 @@ def main():
         for rel in tracked:
             src = os.path.join(ROOT, rel)
             if not os.path.isfile(src):
+                print('  missing, skipped: %s' % rel)
                 continue
             dst = os.path.join(tmp, rel)
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             shutil.copy2(src, dst)
 
+        sh('packwiz', 'refresh', cwd=tmp)
         target = os.path.join(tmp, os.path.basename(out))
         sh('packwiz', 'mr', 'export', '-o', os.path.basename(out), cwd=tmp)
 

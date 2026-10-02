@@ -64,19 +64,23 @@
 `nightly.link/packwiz/packwiz/workflows/go/main`), Java 21.
 
 ```sh
-packwiz refresh          # пересобрать index.toml, проверить хеши
-python tools/clean-index.py   # выкинуть из индекса build-артефакты (обязательно!)
-packwiz update --all     # проверить обновления модов (пины без [update] не трогает)
-packwiz mr export        # собрать .mrpack локально для теста
+packwiz update --all               # проверить обновления модов (пины без [update] не трогает)
+
+# пересборка релиза — обе команды работают в чистом дереве из tracked-файлов
+python tools/refresh-index-clean.py                       # index.toml
+python tools/sync-index-hash.py                            # хеш индекса в pack.toml
+python tools/export-mrpack-clean.py AquaSMP-vX.Y.Z.mrpack  # .mrpack
+python tools/build-prism-pack.py vX.Y.Z                   # zip для PrismLauncher
+python tools/verify_release.py                             # проверка всего пака
 ```
 
-> **Порядок важен.** `packwiz` индексирует модпак прямым обходом каталога и
-> `.gitignore` не читает, а `mr export` ещё и сам вызывает refresh. Если сборка
-> модов уже лежит в `src/*/build`, индекс раздувается на ~9 000 записей, а
-> `.mrpack` — с 70 МБ до 1.5 ГБ. `tools/clean-index.py` приводит индекс к
-> тому, что увидит CI (свежий checkout + скачанные `mods/*.jar`), и
-> пересчитывает хеш в `pack.toml`. Запускать его **после** `refresh` и
-> **до** коммита.
+> **Почему не `packwiz refresh` / `packwiz mr export` напрямую.** `packwiz`
+> индексирует модпак прямым обходом каталога и `.gitignore` не читает, а
+> `mr export` ещё и сам вызывает refresh. Если сборка модов уже лежит в
+> `src/*/build`, индекс раздувается на ~8 000 записей, а `.mrpack` — с 37 МБ
+> до 1.5 ГБ. `*-clean.py` выгружают tracked-файлы во временный каталог и
+> запускают packwiz там, то есть получают ровно то, что увидит CI (свежий
+> checkout + скачанные `mods/*.jar`).
 
 Структура:
 
@@ -84,7 +88,7 @@ packwiz mr export        # собрать .mrpack локально для тес
 Aqua_SMP_modpack/
 ├── pack.toml / index.toml   # манифест пака (MC 1.21.1, NeoForge 21.1.248)
 ├── mods/*.pw.toml           # 218 модов с Modrinth (id версии запинен)
-├── mods/*.jar               # 12 пинов (см. выше), исключения в .gitignore
+├── mods/*.jar               # 16 пинов (см. выше), исключения в .gitignore
 ├── config/                  # 364 файла (рантайм-мусор вычищен, см. ниже)
 ├── kubejs/                  # скрипты (server/client/startup)
 ├── defaultconfigs/

@@ -6,7 +6,7 @@ hash = "f9696b796b01abd07ff6f78c612c05ee5979c88012b97bbee1ead1b0f9f56622"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "191d54e3eea080db05418254596eb295fc3c228ef54a1556f462622bacd4e6e4"
+hash = "d92182028e004a7c58b9411905a8bb812aae73ce34faefd266f2f9ab90d4ac13"
 
 [[files]]
 file = "LICENSE"
@@ -14,7 +14,7 @@ hash = "89c794623d24995745c84eced85cbc9e8a46b6e77f3d4e9a4238c27b7fecbd11"
 
 [[files]]
 file = "README.md"
-hash = "854eed0d7e531bcf0fd5e1d7d493e94cd1b1e6b9b76c1b132dd50d36e1bbe3f2"
+hash = "9a581ef736145188b6bb03f7f008358b0a15ade5f72ec99de5c0920866bc6164"
 
 [[files]]
 file = "config/DistantHorizons.toml"
@@ -922,7 +922,7 @@ hash = "cc59fb1039726fda3ab1eb69b06d9b9aebb7496604ea579cfb735bc5377e7825"
 
 [[files]]
 file = "config/fmm_worldgen-common.toml"
-hash = "ef371e803170071d34a7267a76599456849e7411fbfa373d5a87786bfbeff504"
+hash = "a7ae0a1f05bc87181fee439af75062a3b088291b9def7dcd634fcc37f7e2f6e9"
 
 [[files]]
 file = "config/gnkinetics-client.toml"
@@ -1094,7 +1094,7 @@ hash = "ed6c443ee913c0ff666ee8653e6b5ab2655a72fad8a313bb728425cc6c3e67b0"
 
 [[files]]
 file = "config/meowrelics/balance.json"
-hash = "cb775c19b7027fc5a8fa6a49d21ff709de7d6b7a79d39389d5a46267734ee4cb"
+hash = "c8c0c671681639dffde9e0b20176705063637882950ca0896cf8118e4da4983c"
 
 [[files]]
 file = "config/modernfix-common.toml"
@@ -1810,6 +1810,11 @@ hash = "3b8895369640b2a52d3e05f7186185ba6798e44d513f11c5427a0fe9c16769e9"
 metafile = true
 
 [[files]]
+file = "mods/create-aeronautics-burner-fuel.pw.toml"
+hash = "90f8323031d6bbb7f764562c68783014a7dfd177b0f7a8c6a9c512f9d74516b6"
+metafile = true
+
+[[files]]
 file = "mods/create-aeronautics-delivery-required.pw.toml"
 hash = "3249678012dd5bc27af549464569253986c315dcf8d9a10d1924ca053e61e2c4"
 metafile = true
@@ -2381,13 +2386,13 @@ hash = "98929c2d2368656d039c75d32612333edf4838ce95b84c7191d01021e3cde6fb"
 metafile = true
 
 [[files]]
-file = "mods/lineage_core-2-1-0.pw.toml"
-hash = "3d29a3021c71bfa137fdd1efd2d5f8479157940f059824c129a4b33dab75861f"
+file = "mods/lineage_core-2-1-1.pw.toml"
+hash = "766fd1880bdc1ea0b72303b5dbbe8626be2611e9008ccde353e45c403d6ed838"
 metafile = true
 
 [[files]]
-file = "mods/lineage_core-2.1.0.jar"
-hash = "91b2e9b0cc5532eb8395533f4591d8c121f60a58d7c814c4c86eb747c4e056f3"
+file = "mods/lineage_core-2.1.1.jar"
+hash = "00655b4fecda749112d7f594df11dd0cebd4d8303b074307fcd571372721def9"
 
 [[files]]
 file = "mods/linear-bearing.pw.toml"
@@ -2419,11 +2424,11 @@ metafile = true
 
 [[files]]
 file = "mods/meowrelics.jar"
-hash = "53f8c92c5c6cdb7a5f58899e4c2cd5960a09f085b06741736229b9ce4cc77490"
+hash = "6c999d310cf17e7b8b83769de842b6c380377512a82bb5e1f126d8a3edc6e584"
 
 [[files]]
 file = "mods/meowrelics.pw.toml"
-hash = "4da3141af59e743d443ab62a6aae4d2763944ad469e7145f8a829dec64722a1b"
+hash = "150b28fe12ffc974d5d1ab22fff22903e763e538381b5ae4817a06d3960accf6"
 metafile = true
 
 [[files]]
@@ -3891,7 +3896,7 @@ hash = "66c87c7e9c048910618e9ec4af5e4d172f78bfd44398a08a80ec05399c72f283"
 
 [[files]]
 file = "src/linage_core/gradle.properties"
-hash = "b12c237c88015bd12f4825610bbe78091fe164bb827b16d3c171485449cd103d"
+hash = "1d077bed8b606e18516fcccec8490c721127ca40664def29338d1756abb82c47"
 
 [[files]]
 file = "src/linage_core/gradle/wrapper/gradle-wrapper.jar"
@@ -3959,7 +3964,7 @@ hash = "8031670460a9875287a525d5005cc8eba4f876fafbbf3061d22bd0438b1eed1a"
 
 [[files]]
 file = "src/linage_core/src/main/java/xyz/lineage/game/FrozenWaters.java"
-hash = "4c89afd61d9318655670b1aeeecc0ca8a690f794749048c2d7684b8c58d20758"
+hash = "964772df51e14438a2092832dbedfb8163c9dc2997acf307f9831084accb23c3"
 
 [[files]]
 file = "src/linage_core/src/main/java/xyz/lineage/game/LineageRites.java"
@@ -17579,7 +17584,7 @@ hash = "956642c1b3cf7f67d608ae61259de73232244313e9fdcf90fde080692bfa2ff6"
 
 [[files]]
 file = "src/meowrelics/gradle.properties"
-hash = "7fa0e92c9dbbefdbd941741875b1d13806958b26c53c8067e6174f07edc3d421"
+hash = "77950e80c9ce17bfcc1c344eb559a4c865d628f9de755da23ee2001436e3c407"
 
 [[files]]
 file = "src/meowrelics/gradle/wrapper/gradle-wrapper.jar"
@@ -17615,15 +17620,15 @@ hash = "4990644a64411d12d46bd99724e368a40f6a99525c026c0e97605d7465911fd1"
 
 [[files]]
 file = "src/meowrelics/src/main/java/me/nanorasmus/meowrelics/balance/BalanceLoader.java"
-hash = "7426636a4b52633ec906120498c67296eeab934ff9d1ae2a1101accffc9dc0f7"
+hash = "8aad6c2ce2ca2fb9ee68794e169149e96d3d0024e3bc497712270f5a70809a7e"
 
 [[files]]
 file = "src/meowrelics/src/main/java/me/nanorasmus/meowrelics/balance/BalanceSpec.java"
-hash = "ed956558a759dd98ce142c5c6d8a8094ea5f9769597f1c9fb9eddeef9ca86f86"
+hash = "ce964864204f6dcc9cb077039bb0d68c4573d10441b61b55ccf63bd1a96d6187"
 
 [[files]]
 file = "src/meowrelics/src/main/java/me/nanorasmus/meowrelics/balance/RelicBalancer.java"
-hash = "b102ac92076e71e1ec232da2e68cfae169755e49487a448528941cd5de3aa056"
+hash = "809205ebfa6ae99a98a3d8a7488a08e85474d434e9831d032e91cabaee01e7a6"
 
 [[files]]
 file = "src/meowrelics/src/main/java/me/nanorasmus/meowrelics/item/LootKind.java"
@@ -17655,7 +17660,7 @@ hash = "8124355f86aa94d2ccfca616a057ade783a450b2f1ab12c5f44a90a159d18d5f"
 
 [[files]]
 file = "src/meowrelics/src/main/java/me/nanorasmus/meowrelics/relic/RelicRandomizer.java"
-hash = "71fed959e345a48a2264d3b93c93d3da09a8710b7d52dbe384c32a42cd8c854a"
+hash = "f775b39f5e7ca4b483a9681ca82c0acf0f34c1dfbed2bfd9b18fec6aab398860"
 
 [[files]]
 file = "src/meowrelics/src/main/resources/META-INF/neoforge.mods.toml"
@@ -17706,6 +17711,10 @@ file = "tools/_tmp_probe.py"
 hash = "d7124490a3f73244cad8886671209cc22b4e178c3877c93b5f9ecafd3dc8828a"
 
 [[files]]
+file = "tools/build-prism-pack.py"
+hash = "2eb9433a351fc43a4fd2e1f1654ac9ac99a33a0e8afd2f24102dea0d08ec873d"
+
+[[files]]
 file = "tools/build-server-pack.py"
 hash = "9cb7e78175975689b7e9230d6f4878d50ea733eabb71eaa8a0b6720f7cd66406"
 
@@ -17731,7 +17740,7 @@ hash = "b58f3ad56d95bac52150add199cd0992c986b2df60932190755772c1b318a90e"
 
 [[files]]
 file = "tools/export-mrpack-clean.py"
-hash = "5668a1b566528cb84f3476fcfbd31cc141da04ab1c3d357f3da8d0d420ade13d"
+hash = "2b22afd7efa6c7258e81a3361566873fb3652266c3b946701cc5eedf48644f87"
 
 [[files]]
 file = "tools/fetch-mods.py"
@@ -17740,3 +17749,11 @@ hash = "b0215314feeafe35d3d0d0df0d4299ea79f478f1c52461adbd55292d68ce91a0"
 [[files]]
 file = "tools/refresh-index-clean.py"
 hash = "85842f101b31c39ab641c54f43233d84ae199fce8a37c382064e9d7657428bc0"
+
+[[files]]
+file = "tools/sync-index-hash.py"
+hash = "bddf887fe49da381df8abdb8f376e22846db6a54c359e51539758a46e75050d0"
+
+[[files]]
+file = "tools/verify_release.py"
+hash = "7fe2b9f60da62b5cb413ca6aa1b6e8ab013501deee161b33f9215e5beb384cc1"
