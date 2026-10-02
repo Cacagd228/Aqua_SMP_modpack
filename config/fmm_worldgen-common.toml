@@ -20,10 +20,10 @@
 		# Range: 10.0 ~ 1000.0
 		max_radius = 87.5
 		#Spawn probability of small islands per grid cell (0.0 to 1.0).
-		#Default: 0.40 (40% spawn chance per 750-block cell)
-		# Default: 0.4
+		#Default: 0.17 (~30 small islands per 10000x10000 block area)
+		# Default: 0.17
 		# Range: 0.0 ~ 1.0
-		spawn_chance = 0.4
+		spawn_chance = 0.17
 
 	[general.medium_islands]
 		#Grid spacing (cell size in blocks) for medium island distribution.
@@ -42,10 +42,10 @@
 		# Range: 20.0 ~ 2000.0
 		max_radius = 175.0
 		#Spawn probability of medium islands per grid cell (0.0 to 1.0).
-		#Default: 0.35 (35% spawn chance per 1400-block cell)
-		# Default: 0.35
+		#Default: 0.29 (~15 medium islands per 10000x10000 block area)
+		# Default: 0.29
 		# Range: 0.0 ~ 1.0
-		spawn_chance = 0.35
+		spawn_chance = 0.29
 
 	[general.large_islands]
 		#Grid spacing (cell size in blocks) for large island distribution.
@@ -64,10 +64,10 @@
 		# Range: 50.0 ~ 4000.0
 		max_radius = 212.5
 		#Spawn probability of large islands per grid cell (0.0 to 1.0).
-		#Default: 0.30 (30% spawn chance per 2400-block cell)
-		# Default: 0.3
+		#Default: 0.29 (~5 large islands per 10000x10000 block area)
+		# Default: 0.29
 		# Range: 0.0 ~ 1.0
-		spawn_chance = 0.3
+		spawn_chance = 0.29
 
 	[general.climate_and_coast]
 		#Spawn weight/chance for HOT islands (Savannas, Badlands Mesas, Mangrove Oases).

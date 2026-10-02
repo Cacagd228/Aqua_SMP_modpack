@@ -5,6 +5,7 @@ import it.hurts.sskirillss.relics.api.relics.RelicTemplate;
 import it.hurts.sskirillss.relics.api.relics.abilities.AbilityTemplate;
 import it.hurts.sskirillss.relics.items.relics.base.data.loot.LootEntry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,6 +17,10 @@ import java.util.List;
 
 /**
  * Выбирает случайную реликвию для выдачи из мешочка.
+ *
+ * <p>Часть реликвий исключена из ротации списком {@link #EXCLUDED}. Их по-прежнему
+ * можно получить иным способом (командами, вручную в сундук) — выпадать из мешочков
+ * они просто перестают.
  *
  * <p>Редкость берётся не с потолка, а из настоящих лут-весов реликвий: сумма
  * весов всех записей её {@code LootTemplate}. Именно из этих шаблонов мод Relics
@@ -36,6 +41,22 @@ import java.util.List;
 public final class RelicRandomizer {
 
     private static final Logger LOG = LoggerFactory.getLogger("MeowRelics");
+
+    /**
+     * Реликвии, убранные из ротации мешочков.
+     *
+     * <p>Хранится в {@link #EXCLUDED}: список лежит в balance.json, чтобы менять
+     * пул можно было без пересборки мода. Если файл не прочитан, ротация
+     * останется полной.
+     */
+    private static volatile java.util.Set<String> EXCLUDED = java.util.Set.of();
+
+    /** Заменяет список исключений. Вызывается загрузчиком баланса. */
+    public static void setExcluded(java.util.Collection<String> ids) {
+        EXCLUDED = ids == null ? java.util.Set.of()
+                : java.util.Set.copyOf(ids);
+        LOG.info("Исключено из пула мешочков: {}", EXCLUDED.size());
+    }
 
     private RelicRandomizer() {
     }
@@ -93,11 +114,16 @@ public final class RelicRandomizer {
         return new ItemStack(chosen);
     }
 
-    /** Собирает список реликвий с лут-весом и мощностью. */
+    /** Собирает список реликвий с лут-весом и мощностью, кроме исключённых. */
     private static List<Entry> collectPool() {
         List<Entry> pool = new ArrayList<>();
+        java.util.Set<String> excluded = EXCLUDED;
         for (Item item : BuiltInRegistries.ITEM) {
             if (item instanceof IRelicItem relic) {
+                ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+                if (id != null && excluded.contains(id.toString())) {
+                    continue;
+                }
                 pool.add(new Entry(item, lootWeight(relic), power(relic)));
             }
         }

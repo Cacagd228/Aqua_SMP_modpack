@@ -6,6 +6,16 @@
     "Сверить оригинал: /meowrelics dump -> config/meowrelics/current_balance.json"
   ],
 
+  "_пул": [
+    "excludedFromBags — id предметов, которые не выпадают из мешочков.",
+    "Реликвия остаётся в игре (команды, ручная выдача), но её нельзя вытянуть из мешочка."
+  ],
+  "excludedFromBags": [
+    "relics:ring_of_the_seven_deadly_sins",
+    "relics:jellyfish_necklace",
+    "relics:midnight_mantle"
+  ],
+
   "relics": {
     "artifacts:onion_ring": {
       "abilities": {
@@ -228,6 +238,463 @@
               "initialMax": 2.5,
               "targetValue": 5.0025
             }
+          }
+        }
+      }
+    },
+
+    "artifacts:kitty_slippers": {
+      "abilities": {
+        "nine_lives": {
+          "_комментарий": "Спасает с 1 HP. Шанс пополам: было 50% -> 25%, старт тоже пополам. Ранг 5 (evasion_chance) не тронут",
+          "stats": {
+            "survival_chance": { "initialMin": 0.0125, "initialMax": 0.05, "targetValue": 0.250025 }
+          }
+        }
+      }
+    },
+
+    "artifacts:bunny_hoppers": {
+      "abilities": {
+        "jump": {
+          "_комментарий": "Ранг 5 (impact): урон в воздухе +150% за блок -> +10% за блок, старт ужат в 15 раз. Длительность прыжка и радиус отталкивания не тронуты",
+          "stats": {
+            "impact_damage_bonus": { "initialMin": 0.0167, "initialMax": 0.0333, "targetValue": 0.1 }
+          }
+        }
+      }
+    },
+
+    "artifacts:power_glove": {
+      "abilities": {
+        "power": {
+          "_комментарий": "Было 3 удара на максе (+500%), старт 7-10 ударов (+100-150%). Стало 10 ударов на максе (+50%), старт 12-15 ударов (+15-25%). Ранг 1 (пробитие щитов) и ранг 5 (echo) не тронуты",
+          "stats": {
+            "hits_required": { "initialMin": 12.0, "initialMax": 15.0, "targetValue": 10.0 },
+            "power_damage_bonus": { "initialMin": 0.15, "initialMax": 0.25, "targetValue": 0.5 },
+            "armor_ignore": {
+              "_комментарий": "Ранг 3: было 100% игнора брони -> втрое меньше, 33%. Старт тоже втрое меньше",
+              "initialMin": 0.05,
+              "initialMax": 0.116667,
+              "targetValue": 0.333493
+            }
+          }
+        }
+      }
+    },
+
+    "artifacts:warp_drive": {
+      "abilities": {
+        "warp": {
+          "_комментарий": "Все три стата в секундах. КД: 0.5 сек на максе -> 30 сек, старт 60-75 сек. Ранг 3 (дезориентация): радиус 10 -> 5 блоков, ослепление 10 -> 3 сек. Ранги 1 (защита) и 5 (невесомость) не тронуты",
+          "stats": {
+            "cooldown": { "initialMin": 60.0, "initialMax": 75.0, "targetValue": 30.0 },
+            "blind_radius": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 5.0 },
+            "blind_duration": { "initialMin": 1.0, "initialMax": 1.5, "targetValue": 3.0 }
+          }
+        }
+      }
+    },
+
+    "artifacts:crystal_heart": {
+      "abilities": {
+        "heart": {
+          "_комментарий": "Всё втрое: +20 HP -> ~6.7, перезарядка 10 сек -> ~3.3, ранг1 сопротивление 65% -> 32.5%, ранг5 порог 25% -> 12.5% и бессмертие 10 -> 5 сек. Ранг3 (recuperation, low_health_heal_bonus) не тронут",
+          "stats": {
+            "bonus_health": { "initialMin": 0.67, "initialMax": 2.0, "targetValue": 6.669 },
+            "cooldown": { "initialMin": 16.67, "initialMax": 20.0, "targetValue": 3.347 },
+            "full_health_resistance": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.32494 },
+            "heavy_hit_threshold": { "initialMin": 0.375, "initialMax": 0.25, "targetValue": 0.124875 },
+            "immortality_duration": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 5.00175 }
+          }
+        }
+      }
+    },
+
+    "artifacts:helium_flamingo": {
+      "abilities": {
+        "flying": {
+          "_комментарий": "Время парения 60 сек не тронуто. Скорость +100% -> +60%. Ранг1 (ranged_damage_bonus) +100% -> +50%. Ранг3 (resistance, 50%) и ранг5 не тронуты",
+          "stats": {
+            "speed_bonus": { "initialMin": 0.09, "initialMax": 0.21, "targetValue": 0.600288 },
+            "ranged_damage_bonus": { "initialMin": 0.075, "initialMax": 0.175, "targetValue": 0.50024 }
+          }
+        }
+      }
+    },
+
+    "artifacts:obsidian_skull": {
+      "abilities": {
+        "lava": {
+          "_комментарий": "Всё пополам: 60 -> 30 сек в лаве, ранг3 (heat_surge) +100% -> +50%, ранг5 (obsidian_skin) -75% -> -37.5% урона. Ранг1 (lava_launch) без статов",
+          "stats": {
+            "duration": { "initialMin": 2.5, "initialMax": 7.5, "targetValue": 29.99625 },
+            "low_reserve_speed_bonus": { "initialMin": 0.075, "initialMax": 0.125, "targetValue": 0.49994 },
+            "damage_reduction": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.374815 }
+          }
+        }
+      }
+    },
+
+    "artifacts:cloud_in_a_bottle": {
+      "abilities": {
+        "jump": {
+          "_комментарий": "Прыжков 10 -> 5, замедление падения 10 -> 5 сек, ранг3 (updraft) +250% -> +125%. Ранг5 (combat_recovery) и синергия cloud_burst не тронуты",
+          "stats": {
+            "count": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 5.00175 },
+            "slow_fall_duration": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 5.0025 },
+            "updraft_bonus": { "initialMin": 0.125, "initialMax": 0.25, "targetValue": 1.250125 }
+          }
+        }
+      }
+    },
+
+    "artifacts:thorn_pendant": {
+      "abilities": {
+        "poison": {
+          "_комментарий": "Отражение 100% -> 33%. Ранг1: отравление 5 -> ~1.7 ур и 30 -> 10 сек. Ранг3 (poisoned_damage_bonus) +100% -> +25%. Ранг5 (resistance) без статов",
+          "stats": {
+            "reflect_damage": { "initialMin": 0.033, "initialMax": 0.117, "targetValue": 0.333493 },
+            "poison_level": { "initialMin": 1.0, "initialMax": 1.0, "targetValue": 1.66683 },
+            "poison_duration": { "initialMin": 0.33, "initialMax": 1.67, "targetValue": 10.0025 },
+            "poisoned_damage_bonus": { "initialMin": 0.025, "initialMax": 0.0875, "targetValue": 0.25012 }
+          }
+        }
+      }
+    },
+
+    "artifacts:flame_pendant": {
+      "abilities": {
+        "fire": {
+          "_комментарий": "Шанс поджога 50% -> 10%. Длительность горения 30 сек не тронута. Ранг1 (burning_damage_bonus) +100% -> +20%. Ранг5 (healing) 12.5 -> 1.25 HP/сек. Ранг3 (resistance) без статов",
+          "stats": {
+            "chance": { "initialMin": 0.02, "initialMax": 0.04, "targetValue": 0.1 },
+            "burning_damage_bonus": { "initialMin": 0.03, "initialMax": 0.07, "targetValue": 0.2 },
+            "healing": { "initialMin": 0.05, "initialMax": 0.25, "targetValue": 1.250125 }
+          }
+        }
+      }
+    },
+
+    "artifacts:shock_pendant": {
+      "abilities": {
+        "shock": {
+          "_комментарий": "Всё втрое: шанс 50% -> 16.7%, дистанция 10 -> 3.3 блока, 10 -> 3.3 скачков, урон 20 -> 6.7. Ранг3 (conductor +100%) и ранг5 (tremor 25%/5 сек) не тронуты",
+          "stats": {
+            "chance": { "initialMin": 0.033, "initialMax": 0.067, "targetValue": 0.166767 },
+            "distance": { "initialMin": 1.0, "initialMax": 1.67, "targetValue": 3.335 },
+            "bounces": { "initialMin": 1.0, "initialMax": 2.0, "targetValue": 3.3345 },
+            "damage": { "initialMin": 0.33, "initialMax": 1.67, "targetValue": 6.66583 }
+          }
+        }
+      }
+    },
+
+    "artifacts:panic_necklace": {
+      "abilities": {
+        "panic": {
+          "_комментарий": "Скорость +10% -> +5% за моба, потолок 100% -> 50%. Радиус 32 блока не тронут. Ранг1 (resistance) убран в ноль. Ранг3 лечение 10 -> 2.5. Ранг5 (attack_speed) не тронут",
+          "stats": {
+            "movement": { "initialMin": 0.005, "initialMax": 0.0125, "targetValue": 0.049995 },
+            "max_movement": { "initialMin": 0.075, "initialMax": 0.125, "targetValue": 0.49994 },
+            "resistance": { "initialMin": 0.0, "initialMax": 0.0, "targetValue": 0.0 },
+            "heal": { "initialMin": 0.75, "initialMax": 1.25, "targetValue": 2.50125 }
+          }
+        }
+      }
+    },
+
+    "artifacts:cross_necklace": {
+      "abilities": {
+        "protection": {
+          "_комментарий": "Окно неуязвимости 1 -> 0.5 сек. Ранг1 (holy_fire) 30 -> 6 сек. Ранг3 (smite) +250% -> ~35.7%. Ранг5 (salvation) 25% -> 5%",
+          "stats": {
+            "invulnerability": { "initialMin": 0.025, "initialMax": 0.05, "targetValue": 0.499925 },
+            "fire_duration": { "initialMin": 0.6, "initialMax": 1.0, "targetValue": 6.0015 },
+            "undead_damage": { "initialMin": 0.0143, "initialMax": 0.0357, "targetValue": 0.35709 },
+            "survival_chance": { "initialMin": 0.01, "initialMax": 0.02, "targetValue": 0.05 }
+          }
+        }
+      }
+    },
+
+    "artifacts:cowboy_hat": {
+      "abilities": {
+        "riding": {
+          "_комментарий": "Характеристики в седле 200% -> 100%. Ранг3 (reach) 500% -> 100%. Ранг5 (absorption) 20 -> 2.5. Ранг1 (taming) без статов",
+          "stats": {
+            "amount": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 1.0 },
+            "reach": { "initialMin": 0.03, "initialMax": 0.07, "targetValue": 1.0 },
+            "absorption": { "initialMin": 0.25, "initialMax": 0.75, "targetValue": 2.5 }
+          }
+        }
+      }
+    },
+
+    "artifacts:superstitious_hat": {
+      "abilities": {
+        "looting": {
+          "_комментарий": "Шанс 75% -> 7.5%, срабатываний 50 -> 5. Ранг3: окно 50 -> 25 сек, бонус +25% -> +12.5%. Ранг1 (beast_hunter) и ранг5 (streak) не тронуты",
+          "stats": {
+            "chance": { "initialMin": 0.005, "initialMax": 0.015, "targetValue": 0.075008 },
+            "max_casts": { "initialMin": 0.1, "initialMax": 0.5, "targetValue": 4.99925 },
+            "first_kill_window": { "initialMin": 30.0, "initialMax": 25.0, "targetValue": 5.00625 },
+            "first_kill_bonus": { "initialMin": 0.05, "initialMax": 0.125, "targetValue": 0.250125 }
+          }
+        }
+      }
+    },
+
+    "artifacts:night_vision_goggles": {
+      "abilities": {
+        "vision": {
+          "_комментарий": "Видимость +100% не тронута. Ранг1 (clarity) без статов. Ранг3 (evasion) 50% -> 12.5%. Ранг5 (ambush) 250% -> 25%",
+          "stats": {
+            "miss_chance": { "initialMin": 0.0125, "initialMax": 0.0625, "targetValue": 0.1250625 },
+            "damage_bonus": { "initialMin": 0.015, "initialMax": 0.035, "targetValue": 0.25 }
+          }
+        }
+      }
+    },
+
+    "artifacts:snorkel": {
+      "abilities": {
+        "snorkeling": {
+          "_комментарий": "Глубина 15 -> 5 блоков. Ранг1 (vision) без статов. Ранг3 (reserve) 60 -> 30 сек. Ранг5 (resistance) 50% -> 25%",
+          "stats": {
+            "water_depth": { "initialMin": 0.33, "initialMax": 1.0, "targetValue": 5.0005 },
+            "reserve_duration": { "initialMin": 2.5, "initialMax": 5.0, "targetValue": 30.0075 },
+            "drowning_resistance": { "initialMin": 0.025, "initialMax": 0.125, "targetValue": 0.250125 }
+          }
+        }
+      }
+    },
+
+    "artifacts:novelty_drinking_hat": {
+      "_комментарий": "Пластиковый шлем — тот же предмет-скин, у него ровно эти же статы. Правь оба id.",
+      "abilities": {
+        "drinking": {
+          "_комментарий": "Скорость 250% -> 75%. Ранг1 воздух 250 -> 62.5. Ранг3 голод 10 -> 2.5. Ранг5 здоровье 20 -> 0.5",
+          "stats": {
+            "speed": { "initialMin": 0.075, "initialMax": 0.15, "targetValue": 0.75 },
+            "air": { "initialMin": 6.25, "initialMax": 18.75, "targetValue": 62.521875 },
+            "hunger": { "initialMin": 0.25, "initialMax": 0.75, "targetValue": 2.500875 },
+            "health": { "initialMin": 0.0625, "initialMax": 0.125, "targetValue": 0.5 }
+          }
+        }
+      }
+    },
+
+    "artifacts:plastic_drinking_hat": {
+      "abilities": {
+        "drinking": {
+          "_комментарий": "Скин того же предмета, что и novelty_drinking_hat — значения идентичны",
+          "stats": {
+            "speed": { "initialMin": 0.075, "initialMax": 0.15, "targetValue": 0.75 },
+            "air": { "initialMin": 6.25, "initialMax": 18.75, "targetValue": 62.521875 },
+            "hunger": { "initialMin": 0.25, "initialMax": 0.75, "targetValue": 2.500875 },
+            "health": { "initialMin": 0.0625, "initialMax": 0.125, "targetValue": 0.5 }
+          }
+        }
+      }
+    },
+
+    "artifacts:eternal_steak": {
+      "abilities": {
+        "meal": {
+          "_комментарий": "Базовые regen 5 сек и прочность 10 не тронуты. Ранг1 (restoration, healing) убран в ноль. Ранг3 (preservation) 25% не тронут. Ранг5 (quick_meal) 75% -> 25%",
+          "stats": {
+            "healing": { "initialMin": 0.0, "initialMax": 0.0, "targetValue": 0.0 },
+            "consume_speed": { "initialMin": 0.033, "initialMax": 0.083, "targetValue": 0.250167 }
+          }
+        }
+      }
+    },
+
+    "artifacts:scarf_of_invisibility": {
+      "abilities": {
+        "invisibility": {
+          "_комментарий": "Перезарядка 6 сек -> 120 сек, порог неподвижности 7.5 -> 6 сек. Ранг1 (strike, +250% урона) убран в ноль. Ранг3 (stun) 5 -> 2.5 сек. Ранг5 (regeneration, 1 HP/сек) не тронут",
+          "stats": {
+            "delay": { "initialMin": 8.0, "initialMax": 10.0, "targetValue": 6.0 },
+            "cooldown": { "initialMin": 100.0, "initialMax": 120.0, "targetValue": 120.0 },
+            "damage": { "initialMin": 0.0, "initialMax": 0.0, "targetValue": 0.0 },
+            "stun": { "initialMin": 1.0, "initialMax": 1.5, "targetValue": 2.4975 }
+          }
+        }
+      }
+    },
+
+    "artifacts:umbrella": {
+      "abilities": {
+        "glider": {
+          "_комментарий": "Падение 0.15 не тронуто. Ранг1 (bounce): зарядов 15 -> 7 и сила 1 -> 0.5. Ранг2 (vanishing) невидимость 10 -> 5 сек",
+          "stats": {
+            "bounces": { "initialMin": 1.5, "initialMax": 1.5, "targetValue": 7.5 },
+            "strength": { "initialMin": 0.25, "initialMax": 0.375, "targetValue": 0.49969 },
+            "vanishing_duration": { "initialMin": 1.5, "initialMax": 1.5, "targetValue": 5.00175 }
+          }
+        },
+        "shield": {
+          "_комментарий": "Купол: блоков 25 -> 5, кулдаун 1 сек не тронут. Ранг3 (repel) 2 блока не тронут",
+          "stats": {
+            "hits": { "initialMin": 2.0, "initialMax": 2.0, "targetValue": 5.0 }
+          }
+        }
+      }
+    },
+
+    "relics:rider_flute": {
+      "abilities": {
+        "stable": {
+          "_комментарий": "Слотов 4 и лечение 0.5 HP/сек не тронуты. Ранг5 (resistance) 50% -> 16.7%",
+          "stats": {
+            "resistance": { "initialMin": 0.017, "initialMax": 0.033, "targetValue": 0.166667 }
+          }
+        }
+      }
+    },
+
+    "relics:hunting_belt": {
+      "abilities": {
+        "pack": {
+          "_комментарий": "Урон питомцам +300% -> +37.5%. Ранг1 (leader): сопротивление 10% за питомца -> 5%, радиус 15 блоков не тронут. Ранг3 и ранг5 не тронуты",
+          "stats": {
+            "damage_modifier": { "initialMin": 0.031, "initialMax": 0.0625, "targetValue": 0.375094 },
+            "resistance_per_pet": { "initialMin": 0.005, "initialMax": 0.025, "targetValue": 0.050025 }
+          }
+        }
+      }
+    },
+
+    "relics:ghostly_mantle": {
+      "abilities": {
+        "fog": {
+          "_комментарий": "Туман: 15 -> 7.5 сек, воздух 200 -> 100/сек. Урон от удушья +100% не тронут (это отдельный множитель). Радиус 2.5 блока не тронут. Ранг1 (frostbite, тремор 5 -> 2.5 сек)",
+          "stats": {
+            "duration": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 7.5 },
+            "air_loss": { "initialMin": 0.5, "initialMax": 1.0, "targetValue": 5.0 },
+            "tremor": { "initialMin": 0.5, "initialMax": 1.0, "targetValue": 2.5 }
+          }
+        },
+        "gaze": {
+          "_комментарий": "Взгляд: заряд на цель 7.5% -> 3.75%, зарядов 10 -> 5, ослабление 15% -> 7.5%. Дистанция 30 блоков и время набора заряда (1/сек) не тронуты",
+          "stats": {
+            "charges": { "initialMin": 1.5, "initialMax": 1.5, "targetValue": 5.0 },
+            "weakness": { "initialMin": 0.0025, "initialMax": 0.005, "targetValue": 0.0375 },
+            "damage": { "initialMin": 0.005, "initialMax": 0.0125, "targetValue": 0.075 }
+          }
+        }
+      }
+    },
+
+    "relics:kinetic_belt": {
+      "abilities": {
+        "gliding": {
+          "_комментарий": "Инерция 100% и снижение урона от падения не тронуты. Ранг3 (strike) урон снарядов +250% -> +50%. Ранг5 (resistance) -75% -> -25%",
+          "stats": {
+            "damage": { "initialMin": 0.02, "initialMax": 0.05, "targetValue": 0.4999 },
+            "resistance": { "initialMin": 0.017, "initialMax": 0.05, "targetValue": 0.25003 }
+          }
+        }
+      }
+    },
+
+    "relics:cut_glass_boot": {
+      "abilities": {
+        "glass": {
+          "_комментарий": "Объём (50 000 мБ) и число жидкостей (10) не тронуты — по просьбе. Прирост скорости за 1000 мБ +8% -> +4%",
+          "stats": {
+            "speed": { "initialMin": 0.005, "initialMax": 0.025, "targetValue": 0.05 }
+          }
+        }
+      }
+    },
+
+    "relics:chef_hat": {
+      "abilities": {
+        "satiety": {
+          "_комментарий": "Шанс выпадения 75% не тронут. Ранг1 (quick_meal, в 3 раза быстрее) — хардкод 3.0 в коде, стата нет, конфигом не меняется. Ранг3 (meatball_healing) 10 -> 3.3 HP, приготовленная вдвое больше. Ранг5 (cooked_meatball) не тронут",
+          "stats": {
+            "healing": { "initialMin": 0.33, "initialMax": 0.67, "targetValue": 3.33367 }
+          }
+        }
+      }
+    },
+
+    "relics:piglin_mask": {
+      "abilities": {
+        "barter": {
+          "_комментарий": "Бартер: 11.75 -> 2.35 предметов за единицу. Ранг3 (pocket, 64 зубов) не тронут",
+          "stats": {
+            "trades": { "initialMin": 0.2, "initialMax": 0.6, "targetValue": 2.35 }
+          }
+        },
+        "looting": {
+          "_комментарий": "Мародёрство: шанс зуба, порог (2.5 HP) и время эффекта 30 сек не тронуты. Ранг5 (frenzy) урон 3% -> 1.5% и скорость атаки 7% -> 3.5% за зуб, потолок 32 зуба не тронут",
+          "stats": {
+            "attack_damage": { "initialMin": 0.0025, "initialMax": 0.005, "targetValue": 0.015 },
+            "attack_speed": { "initialMin": 0.0025, "initialMax": 0.005, "targetValue": 0.035 }
+          }
+        }
+      }
+    },
+
+    "relics:roller_skate": {
+      "abilities": {
+        "skating": {
+          "_комментарий": "Разгон 250% не тронут. Время разгона (5 сек) — хардкод 100 тиков в коде, стата нет, конфигом не меняется. Ранг1 (step_height) 3 -> 1.5 блока. Ранг3 (resistance) 100% -> 33%. Ранг5 (sparkling) урон искр 10 -> 5, поджог 10 сек не тронут",
+          "stats": {
+            "step_height": { "initialMin": 0.3, "initialMax": 0.6, "targetValue": 1.49925 },
+            "resistance": { "initialMin": 0.033, "initialMax": 0.083, "targetValue": 0.3333 },
+            "damage": { "initialMin": 0.5, "initialMax": 1.25, "targetValue": 4.999375 }
+          }
+        }
+      }
+    },
+
+    "relics:clot_of_time": {
+      "abilities": {
+        "rewind": {
+          "_комментарий": "Перемотка 30 -> 15 сек. Ранги 1, 3, 5 оставлены как есть (там нет чисел)",
+          "stats": {
+            "time": { "initialMin": 1.5, "initialMax": 2.5, "targetValue": 15.00375 }
+          }
+        }
+      }
+    },
+
+    "relics:chorus_staff": {
+      "abilities": {
+        "blink": {
+          "_комментарий": "Запас 40 -> 5 зарядов. Дистанция 30 блоков и кулдаун 5 сек не тронуты. Ранги 1, 3, 5 оставлены как есть",
+          "stats": {
+            "max_charge": { "initialMin": 1.0, "initialMax": 2.0, "targetValue": 5.0 }
+          }
+        }
+      }
+    },
+
+    "relics:reflective_necklace": {
+      "abilities": {
+        "reflection": {
+          "_комментарий": "Сфера: урон 250% -> 50%, шанс 100% не тронут. Радиус поиска 16 блоков и время жизни 60 сек не тронуты. Ранг1 (stun) 2.5 сек не тронут. Ранг3 (piercing) 20 -> 3 цели. Ранг5 (bounce) 50 отскоков не тронут",
+          "stats": {
+            "damage": { "initialMin": 0.05, "initialMax": 0.1, "targetValue": 0.499992 },
+            "piercings": { "initialMin": 1.0, "initialMax": 1.0, "targetValue": 3.0 }
+          }
+        }
+      }
+    },
+
+    "relics:springy_boot": {
+      "abilities": {
+        "bounce": {
+          "_комментарий": "Сила прыжка 200% и полное сокращение урона от падения не тронуты. Ранг1 (disappearance, невидимость) без статов. Ранг3 (strike) +50% урона за отскок не тронут. Ранг5 (shockwave) пополам: радиус 10 -> 5 блоков, урон 30 -> 15, оглушение 5 -> 2.5 сек. ВНИМАНИЕ: stun мод читает как (int)секунды*20, то есть дробная часть отбрасывается — при 2.5 фактически будет 2 сек. Старт stun поднят до 1.0, иначе (int) даёт 0 оглушения",
+          "stats": {
+            "radius": { "initialMin": 0.5, "initialMax": 1.5, "targetValue": 5.000025 },
+            "damage": { "initialMin": 1.25, "initialMax": 2.5, "targetValue": 15.00375 },
+            "stun": { "initialMin": 1.0, "initialMax": 1.5, "targetValue": 2.499625 }
           }
         }
       }

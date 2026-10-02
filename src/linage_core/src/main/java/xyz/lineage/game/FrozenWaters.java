@@ -29,12 +29,14 @@ import xyz.lineage.registry.SoulAttachments;
  * Mermaid blood alone swims the chill unburned.
  */
 public final class FrozenWaters {
-    /** The exact biomes whose water bites. */
-    private static final Set<String> COLD_BIOMES = Set.of(
-        "minecraft:frozen_ocean",
-        "minecraft:deep_frozen_ocean",
-        "minecraft:cold_ocean",
-        "minecraft:deep_cold_ocean");
+    /**
+     * Biome paths whose water bites. Matched by path rather than full id, so
+     * deep variants (deep_frozen_ocean, deep_cold_ocean) and modded oceans in
+     * another namespace are covered without listing every variant. Plain
+     * deep_ocean counts too - the pressure alone is enough down there.
+     */
+    private static final Set<String> COLD_BIOMES =
+        Set.of("frozen_ocean", "cold_ocean", "deep_ocean");
     /**
      * Create's diving suit and lava diving suit, both of which shrug off the cold.
      * Only the complete set counts: a helmet without boots leaves the diver cold.
@@ -129,7 +131,7 @@ public final class FrozenWaters {
     }
 
     private static boolean cold(LevelReader level, BlockPos pos) {
-        return level.getBiome(pos).unwrapKey().map(key -> COLD_BIOMES.contains(key.location().toString()))
+        return level.getBiome(pos).unwrapKey().map(key -> COLD_BIOMES.contains(key.location().getPath()))
             .orElse(Boolean.FALSE);
     }
 

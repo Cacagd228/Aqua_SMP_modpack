@@ -41,6 +41,8 @@ public final class RelicBalancer {
     /** Интерфейс логгера, чтобы не тащить slf4j в чистую логику. */
     public interface Logger {
         void warn(String msg);
+
+        void info(String msg);
     }
 
     /**
@@ -66,9 +68,35 @@ public final class RelicBalancer {
             return vanilla;
         }
         AbilitiesTemplateBuilder builder = vanilla.toBuilder();
+
+        // Выключенные способности выкидываем из карты, а не правим поштучно:
+        // сначала собираем правки, потом пересобираем карту целиком.
+        Map<String, AbilityTemplate> result = new java.util.LinkedHashMap<>(vanilla.getAbilities());
+        boolean anyDisabled = false;
+        for (Map.Entry<String, BalanceSpec.AbilitySpec> entry : spec.abilities.entrySet()) {
+            if (Boolean.TRUE.equals(entry.getValue().disabled)) {
+                if (result.remove(entry.getKey()) != null) {
+                    anyDisabled = true;
+                    log.info("Реликвия " + idOf(relic) + ": способность '" + entry.getKey()
+                            + "' выключена балансом");
+                } else {
+                    log.warn("Реликвия " + idOf(relic) + ": нечего выключать — нет способности '"
+                            + entry.getKey() + "'");
+                }
+            }
+        }
+        if (anyDisabled) {
+            // Синергии переносим из дефолтного шаблона: builder() сам бы их потерял.
+            builder.abilities(result).synergies(vanilla.getSynergies());
+        }
+
         for (Map.Entry<String, BalanceSpec.AbilitySpec> entry : spec.abilities.entrySet()) {
             String abilityId = entry.getKey();
             BalanceSpec.AbilitySpec abilitySpec = entry.getValue();
+
+            if (Boolean.TRUE.equals(abilitySpec.disabled)) {
+                continue;
+            }
 
             AbilityTemplate current = vanilla.getAbilities().get(abilityId);
             if (current == null) {

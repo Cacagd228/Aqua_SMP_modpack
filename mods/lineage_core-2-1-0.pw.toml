@@ -1,8 +1,0 @@
-name = "Lineage Core (custom)"
-filename = "lineage_core-2.1.0.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/lineage_core-2.1.0.jar"
-hash-format = "sha512"
-hash = "fb063e8aec2ee8506b723ca89ec1b3ecb970858653d3f7ffbc81c25e50a0de8b4175b2b2a73db4b69878b0ec7e9249fda3f4889f6dd4b13fc40692200b28c009"

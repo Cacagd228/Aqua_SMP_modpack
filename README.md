@@ -25,11 +25,11 @@
 
 ## Состав
 
-- **215 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
-- **12 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
+- **218 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
+- **16 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
 - кастомные из `src/`: `aerofix`, `FMMWorldgen`, `lineage_core`, `meowaddons`,
-    `meowhex`, `apofix`, `fmm_teams`, `hexsable`, `colonycard`;
-  - CurseForge-only, запинены: `framework`, `harderdiesel`;
+    `meowhex`, `meowrelics`, `apofix`, `fmm_teams`, `hexsable`, `colonycard`;
+  - CurseForge-only, запинены: `framework`, `harderdiesel`, `structure_pool_api`;
   - приватные/репаки: `panoptic_recipe_builder`, `Design-n-Decor`, `colorwheel`.
 - Убрано из старой сборки: `jeiexport` (дев-инструмент), дубль
   `moonlight-3.5.2`, `neoforge.mods.toml` из `mods/`.
@@ -49,9 +49,10 @@
 |---|---|---|---|
 | AeroFix | `aerofix` | 1.0.0 | Фикс Create Aeronautics поверх стокового bundle |
 | FMM Worldgen | `fmm_worldgen` | 1.1.0 | Кастомная генерация мира-архипелага |
-| Lineage Core | `lineage_core` | 2.1.0 | Ядро: расы/происхождения, команды, статистика |
+| Lineage Core | `lineage_core` | 2.1.1 | Ядро: расы/происхождения, команды, статистика |
 | Meow Addons | `meowaddons` | 1.0.1 | Create-аддоны: блоки, передатчики, пондеры |
 | MeowHex | `meowhex` | 1.4.0 | Hex-магия: мана, паттерны, assembly, контент |
+| MeowRelics | `meowrelics` | 1.1.0 | Ребаланс Relics, мешочки вместо дропа, аддон-артефакты |
 | HexSable | `hexsable` | 1.1.0 | Мост Hex Casting ↔ Sable |
 | Colony Card | `colonycard` | 1.0.0 | Карточки colony |
 | Apofix | `apofix` | 1.0.0 | Доп. атрибуты для Apothic Attributes |
@@ -82,7 +83,7 @@ packwiz mr export        # собрать .mrpack локально для тес
 ```
 Aqua_SMP_modpack/
 ├── pack.toml / index.toml   # манифест пака (MC 1.21.1, NeoForge 21.1.248)
-├── mods/*.pw.toml           # 215 модов с Modrinth (id версии запинен)
+├── mods/*.pw.toml           # 218 модов с Modrinth (id версии запинен)
 ├── mods/*.jar               # 12 пинов (см. выше), исключения в .gitignore
 ├── config/                  # 364 файла (рантайм-мусор вычищен, см. ниже)
 ├── kubejs/                  # скрипты (server/client/startup)

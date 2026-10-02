@@ -23,6 +23,14 @@ public final class BalanceSpec {
     /** Опциональный множитель целевого значения статов (сила эффектов на максимуме). */
     public Double statTargetMultiplier = null;
 
+    /**
+     * Реликвии, которые не должны выпадать из мешочков.
+     *
+     * <p>Список id предметов, напр. {@code relics:ring_of_the_seven_deadly_sins}.
+     * Правка не требует пересборки мода — достаточно {@code /meowrelics reload}.
+     */
+    public List<String> excludedFromBags = null;
+
     /** Ключ — ResourceLocation реликвии, напр. {@code relics:hunting_belt}. */
     public Map<String, RelicSpec> relics = new LinkedHashMap<>();
 
@@ -48,6 +56,14 @@ public final class BalanceSpec {
         public Integer requiredLevel = null;
         /** Максимальный уровень способности. */
         public Integer maxLevel = null;
+        /**
+         * Удалить способность из реликвии целиком: {@code true} — убрать,
+         * {@code false} — вернуть, если её выключали раньше.
+         *
+         * <p>Нужна именно пересборка карты способностей, а не обнуление статов:
+         * способность с нулевыми числами всё равно остаётся в UI и в логе опыта.
+         */
+        public Boolean disabled = null;
         /** Статы способности. */
         public Map<String, StatSpec> stats = new LinkedHashMap<>();
     }

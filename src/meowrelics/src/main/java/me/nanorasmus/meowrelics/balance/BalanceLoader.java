@@ -7,6 +7,7 @@ import it.hurts.sskirillss.relics.api.relics.IRelicItem;
 import it.hurts.sskirillss.relics.api.relics.RelicTemplate;
 import it.hurts.sskirillss.relics.items.relics.base.data.loot.LootTemplate;
 import it.hurts.sskirillss.relics.level.RelicLootModifier;
+import me.nanorasmus.meowrelics.relic.RelicRandomizer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -86,7 +87,21 @@ public final class BalanceLoader {
     }
 
     private int apply(BalanceSpec spec) {
-        RelicBalancer balancer = new RelicBalancer(message -> log.warn("[баланс] {}", message));
+        RelicBalancer balancer = new RelicBalancer(new RelicBalancer.Logger() {
+            @Override
+            public void warn(String msg) {
+                log.warn("[баланс] {}", msg);
+            }
+
+            @Override
+            public void info(String msg) {
+                log.info("[баланс] {}", msg);
+            }
+        });
+
+        // Список исключений — до правки шаблонов: ротация мешочков читает его
+        // при каждом вскрытии, так что порядок тут неважен, но логичнее сначала.
+        RelicRandomizer.setExcluded(spec.excludedFromBags);
 
         // Кэшируем оригиналы при первом проходе. constructDefaultRelicTemplate()
         // каждый раз создаёт новый объект из кода мода — это и есть «ваниль».
