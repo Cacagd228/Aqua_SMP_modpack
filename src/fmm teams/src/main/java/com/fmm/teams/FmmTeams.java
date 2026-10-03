@@ -1,8 +1,11 @@
 package com.fmm.teams;
 
+import com.fmm.teams.client.AdminClient;
 import com.fmm.teams.client.TeamClient;
+import com.fmm.teams.net.AdminNet;
 import com.fmm.teams.net.TeamNet;
 import com.fmm.teams.server.AdminCommands;
+import com.fmm.teams.server.AdminServer;
 import com.fmm.teams.server.TeamCommands;
 import com.fmm.teams.server.TeamServer;
 import com.fmm.teams.server.TerritoryTracker;
@@ -50,6 +53,20 @@ public class FmmTeams {
                 (payload, ctx) -> ctx.enqueueWork(() -> {
                     if (FMLEnvironment.dist.isClient()) {
                         clientSync(payload);
+                    }
+                }));
+        registrar.playToServer(AdminNet.ServerboundAdminAction.TYPE,
+                AdminNet.ServerboundAdminAction.STREAM_CODEC,
+                (payload, ctx) -> ctx.enqueueWork(() -> {
+                    if (ctx.player() instanceof ServerPlayer sp) {
+                        AdminServer.handleAction(sp, payload);
+                    }
+                }));
+        registrar.playToClient(AdminNet.ClientboundAdminData.TYPE,
+                AdminNet.ClientboundAdminData.STREAM_CODEC,
+                (payload, ctx) -> ctx.enqueueWork(() -> {
+                    if (FMLEnvironment.dist.isClient()) {
+                        Minecraft.getInstance().execute(() -> AdminClient.applySync(payload));
                     }
                 }));
     }

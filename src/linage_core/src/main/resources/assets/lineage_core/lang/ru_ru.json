@@ -238,7 +238,6 @@
   "message.lineage_core.titan_fell": "ХВАТКА ТИТАНА!",
   "message.lineage_core.second_wind": "Смерть моргнула — а ты выстоял.",
   "message.lineage_core.market_scorn": "Торговец отмахивается от тебя.",
-  "message.lineage_core.cold_touch": "Холодная вода кусается — вольна здесь лишь кровь русалки.",
 
   "command.lineage_core.oath_broken": "Клятва крови снята с %s.",
   "command.lineage_core.lineage_set": "Кровь %s перекована: %s.",

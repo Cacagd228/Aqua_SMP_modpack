@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/lineage_core-2.1.1.jar"
 hash-format = "sha512"
-hash = "f619a9bf000c0569770cecf0236fc7abdcd1a949797d2dfef48616f94e47e8c96ca92a02d8eb7f9daab737430e4b0ec3e0c400a4e315c215f469fc4a40582d29"
+hash = "a83afbd42a7d4d663c8f027ecea4880898f82669bdd141dddc2656000f88dd1defea81d46e632f17c97cda59c6ceab27612e53f04799908476a17bd710193e52"

@@ -5,8 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "SteeringWheelPacketMixin",
-    "SteeringWheelBlockEntityMixin",
-    "SwivelBearingBlockEntityMixin"
+    "SteeringWheelBlockEntityMixin"
   ],
   "client": [
     "ClientBalloonEffectRendererMixin"

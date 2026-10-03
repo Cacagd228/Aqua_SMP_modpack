@@ -143,6 +143,8 @@ public final class TeamServer {
     static TeamNet.ClientboundTeamSync buildSync(ServerPlayer player, TeamManager mgr) {
         UUID uuid = player.getUUID();
         mgr.touchPlayer(uuid, player.getGameProfile().getName());
+        // The client must not have to guess its own permission level: the server tells it.
+        boolean op = player.hasPermissions(AdminServer.PERM_LEVEL);
         Team team = mgr.teamOf(uuid);
         List<TeamNet.InviteEntry> invites = new ArrayList<>();
         for (Team t : mgr.pendingInvites(uuid)) {
@@ -150,7 +152,7 @@ public final class TeamServer {
         }
         if (team == null) {
             return new TeamNet.ClientboundTeamSync(false, null, "", "", null, "private", 0L,
-                    List.of(), invites, 0, 0, List.of(), null);
+                    List.of(), invites, 0, 0, List.of(), null, op);
         }
         List<TeamNet.MemberEntry> members = new ArrayList<>();
         for (UUID m : team.sortedMembers()) {
@@ -172,7 +174,7 @@ public final class TeamServer {
         return new TeamNet.ClientboundTeamSync(true, team.id(), team.name(),
                 team.nameOf(team.owner()), team.owner(),
                 yourRole == null ? "private" : yourRole.id(), team.createdAt(), members, invites,
-                mgr.teamPoints(team.id()), mgr.teamClaimedCost(team.id()), islands, here);
+                mgr.teamPoints(team.id()), mgr.teamClaimedCost(team.id()), islands, here, op);
     }
 
     /** Turns a stored claim into a client entry. Tier name is localised on the client. */
@@ -191,7 +193,8 @@ public final class TeamServer {
                 data.tier().getCost(), data.centerX(), data.centerZ(), mine);
     }
 
-    private record Target(UUID uuid, String name) {}
+    /** A resolved player reference. Package-private so {@link AdminServer} can reuse the lookup. */
+    record Target(UUID uuid, String name) {}
 
     /** Resolves by online player name first, then by member/invite name cache, then profile cache. */
     static Target resolve(MinecraftServer server, String text) {

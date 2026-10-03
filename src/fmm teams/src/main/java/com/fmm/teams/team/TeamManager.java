@@ -183,6 +183,24 @@ public final class TeamManager extends SavedData {
         return null;
     }
 
+    /**
+     * Admin island grant that may skip the point budget. With {@code free = true} the claim is
+     * recorded at full cost but the team is allowed to go into the red, which is what an operator
+     * wants when fixing a broken economy by hand.
+     * Returns error key or null on success.
+     */
+    public synchronized String adminClaimIsland(UUID teamId, long zoneId, int islandCost,
+                                               String tierId, double centerX, double centerZ,
+                                               boolean free) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (islandClaims.containsKey(zoneId)) return "msg.fmm_teams.err.island_claimed";
+        if (!free && !canAfford(team.id(), islandCost)) return "msg.fmm_teams.err.insufficient_points";
+        islandClaims.put(zoneId, new IslandClaim(zoneId, team.id(), islandCost, tierId, centerX, centerZ));
+        setDirty();
+        return null;
+    }
+
     /** Adds (or with a negative delta, removes) admin bonus points. Clamped at 0. */
     public synchronized String addBonus(UUID teamId, int delta) {
         Team team = teams.get(teamId);
@@ -210,6 +228,103 @@ public final class TeamManager extends SavedData {
         team.removeMember(target);
         memberIndex.remove(target);
         rebalanceClaims(team.id());
+        setDirty();
+        return null;
+    }
+
+    /**
+     * Admin kick that also copes with the owner: ownership moves to the first remaining member,
+     * and a one-man party is disbanded outright. Kicking the last person standing must never leave
+     * an ownerless team behind. Returns error key or null on success.
+     */
+    public synchronized String adminKickHard(UUID teamId, UUID target) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (!team.isMember(target)) return "msg.fmm_teams.err.not_member";
+        if (target.equals(team.owner())) {
+            if (team.size() == 1) {
+                disbandInternal(team);
+                setDirty();
+                return null;
+            }
+            List<UUID> rest = new ArrayList<>(team.sortedMembers());
+            rest.remove(target);
+            team.transferOwner(rest.get(0));
+            team.removeMember(target);
+            memberIndex.remove(target);
+            rebalanceClaims(team.id());
+            setDirty();
+            return null;
+        }
+        return adminKick(teamId, target);
+    }
+
+    /** Admin disband: drops the party and every island it held, with no owner check. */
+    public synchronized String adminDisband(UUID teamId) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        disbandInternal(team);
+        setDirty();
+        return null;
+    }
+
+    /**
+     * Admin force-join: pulls a player into the party even if they already belong to another one,
+     * which is what an operator needs to untangle a messy player base. Their old party is
+     * rebalanced so it does not keep islands it can no longer pay for.
+     * Returns error key or null on success.
+     */
+    public synchronized String adminAddMember(UUID teamId, UUID player, String playerName) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (team.isMember(player)) return "msg.fmm_teams.err.already_in_team";
+        if (team.size() >= MAX_TEAM_SIZE) return "msg.fmm_teams.err.team_full";
+
+        Team previous = teamOf(player);
+        if (previous != null) {
+            previous.removeMember(player);
+            memberIndex.remove(player);
+            rebalanceClaims(previous.id());
+        }
+        clearInvite(player, teamId);
+        team.addMember(player, playerName);
+        memberIndex.put(player, teamId);
+        setDirty();
+        return null;
+    }
+
+    /** Admin role change without an owner check. Ownership only moves through transfer. */
+    public synchronized String adminSetRole(UUID teamId, UUID target, Role role) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (!team.isMember(target)) return "msg.fmm_teams.err.not_member";
+        if (role == Role.OWNER) return "msg.fmm_teams.err.bad_role";
+        if (target.equals(team.owner())) return "msg.fmm_teams.err.owner_leave";
+        if (!team.setRole(target, role)) return "msg.fmm_teams.err.bad_role";
+        setDirty();
+        return null;
+    }
+
+    /** Admin ownership transfer, no owner check. */
+    public synchronized String adminTransfer(UUID teamId, UUID target) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        if (!team.isMember(target)) return "msg.fmm_teams.err.not_member";
+        if (target.equals(team.owner())) return "msg.fmm_teams.err.bad_role";
+        team.transferOwner(target);
+        setDirty();
+        return null;
+    }
+
+    /** Admin rename, validated exactly like a fresh party name. */
+    public synchronized String adminRename(UUID teamId, String rawName) {
+        Team team = teams.get(teamId);
+        if (team == null) return "msg.fmm_teams.err.no_team";
+        String name = sanitizeName(rawName);
+        if (name == null) return "msg.fmm_teams.err.bad_name";
+        Team other = byName(name);
+        if (other != null && !other.id().equals(teamId)) return "msg.fmm_teams.err.name_taken";
+        team.rename(name);
         setDirty();
         return null;
     }

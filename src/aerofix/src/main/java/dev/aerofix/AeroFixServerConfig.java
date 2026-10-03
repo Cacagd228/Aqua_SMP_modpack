@@ -12,7 +12,6 @@ public final class AeroFixServerConfig {
     public static final ModConfigSpec SPEC;
 
     public static final ModConfigSpec.BooleanValue FIX_STEERING_WHEEL;
-    public static final ModConfigSpec.BooleanValue FIX_SWIVEL_BEARING;
     public static final ModConfigSpec.IntValue STEERING_MAX_RANGE;
 
     static {
@@ -24,10 +23,6 @@ public final class AeroFixServerConfig {
                         "от игроков дальше steeringMaxRange блоков, плюс санация состояния",
                         "блока от NaN и кламп предела угла.")
                 .define("fixSteeringWheel", true);
-        FIX_SWIVEL_BEARING = b
-                .comment("Фикс поворотного подшипника (Swivel Bearing): не падать, если",
-                        "саблевел, к которому шёл constraint handle, уже удалён (null).")
-                .define("fixSwivelBearing", true);
         STEERING_MAX_RANGE = b
                 .comment("Максимальная дистанция, с которой игрок может управлять рулём, блоков.",
                         "Защита от прокрутки руля на другом конце карты.")
@@ -44,14 +39,6 @@ public final class AeroFixServerConfig {
     public static boolean fixSteeringWheel() {
         try {
             return FIX_STEERING_WHEEL.get();
-        } catch (IllegalStateException e) {
-            return true;
-        }
-    }
-
-    public static boolean fixSwivelBearing() {
-        try {
-            return FIX_SWIVEL_BEARING.get();
         } catch (IllegalStateException e) {
             return true;
         }

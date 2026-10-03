@@ -19,7 +19,8 @@ import net.minecraft.resources.ResourceLocation;
 public final class TeamNet {
     private TeamNet() {}
 
-    public static final String PROTOCOL = "2";
+    /** Bumped to 4 when the operator flag was added; mismatched builds fail to connect on purpose. */
+    public static final String PROTOCOL = "4";
 
     // ---------- snapshot model (client cache) ----------
 
@@ -53,10 +54,12 @@ public final class TeamNet {
             int points,
             int spent,
             List<IslandEntry> islands,
-            IslandEntry hereIsland) {
+            IslandEntry hereIsland,
+            /** Server-authoritative operator flag; gates the admin panel button. */
+            boolean op) {
         public static Snapshot empty(List<InviteEntry> invites) {
             return new Snapshot(false, null, "", "", null, null, 0L, List.of(), List.copyOf(invites),
-                    0, 0, List.of(), null);
+                    0, 0, List.of(), null, false);
         }
 
         public int countRole(Role role) {
@@ -86,7 +89,8 @@ public final class TeamNet {
             int points,
             int spent,
             List<IslandEntry> islands,
-            IslandEntry hereIsland) implements CustomPacketPayload {
+            IslandEntry hereIsland,
+            boolean op) implements CustomPacketPayload {
         public static final Type<ClientboundTeamSync> TYPE =
                 new Type<>(ResourceLocation.fromNamespaceAndPath("fmm_teams", "team_sync"));
 
@@ -160,11 +164,12 @@ public final class TeamNet {
                 for (int i = 0; i < isCount; i++) islands.add(decodeIsland(buf));
                 boolean hasHere = ByteBufCodecs.BOOL.decode(buf);
                 IslandEntry here = hasHere ? decodeIsland(buf) : null;
+                boolean op = ByteBufCodecs.BOOL.decode(buf);
                 return new ClientboundTeamSync(hasTeam,
                         teamIdStr.isEmpty() ? null : UUID.fromString(teamIdStr),
                         teamName, ownerName,
                         ownerUuidStr.isEmpty() ? null : UUID.fromString(ownerUuidStr),
-                        yourRoleId, createdAt, members, invites, points, spent, islands, here);
+                        yourRoleId, createdAt, members, invites, points, spent, islands, here, op);
             }
 
             @Override
@@ -186,6 +191,7 @@ public final class TeamNet {
                 for (IslandEntry isl : p.islands()) encodeIsland(buf, isl);
                 ByteBufCodecs.BOOL.encode(buf, p.hereIsland() != null);
                 if (p.hereIsland() != null) encodeIsland(buf, p.hereIsland());
+                ByteBufCodecs.BOOL.encode(buf, p.op());
             }
         };
 
@@ -198,7 +204,7 @@ public final class TeamNet {
             Role role = hasTeam ? Role.fromId(yourRoleId) : null;
             return new Snapshot(hasTeam, teamId, teamName, ownerName, ownerUuid, role,
                     createdAt, List.copyOf(members), List.copyOf(invites),
-                    points, spent, List.copyOf(islands), hereIsland);
+                    points, spent, List.copyOf(islands), hereIsland, op);
         }
     }
 

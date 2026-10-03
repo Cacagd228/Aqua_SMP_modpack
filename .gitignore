@@ -83,3 +83,10 @@ AGENT_MAP.md
 
 !mods/Design-n-Decor-1.21.1-2.2b.jar
 !mods/colorwheel-neoforge-1.2.9+mc1.21.1.jar
+
+# Черновики Recipe Builder / Notepad++: авто-бэкапы и редакторские копии main.js.
+# Настоящие тир-скрипты (tier_*.js) и main.js коммитятся как обычно.
+kubejs/**/main(1).js
+kubejs/**/main(2).js.bak
+kubejs/**/main(3).js.bak
+kubejs/**/*.js.bak

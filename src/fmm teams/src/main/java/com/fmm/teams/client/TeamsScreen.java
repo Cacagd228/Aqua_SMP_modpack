@@ -132,6 +132,11 @@ public class TeamsScreen extends Screen {
             // right column bottom: leave / disband
             buttons.add(new Btn(isOwner ? "disband" : "leave", rx, rowY, rx + rw, rowY + 20, true));
         }
+        // Admin entry point. Hidden entirely for non-operators instead of greyed out, so the
+        // menu never hints at tooling a player cannot use. The server re-checks on every action.
+        if (s.op()) {
+            buttons.add(new Btn("admin", x2 - 148, y1 + H - 24, x2 - 74, y1 + H - 6, true));
+        }
         // close button always
         buttons.add(new Btn("close", x2 - 68, y1 + H - 24, x2 - 12, y1 + H - 6, true));
     }
@@ -208,6 +213,10 @@ public class TeamsScreen extends Screen {
         TeamNet.Snapshot s = snap();
         switch (id) {
             case "close" -> onClose();
+            case "admin" -> {
+                if (!s.op()) return;
+                AdminClient.openAdmin();
+            }
             case "tab_members" -> {
                 tab = 0;
                 selMember = -1;

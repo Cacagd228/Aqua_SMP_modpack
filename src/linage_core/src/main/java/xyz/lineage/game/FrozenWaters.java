@@ -1,13 +1,9 @@
 package xyz.lineage.game;
 
-import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.FluidTags;
@@ -18,7 +14,6 @@ import net.minecraft.world.level.LevelReader;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import xyz.lineage.LineageCore;
 import xyz.lineage.data.SoulLedger;
 import xyz.lineage.lineage.Lineage;
 import xyz.lineage.lineage.LineageCatalog;
@@ -30,10 +25,12 @@ import xyz.lineage.registry.SoulAttachments;
  */
 public final class FrozenWaters {
     /**
-     * Biome paths whose water bites. Matched by path rather than full id, so
-     * deep variants (deep_frozen_ocean, deep_cold_ocean) and modded oceans in
-     * another namespace are covered without listing every variant. Plain
-     * deep_ocean counts too - the pressure alone is enough down there.
+     * Biome path fragments whose water bites. A biome is cold when its path
+     * contains one of these, so the deep variants (deep_frozen_ocean,
+     * deep_cold_ocean) are covered alongside their shallow counterparts
+     * without listing every variant, as are modded oceans in another
+     * namespace. Plain deep_ocean counts too - the pressure alone is enough
+     * down there.
      */
     private static final Set<String> COLD_BIOMES =
         Set.of("frozen_ocean", "cold_ocean", "deep_ocean");
@@ -67,8 +64,6 @@ public final class FrozenWaters {
     private static final int BOAT_RHYTHM = 10;
     private static final float BOAT_ACHES = 3.0F;
 
-    private static final Set<UUID> CHILLED = new HashSet<>();
-
     /**
      * Runs every tick so the frost sheen never flickers off (frozen ticks decay
      * by two per tick), but only bites once per second.
@@ -80,7 +75,6 @@ public final class FrozenWaters {
         }
         boolean cold = swimmingInColdWater(player);
         if (!cold || isMermaid(player) || suitedUp(player)) {
-            CHILLED.remove(player.getUUID());
             return;
         }
         if (player.canFreeze()) {
@@ -90,10 +84,6 @@ public final class FrozenWaters {
         }
         if (player.tickCount % CHILL_RHYTHM != 0) {
             return;
-        }
-        if (CHILLED.add(player.getUUID())) {
-            player.displayClientMessage(Component.translatable("message." + LineageCore.MOD_ID + ".cold_touch")
-                .withStyle(ChatFormatting.AQUA), true);
         }
         player.hurt(player.damageSources().freeze(), CHILL_ACHES);
     }
@@ -131,7 +121,11 @@ public final class FrozenWaters {
     }
 
     private static boolean cold(LevelReader level, BlockPos pos) {
-        return level.getBiome(pos).unwrapKey().map(key -> COLD_BIOMES.contains(key.location().getPath()))
+        return level.getBiome(pos).unwrapKey()
+            .map(key -> {
+                String path = key.location().getPath();
+                return COLD_BIOMES.stream().anyMatch(path::contains);
+            })
             .orElse(Boolean.FALSE);
     }
 
