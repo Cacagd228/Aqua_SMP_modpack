@@ -25,7 +25,7 @@
 
 ## Состав
 
-- **218 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
+- **220 модов** тянутся с Modrinth по `mods/*.pw.toml` (версии запинены).
 - **16 jar'ов** лежат в `mods/` напрямую — их нет на Modrinth:
 - кастомные из `src/`: `aerofix`, `FMMWorldgen`, `lineage_core`, `meowaddons`,
     `meowhex`, `meowrelics`, `apofix`, `fmm_teams`, `hexsable`, `colonycard`;
@@ -40,6 +40,9 @@
   `Xaero's Minimap`, `Xaero's World Map`, `Xaero's Maps: Multiplayer+`.
 - Create Aeronautics теперь **стоковый** с Modrinth, а правки навешивает
   отдельный мод `aerofix` — обновления больше не заблокированы.
+- Добавлено в 1.1.8: `CC: Sable` 1.3.4 (аддон CC: Tweaked для Sable-задней части
+  Create: Simulated) и `Controlling` 19.0.5 (подсказки по клавишам). Оба запинены
+  по Modrinth — версии запиненные, автообновление работает.
 
 > Отдельно раздаётся ресурс-пак `AquaSMP-Sounds` (звуки комментаторов и тишина).
 > В моде `meowhex` аудио больше нет; пак собирается `tools/build-sounds-pack.py`
@@ -56,7 +59,7 @@
 | HexSable | `hexsable` | 1.1.0 | Мост Hex Casting ↔ Sable |
 | Colony Card | `colonycard` | 1.0.0 | Карточки colony |
 | Apofix | `apofix` | 1.0.0 | Доп. атрибуты для Apothic Attributes |
-| FMM Teams | `fmm_teams` | 0.1.0 | Команды и клеймы островов в стиле Panoptic |
+| FMM Teams | `fmm_teams` | 0.1.0 | Команды, клеймы островов и админ-панель в стиле Panoptic |
 
 ## Разработка
 
@@ -74,6 +77,14 @@ python tools/build-prism-pack.py vX.Y.Z                   # zip для PrismLaun
 python tools/verify_release.py                             # проверка всего пака
 ```
 
+`verify_release.py` берёт версию из переменной окружения `AQUA_VERSION`
+(по умолчанию — текущая) и ищет по ней `.mrpack` и prism-zip, поэтому после
+бампа версии её нужно задать явно:
+
+```sh
+AQUA_VERSION=1.1.8-release python tools/verify_release.py
+```
+
 > **Почему не `packwiz refresh` / `packwiz mr export` напрямую.** `packwiz`
 > индексирует модпак прямым обходом каталога и `.gitignore` не читает, а
 > `mr export` ещё и сам вызывает refresh. Если сборка модов уже лежит в
@@ -87,7 +98,7 @@ python tools/verify_release.py                             # проверка в
 ```
 Aqua_SMP_modpack/
 ├── pack.toml / index.toml   # манифест пака (MC 1.21.1, NeoForge 21.1.248)
-├── mods/*.pw.toml           # 218 модов с Modrinth (id версии запинен)
+├── mods/*.pw.toml           # 220 модов с Modrinth (id версии запинен)
 ├── mods/*.jar               # 16 пинов (см. выше), исключения в .gitignore
 ├── config/                  # 364 файла (рантайм-мусор вычищен, см. ниже)
 ├── kubejs/                  # скрипты (server/client/startup)

@@ -21,7 +21,9 @@ def check(cond, msg):
 pt = tomllib.load(open('pack.toml', 'rb'))
 idx_hash = hashlib.sha256(open('index.toml', 'rb').read()).hexdigest()
 check(pt['index']['hash'] == idx_hash, 'pack.toml hash matches index.toml')
-check(pt['version'] == '1.1.7-release.2', 'pack.toml version is 1.1.7-release.2 (%s)' % pt['version'])
+VERSION = os.environ.get('AQUA_VERSION', '1.1.8-release')
+check(pt['version'] == VERSION,
+      'pack.toml version is %s (%s)' % (VERSION, pt['version']))
 
 # --- index.toml must not contain dev output ---------------------------
 idx_text = open('index.toml', encoding='utf-8', errors='ignore').read()
@@ -87,7 +89,7 @@ check(not nonempty, '%d structure_set overrides, all empty %s' % (len(ss), nonem
 check(len(ss) == 8, 'expected 8 structure_set overrides, got %d' % len(ss))
 
 # --- mrpack ----------------------------------------------------------
-mrp = 'AquaSMP-v1.1.7-release.2.mrpack'
+mrp = 'AquaSMP-v%s.mrpack' % VERSION
 if os.path.isfile(mrp):
     z = zipfile.ZipFile(mrp)
     names = z.namelist()
@@ -109,7 +111,7 @@ else:
     check(False, 'mrpack present')
 
 # --- prism zip -------------------------------------------------------
-pz = 'AquaSMP-v1.1.7-release.2-prism.zip'
+pz = 'AquaSMP-v%s-prism.zip' % VERSION
 if os.path.isfile(pz):
     z = zipfile.ZipFile(pz)
     names = z.namelist()
