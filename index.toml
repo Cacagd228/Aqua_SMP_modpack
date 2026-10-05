@@ -2,11 +2,11 @@ hash-format = "sha256"
 
 [[files]]
 file = ".github/workflows/release.yml"
-hash = "f9696b796b01abd07ff6f78c612c05ee5979c88012b97bbee1ead1b0f9f56622"
+hash = "03d277747242817fb24c853b0405a4efa2341bd3693c8857931dbee20bb68a55"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "b5355f44d3fa518a527da5b9766d5e3a30d1bbb6b7f89e5ec1b02dd6dce8f93e"
+hash = "6c261423486276c43201337c8e0eb39b05a3ae9229af37fd5850a4a3ab3aa1f6"
 
 [[files]]
 file = "LICENSE"
@@ -14,7 +14,7 @@ hash = "89c794623d24995745c84eced85cbc9e8a46b6e77f3d4e9a4238c27b7fecbd11"
 
 [[files]]
 file = "README.md"
-hash = "9a581ef736145188b6bb03f7f008358b0a15ade5f72ec99de5c0920866bc6164"
+hash = "35f5bbd5406884d132183a8b2429c32d69d8ac403bd96c93cf63576b2686f9ee"
 
 [[files]]
 file = "config/DistantHorizons.toml"
@@ -1522,11 +1522,11 @@ hash = "de6699344148d5184ad90205add2d88bd97266e6c03351ec6e22a92706239eb7"
 
 [[files]]
 file = "kubejs/server_scripts/00_tier_lockdown.js"
-hash = "b4dd6d2ed0b4471cd7e2d188b2ae76264fd99a0f5e6d436ce219a3d159facd81"
+hash = "1e0c2ac2a27e7894e317abb76888ba62e6a90f5f39d4d528dfc4bd0fe906bf19"
 
 [[files]]
 file = "kubejs/server_scripts/TIERS.md"
-hash = "ede3281627cdae17ed4d04ee1390addc26edbcfa9e971523006828ed5f653382"
+hash = "eea0c3bdee347ee52b85e1fb598367cb53bdb2f038fbbde0d503e4bb8658c88e"
 
 [[files]]
 file = "kubejs/server_scripts/corps_crafting.js"
@@ -1574,7 +1574,7 @@ hash = "bfb9e1c4e52e1bcaf3dd38bd18922ef314e9d6f695434275433d1bb3d2324473"
 
 [[files]]
 file = "kubejs/server_scripts/tier_iron.js"
-hash = "c05e787fd3796c659edc5d939e2660513acf28192eef8046ab8d928c90c731b0"
+hash = "58181cff0d31e90bdd8ee70605d9b1c52a61c749f65885eb771fd83fe0bcaa56"
 
 [[files]]
 file = "kubejs/startup_scripts/curios_shared_slot.js"
@@ -2420,12 +2420,12 @@ metafile = true
 
 [[files]]
 file = "mods/meowaddons-1-0-1.pw.toml"
-hash = "d12e3ab66e19c3521a2d52e4516c9ce6d72f852183b01dbdaa8f8a08155e19f0"
+hash = "ddf5552aea2427efd728fdd8a82fd6f8d93954faf74a427f3603f583792a5c78"
 metafile = true
 
 [[files]]
 file = "mods/meowaddons-1.0.1.jar"
-hash = "ce0ade44809883d56cf33bbeda1a74cf608522d6fa55a01ceb917e8cb52dc758"
+hash = "a423fd237beca86e27ec1a43d56e58d0fb6a30aff6082bd0c4d723985077a451"
 
 [[files]]
 file = "mods/meowhex.jar"
@@ -4186,7 +4186,7 @@ hash = "58978ac2ef496026143957f18348ffac72fdef903620e201520e0caf30312570"
 
 [[files]]
 file = "src/meowaddons/build.gradle"
-hash = "f614f8209fc67ef5b5e1b83b7512d79694824c45dc2090137373a56e95f54e73"
+hash = "378beae2fa3c6044564cf8de9b381f183d7dfd963a0b938e948440c77f3ccd91"
 
 [[files]]
 file = "src/meowaddons/carcases/carcass.bbmodel"
@@ -4254,7 +4254,7 @@ hash = "991c0c4627d83ac7462631d5efb628c687c21c321367dedb106a50ed2e159c1d"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/MeowAddons.java"
-hash = "e9800207ac22695d647d66f78c2a18fb2fde33b4706722daa1819c85d4e58d0b"
+hash = "778dae58947694421619e77f65773e3b96901f4b5ee4248c5af1af1b1b112469"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/ModBlockEntities.java"
@@ -4283,6 +4283,14 @@ hash = "b5f5f7668b8210019eb3927c4b83dbec89a53976eff7482587b19d6e3e6bcebe"
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/block/FrameBlock.java"
 hash = "4515c922172c21e8c22ff2974bce71be75da456044f1cdb1951d6c4e2a8d49ec"
+
+[[files]]
+file = "src/meowaddons/src/main/java/com/meowaddons/client/nether/NetherAirOverlay.java"
+hash = "a77b83a4096b2ca1a393878a5828a552ae27b30e3de367e192b9391ef850fef3"
+
+[[files]]
+file = "src/meowaddons/src/main/java/com/meowaddons/client/nether/NetherClientEvents.java"
+hash = "993ee90d66f6c64327e285dc092680948aa2da9308bda198cc2a48277be0b2be"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/client/transmitter/TransmitterClientEvents.java"
@@ -4323,6 +4331,14 @@ hash = "d125493321d5aaaedcfd059cff24576b85befba9fe1400fdc7db29f42f2e03c3"
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/integration/kubejs/MeowKubeJSPlugin.java"
 hash = "1051b9a4593d38d6b83cfed7ff524780cc118dec356a6e3d8e0a24be573ddc8c"
+
+[[files]]
+file = "src/meowaddons/src/main/java/com/meowaddons/mixin/SawBlockEntityMixin.java"
+hash = "492f3e50ef9eb630d90e2b8f03c48d4350f1693c6df3d1026b4dc66ce7423e14"
+
+[[files]]
+file = "src/meowaddons/src/main/java/com/meowaddons/nether/NetherHeatHandler.java"
+hash = "09135a5cd54302a5aed49fa13c61d98ec499f9d19581ed51e7580dfcf464fd9f"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/network/TransmitterPackets.java"
@@ -4510,7 +4526,7 @@ hash = "248d0c598be39fed139ed332f8f261f7a98d9b7fcd83172d4ef3285035cece2a"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/tier/TieredSawBlockEntity.java"
-hash = "eff75f45ae8116cce271287f084613e1d9b267aefab638759ddbaa66c9538085"
+hash = "6f9f6745747202ac74961d9e5a88420c7946d557d512a8425efb48e1f146d34e"
 
 [[files]]
 file = "src/meowaddons/src/main/java/com/meowaddons/tier/TieredSawClient.java"
@@ -4542,7 +4558,7 @@ hash = "94b732402a8ac72b3684908018030fb5359fbbd095a4e68f642210b88bdf488d"
 
 [[files]]
 file = "src/meowaddons/src/main/resources/META-INF/neoforge.mods.toml"
-hash = "3a7111ad120c23a8399485fb7523246da4416405fc716409c50a5c968982d0af"
+hash = "51e9ee88c59215b2e5f66ad212e8950016757d64729e975a875b5f5561477a51"
 
 [[files]]
 file = "src/meowaddons/src/main/resources/META-INF/services/net.createmod.ponder.api.registration.PonderPlugin"
@@ -4575,6 +4591,10 @@ hash = "0212f0fa5f4a32aae7dc575fd86f3326f8190c238d4ee46d5f9d3117bfe6fd53"
 [[files]]
 file = "src/meowaddons/src/main/resources/kubejs.plugins.txt"
 hash = "6c83f9d458ca1795c1f72e2ba46a172f952b48d256dcbc6dd78dd8e500625cc3"
+
+[[files]]
+file = "src/meowaddons/src/main/resources/meowaddons.mixins.json"
+hash = "6f31a680fe31c042592c5dc37a7f18d50b1f0238e01a548229f306f44bb23863"
 
 [[files]]
 file = "src/meowaddons/src/main/resources/pack.mcmeta"
@@ -17782,4 +17802,4 @@ hash = "bddf887fe49da381df8abdb8f376e22846db6a54c359e51539758a46e75050d0"
 
 [[files]]
 file = "tools/verify_release.py"
-hash = "7fe2b9f60da62b5cb413ca6aa1b6e8ab013501deee161b33f9215e5beb384cc1"
+hash = "d8cb06788874da444b8044a4bec9b3822a9f1c3a7a5ee277470a9ceaca5e0fea"
