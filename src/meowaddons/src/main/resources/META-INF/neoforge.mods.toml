@@ -22,3 +22,6 @@ type="required"
 versionRange="[6.0,)"
 ordering="AFTER"
 side="BOTH"
+
+[[mixins]]
+config="meowaddons.mixins.json"

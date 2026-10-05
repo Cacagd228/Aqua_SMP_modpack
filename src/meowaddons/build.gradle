@@ -55,6 +55,10 @@ dependencies {
     compileOnly("dev.latvian.mods:kubejs-neoforge:2101.7.2-build.374")
 
 
+    // Миксин на SawBlockEntity#getRecipes (приватный) — без него тировая пила
+    // не находит шаги sequenced assembly: см. SawBlockEntityMixin.
+    compileOnly 'org.spongepowered:mixin:0.8.5'
+
     compileOnly files('devmods/ponder-neoforge-1.0.82.jar')
     compileOnly files('devmods/flywheel-neoforge-1.21.1-1.0.6.jar')
     compileOnly files('devmods/create-1.21.1-6.0.10.jar')

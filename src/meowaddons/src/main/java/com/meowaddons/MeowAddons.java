@@ -1,5 +1,6 @@
 package com.meowaddons;
 import com.meowaddons.config.SpeedFactorConfig;
+import com.meowaddons.nether.NetherHeatHandler;
 import com.meowaddons.recipe.ModRecipeSerializers;
 import com.meowaddons.recipe.ModRecipeTypes;
 import com.simibubi.create.api.stress.BlockStressValues;
@@ -15,6 +16,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(MeowAddons.MODID)
 public class MeowAddons {
@@ -28,6 +30,7 @@ public MeowAddons(IEventBus b, ModContainer c){
     ModCreativeTabs.register(b);
     ModRecipeTypes.register(b);
     ModRecipeSerializers.register(b);
+    NeoForge.EVENT_BUS.addListener(NetherHeatHandler::onPlayerTick);
     b.addListener(this::commonSetup);
     b.addListener(this::clientSetup);
     // BowEnchantmentEvents и AutoShot-логика висят на @EventBusSubscriber —

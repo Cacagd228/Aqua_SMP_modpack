@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.meowaddons.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SawBlockEntityMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
