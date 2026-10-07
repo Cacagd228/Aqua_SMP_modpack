@@ -21,7 +21,7 @@ def check(cond, msg):
 pt = tomllib.load(open('pack.toml', 'rb'))
 idx_hash = hashlib.sha256(open('index.toml', 'rb').read()).hexdigest()
 check(pt['index']['hash'] == idx_hash, 'pack.toml hash matches index.toml')
-VERSION = os.environ.get('AQUA_VERSION', '1.1.8-release')
+VERSION = os.environ.get('AQUA_VERSION', '1.1.9-release')
 check(pt['version'] == VERSION,
       'pack.toml version is %s (%s)' % (VERSION, pt['version']))
 
@@ -64,6 +64,11 @@ required = [
     'mods/meowrelics.pw.toml',
     'mods/lineage_core-2.1.1.jar',
     'mods/lineage_core-2-1-1.pw.toml',
+    'mods/lineage_sable_fix-1.0.0.jar',
+    'mods/lineage_sable_fix-1-0-0.pw.toml',
+    'mods/create_tracks_plus-1-0-5.pw.toml',
+    'mods/gravestone_mod-1-0-40.pw.toml',
+    'mods/lets_do_vinery-1-5-4.pw.toml',
     'mods/create-aeronautics-burner-fuel.pw.toml',
     'mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
     'config/meowrelics/balance.json',
@@ -99,7 +104,8 @@ if os.path.isfile(mrp):
     # same as the other 12 pins.
     for j in ('mods/meowrelics.jar', 'mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
               'mods/meowhex.jar', 'mods/aerofix-1.0.0.jar',
-              'mods/lineage_core-2.1.1.jar'):
+              'mods/lineage_core-2.1.1.jar',
+              'mods/lineage_sable_fix-1.0.0.jar'):
         check(j in ov, 'mrpack carries pinned jar %s' % j)
     # The clean export must not inline gradle output. Tracked sources ARE expected:
     # CI has always shipped them (v1.1.6 index had 3645 src entries).
@@ -119,8 +125,12 @@ if os.path.isfile(pz):
                   'minecraft/mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar',
                   'minecraft/mods/colonycard-1.0.0.jar',
                   'minecraft/mods/lineage_core-2.1.1.jar',
+                  'minecraft/mods/lineage_sable_fix-1.0.0.jar',
                   'minecraft/mods/meowhex.jar',
                   'minecraft/mods/createburnerfuel-1.0.2.jar',
+                  'minecraft/mods/tracks_plus-1.0.5.jar',
+                  'minecraft/mods/gravestone-neoforge-1.21.1-1.0.40.jar',
+                  'minecraft/mods/letsdo-vinery-neoforge-1.5.4.jar',
                   'minecraft/mods/meowrelics.jar',
                   'minecraft/kubejs/data/create_rns/worldgen/structure_set/deposits.json',
                   'minecraft/kubejs/data/scguns/worldgen/structure_set/aboveground_medium.json',

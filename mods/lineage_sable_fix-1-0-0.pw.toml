@@ -1,0 +1,8 @@
+name = "Lineage Sable Sky Fix (custom)"
+filename = "lineage_sable_fix-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Cacagd228/Aqua_SMP_modpack/main/mods/lineage_sable_fix-1.0.0.jar"
+hash-format = "sha512"
+hash = "ebf24888a2fafa63781d87cb028700bbe92e8a0e3b8d77874bca921646fa6252cf07bb0a873241a82b0e18a0ad6af5dddce74bd1a269106b759197679a3f3566"
