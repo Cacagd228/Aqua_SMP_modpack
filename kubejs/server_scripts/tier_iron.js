@@ -12,7 +12,8 @@
 //     encased_fan, vertical_gearbox, encased_chain_drive,
 //     mechanical_piston, sticky_mechanical_piston, piston_extension_pole,
 //     mechanical_bearing, white_sail, sail_frame,
-//     portable_storage_interface, radial_chassis, whisk
+//     portable_storage_interface, radial_chassis, whisk,
+//     fluid_pipe (sequenced assembly, перенесён из tier_copper.js)
 //
 // TODO (нужен точный ID, пока НЕ тируется, остаётся ванилью):
 //  - "I2 двигатель" — предположительно createdieselgenerators:diesel_engine,
@@ -183,4 +184,15 @@ ServerEvents.recipes(event => {
     C: 'create:andesite_alloy',
     S: '#c:plates/iron'
   }).id('aquasmp:iron/whisk')
+
+  // Труба (fluid_pipe) — ИЗМЕНЁННЫЙ крафт: sequenced assembly меowaddons.
+  // Не ванильная схема SCS из Create, а пресс -> пила по медному листу.
+  // Жидкостный бак и воронки идут с первого века, помпа и вентиль
+  // собираются только через create:fluid_pipe — без неё гидравлика
+  // в этом веке не запускается.
+  event.recipes.meowaddons.sequenced_assembly_t1('create:copper_sheet', [
+    { type: 'meowaddons:pressing_t1', ingredients: [{ item: 'create:copper_sheet' }], results: [{ id: 'create:copper_sheet' }] },
+    { type: 'meowaddons:cutting_t1', ingredients: [{ item: 'create:copper_sheet' }], results: [{ id: 'create:copper_sheet' }] }
+  ], 'create:fluid_pipe').set('transitional_item', 'create:copper_sheet').set('loops', 4)
+    .id('aquasmp:iron/fluid_pipe')
 })

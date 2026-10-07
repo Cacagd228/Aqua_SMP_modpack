@@ -2518,11 +2518,6 @@ file = "mods/create_things_and_misc-4.1.1-neoforge-1.21.1.jar"
 hash = "37cfe32ca602a37bd21307e6f456a35788c30315722f14e07326ff555d188fc0"
 
 [[files]]
-file = "mods/create_tracks_plus-1-0-5.pw.toml"
-hash = "ad904119911c6a95df0cdc8b43767f23f8be868777a26531ce4aac6025d51126"
-metafile = true
-
-[[files]]
 file = "mods/create_trimmed.jar"
 hash = "77c94f473baee87f89bd6793da0e3425c578425ca31af148b2840221ea79f19a"
 
@@ -3500,21 +3495,21 @@ file = "mods/smart_bounds-1.0.0.jar"
 hash = "0240f90b62401ef6edf30714cb0eefbbc104be629a9e595383ddf3ac898718b5"
 
 [[files]]
-file = "mods/sodium-extra-neoforge-0.9.4+mc1.21.1.jar"
-hash = "655b4a25d3d1ccc0f53d0589c676f0a86e46843ae537749048b4b0edc33a0f6f"
+file = "mods/sodium-extra-neoforge-0.9.3+mc1.21.1.jar"
+hash = "fa553bce38bad6fdd478841a270a79a31dc05f87d7892b1cf839850602ac9186"
 
 [[files]]
 file = "mods/sodium-extra.pw.toml"
-hash = "bb91192115a88cbdacb97223adf921bb966331b5fc31464e64722cb2fa469642"
+hash = "c490445e40a84c9e19bd3d3a7c8e8b9709b8cea0346a307eb7fb8a32a72a9504"
 metafile = true
 
 [[files]]
-file = "mods/sodium-neoforge-0.8.12+mc1.21.1.jar"
-hash = "2f9e69ec9521e657100ef83b3bdf3f18dba6078d57f9853722d7643a577b2266"
+file = "mods/sodium-neoforge-0.8.13+mc1.21.1.jar"
+hash = "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d"
 
 [[files]]
 file = "mods/sodium.pw.toml"
-hash = "7cfef60a3f36d2374690d82e305da556f182964154aaab1e3bca39bd05c3c0d9"
+hash = "00e3ac3ebc54ea61f44cffa73f38d082cfa5b85dd9e79f2fd05d0d9e93bf9fc4"
 metafile = true
 
 [[files]]
@@ -3663,6 +3658,2530 @@ metafile = true
 [[files]]
 file = "mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"
 hash = "b5c30321b46cfaa521645a04aff89d2804d8167a25bb23ad4b1ae8da73093a2f"
+
+[[files]]
+file = "prism-stage/minecraft/config/DistantHorizons.toml"
+hash = "6b5075cf946d9a4dd5c52b2c7a286479c8452e00730f9a24af8af1206cfc8ea8"
+
+[[files]]
+file = "prism-stage/minecraft/config/advancementdisable.toml"
+hash = "97791cb1955bffd705bf85f4eee33c7f37e327dbeacf1770cba3a7406d47de82"
+
+[[files]]
+file = "prism-stage/minecraft/config/aero_cam_sync-client.toml"
+hash = "c4ec40b1c75a69d877c5ddea4495337a602f0194e50fdb0fbb3910f161c5a181"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeronautics-client.toml"
+hash = "27ff265934c173ba8a925505f3a1423bbe20cd5adbf8410bb6c921e318b62e6a"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeronautics-server.toml"
+hash = "733a50c4a935c18257572c88cf0df06e85978671930984248d4dac1ffdfb6b19"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeronautics_utility_objects-server.toml"
+hash = "c16f2363ae6500501d83bf53da22ef81c4c69eb82bda7ad68a264d0f09adf9b2"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeronauticswinds-client.toml"
+hash = "9d36dcd4803a6bec2db22c6df0e81d6c1a037bba2a91418353d9c7c14cfc4124"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeronauticswinds-common.toml"
+hash = "03aad5c6f58acf6443049d22a07a0adb933e7293bfd62b54ecc73744c7e524c6"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeroworks-client.toml"
+hash = "df9b02b4d3c74f9ea6ea89003b160e4fe9585574ff8d51fff59020e61713b72f"
+
+[[files]]
+file = "prism-stage/minecraft/config/aeroworks-common.toml"
+hash = "9793245f332dcc8b700f16d297d5c7b17923b13e74e0070e032719268daf3243"
+
+[[files]]
+file = "prism-stage/minecraft/config/apotheosis/apothic_attributes.cfg"
+hash = "336a1dcfde783fb49e7f5ae3f5905179e2e7800c0cd41cee8fc6bd210edb2e06"
+
+[[files]]
+file = "prism-stage/minecraft/config/arcon-client.toml"
+hash = "d187257a303b8c123aa809d23fc05de2dc684251b9735296de75d95afc660bf9"
+
+[[files]]
+file = "prism-stage/minecraft/config/arcon-common.toml"
+hash = "1eada48b836110114efeb113561c56cfbb0597e27f2f97ac5503dd4c63890d3b"
+
+[[files]]
+file = "prism-stage/minecraft/config/arcon-server.toml"
+hash = "310cd1791d961a6bb6f75ecbb7d16c2150fdde4d84f0823344673a8440c97161"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/air_magic_resist.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/earth_magic_resist.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/fire_magic_resist.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/magic_resist.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/mana_discount.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/mana_regen.json"
+hash = "fead7637d9e24d53ba947a7260fdbb1b8d7da59e0d46a480e2a5fb9bf2d4aeb1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/max_mana.json"
+hash = "dcad8475fc5b0089999436d2961ec7dc52d8b8548aec03b5dd0104e35c4f4906"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apofix/water_magic_resist.json"
+hash = "c744ebac9d3874f2894df3bb7367dc328da3de0fe97ea399311eb38eecbce638"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/armor_pierce.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/armor_shred.json"
+hash = "803b5a64c395b01f6efd12222624c7422cc548890c74d62f105daa670500e438"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/arrow_damage.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/arrow_velocity.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/cold_damage.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/cooldown_reduction.json"
+hash = "20fb17a4c7d63f89af4530b823b1d95c8fc10a114112f802fcf377c1b8c23128"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/crit_chance.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/crit_damage.json"
+hash = "c53319e27427fef88d5df7db100e255158c6f088d53b67cc4c2a7f8d0a152693"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/current_hp_damage.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/dodge_chance.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/draw_speed.json"
+hash = "bb3d3e9c91455de6702c80400f82cd48760dd76ea9e71498ea4939c675e3b0f4"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/experience_gained.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/fire_damage.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/ghost_health.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/healing_received.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/life_steal.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/mining_speed.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/overheal.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/projectile_damage.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/prot_pierce.json"
+hash = "a34b1473712893aa4dd1a7ae1a7a0a6faf7232e546e1c112871054694c8fed35"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/apothic_attributes/prot_shred.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.attack_burning_duration.json"
+hash = "2b35471191429cb7b18be98f70f23a3ea36ddf0d984a5a3f6a492ce3b3a1dba5"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.drinking_speed.json"
+hash = "ea105c9bb954b8cc9e60749b9a304a1ff80fa0c80873099c569e94c6ea5d6c67"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.eating_speed.json"
+hash = "ea105c9bb954b8cc9e60749b9a304a1ff80fa0c80873099c569e94c6ea5d6c67"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.flatulence.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.invincibility_ticks.json"
+hash = "f2b86540287515290388f49a96e00e5e9ae90abe7332b9beeb44870d0e30c206"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.mount_speed.json"
+hash = "c568f31255bb84ce497127463bdeaa91d597a4336320d84bf669e630ccf169ea"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.movement_speed_on_snow.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.slip_resistance.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.sprinting_speed.json"
+hash = "c568f31255bb84ce497127463bdeaa91d597a4336320d84bf669e630ccf169ea"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/generic.sprinting_step_height.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/player.entity_experience.json"
+hash = "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/artifacts/player.villager_reputation.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/caelus/fall_flying.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/estrogen/boob_growing_start_time.json"
+hash = "d83976a7b1d8096dd5fec751a130f6aa54c044e9694d2ed6712b5f76620705ab"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/estrogen/boob_initial_size.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/estrogen/dash_level.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/estrogen/fall_damage_resistance.json"
+hash = "eef573c49a6e5515f15cc322478ac841853433e87f2dc5feeb2d67dc52b7419b"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/estrogen/show_boobs.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/agility.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/charisma.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/intelligence.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/strength.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/vitality.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/fmm_origins/wisdom.json"
+hash = "0e70fbf385ae261a7af0f486bcee6dfd14fbd505786208001127d67e34fc1ac1"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/grid_zoom.json"
+hash = "28f7e3cd06e2fef81c87748a06629537131574b3f2f974ab4699f87040b11b15"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/mana_discount.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/mana_infinite.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/mana_max.json"
+hash = "e0a47bf34f7d7e3b66948455d9cee8ef8934f2222ddb4a7a83501fb3b0bf9a99"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/mana_regen.json"
+hash = "6217856e9bb2355a468bbe03fe24bc97bae91f8deb54e9df42f8a4021cde99e6"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/hexcasting/scry_sight.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.armor.json"
+hash = "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.armor_toughness.json"
+hash = "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.attack_damage.json"
+hash = "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.attack_knockback.json"
+hash = "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.attack_speed.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.burning_time.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.explosion_knockback_resistance.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.fall_damage_multiplier.json"
+hash = "6217856e9bb2355a468bbe03fe24bc97bae91f8deb54e9df42f8a4021cde99e6"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.flying_speed.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.follow_range.json"
+hash = "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.gravity.json"
+hash = "84207d0866413a367d92222bd193912a418615f5eb9da342057bafec30173a79"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.jump_strength.json"
+hash = "220b18479d9b6497fc95e3b2ffcca5014d93eca33153fab8f343151c9a553bde"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.knockback_resistance.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.luck.json"
+hash = "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.max_absorption.json"
+hash = "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.max_health.json"
+hash = "9d0ae1c8fda340e80aac17df9999ec1e9c7396a2327f63a40ea8006991201305"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.movement_efficiency.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.movement_speed.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.oxygen_bonus.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.safe_fall_distance.json"
+hash = "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.scale.json"
+hash = "0e28210686e7f216d46ba0fee2508c263c7c39e26fb6d8380404789d3185e73a"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.step_height.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/generic.water_movement_efficiency.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.block_break_speed.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.block_interaction_range.json"
+hash = "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.entity_interaction_range.json"
+hash = "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.mining_efficiency.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.sneaking_speed.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.submerged_mining_speed.json"
+hash = "f874427dd6754eff702ef41fd35649493094ddd0c79e01623a2cc9ccfe8ce8d7"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/player.sweeping_damage_ratio.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/minecraft/zombie.spawn_reinforcements.json"
+hash = "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/neoforge/nametag_distance.json"
+hash = "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/neoforge/swim_speed.json"
+hash = "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/sable/player.sub_level_punch_cooldown.json"
+hash = "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/sable/player.sub_level_punch_strength.json"
+hash = "3e05221436880d09fbac95dfc9cde9d2225e8cfdb81ea0c4a41a453934acf938"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/scguns/additional_bullet_damage.json"
+hash = "d95d44fb4007bce62b23a2577d47ced86cf1761d03d1bed6fc213a36f5ebebdb"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/scguns/bullet_damage_multiplier.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/scguns/projectile_speed.json"
+hash = "ece46ac2de2113aed6c7ac9496f398d15ce58b2b54afa6301100de7bc7f7f333"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/scguns/reload_speed.json"
+hash = "c0acef5d30bc1402e48f45c10fdbe947e0034ecda045efe076714a9fd50ba1c7"
+
+[[files]]
+file = "prism-stage/minecraft/config/attributefix/scguns/spread_multiplier.json"
+hash = "6a50a28a3820a8085fb2d43b0b3ba718ff8d9e0df9800e855d540c3c7a82d862"
+
+[[files]]
+file = "prism-stage/minecraft/config/axiom/.axiom.json.backup"
+hash = "9a0ac70903a546cf1d5f7cae8af26f14f8be99b339726cd883f1d3f567f58831"
+
+[[files]]
+file = "prism-stage/minecraft/config/axiom/axiom.json"
+hash = "9a0ac70903a546cf1d5f7cae8af26f14f8be99b339726cd883f1d3f567f58831"
+
+[[files]]
+file = "prism-stage/minecraft/config/axiom/hotbars/127.0.0.1"
+hash = "d41d732e58dfbd3326da3f21ddd78d6cbe0897e28b59db8d52ed4b35facf73ca"
+
+[[files]]
+file = "prism-stage/minecraft/config/axiom/imgui.ini"
+hash = "6e0df464fc094392e22cd3c9898eaa9a0a0508a54fdcc9fff8c640d107e94caa"
+
+[[files]]
+file = "prism-stage/minecraft/config/axiom/translations.zip"
+hash = "4ae6d13ee3bd18c91c64b749e2bec46c73e46dabc4cb1149c2e51e790ab6baa0"
+
+[[files]]
+file = "prism-stage/minecraft/config/azimuth-client.toml"
+hash = "508ee591fdb80db1aaf899bf798f8d22e7682fbe36728f555e38eed668b47c80"
+
+[[files]]
+file = "prism-stage/minecraft/config/azimuth-common.toml"
+hash = "c7386c2e095faf8079add2e2046da0f6e2576069e9997bba550c438ba671b0f9"
+
+[[files]]
+file = "prism-stage/minecraft/config/badoptimizations.txt"
+hash = "cae5ba66971b2f61e0b523c5aeb8b8d4fa806f0bea8a1709860e4fea94426ac9"
+
+[[files]]
+file = "prism-stage/minecraft/config/beachparty-common.toml"
+hash = "652e3ef889c34ddefd2ce7a97fdd118ceee29f261c7127c4533bf8400b105ff4"
+
+[[files]]
+file = "prism-stage/minecraft/config/better-advanced-tooltips-client.toml"
+hash = "167486d8ac09ab9959c9b98c97c169365eaa9e5be0488b9ff8e6a04695d456e0"
+
+[[files]]
+file = "prism-stage/minecraft/config/bits_n_bobs-common.toml"
+hash = "ef974c139b71fdbc4cc14048f46150ff95e8d9911d32a0f5c5bd0b393742fb80"
+
+[[files]]
+file = "prism-stage/minecraft/config/bits_n_bobs-server.toml"
+hash = "7cbe159ecaee877701616a6525afcc14ec04d8b114a77306413a3b3be0a4c505"
+
+[[files]]
+file = "prism-stage/minecraft/config/bobby.conf"
+hash = "9e83aa2d0eadefc46eef453924c5ba04cdf7dae5e54bc243e965f0218ddb92b4"
+
+[[files]]
+file = "prism-stage/minecraft/config/c2me.toml"
+hash = "6a01bea887769d819e7fd15db3ab026a7a75a7f6360f780d32c739efb85b634c"
+
+[[files]]
+file = "prism-stage/minecraft/config/cardboarded_conveynience.json"
+hash = "0f60e4f61887bac819d9d8b21b7cd4bde87ee46b2b338beed18e33dd0484fac4"
+
+[[files]]
+file = "prism-stage/minecraft/config/cbc_at-server.toml"
+hash = "22f128ac2ac98719086859030eddeb0300d51653cca6888ca41cdd9e6848cfdd"
+
+[[files]]
+file = "prism-stage/minecraft/config/cbc_more_content-client.toml"
+hash = "26cb424eefea6cafdce3eddb54f6b3989abbe201758ccce38669401ab84a1d97"
+
+[[files]]
+file = "prism-stage/minecraft/config/cbc_more_content-server.toml"
+hash = "4819084f2f7e9ba6cf490070569bc75100cd34978cd937a78e3f6b0680c90636"
+
+[[files]]
+file = "prism-stage/minecraft/config/cbcmoreshells-server.toml"
+hash = "358c015b82842fb4d27deb3c5bc099b3513b9c1730f724be978c89a7de5d031e"
+
+[[files]]
+file = "prism-stage/minecraft/config/chunky/config.json"
+hash = "c7384a22595488f79f3125b22cc175eb729267267807a084479419349797abc8"
+
+[[files]]
+file = "prism-stage/minecraft/config/chunky/tasks/minecraft/overworld.properties"
+hash = "dd09b9b34bd496c19db62619b4102dfdfcac00947e31d6eb136f31d3c4e89c16"
+
+[[files]]
+file = "prism-stage/minecraft/config/colorwheel-client.toml"
+hash = "a7d87ab03d61fecad6d297bcad9976c9e48765ca67f90b3c388419c2a70b452e"
+
+[[files]]
+file = "prism-stage/minecraft/config/computercraft-client.toml"
+hash = "64b707a15cc44b030e85077aad16b485910e2c732d3319d8718e6b84801decb5"
+
+[[files]]
+file = "prism-stage/minecraft/config/computercraft-server.toml"
+hash = "7ba770f3612ebf571a4f18191a3151f16f97102251475f2bbf63c6d0a6d4f12d"
+
+[[files]]
+file = "prism-stage/minecraft/config/configuration-options.json"
+hash = "0b68a3b324f4a172d577a10446593b8f64f38e37199c928b0fc5aee152baee00"
+
+[[files]]
+file = "prism-stage/minecraft/config/connector.json"
+hash = "67bee06b2b321ed25e0d4e9b5bac7ab76c8ae76442de6caf11f463ce2ae1ac5e"
+
+[[files]]
+file = "prism-stage/minecraft/config/connectorextras_energy_bridge-common.toml"
+hash = "2960bccd52230cb571c760ba9122ec1f4b21b5079f977700d4ac03f1518aef6d"
+
+[[files]]
+file = "prism-stage/minecraft/config/copycats-client.toml"
+hash = "e315dbb97d8623bcb779383e2b58d22cf2c65b7ca239f73cb34660ee077fecfb"
+
+[[files]]
+file = "prism-stage/minecraft/config/copycats-common.toml"
+hash = "14818ac4ed5c487630e917c6bcbb986b6dfad26357111cdb4619ad5456b3a46e"
+
+[[files]]
+file = "prism-stage/minecraft/config/copycats-server.toml"
+hash = "dac18a20718319d6556a7b2709d8f7a64b5da718d2b05ab9d32604087860322a"
+
+[[files]]
+file = "prism-stage/minecraft/config/cpm.json"
+hash = "142e4d68ffc9d4dce27f82ab8e48844fe89166e99a9dbae9812fc0b0d99a0791"
+
+[[files]]
+file = "prism-stage/minecraft/config/create-client.toml"
+hash = "16774bad3d5684a5ecfb6e9e9a8ca5c158fbc8bb3c97568af830be925e6d3d2a"
+
+[[files]]
+file = "prism-stage/minecraft/config/create-common.toml"
+hash = "1c632f62c30f4e1223669267196d2ff1a2c03e400bf565ff4fe81e20c7cd2bdf"
+
+[[files]]
+file = "prism-stage/minecraft/config/create-server.toml"
+hash = "f1a3edd31cdcf2b602b7d51d1fe8ba5e88d6403580ba382ba4cbfab1ecb3a365"
+
+[[files]]
+file = "prism-stage/minecraft/config/create-stuff-additions.toml"
+hash = "d6cb54312eaf10821b8fdbd0d07cb1f5bcce1c5fa26482495e3ca116e52718c1"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_aeronautics_automated_logistics-client.toml"
+hash = "d5b9df2dcafb16809e71fc21b7b53ff3fc409d78e799d867c81a1e95bf448512"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_aeronautics_automated_logistics-common.toml"
+hash = "3cebf03eb64705582b7b5d1974a2f8d4be048eb394e59a6ddc9cabcf04130656"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_aeronautics_toolgun-server.toml"
+hash = "13be96f265a8f669e033ace91eb77d6550691a4d7cdeb1cfc488ba6f29a6ccc7"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_connected-common.toml"
+hash = "5e18ed787b1fb0fcd23abcc4baf7f73f5ebcf73f369bf1102ba251569fd06fd4"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_connected-server.toml"
+hash = "5b0f4cdc30aac70ead5b98c9768e0aa39868141b999cfcdebc3e49f18a8ac9eb"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_dragons_plus-client.toml"
+hash = "a3888f58a510d8e33e3caf8444af00c726f895f75f1d85f5b99c20c6ca420290"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_dragons_plus-common.toml"
+hash = "8f6fb30e56b4eec815d02127682717d9846a724dcd7d77ca8309aa7300498d22"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_dragons_plus-server.toml"
+hash = "795092d792196127eb8c77ec66839b688d7cca38629825984c17afd9e02baf68"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_dragons_plus-simulated-extension-server.toml"
+hash = "0de5b1bdbe632be0df582afe49a8073b38816b58a5016c0806cd6cf52666917e"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_enchantment_industry-client.toml"
+hash = "a12fe6bf0d2f2b1c1a4ad05ab17cbd34f9fdf1dbcef20085f6b48a4dcf94d242"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_enchantment_industry-common.toml"
+hash = "c758403d22c507ca6c7c3e52460ac2668127b9a20ee2cd85e0e2aed1d252f35b"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_enchantment_industry-server.toml"
+hash = "74d6bf333342576057cb0da6252a0aa836191090ec30d75d5e100de2b1fb6f68"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_hypertube-client.toml"
+hash = "1e656302c25b03ffb6410e1e8aaa54abbaa38059072de303dd6736cb116c3c69"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_hypertube-server.toml"
+hash = "f050b43daa7a9dd2b5e6271aac0715f5076399ff70acd5619480b97dbf66e5e6"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_marketplace-client.toml"
+hash = "77a94d0bb15d31cdd1c8798330557642ddb1d0b4fe5137c48ca02d6f495a05bc"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_marketplace-common.toml"
+hash = "d2e8bab4c1e8a942d2dfd70938c702f14e22b5af16748e2d6bd9a8cbe9ec1bb1"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_radar-client.toml"
+hash = "2cb78bf192e6ebc75befff5747a4eb123cbe68601ae8935712b1cb0815bcda81"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_radar-server.toml"
+hash = "472ba660b492df1e794c785c00182cb4fc5689200e34aa17b863fbfc09394c3a"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_rns-server.toml"
+hash = "1ea4826e44ee474fc15769d4d31a4cdc2ec97681444b8aec6ee9710d29d09e08"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_submarine-common.toml"
+hash = "b38d4a268cf6c90c406b48dcd162313931171d23e446c31a7e4469499e2a31de"
+
+[[files]]
+file = "prism-stage/minecraft/config/create_submarine_client_state.json"
+hash = "08b6e82ddd47db0d09dbbd7bebd4c0bc2a013ea2a1dc80e85ae28a19827fa374"
+
+[[files]]
+file = "prism-stage/minecraft/config/createadditionallogistics-common.toml"
+hash = "d0a79b70c0e11d6ba22c20f93a07f5eff94db67f8b34b6ce541837fa3cdfa994"
+
+[[files]]
+file = "prism-stage/minecraft/config/createadditionallogistics-server.toml"
+hash = "d3b5292d04c21926c383361cbc04850433eb84f2b9353c12edff0d5e3f63126b"
+
+[[files]]
+file = "prism-stage/minecraft/config/createbigcannons-client.toml"
+hash = "a97b8ef8b0501c855edd8726b2bc869772fa0f15972d1516cbb481070428eb23"
+
+[[files]]
+file = "prism-stage/minecraft/config/createbigcannons-server.toml"
+hash = "ed1f99827104bc23ebb8b1fbaa42dd7c298cbd0ac7c7068a115bb8247ffc1e01"
+
+[[files]]
+file = "prism-stage/minecraft/config/createcasing-common.toml"
+hash = "7b06780041acfd671c0d6bdf320112cc31d96888c15c648fd98c746cd6d61317"
+
+[[files]]
+file = "prism-stage/minecraft/config/createcobblestone-common.toml"
+hash = "a69029c21ce3a74faef6da05334a8761142a15887d1261002e56d5543b58d693"
+
+[[files]]
+file = "prism-stage/minecraft/config/createdeliveryrequired-client.toml"
+hash = "4f46366a1918b62eb8d28d47c03509699ec8f4c1825dcddb5e79f45026c71575"
+
+[[files]]
+file = "prism-stage/minecraft/config/createdeliveryrequired-server.toml"
+hash = "0baccb8716c64a8906c707727f1fc7913b5ff9b8187d90aa2c29ec9a33e1bbd3"
+
+[[files]]
+file = "prism-stage/minecraft/config/createdieselgenerators-client.toml"
+hash = "f5a9c7e31e704d9ee81cad29080f5301a96bf92518e0c51f77b17b14ce3985e7"
+
+[[files]]
+file = "prism-stage/minecraft/config/createdieselgenerators-common.toml"
+hash = "be7551d5b0d7f454c5fb33539429e3a389343f80eb2af6de95bde442a13b9c92"
+
+[[files]]
+file = "prism-stage/minecraft/config/createdieselgenerators-server.toml"
+hash = "674cc1290b257251ed29107ce56e5059152ee7f75f8d13d5739d61a34db58486"
+
+[[files]]
+file = "prism-stage/minecraft/config/createestrogen/client.json5"
+hash = "4cf322de399db73a7083c4b506b1773bc9363514dd9db0687e6aadca3778b2eb"
+
+[[files]]
+file = "prism-stage/minecraft/config/createestrogen/common.json5"
+hash = "7b6ca8cdd9859408821bb79a247aea70b76d1c0b5dd9db7f88572dc4465e353c"
+
+[[files]]
+file = "prism-stage/minecraft/config/createestrogen/server.json5"
+hash = "7b6ca8cdd9859408821bb79a247aea70b76d1c0b5dd9db7f88572dc4465e353c"
+
+[[files]]
+file = "prism-stage/minecraft/config/creategoggles-client.toml"
+hash = "a006214121ced9bf7cb1737fb0d15cf4acbda45e2ee173e1e32e6b848c8d31f9"
+
+[[files]]
+file = "prism-stage/minecraft/config/creategoggles-common.toml"
+hash = "eab90898a8cff0ada8ebf541433079f5794141bf5195d953a25b9180f082fe18"
+
+[[files]]
+file = "prism-stage/minecraft/config/createlazytick-client.toml"
+hash = "f9ff8abdc007d16f2331f9923f512d11fc0f6a7e9de9bbe7981d5d706a27c36c"
+
+[[files]]
+file = "prism-stage/minecraft/config/createlazytick-server.toml"
+hash = "0842bb5bb1fabe9bebb18ae52ac255dbfe06f02cbbe5b154cb891a01d98ec450"
+
+[[files]]
+file = "prism-stage/minecraft/config/createpropulsion-client.toml"
+hash = "df1b1e3fcfe3c707619426c1b401041372f847153fc344ba306a16a8ffa46aeb"
+
+[[files]]
+file = "prism-stage/minecraft/config/createpropulsion-common.toml"
+hash = "bd7194849785c9704eb361f82d084f3e92e2374f518946e786c5016ce027e9e4"
+
+[[files]]
+file = "prism-stage/minecraft/config/createrailwaysnavigator-client.toml"
+hash = "ec4f6c56676a2dff6c730cc6d9f5c41711c470d6edb04bfd69e5f1c6980c2224"
+
+[[files]]
+file = "prism-stage/minecraft/config/createrailwaysnavigator-common.toml"
+hash = "7894938f711268271e05142ec13e793129ba0c7d2909644e830168767c4aae44"
+
+[[files]]
+file = "prism-stage/minecraft/config/createtransmission-server.toml"
+hash = "d4a575e6a041d532908b3fe55bbf23c479f49b9a06f0728ccb1692eafdf398f8"
+
+[[files]]
+file = "prism-stage/minecraft/config/createtweakedcontrollers-client.toml"
+hash = "e515cfbb98173e45c0bc11ec251858ec8a9159fde505b7bff8559db7f18dd5c7"
+
+[[files]]
+file = "prism-stage/minecraft/config/createvintageneoforged-client.toml"
+hash = "e08556de5df997ed9275fd97c51f41f98cdf70bfaccc6edfcdddd47011d01bd8"
+
+[[files]]
+file = "prism-stage/minecraft/config/createvintageneoforged-common.toml"
+hash = "09ff99bb34a4e104581bab4c5428c8110d1792f16169fa5d0a1894bc2e626a68"
+
+[[files]]
+file = "prism-stage/minecraft/config/createvintageneoforged-server.toml"
+hash = "981e90a056debe70138aed45e95bf0958cf13cfe6144ae54f3b6e106deff2aec"
+
+[[files]]
+file = "prism-stage/minecraft/config/createwingsplus-common.toml"
+hash = "d640c77b9cbb56c6ca4bd3bf4194ad5fa6dd3572cd22934e29c547d9d8942632"
+
+[[files]]
+file = "prism-stage/minecraft/config/cubes_without_borders.json"
+hash = "f248bc2019d956312c0c18037b84e764947dd200c00a96f45a807624d233010d"
+
+[[files]]
+file = "prism-stage/minecraft/config/curios-client.toml"
+hash = "f1e31eed2ff11e1c6eda6517dc8b24dabd5b752ba1f8a3503c5ce750af1fc7b4"
+
+[[files]]
+file = "prism-stage/minecraft/config/curios-common.toml"
+hash = "e628b1a354ced423c60519113a227f7d343511e697a8515ae827ac27c8634fce"
+
+[[files]]
+file = "prism-stage/minecraft/config/curios-server.toml"
+hash = "3c34cf9f7918c6a9ec15b14a87aa4570a751c1688f8ac01cb2e9acfb9392a734"
+
+[[files]]
+file = "prism-stage/minecraft/config/deployer-server.toml"
+hash = "9516e91a51a89d1e0d6c1f4d502833883332a040c153a51b12fe04dbdb7ca3ec"
+
+[[files]]
+file = "prism-stage/minecraft/config/dragonlib-common.toml"
+hash = "ab2282c0b16f6d0bfd4bab36822d476eaeac45b2f946af02a5236ae0c5bfdfa8"
+
+[[files]]
+file = "prism-stage/minecraft/config/dragonlib-server.toml"
+hash = "81af6c3944505da95595095cbaaee82cd7683df13a42f46358a9d179ba961f26"
+
+[[files]]
+file = "prism-stage/minecraft/config/durabilitytooltip-common.toml"
+hash = "2f33433f38df628bf545b76e0ae5babe3efe1ad08dae14b6077a44c768072d7f"
+
+[[files]]
+file = "prism-stage/minecraft/config/dynamic_fps.json"
+hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "prism-stage/minecraft/config/emi.css"
+hash = "b2fefce8b997851759990d1ec0c71d4be631e435857eb7b19516e4806986ac34"
+
+[[files]]
+file = "prism-stage/minecraft/config/emotecraft.json"
+hash = "8cfb42df2afa3b8aed623ab5ad0310181693831f55f092ebcef87b299ccc03e6"
+
+[[files]]
+file = "prism-stage/minecraft/config/emotecraft_emote_map.json"
+hash = "0ce5a209870e0673c14f68d4581de2cefc67a3c37aa7071c943b711a69835775"
+
+[[files]]
+file = "prism-stage/minecraft/config/entityculling.json"
+hash = "e92e6772c4b6ec28b9c179c80831d56d11fc65064591424a120133d397b2ab49"
+
+[[files]]
+file = "prism-stage/minecraft/config/escalated-server.toml"
+hash = "dc38be15cae51c0235f39c08d7055d09b5916234a7761270cc9035201d6cc788"
+
+[[files]]
+file = "prism-stage/minecraft/config/estrogen/client.json5"
+hash = "064bfc5725bee3b9d458c11cc47274f957ec72d1cd54dfe9665f061034c0b2b0"
+
+[[files]]
+file = "prism-stage/minecraft/config/estrogen/common.json5"
+hash = "fcf7767612748f9b3629d0cb07f3d1abd467074fec01cd44f03400f3579dd5c5"
+
+[[files]]
+file = "prism-stage/minecraft/config/estrogen/server.json5"
+hash = "583c71b2abdce8e0d16d9c3d632a259bbdffb4100ed46b397ade1790780cbdba"
+
+[[files]]
+file = "prism-stage/minecraft/config/exmi/enable_config.json"
+hash = "1bf08b99fd96ff0114284cc2d7bfafd005e3be6a7036947c6442754ff2eaafbf"
+
+[[files]]
+file = "prism-stage/minecraft/config/extra_gauges-server.toml"
+hash = "6967be2354a821d42b93572dc97f725ce16e704fb7fca1412f4981c12331ddd5"
+
+[[files]]
+file = "prism-stage/minecraft/config/fabric/indigo-renderer.properties"
+hash = "be5f5f24501b3a595d46bf15a02eb5acbe969739ad862168c228546b73b7a788"
+
+[[files]]
+file = "prism-stage/minecraft/config/farm_and_charm-common.toml"
+hash = "2e93b17ed7edf7873abd44fd44535b43062d5421fb62ec63d62a4f4c30a6363e"
+
+[[files]]
+file = "prism-stage/minecraft/config/farmersdelight-client.toml"
+hash = "a8cdc0376674d522d92d977cac5800d00c6f70ea62ea83dea59595fb232b8e3e"
+
+[[files]]
+file = "prism-stage/minecraft/config/farmersdelight-common.toml"
+hash = "0cc639f1ce8ab5e63f754ab41be3ab09398fd149de6d0b5edc476034e3ed8b06"
+
+[[files]]
+file = "prism-stage/minecraft/config/ferritecore-mixin.toml"
+hash = "1356f9d52b2dcb2afa5a593e53c286d9c1c3778a6f8b1cf761953b185b7dce78"
+
+[[files]]
+file = "prism-stage/minecraft/config/flerovium.json"
+hash = "b9191d66e27631be50d24e6294603c98d9256d37e499465efe519a37d8c4d187"
+
+[[files]]
+file = "prism-stage/minecraft/config/fluidlogistics-client.toml"
+hash = "96209e449d3a61c6e89554469c5aeae068a015541d8e284ce77380bd94dafeeb"
+
+[[files]]
+file = "prism-stage/minecraft/config/fluidlogistics-server.toml"
+hash = "97230c9ff25b22146726125130fa15ad7762f14fa05b7ee49f7e863a8664724d"
+
+[[files]]
+file = "prism-stage/minecraft/config/flywheel-client.toml"
+hash = "4ae4bcb313f7215d1466a36e008e0f20805c98e1aa5b46b154a81dbfdb098e9d"
+
+[[files]]
+file = "prism-stage/minecraft/config/fml.toml"
+hash = "cc59fb1039726fda3ab1eb69b06d9b9aebb7496604ea579cfb735bc5377e7825"
+
+[[files]]
+file = "prism-stage/minecraft/config/fmm_worldgen-common.toml"
+hash = "1e1c2fa4f7a58775c9dbd3ed1c457fa9ccaec081528638fdeabdf2a1c7802bf9"
+
+[[files]]
+file = "prism-stage/minecraft/config/gnkinetics-client.toml"
+hash = "d769b1896d40f2f1344a13a6c959fae16ed73b1770487dd368352877e23000ed"
+
+[[files]]
+file = "prism-stage/minecraft/config/gnkinetics-server.toml"
+hash = "9fec9ee78fa22be72f55dfc3bf39d23e3a477a52db08699b793566aa08ff872a"
+
+[[files]]
+file = "prism-stage/minecraft/config/gun_scaling/main.toml"
+hash = "3b604a89c13efec98d72baaedc786c3f26a33896d2553dbc9007482f200a909f"
+
+[[files]]
+file = "prism-stage/minecraft/config/harderdiesel-server.toml"
+hash = "e886a018aec6a8f02ed691b795c0168025737b4208f9c42ca69c5ce837a54c35"
+
+[[files]]
+file = "prism-stage/minecraft/config/herbalbrews-common.toml"
+hash = "600cadae6ca6656dd7199e85b0dd87074076b7e16878f3679adb84e44f02fcc7"
+
+[[files]]
+file = "prism-stage/minecraft/config/hexcasting-client.toml"
+hash = "4d3c5289fe94ad8afed3d64e97b2cf68bd3cadbf1ea50f5e499229ed4e57f642"
+
+[[files]]
+file = "prism-stage/minecraft/config/hexcasting-common.toml"
+hash = "ab398f0d779ef77feba20527c54ddd81c82277a32e75ec564b7099405646e65c"
+
+[[files]]
+file = "prism-stage/minecraft/config/hexcasting-server.toml"
+hash = "4dd6535096946cc99b5144a1e1e8d371091a08586d15c0f715ef7dfb03f09f03"
+
+[[files]]
+file = "prism-stage/minecraft/config/hotstuff-common.toml"
+hash = "adaf3464e8422cec50b7d93bced54eea16aab2e08f5a4f5c60200480f5d3277f"
+
+[[files]]
+file = "prism-stage/minecraft/config/immediatelyfast.json"
+hash = "a6c9d147a51c9e432c5c74c00285cfc5ba8b6fa4a0c6686051a7168b158d0d7a"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol-server.toml"
+hash = "3e6efcad6e8fc9714583efa0771c386698f2f147d16b91319fa334a5ad5703a9"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/areas.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/breakevents.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/effects.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/events.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/experience.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/leftclicks.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/loot.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/phases.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/placeevents.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/rightclicks.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/spawn.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/incontrol/spawner.json"
+hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+
+[[files]]
+file = "prism-stage/minecraft/config/iris-excluded.json"
+hash = "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb"
+
+[[files]]
+file = "prism-stage/minecraft/config/jade/hide-blocks.json"
+hash = "309df4ae96864c19eae41b646d58497c85a73b1fc3c584e772ef4d5822794baa"
+
+[[files]]
+file = "prism-stage/minecraft/config/jade/hide-entities.json"
+hash = "3741bb54a4535fb5a00fb0ee1f4386f3dd17834aebdf9e89c21fcd3307109709"
+
+[[files]]
+file = "prism-stage/minecraft/config/jade/jade.json"
+hash = "5754114a0a663b321793a61f741bafa70c2a6dd649657260cdc096600763ad94"
+
+[[files]]
+file = "prism-stage/minecraft/config/jade/plugins.json"
+hash = "a8dde6ed108d6b6bcb0d0bab38813b3a4edc008e51fd837ffcbf666c0f3ad09c"
+
+[[files]]
+file = "prism-stage/minecraft/config/jade/sort-order.json"
+hash = "0fb9acf855a1fc3b2a245207728365a7edd1738979dad4049781879c0ea7485b"
+
+[[files]]
+file = "prism-stage/minecraft/config/jei-server.toml"
+hash = "57d741871716e29b3a318b625e740d590598f001c362b6a4a95e3ee628c5cbc3"
+
+[[files]]
+file = "prism-stage/minecraft/config/jeiexport-client.toml"
+hash = "eb65b21141f407644bd800d47c7e7d35a55d4ad4873096a7855ac1c98d7771e8"
+
+[[files]]
+file = "prism-stage/minecraft/config/konkrete/locals/de_de.local"
+hash = "79a34cfd15c2d9c06498dc221be79279507d9b57666cd44f8d2c2cf95d3582ef"
+
+[[files]]
+file = "prism-stage/minecraft/config/konkrete/locals/en_us.local"
+hash = "fdf1864fd049b3f1b9af1f8db6c5125a627be7d06a451c778da3329843d3c39a"
+
+[[files]]
+file = "prism-stage/minecraft/config/konkrete/locals/pl_pl.local"
+hash = "d38a7776e362e4de6082078d803c1c9358d9d40526edfe4bdfd29c552aef76d8"
+
+[[files]]
+file = "prism-stage/minecraft/config/konkrete/locals/pt_br.local"
+hash = "dca55a2792451b31424cd5c24037141ec57cdca51955d062dd908fa9ca6a3e9c"
+
+[[files]]
+file = "prism-stage/minecraft/config/kritter.json5"
+hash = "b47f839be4d54affccadb5967c8582ae699461d05b8aa86a49a86f7c48135657"
+
+[[files]]
+file = "prism-stage/minecraft/config/ldlib2-client.toml"
+hash = "53a0cf0009045ff6323c7e0ebc6feb4a971ea3f8e417a80bc4ffcbd5be902788"
+
+[[files]]
+file = "prism-stage/minecraft/config/lithium.properties"
+hash = "6cf6f83720071fd1657c8e79b357caf68d40f410ae123e5f922483eb1d1d25be"
+
+[[files]]
+file = "prism-stage/minecraft/config/meadow-common.toml"
+hash = "d766f736dadd3697ce75c5fe080d0ac84a21a22424363420b86814baf20b55e6"
+
+[[files]]
+file = "prism-stage/minecraft/config/meowhex-client.toml"
+hash = "a30ca5a5e66cfb162b9b5b3a81cd525c0d8cc072b29eec8535f2a8b583afc26a"
+
+[[files]]
+file = "prism-stage/minecraft/config/meowhex-common.toml"
+hash = "2357a403d0f55276237a31408c5080084863e7cb4ea632b549fc4e9b0d60d5ba"
+
+[[files]]
+file = "prism-stage/minecraft/config/meowhex-server.toml"
+hash = "ed6c443ee913c0ff666ee8653e6b5ab2655a72fad8a313bb728425cc6c3e67b0"
+
+[[files]]
+file = "prism-stage/minecraft/config/meowrelics/balance.json"
+hash = "c8c0c671681639dffde9e0b20176705063637882950ca0896cf8118e4da4983c"
+
+[[files]]
+file = "prism-stage/minecraft/config/modernfix-common.toml"
+hash = "ee24e2b1bc100942a1c605f996255742cd6a5bb3662877aa906bc301100ccf27"
+
+[[files]]
+file = "prism-stage/minecraft/config/modernfix-mixins.properties"
+hash = "cda1de84880f439d9c8a025861a483d51972e76b8a5a6a253dd0196aec821ac5"
+
+[[files]]
+file = "prism-stage/minecraft/config/moonlight-client.toml"
+hash = "71966bc6f963b429b0c5fd4529bd07951256934313a023f7a3478f85fff79b5d"
+
+[[files]]
+file = "prism-stage/minecraft/config/moonlight-common.toml"
+hash = "a6d5e783dc1469e925d4cf62f17a94ee2dff4ff025d9ed9e61b129581019cdf3"
+
+[[files]]
+file = "prism-stage/minecraft/config/moreculling.toml"
+hash = "db63bd41fae1b92828f13b34b93215549ca167ccf44a4c09d050fe559fa203a5"
+
+[[files]]
+file = "prism-stage/minecraft/config/neoforge-client.toml"
+hash = "a5f0eb38f8daf8574f7672a8393a0ab5c668d6ec6e7ae43fc8669e928786929d"
+
+[[files]]
+file = "prism-stage/minecraft/config/neoforge-common.toml"
+hash = "e6f7578cf8c11ade0a47e36bf3863fc96f84cdf4bb679c0fceabb1e8a2f42399"
+
+[[files]]
+file = "prism-stage/minecraft/config/neoforge-server.toml"
+hash = "0f1415d7fef6d7f6194275501d500b633dd3310aea40d64128edd1b096372f60"
+
+[[files]]
+file = "prism-stage/minecraft/config/numismatics-client.toml"
+hash = "91fc4b40a4a6ac5e9607f0b4397b50e22220bfd4b1f300b83c41daaa8e5fabc1"
+
+[[files]]
+file = "prism-stage/minecraft/config/numismatics-common.toml"
+hash = "d7503e0aa95bca063d76be87f521afa4535572bb8e7768d7b9c8fe6e4ed316b9"
+
+[[files]]
+file = "prism-stage/minecraft/config/numismatics-server.toml"
+hash = "76e404bb6fff01513f2e2f9bc6ec00f24194be67a4dcc5b38cc6d7837cd63dc2"
+
+[[files]]
+file = "prism-stage/minecraft/config/offroad-server.toml"
+hash = "7dda83d4436419564b495e65b4123ab8453eb926cdd8dabc526e41d3ace6bf40"
+
+[[files]]
+file = "prism-stage/minecraft/config/overflowingbars-client.toml"
+hash = "9037e801784c5d10420d23445e1086e8ac39480bce15eef4b73d9b519a373561"
+
+[[files]]
+file = "prism-stage/minecraft/config/panoptic-common.toml"
+hash = "8a28175d47081ff4eed3b2d6cba85f4e43a5edf0a44ff91a745f0e3392b762b0"
+
+[[files]]
+file = "prism-stage/minecraft/config/patchouli-client.toml"
+hash = "af6a2ac2c40095993ccdc76bb8c74dd72ed4dd216276e39f5e835a87c1ab6e27"
+
+[[files]]
+file = "prism-stage/minecraft/config/placebo.cfg"
+hash = "eb7e9906d126543f03c2257ca98efa4b845d1e7479dc8b069a12b194c86debcf"
+
+[[files]]
+file = "prism-stage/minecraft/config/ponder-client.toml"
+hash = "57fe579bf4cdbcab6c6702dc0dad2727b899f07f28fea686bca1e4b25b20bbfb"
+
+[[files]]
+file = "prism-stage/minecraft/config/powergrid-client.toml"
+hash = "727d1a70c9f9ea9993c639d979c8f3b68a2deed0e13a26312128d998019ee266"
+
+[[files]]
+file = "prism-stage/minecraft/config/powergrid-common.toml"
+hash = "353ff57e22aba1ad258de34ff0ffce3a229bebeaec909e1b2501326cc55d73f1"
+
+[[files]]
+file = "prism-stage/minecraft/config/powergrid-server.toml"
+hash = "51891869778142e1dbf2413816a1d35b5113e45aa51ffece1af7cb1315409716"
+
+[[files]]
+file = "prism-stage/minecraft/config/quickskin-server.json"
+hash = "3fe4d409cb36aaf7e3e70676c14af27dd8f6fecc66d6fcbfe114f7cd36619cdb"
+
+[[files]]
+file = "prism-stage/minecraft/config/railways-client.toml"
+hash = "3050e460327f400654d8853f26e267e7c47d28312a42262985764b29998a5676"
+
+[[files]]
+file = "prism-stage/minecraft/config/railways-common.toml"
+hash = "cb0af90a705f48886a1c4ec970dfeb70e91d6961f561b5f1d5a31f5e0cc1edd5"
+
+[[files]]
+file = "prism-stage/minecraft/config/railways-server.toml"
+hash = "ffa9360afd80c2952b87b6892d6f782a3e9e82dbba98613a728d4fc4ecd647c1"
+
+[[files]]
+file = "prism-stage/minecraft/config/relics.yaml"
+hash = "3a06e656323ddfd8221469c3aebf0849e65638aa886d71ceb4cbf9e023b9787d"
+
+[[files]]
+file = "prism-stage/minecraft/config/resourcify.json"
+hash = "ade1b4a28332a849a0b3dfe006db3d1ef22810301999316fd58a34b130968fb5"
+
+[[files]]
+file = "prism-stage/minecraft/config/ritchiesprojectilelib-server.toml"
+hash = "0118936ae0375d6c318582b47e0cf631540ba683d4a5db25a3ca7f090eda54c1"
+
+[[files]]
+file = "prism-stage/minecraft/config/sable-client.toml"
+hash = "0dd32460fb2fc6a4e438784924c377f11ba416732be1daff68c951e2e197d42d"
+
+[[files]]
+file = "prism-stage/minecraft/config/sable-common.toml"
+hash = "0614f722541191b6ddcfb686f97d5ea9a3280d32f8e0607c0d31dffe9a2dc5d7"
+
+[[files]]
+file = "prism-stage/minecraft/config/sable-server.toml"
+hash = "086c61695c31826b3fbcd4e5f55be8f42c3e4f25d6e1d3ffb680588a7457d2bc"
+
+[[files]]
+file = "prism-stage/minecraft/config/sable_schematic_api-server.toml"
+hash = "2da17c793de396c579400d9a33e2d20980205741b41a86a15c1ad236a6af7c8d"
+
+[[files]]
+file = "prism-stage/minecraft/config/scguns-client.toml"
+hash = "95cece7299e0bb26e1c1f7132fff6c0ed9e8d415e97a7d38879fe44b6d1bf106"
+
+[[files]]
+file = "prism-stage/minecraft/config/scguns-common.toml"
+hash = "7dbaf91957c8cfdba3ba0bc9d2729b118efcfd3a1b9b62d963cb4e52f218d9fb"
+
+[[files]]
+file = "prism-stage/minecraft/config/scguns-server.toml"
+hash = "60fd564db0abb531185e2ed98eca9862570e0ee773c70458da7e7d04de275bd6"
+
+[[files]]
+file = "prism-stage/minecraft/config/simulated-client.toml"
+hash = "944ba0d36dfe00436e814fffd736acdd51292da18a01a060ea6ffbcf3dc7388b"
+
+[[files]]
+file = "prism-stage/minecraft/config/simulated-server.toml"
+hash = "74ceaca226933e2471df76e5f6a8b1d0e2e339754419fd7c0c8f37fb3b90d243"
+
+[[files]]
+file = "prism-stage/minecraft/config/simulated_addition-server.toml"
+hash = "c9b430a3c4e8160e04002385aa80a7a81da62b261fab46aaa4571f32d228a4fd"
+
+[[files]]
+file = "prism-stage/minecraft/config/simulatedcoasters-common.toml"
+hash = "97fa738939cb6a7e0ab5bcd7833544b1bde56b41e314c8a1e37278154082a874"
+
+[[files]]
+file = "prism-stage/minecraft/config/sodium-extra-options.json"
+hash = "c9d452ecb24bb91415d26bdb66246779d2f2c6c8fd94d79eee7db4e56cb1a94b"
+
+[[files]]
+file = "prism-stage/minecraft/config/sodium-extra.properties"
+hash = "a2f1b47c1eaa119ab34727f1d43c2506cb3d7f17ba8fb4efb49e20c8e0b58e70"
+
+[[files]]
+file = "prism-stage/minecraft/config/sodium-mixins.properties"
+hash = "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01"
+
+[[files]]
+file = "prism-stage/minecraft/config/sodium-options.json"
+hash = "44478bef0973f1aa587c0493568a5cbc5426233b611f14bd2be489b5b862fa7f"
+
+[[files]]
+file = "prism-stage/minecraft/config/sophisticatedbackpacks-common.toml"
+hash = "390cb983090cdc5ba9013c0551fcde8ecf579040f970e33de5ecfc500841cb7f"
+
+[[files]]
+file = "prism-stage/minecraft/config/sophisticatedbackpacks-server.toml"
+hash = "fa0948d11cde985637e86f4d6f1bd8a95bc0119d3b6f63bb2022c24744beeb90"
+
+[[files]]
+file = "prism-stage/minecraft/config/sophisticatedcore-client.toml"
+hash = "12f65a872b73c931b0a192d7e95c7d89f7ef7f1fd33f3ee7ff6bbda12fb8845f"
+
+[[files]]
+file = "prism-stage/minecraft/config/sophisticatedcore-common.toml"
+hash = "53abd4b9a5d9d43ce55b33a799e1cea1d1ed8ebbbb9cad929b31bc33067a63c3"
+
+[[files]]
+file = "prism-stage/minecraft/config/submarine_hull.json"
+hash = "8270aa384ccb0c584d967a22978c588dc2227c8dd4e3509d27cbc2d32ef8d55b"
+
+[[files]]
+file = "prism-stage/minecraft/config/supplementaries-client.toml"
+hash = "05e5e95a563d78317ca78b55038a308db39f1148bf41de2cb3e1c79664ee8492"
+
+[[files]]
+file = "prism-stage/minecraft/config/supplementaries-common.toml"
+hash = "dc75738e460902b58979678e29eccaee081eab6ce9663c197dd6d67eddc07d9d"
+
+[[files]]
+file = "prism-stage/minecraft/config/synaxis-server.toml"
+hash = "9ba0a724fbcce401d44d4928a5bf8445a82d5a0eed9e61b6c9c5a7e00d54e539"
+
+[[files]]
+file = "prism-stage/minecraft/config/synaxis/control_chair_bindings.json"
+hash = "e3677c58e525dddd7bf0c4b448e3196c787f153cdfc5b4be4def718bfe162a1f"
+
+[[files]]
+file = "prism-stage/minecraft/config/trading_floor-server.toml"
+hash = "405ee8a88c2a978437ab44289b9ed7205e81daf04f5bfb989052fbed12b0e30d"
+
+[[files]]
+file = "prism-stage/minecraft/config/transition.json"
+hash = "60420a41571a4658b91babfa2b47d6fefb7c1766eeea969f51ff98ab34c2431c"
+
+[[files]]
+file = "prism-stage/minecraft/config/trashslot-common.toml"
+hash = "6cd3a10e6f7eaacf14aa46fa68dc141efbad30b32f3eabab8a82781fe96fea28"
+
+[[files]]
+file = "prism-stage/minecraft/config/treephysics-client.toml"
+hash = "8b81e428e48334335233d4eee06fbfcd4b55c4680fcb2e860dd0090f9f52d15a"
+
+[[files]]
+file = "prism-stage/minecraft/config/treephysics-common.toml"
+hash = "94d03077b58743b0e7a1aa861092c404c4d21ef69457f01023c4f93cfc59ca98"
+
+[[files]]
+file = "prism-stage/minecraft/config/trender.json"
+hash = "0a282f3623f7f9443a1d10b5768865f69e58b74e000dcfb4f40399626b7a6124"
+
+[[files]]
+file = "prism-stage/minecraft/config/vestalihy-common.toml"
+hash = "e44c5720e8f52e275e2b71366c3f275262c3b0fc8e447b2e542311a4774e99f3"
+
+[[files]]
+file = "prism-stage/minecraft/config/vista-client.toml"
+hash = "dd92b72926b9900063b4072ae3f19b78e534bb870724abd65118968884069cb8"
+
+[[files]]
+file = "prism-stage/minecraft/config/vista-common.toml"
+hash = "875db3d3f509144a7a589f8823ae862fd8706d362bb4da0e13d6f47f8a1ea9d5"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/category-volumes.properties"
+hash = "94c1c4f70e5b995fbd71e86d4fa646030437fecae0685875b560a55fbd0d0e56"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/player-volumes.properties"
+hash = "0332261861a5ace96f503e85b0d48a8df74ea6c2f3545cd229543a6afb55ad96"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/translations.properties"
+hash = "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/username-cache.json"
+hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/voicechat-client.properties"
+hash = "e69fbd412f49bdf51a78838822ec10bf3a3ddb8dbaaa7c5d00d543377cc81d79"
+
+[[files]]
+file = "prism-stage/minecraft/config/voicechat/voicechat-server.properties"
+hash = "a23c55534c796d5e04d4cba6f8cae3b380a12229d2f7ca5d487c3d191e6d333e"
+
+[[files]]
+file = "prism-stage/minecraft/config/xaerohud.txt"
+hash = "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c"
+
+[[files]]
+file = "prism-stage/minecraft/config/xaeropatreon.txt"
+hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+[[files]]
+file = "prism-stage/minecraft/config/xmmp.toml"
+hash = "55ca115df0890c7f7ab2245e14187fd84ff2f95b77388660caae015bae6e2833"
+
+[[files]]
+file = "prism-stage/minecraft/config/yacl.json5"
+hash = "121b93764159be6fb7dab523b29a844e2bb78400ce8c48f52135a097e9b0006e"
+
+[[files]]
+file = "prism-stage/minecraft/defaultconfigs/biolith/general.json"
+hash = "7f1e58be2cf7db18181869804bb09823ee93a4ea863d560036e8a05954bcf806"
+
+[[files]]
+file = "prism-stage/minecraft/icon.png"
+hash = "b2b3a1db2a7fefd200d2c5c7fac79a833e874ee3984174b491c2b96f8e2523d7"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/README.txt"
+hash = "989f3737ae4621b8ff6730bce4cbeeee756921e7e510e0c281c8a350501d98af"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/estrogen/lang/en_us.json"
+hash = "c18e590e4db63002e4906a50aa2102ffd82ade74adbc0325db6a6e6d0cae5b79"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/estrogen/lang/ru_ru.json"
+hash = "e6be18504d271e742ea0ee224225c2dfac3f8f649a403c16169ac04eb011997c"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/kubejs/lang/en_us.json"
+hash = "37cfccd9d6cd7ff4fa3ec1a16d3e5605079aa4bcde2bebfbb6cde3682df0676e"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/kubejs/lang/ru_ru.json"
+hash = "7b552158aab36e9de4d1990771261c2fcff9928f93f48a3547caf70ed30525b9"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/kubejs/textures/slot/face.png"
+hash = "2512ec6013c1ff23bfcd29ddd2a5ce12a6034476a5f7af93d84e2d3ca07fc759"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/assets/kubejs/textures/slot/shared.png"
+hash = "1fdfcca65e28a4eb7c74d0c40cc2fc750192db184fcf8c2b7f56100e432a0aa8"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/client_scripts/cdr_contractor_ponder.js"
+hash = "59ae29ed1ea30b07b4df947d950d93c85f12e5136702c9d6ff9ecbedb411f1f1"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/client_scripts/cdr_market_ponder.js"
+hash = "239333030128701caf1c9efa114fbf1255ffedd0b29fd1391dd0105c624df0db"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/client_scripts/cdr_p2p_ponder.js"
+hash = "e6b3fda9bb3b0e20852ed20ace2e2db219534123fe5c84172bd53c252e365921"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/client_scripts/estrogen_tooltip.js"
+hash = "5eeba36797b8b71347a15059e1203d02f18be2cb1505ce7f7ec2b475804a5b9f"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/client_scripts/main.js"
+hash = "3df46f0add819bf2602642215b5c62f0581ffdaaf97e77c80a8c4d966e05adcf"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/config/client.json"
+hash = "0aeb4cb329b896e33a0777a1683b0b813a6f2f0adc5bc2cf3e6d10e18e442fef"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/config/common.json"
+hash = "e00a67922942660d77c213379b5128a46c5abc894178b0be04006d325ff5f6b3"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/config/web_server.json"
+hash = "1fb568e4539aec5f72c29cd7efdea107ecea0cff7c5f9f3c4b7c0f2820151123"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/aquasmp/loot_modifiers/hex_scrolls_to_fishing.json"
+hash = "4d3745da9e0afa2c8ecee68f134d361adcf61d7362cfe523617cce753334a679"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/aquasmp/loot_table/hex_scroll_fishing.json"
+hash = "877b5df3fa325644811ba111272853dd9001221b7defbca0b0d72cb9ce656e1d"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/aquasmp/tags/item/hex_pattern_scrolls.json"
+hash = "41fd38257f5b0f522812d10fe602c77badbed97175662b8eb2d010a1da65f5cf"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/create_rns/worldgen/structure_set/deposits.json"
+hash = "0173cdce43ee96c4af9f335ae99fff35fecc9a6643b5b2c5462a5bd0a9b1c125"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/create_rns/worldgen/structure_set/nether_deposits.json"
+hash = "2b82201bf8f1484e2bd163b0e270898cfa63e13d222991b37d65820ab5d33a15"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/curios/tags/item/face.json"
+hash = "913dbf577fa858a60b844e42f187914b8f3c1b348c239efff3b7f30c4b17f7af"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/curios/tags/item/head.json"
+hash = "d7b3fd78016e3bdcef02413420ddfda43100c4265936de3fea42f241c0b49951"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/kubejs/curios/slots/shared.json"
+hash = "473b91ba4277016fba260e58f58dc1a86a8e8263129f7a43db31e2c805326706"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/minecraft/worldgen/structure_set/ocean_monuments.json"
+hash = "01716269239f843a43f5e86e82ec899e6b66538822f88d807bf484c424b62147"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/minecraft/worldgen/structure_set/strongholds.json"
+hash = "172823e36c54c41cedb78a1c22673005a8ee708586ce87373490174d027430e1"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/minecraft/worldgen/structure_set/trial_chambers.json"
+hash = "eff8e905c5891f695efcb92f98b79078c9f7542e7e3dc042f2cf47cf900dc868"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json"
+hash = "048d9e54272cdcd5439ae0ea10eac557a0032b7eef5ede60784ded75a0d46dc2"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/sable/physics_block_properties/aquasmp_physical_bearings.json"
+hash = "41cf8748fc0735a396f0bcbe47a3d9e6600523eabd5072615cf6ceeeea949b8b"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/scguns/worldgen/structure_set/aboveground_medium.json"
+hash = "b8ef2a946948c55b2d31ce5109d06065cf9fb781cb333928e10c3dec7dacd408"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/scguns/worldgen/structure_set/cog_chambers.json"
+hash = "ba9aeaf62734d7dbf8b467c54b88362c90f8fc4c43b8d63a5689be6f483491b7"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/data/scguns/worldgen/structure_set/trench.json"
+hash = "bd9574a3cbf8b29662cd95dd1b688be019e72164b3fd235f490fa15df9806a3f"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/pack.mcmeta"
+hash = "0e3e7db07a4bb5482ce5c64338b5e726d8241dc5a6b4ef1a6c00830eb1db3cd0"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/01_andesite_age.js"
+hash = "1e968a72b6de9d9a7c8a4f0474da0ab4d0a13b80fcd710ba627ff39a98383442"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/02_copper_age.js"
+hash = "e3e18cd79ce9648ef8466bf12068a15f329278565e10194ee435d37945faf4cb"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/03_iron_age.js"
+hash = "cac673dd369735e936537de6456f18339d7bfff45e9b7617ee55ef13dcea07d7"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/04_brass_age.js"
+hash = "56b9d3cf34ed6bcb35be1b5876a888d5b3e93f62b2240b42cec7d97d3c849b93"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/05_steel_age.js"
+hash = "d94564897546a6a6c07c3f6dc22bd360b67cbbe9c228d973b1de461f8da9c30a"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/06_shadow_steel_age.js"
+hash = "6145b2bcfb9d82aeb9597e4677628f322d6a4f51767e6d9203bac2416dfc7d6a"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/07_refined_radiance_age.js"
+hash = "c95063840e02351acd823d0a72946538176c0f7e4f95377db8d08a0c7559d238"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/scripts/08_chromatic_age.js"
+hash = "de6699344148d5184ad90205add2d88bd97266e6c03351ec6e22a92706239eb7"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/00_tier_lockdown.js"
+hash = "a3a16fa10f7bfe4cf51489dd8a79ce1ddebde8f263bf570a0c0d90b025646fd7"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/TIERS.md"
+hash = "1605f1f38024e0b73db35f9c63b0d0ace16d04cbd865e1f91efb994e28cb396a"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/archive_hexcasting_recipes.js.bak"
+hash = "b54e034f20945b511636cae6c4d0912ee2ae1d931d9456d7186e5668e9ee0de4"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/corps_crafting.js"
+hash = "b054467017256ae9e2ed9cec2e916d6b14e606efce2a5be25439b98702de6ce2"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/deco_signs.js"
+hash = "e92b05a3d67fc2e3611bcd7a45b594e74751b89a3259013f686cf344dfe01971"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/disable_mobs.js"
+hash = "fadfc45d967198b9e3010bc7ff7aa44a8bec5e65a2e8a07f3420913bd8fdda24"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/estrogen_tweaks.js"
+hash = "3987418bc629b03fd22c3a02f51486402d9613c9bdc7089f16b2f3ac46ec72c4"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/main(1).js"
+hash = "7a24d5551c71df00125c88d13442226b5630630999fd4a92bb95ffcbae7ed6b4"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/main(2).js.bak"
+hash = "55bcbc7f38c1fe09f53df149612bf42e66299d5597676b79f4ec2311e0e79341"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/main(3).js.bak"
+hash = "92a914d5e391a4402b29f040b63f4494ae84e9dfe41cd82465dd38432a2c4ec2"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/main.js"
+hash = "dabb0cbdc367fc5982a8555e528c10c18870e8b552f17a445959aea81b717d4d"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/reinforced_backpack.js"
+hash = "44b68f361343fc1410f75d6904918543c4b051ac49622f26ebba06171d141a90"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/remove_vanilla_casings.js"
+hash = "96099b48dfc188468496f633f26f0335efe8bd7227921388d60e46265612c294"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/restore_plate_hammering.js"
+hash = "0d1dc26b8282022a49016b8ece199d57d12187aaea1abac4098ae9e3da2f5d8b"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_andesite.js"
+hash = "de00c9510904674778083e6d6838efd23127ce5ae50fe24af3097abd115825b6"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_brass.js"
+hash = "f64904469be62f1cca062576eec37eccfde281fc0a1ac0eaf480ca2acaadeb2d"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_chromatic.js"
+hash = "9327e728da7ec9de5dec2dc17c4957e5d68c678a301aed07efd57075d0ba4d29"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_copper.js"
+hash = "7fb9a473504ae81468053015fc762119ab476a4f627f3c7e47878510572428ed"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_dark.js"
+hash = "bfb9e1c4e52e1bcaf3dd38bd18922ef314e9d6f695434275433d1bb3d2324473"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/server_scripts/tier_iron.js"
+hash = "a11c628f891bdbd630b44c6ed98100b97ec67963adceb1a0e672121a8dfd17ca"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/startup_scripts/curios_shared_slot.js"
+hash = "b6580c0630ed74efa9523d2a4cf0830e56f81604dd99a4331a8c7f31133d8b8d"
+
+[[files]]
+file = "prism-stage/minecraft/kubejs/startup_scripts/main.js"
+hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Apofix-1.21.1-1.0.0.jar"
+hash = "7250fae27fa66e2e809843a309a121ec6dc9c6a7473818d4e2abbdaad46ea827"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ApothicAttributes-1.21.1-2.10.1.jar"
+hash = "7f84ee803e9d4fef2858db28f552724dc0ea6c3943db111cc947d70aa2c9c159"
+
+[[files]]
+file = "prism-stage/minecraft/mods/BadOptimizations-2.4.1-1.21.1.jar"
+hash = "22e2467892d3706f43d1cf2aa637785bb8601c20b0098a82ab956e6a8fc4d2ba"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CBC-Military-Supplement-1.21.1-2.1.4.jar"
+hash = "6541d82ec0a6742719293b3c2a46cf20e6c8710ba8abfe1586c76583d08a0832"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Chunky-NeoForge-1.4.23.jar"
+hash = "d72f235cf1f56f2c374f52c00bdda5034524b28142305a84cfc123a3f92ad274"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ConnectorExtras-1.12.1+1.21.1.jar"
+hash = "ee89c3425b9a4bff766aaff02ccf8110c06f5da6ef5d71974556885cf25d4880"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Controlling-neoforge-1.21.1-19.0.5.jar"
+hash = "cc525fb6b030d9e4d33176983f278919e17b33935e2ca568929bdfa98f2b44a0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Create Components and Additions 2.3.jar"
+hash = "e58244f4b09b23f3a8b889dd0b51269a7cbc97d92ad21dacf447d1d675034699"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Create Encased-1.21.1-1.9.0-ht3.jar"
+hash = "e93bb110241ab8283c6238590eb04f1fb37199815623f53f3e981ee650f344a3"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CreateDragonsPlus-1.11.7b.jar"
+hash = "bdad8fae41888d161b7ef59ded32d5efcf3f80dd9f19fddaad38c24b139e6ee7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CreateLazyTick-2.6.25-6.0.10-neoforge-1.21.1.jar"
+hash = "6119123d771b800db31fd9b76f03f50e27b0bc9d88f5f71923acb694274641cc"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CreateNumismatics-1.1.0+neoforge-mc1.21.1.jar"
+hash = "d33a33b46f923462ae6806a024851afaefa473ced0e95bf405f8ebc13abce767"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CreateRadiologistics-1.1.1.jar"
+hash = "e2801e95758968b338d4730e75d84147bcfaaabefde9d024e1a91e1e1dbc7a5c"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Create_Warnautics-1.0.7+mc.1.21.1.jar"
+hash = "ddba0a76f4904cd4565e796d57deeaa8ac8136385f71620b909224bc30a88914"
+
+[[files]]
+file = "prism-stage/minecraft/mods/CustomPlayerModels-1.21-0.6.27a.jar"
+hash = "b5d3a473998648eefdf646e10a48af95dac57add0df681ca4407e83c716d6c84"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Design-n-Decor-1.21.1-2.2b.jar"
+hash = "af0264e8ba44b77744d9a6173b79fcc39758c5b975fbb377d4000e85bfcd2c8f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar"
+hash = "d6a7a963f794501678113e2545d8b25c90e123ef6b9256bb5716907d059e1ef5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/FMMWorldgen-1.1.0.jar"
+hash = "0c17adf7120475deb9cf8e69b326b3177e949fa9d8d576f3ad69e33f5a42f38d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/FarmersDelight-1.21.1-1.3.4.jar"
+hash = "139ad7696462c89c03eea463f805abffa552526c5dadaadae221dd9624cb197c"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Female-Gender-Mod-neoforge-1.21-3.2.2.jar"
+hash = "3e5660b4c6734261f267d9ad6650496438befd0d4c04a5677db4ad16a63d9825"
+
+[[files]]
+file = "prism-stage/minecraft/mods/GnKinetics-1.21.1-1.0m.jar"
+hash = "9f5e699b59282464aad038b88f89634b080fbee23a1e5dab5b7d954b4f10893b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ImmediatelyFast-NeoForge-1.6.13+1.21.1.jar"
+hash = "fa3aec87e9880d0a8ab9663c96ad0206fd59de5e71acfccbebc264f7ad0ae153"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Jade-1.21.1-NeoForge-15.10.6.jar"
+hash = "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810"
+
+[[files]]
+file = "prism-stage/minecraft/mods/JadeAddons-1.21.1-NeoForge-6.1.1.jar"
+hash = "ebf500331c07a4c67147f61ad8a5e3b186afa49f70028904a639229fdf40f372"
+
+[[files]]
+file = "prism-stage/minecraft/mods/MouseTweaks-neoforge-mc1.21-2.26.1.jar"
+hash = "68e6f4201c5de97b77929a7215c9552495696ca6a3bf3ae4eacc34e135f6cc8b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/OctoLib-NEOFORGE-0.6.2+1.21.jar"
+hash = "92ba07d9d9e55a65421f3c3f203c72fe5149cb024d5277267e81d812e11a7f38"
+
+[[files]]
+file = "prism-stage/minecraft/mods/OverflowingBars-v21.1.1-1.21.1-NeoForge.jar"
+hash = "5f856c47156915fd13ff42917401e488212bb5e2df25fde41f6ec1b032e383db"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Panoptic-1.08a-NeoForge-1.21.1.jar"
+hash = "44615fbaffea76d07e32f3b5939e50ff9916357dbef72411dc134bdd2d30cd2b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/PatPat-1.3.1+1.21.1+neoforge.jar"
+hash = "f4589ff2b58c08821851d49019ef5ebb7e55c40439727ccca37a70615f0add80"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Patchouli-1.21.1-93-NEOFORGE.jar"
+hash = "959af52ed6640c316c3a8469203420be4aeea11ad6603890ba83bf48f5d9f993"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Placebo-1.21.1-9.9.2.jar"
+hash = "1a844a5b081813b1edb82656329e54d38389ed470f6a6516a5887f5303d7daad"
+
+[[files]]
+file = "prism-stage/minecraft/mods/PuzzlesLib-v21.1.56-mc1.21.1-NeoForge.jar"
+hash = "535c853ca57316f73051be2a18a9b3c27e5456fc9c5db098192372744b261931"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Quick Skin - NeoForge - 1.21.1-2.6.2.4.jar"
+hash = "0c085e19253abf099ae2a16706cda621cfa5808848dde54d4e4f2c58d6e0f0c0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Resourcify (1.21.1-neoforge)-1.8.5.jar"
+hash = "ca3a7a57b37e63948fd774275aa6a7e0ce68c5395ac2418f328e349f683891d6"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ScorchedGuns-1.5.jar"
+hash = "6a4237c518fa36a56d3bf2a269fad508e2f4053a51e9c43381709b09806c2001"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Searchables-neoforge-1.21.1-1.0.2.jar"
+hash = "ca193f0c69033d8f709f9e073a7c1ef4ea46714e5c2f94eb23ace12781c6aa68"
+
+[[files]]
+file = "prism-stage/minecraft/mods/Signs Faster (v1.0.0) - 1.21.1 (NeoForge).jar"
+hash = "bb8948e738c398ce3d04799757740a14f7dd5721b0d8d38af8bb0e89fef2daff"
+
+[[files]]
+file = "prism-stage/minecraft/mods/advancementdisable-neoforge-1.0.1+1.21.jar"
+hash = "b205091221d8c5ad7b317dfab9ac3eb9d634007977c4c25628745412478f8643"
+
+[[files]]
+file = "prism-stage/minecraft/mods/aero_cam_sync-1.4.0.jar"
+hash = "335ecaf8cefa4792815a81ac7257e5d432ee1c30704187fc548f1d1db855f4e2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/aeroencasedpipe-1.0.7.jar"
+hash = "1791aa8ca581a0bbfaec604ca4ac1acd4cccb77345adfad5660e86aa3f11ccb4"
+
+[[files]]
+file = "prism-stage/minecraft/mods/aerofix-1.0.0.jar"
+hash = "4ac25ee06422ef6b41dec973159592247b4de42cf4bc8a410231067ab13d7c57"
+
+[[files]]
+file = "prism-stage/minecraft/mods/aeroworks-1.5.0.jar"
+hash = "7e9745569a75eb613a9f75c9308aa2c806d3f0fab3a272d98647a13d3fa41641"
+
+[[files]]
+file = "prism-stage/minecraft/mods/archers-neoforge-3.1.1+1.21.1.jar"
+hash = "e49a164fa54eae3a14ff93afd4ed7fd5b0e043532985c6608f5b17d1fcbbbac7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/archers_expansion-neoforge-2.1.1+1.21.1.jar"
+hash = "a60dcf29e4e3243aeffc0ad9105d157ae891a3052c8257854b631054757ec5c2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/architectury-13.0.11-neoforge.jar"
+hash = "9cc92f2c09533fc5482c60f993bd891c655a0e32b637037cdcb7c2b23adedeeb"
+
+[[files]]
+file = "prism-stage/minecraft/mods/arcon-1.0.0.jar"
+hash = "5376bdbfb0728d5eed03a640cbbfe6e6fcfcb9b76a99b5b9a445debb2f96fc8d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/armor_model_api-neoforge-1.1.0+1.21.1.jar"
+hash = "f3776a0bea29ec48774cf510b98bb3874e41e5edb3dc88bef1a3ff53a57ebccb"
+
+[[files]]
+file = "prism-stage/minecraft/mods/armory-neoforge-1.5.2+1.21.1.jar"
+hash = "a5761d15b87b1e7b286fb4dd7c965623173147f89e457a5a3803e5646d51e478"
+
+[[files]]
+file = "prism-stage/minecraft/mods/arsenal-neoforge-1.5.0+1.21.1.jar"
+hash = "6f70f8c6e1753ac2171c0ac52577ce0258f2dfbc1606dcceb4cd8a7cad81e0f2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/artifacts-neoforge-13.2.3.jar"
+hash = "5841434f9ac404de3d3fdd05880f699b41d4388c4047aba4eccc70e356892e48"
+
+[[files]]
+file = "prism-stage/minecraft/mods/athena-neoforge-1.21.1-4.0.6.jar"
+hash = "43699885bbce3343916d4c5c4940cf0e3f9f6f02fdeb46e8655e121b42282ec5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/attributefix-neoforge-1.21.1-21.1.3.jar"
+hash = "b2b20f3d44e824071284c14de3f4d3323d420e1c450040b339a5c37d2c382ad4"
+
+[[files]]
+file = "prism-stage/minecraft/mods/azimuth-1.4.7.jar"
+hash = "19e00a8268ffccc3165abd52b5d4cd7d415286b69d1ad2cde86e537e4b3ad8fb"
+
+[[files]]
+file = "prism-stage/minecraft/mods/balm-neoforge-1.21.1-21.0.66.jar"
+hash = "6be660e1f6d169553bf44f66d4f78bb9e96a1d66ce108d9608819e3ce6bfba34"
+
+[[files]]
+file = "prism-stage/minecraft/mods/better-advanced-tooltips-2101.1.0-build.5.jar"
+hash = "0f76d46f2f18eb67e67c7974170d7b27deb66473396461c8dc50d6949de1449b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/bettercombat-neoforge-2.4.0+1.21.1.jar"
+hash = "0446e9faa98b764ba010ac31e337d14ac96bbb2fbfeff9b599e1efd510dfde5a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/biolith-neoforge-3.0.14.jar"
+hash = "ded9169efb903198046cf44cf91a290ec836ed83a28e29179087eb860e0e6ce9"
+
+[[files]]
+file = "prism-stage/minecraft/mods/bookshelf-neoforge-1.21.1-21.1.81.jar"
+hash = "19e88d40da2b6a114c2b808f7fb469d96e66a5379df0a8a43fcb7834498b3e76"
+
+[[files]]
+file = "prism-stage/minecraft/mods/caelus-neoforge-7.0.1+1.21.1.jar"
+hash = "432a645557f29de159d9edde2fd109f8e3b32ff30895b4fede04ee5f1a1a682f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cbc_at_Neoforge_1.21.1_0.1.4c.jar"
+hash = "88fb40b3353308c90d68f4512b78b63fd7278d05915d9d8628cecab9508ee58f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cbcatfix-1.21.1-neoforge-1.0.1.jar"
+hash = "6fba0499f901c31e9a0e249e9b1cfafef5bf466e74442253db051f4dc3cf0bc0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cbcperipheral-0.1.0.jar"
+hash = "b87f4c64614979010c8865407e856d85e731d220d06c64a6240e908e73eec505"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cc-tweaked-1.21.1-forge-1.120.2.jar"
+hash = "e8651fe24b384e925e563c9ad077644744474e2e7c0adb8e6d5b4757598dce9f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cc_sable-neoforge-1.3.4.jar"
+hash = "7504abc1666a03e25ee2b8f99c352571b84edc5f85db24fa492d7b70d77adfeb"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ccomunityboxes-2.3-neoForge-1.21.1.jar"
+hash = "f2cea5557c40c7acf99a01f1755cd5ed1cd73d79d7b1c7f710108da81e962d60"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ccsconnector-0.0.1-beta.jar"
+hash = "240c05026a1da5e281adf113cba4f713e5857b0709f5aeab525879a6e4aff698"
+
+[[files]]
+file = "prism-stage/minecraft/mods/chipped-neoforge-1.21.1-4.0.2.jar"
+hash = "18ac6fd6b30db4922ccc6ee8bea5b113f69587505b7529834f37ace506427291"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cloth-config-15.0.140-neoforge.jar"
+hash = "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cmparallelpipes-neoforge-2.0.2.jar"
+hash = "da852ea8c3588bd775ec038743bb3c8332a68e84fd969d56947f62cbf9fc3e11"
+
+[[files]]
+file = "prism-stage/minecraft/mods/colonycard-1.0.0.jar"
+hash = "bc658969a59b569cc77421af4786dd3d7156e6392308120901f90ef941aa670a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/colorful_catalysts-2.1.0.jar"
+hash = "de1724f3a1a74d9b6ad69100ea5218a626888d5f08a5e8177a5858dbc777818a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/colorwheel-neoforge-1.2.9+mc1.21.1.jar"
+hash = "9259e4adb5b091fe2bd60e57be7f0b2ec9872f1c97ff6d2ed3bb2a9a5ec6407f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/compactflap-neoforge-1.21.1-1.0.4.1.jar"
+hash = "69e9be30cfb28b7a24b0c31c0e2ae270989405cc646eef94351bbc0968e81a32"
+
+[[files]]
+file = "prism-stage/minecraft/mods/configuration-neoforge-1.21.1-3.1.1.jar"
+hash = "b903cc326e10af63226c7a45571bda1e0cf88b978c9920275806e852bcd92bc1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/connector-2.0.0-beta.17+1.21.1-full.jar"
+hash = "ca70b57df3a7a4e8d211fea7ff3ae77e768482af374f26bf953ff5fd755564f0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/copycats-3.0.8+mc.1.21.1-neoforge.jar"
+hash = "f0655f3afac3829d3cda7782f2c64e935fdd7667dda137c108dc9055fc1e5c71"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-1.21.1-6.0.10.jar"
+hash = "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-access-denied-0.0.4+c6.0.10.mc1.21.1.jar"
+hash = "d8098deb0efe397b5f6682281f4600ce88f1d7bf3b02390b03a2667b4f2c1872"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-aeronautics-bundled-1.21.1-1.3.2.jar"
+hash = "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-cardboarded-conveynience-1.21.1-neoforge-1.0.0.jar"
+hash = "0e94875e00bb71e5dcd6bdf5cf1be024bd213a5d9db11c024e6e02a17cb7000b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-enchantment-industry-2.5.3.jar"
+hash = "717afae8004ddfb8f44c442704d93fcc0fa5e8099ab778249fc8d48c8ac9dd4b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-shufflefilter-2.2.0-neo.jar"
+hash = "8662f8aa957bfa322a783ad45e1bafd892ad8e31cb2d684b8533dc0d5ccb13b6"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create-stuff-additions1.21.1_v2.1.4b.jar"
+hash = "4aee9a1af2754609ab31bfebf13dc0d7d648e61e440232dbf9bb3459941e23d5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_aeronautics_automated_logistics-0.6.2.jar"
+hash = "b966fe666212da694ef19b292516643081b402c0af18549f94152dd387cc268e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_aeronautics_toolgun-0.3.6.jar"
+hash = "57db4e5b8e52c208a73764a5d0c8bc70fc61a62b96349e12b092dcd0b344874a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_aeronautics_transmission_linkage-0.2.7.jar"
+hash = "d64d2b6aeec3ab12bfd9bf5e3dc32ea40b80e2da0e63dbeb783cfc6f24b54570"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_avionics-neoforge-1.21.1-0.6.0.jar"
+hash = "32869cfa71e1339db59bb0edd92f5a8235a524a574ca06d7f26866cb30662d88"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_compatible_storage-2.13.0-mc1.21.1-neoforge.jar"
+hash = "92fd6a148958f548692a42ce03dce6b9ceb4fa68ffb56b8d3c899eba1ada6a6f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_connected-1.3.2-mc1.21.1.jar"
+hash = "90bdceac63cb0ebd5e51351e22136182b996512edef937d0635d2857b0a3f24b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_factory-0.7b-1.21.1.jar"
+hash = "a2dc0e9dd3c894e1373512035a6483701827a42e1f3da334da9457c124639f6e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_hypertube-0.6.0-NEOFORGE.jar"
+hash = "7bdb8979c7ff7d3b29f7a23771b6ae4870a6dcb7ce2e4a3214fdd6059aacace8"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_marketplace-0.5.0.jar"
+hash = "d03ad82005dc1eff736bbfc34f149a9cef485b5ed119f824947892161793b411"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_oxidized-0.1.3.jar"
+hash = "9221f4caa70036d05a04e83e6b57844fa03b60cdef6ade1491c37c0f7800d063"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_radar-0.4.9.4-1.21.1.jar"
+hash = "4554359fee389b1c255b4cef23ac41e978b2a371cec9e952185f4ec0a90ee930"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_rns-1.3.1-1.21.1-6.jar"
+hash = "553071f04fd7ca0c1cdf7dca3a1d8bac7275fe32ff98a10526e837bda87f43b2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_simulated_additions-0.2.3-neoforge-1.21.1.jar"
+hash = "a0179bf55a2b2f33956663a85a37461bf861add7144a69e066d2b005bb1ca956"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_submarine-2.2.4.jar"
+hash = "87a20bb20ae3c90e6838073d3a84839e251c8794f409ade8cab79f51d1de0c66"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_things_and_misc-4.1.1-neoforge-1.21.1.jar"
+hash = "37cfe32ca602a37bd21307e6f456a35788c30315722f14e07326ff555d188fc0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_trimmed.jar"
+hash = "77c94f473baee87f89bd6793da0e3425c578425ca31af148b2840221ea79f19a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/create_tweaked_controllers-1.21.1-1.2.7.jar"
+hash = "eda56263fabfcf4064dbaa8950a7f469775d4457dc807ee84ba29169690fda34"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createadditionallogistics-1.21.1-1.4.5.jar"
+hash = "f7bf95504c3bf293464b883c989354dd643d559de5bfcad4a23fed4144592d6a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createbb-1.1.3.jar"
+hash = "1167d70dbfb3659b6ecca297ce98ad8e378bead9a06abb0b2036884cf258cee1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createbetterfps-1.21.1-1.1.4.jar"
+hash = "f0080f5cb186bf9f785dc5510babab94d97adc7918952cff780d2c5fadf2ac9a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createbigcannons-5.11.7+mc.1.21.1.jar"
+hash = "ea017ab94637032d039899d88404838d173fa0e6286657cae6a6c3af459e87ca"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createburnerfuel-1.0.2.jar"
+hash = "3bee384c7d9fcf9ac8ebfbf5817c1733b1d1659a14774ecfbc44ed6f6db87b14"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createcobblestone-1.4.12+neoforge-1.21.1-144.jar"
+hash = "78656d1dd5ec0b3f256fbd5eb29d7484e3a12f44f2db1563a6f1dcfd913676aa"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createdeco-2.1.3.jar"
+hash = "edacf1ad0bd6b9f1667d711650dc0cde604356d91caca7ca1ec428c2f9400c6e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createdeliveryrequired-1.0.2.jar"
+hash = "bd7842396950f019c354607783588b94ac1d4e2454b64361c8d10f80305ffe39"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createdieselgenerators-1.21.1-1.3.15.jar"
+hash = "56ef1d574278fc311f1ffa223dbd613077b899354a18d01ae8dca2578a4e2990"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createestrogen-2.0.0+1.21.1.jar"
+hash = "fc46ad25bd0d9c61f799aac6d94c9f5e4ce3960e8de96a48664e9f70534489ac"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createframed-1.21.1-1.8.2.jar"
+hash = "a1f0434f5485de5ba5683320ebca7b71841488421a5249641ae357dbeeb35283"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createliquidfuel-2.1.1-1.21.1.jar"
+hash = "ccd44b069962890352dfee442508880a37eecd3c5625d74d668dd6eb7d39ee3d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createpropulsion-1.1.5.jar"
+hash = "5525a3a0c8b1c476cbc467d021e9d1492b58c78de31ed269eb04f169d42db0a1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createrailwaysnavigator-neoforge-1.21.1-beta-0.9.1-C6.jar"
+hash = "336536a181faf6db7f756393248e786382fdd0c1c2760ff2dfc4b265859321b7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createthreadedtrains-neoforge-1.21.1-1.0.0.jar"
+hash = "cac002b0fb77ec1dd48cf76a07dd5f2341b632788e1add768cf5c555823e4b38"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createtransmission-1.2.2+neoforge-create6-1.21.1.jar"
+hash = "0869f9cbf7c291ed680df8bb345cfffb63ed2c7b494eddb8314778cda848e8fe"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createvintageneoforged-1.21.1-1.3.9.jar"
+hash = "246fd762536dd224e108dd26a9aebf32514a7b63a75eb6ea77d28d95a6f190ff"
+
+[[files]]
+file = "prism-stage/minecraft/mods/createwingsplus-1.4.5.jar"
+hash = "a1e8a7bde9a077fafd6c78e2689298525f9fdc3c3853261c4f76a36b014cb189"
+
+[[files]]
+file = "prism-stage/minecraft/mods/curios-neoforge-9.5.1+1.21.1.jar"
+hash = "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cwb-neoforge-3.0.0+mc1.21.jar"
+hash = "be7144647bc160858e659f6793fcce993914443b9256c2df0369b1c616a2a5d4"
+
+[[files]]
+file = "prism-stage/minecraft/mods/cynosure-1.0.0-neoforge-1.21.1.jar"
+hash = "5ac30e8b0856a683a970092eb22bd1ad410b218e919173f6abcd039301712ed2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/deployer-0.1.2.jar"
+hash = "a6fc332b19b38a37a67be8285e837ddd172f51f8026eacb6c4037a0eeb331b76"
+
+[[files]]
+file = "prism-stage/minecraft/mods/dragonlib-neoforge-1.21.1-beta-3.0.28.jar"
+hash = "ba127947220504d1410716e422ef6a9a387d818a922ad5fdb3be044f9f7556f7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/durabilitytooltip-1.1.6-neoforge-mc1.21.jar"
+hash = "4a2353159c6039d8ce090f7d399ae421e648fdacb7f29a18c67b58886b36f32c"
+
+[[files]]
+file = "prism-stage/minecraft/mods/dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar"
+hash = "78cb67c9faeff5d1cb4da48d41e48ecc47baddaaec0f792e6edc8207aee0ab8e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/emi-1.1.24+1.21.1+neoforge.jar"
+hash = "b68691f94f0727fc517cac2ab55bd6658d1179cc8cc715fe610b60c37469bc4c"
+
+[[files]]
+file = "prism-stage/minecraft/mods/emotecraft-for-MC1.21.1-2.4.12-neoforge.jar"
+hash = "8cff63e900acd55bb39d41978cc2a70a974e326e2038c30ff20ccfde4c953a43"
+
+[[files]]
+file = "prism-stage/minecraft/mods/entityculling-neoforge-1.10.5-mc1.21.1.jar"
+hash = "2eacd2bada39bf1d1ef695736646790c619c0e6cdeaf3d7e3cfc9139d26fae02"
+
+[[files]]
+file = "prism-stage/minecraft/mods/escalated-1.3.2+mc.1.21.1.jar"
+hash = "c25ee54ebec01dcf5d471853f862391e3636c185daa88dba519d66326d60b1be"
+
+[[files]]
+file = "prism-stage/minecraft/mods/estrogen-6.0.2+1.21.1-neoforge.jar"
+hash = "c4ebecf08961275d10e13d52c3923d88ccff2ada79bf18d5ce1e457f04ab3074"
+
+[[files]]
+file = "prism-stage/minecraft/mods/extra-mod-integrations-all-neoforge-1.0.3+1.21.1.jar"
+hash = "588bc09f0f43e04ef0c18d8e884197ffd4a0e605470f455cf0b5f1508cb994ba"
+
+[[files]]
+file = "prism-stage/minecraft/mods/extra_gauges-2.1.2.jar"
+hash = "590a00b64d6aa4d347e848fdcc4824740987695ac899754d57036d62bee5bd2d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/fairylights-neoforge-1.21.1-1.2.3.jar"
+hash = "4881ef2f1247a26057a9257edae6d8dd6c175840f78ebf538e12b85c0de9515b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ferritecore-7.0.3-neoforge.jar"
+hash = "d87ea28262715ebff45b8a82d493e6b468e7a4521bc021df5d88302196d030a8"
+
+[[files]]
+file = "prism-stage/minecraft/mods/flerovium-neoforge-1.21.1-1.1.2-all.jar"
+hash = "2274b5c3e66cda6958b17a968ef8e6ef8710ff8a0a8bb99050fb5a167ba07928"
+
+[[files]]
+file = "prism-stage/minecraft/mods/fluidlogistics-1.2.8.jar"
+hash = "5f6529a8be2158399b5eafb0e91053305a10294b0aa70775da76680adbd25893"
+
+[[files]]
+file = "prism-stage/minecraft/mods/fmm_teams-0.1.0.jar"
+hash = "9d0428ff2a94825d6dabc65576deabf4ece53a4e35610a1c1e74c645d9f51327"
+
+[[files]]
+file = "prism-stage/minecraft/mods/forcemaster_rpg-neoforge-3.1.1+1.21.1.jar"
+hash = "5d2f31e335865cd6c36d10524557cd4c524f86d5c65fbaf3c333df873d570364"
+
+[[files]]
+file = "prism-stage/minecraft/mods/forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar"
+hash = "96f8b489f401c64e87343daf57a030ccd1b58be40fc0aad701278ba58a0fadaf"
+
+[[files]]
+file = "prism-stage/minecraft/mods/framework-neoforge-1.21.1-0.13.11.jar"
+hash = "429ea90a162d7c25c1463ee60979e4d7b1ddb525d9384a3a2a2f45d70bda03f5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/fusion-1.3.14a-neoforge-mc1.21.1.jar"
+hash = "b2c0108c4cbed865ff4e5e435506781fb47daa6249c2ee6003677bea6445af54"
+
+[[files]]
+file = "prism-stage/minecraft/mods/geckolib-neoforge-1.21.1-4.9.2.jar"
+hash = "5e548466af9ab6aca7a91a7c7d4dc0dc8bc385e22958aed5da0e7bebd0fa3fba"
+
+[[files]]
+file = "prism-stage/minecraft/mods/gravestone-neoforge-1.21.1-1.0.40.jar"
+hash = "204be9ccb8632a56a87aee9aab4c7874d0f6749f566c07f5dd420d24e24dc8b0"
+
+[[files]]
+file = "prism-stage/minecraft/mods/harderdiesel-1.4.0.jar"
+hash = "924d059f3165fb7db5166c8516c23dea330ec457194b2ecc0ef2e8582f6d413a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/hexsable-1.1.0.jar"
+hash = "24b2e5ca92ba9246994ccfcab69af2ac4c1ad51e844fa046bac38f1692f53e01"
+
+[[files]]
+file = "prism-stage/minecraft/mods/hotstuff-1.1.7.jar"
+hash = "697b0cb0f6d73436643cdc60bbe1648f7254f3612e9de85b568eeb37f50c8170"
+
+[[files]]
+file = "prism-stage/minecraft/mods/huge-structure-blocks-neoforge-1.1.6.jar"
+hash = "d8ed9763439300a5f3fdcd4aa06cb481ef3e72a4433231f05f88684e9a323f22"
+
+[[files]]
+file = "prism-stage/minecraft/mods/incontrol-1.21-10.2.7.jar"
+hash = "af673d816df02b00f8c5eb787fa72cf10e540bfe3ce00d4b87d08d73455080ed"
+
+[[files]]
+file = "prism-stage/minecraft/mods/interiors-1.21.1-neoforge-0.6.1.jar"
+hash = "0d1326fb8b67623ae1c69a63b788dcdcecaf8df400c7d8e5e55ace79a5166fe5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+hash = "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314"
+
+[[files]]
+file = "prism-stage/minecraft/mods/jei-1.21.1-neoforge-19.39.0.368.jar"
+hash = "ac27623a1e425a05f95f170eea94974d26ea68ca2037e5695176fb66a090de84"
+
+[[files]]
+file = "prism-stage/minecraft/mods/justzoom_neoforge_2.1.0_MC_1.21.1.jar"
+hash = "83f1701f7802d4355e57f73c2751b29e4b760a4e2a18427504bbd9ce7090a0c1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/kjsgen-neoforge-2.0.5+mc1.21.1.jar"
+hash = "83cd46f853fc8d984bf09b700fae65fcf673da8768e54a214fd52ce663a40a92"
+
+[[files]]
+file = "prism-stage/minecraft/mods/konkrete_neoforge_1.9.9_MC_1.21.jar"
+hash = "791c5538751dd3015ef3a2ce92d98719e1a28a48ebbd817b78506771256654cd"
+
+[[files]]
+file = "prism-stage/minecraft/mods/kotlinforforge-5.12.0-all.jar"
+hash = "2785a4dd6de5c6c56065fd8eb789c82771bd2ee773c30794c23160a3b2c39139"
+
+[[files]]
+file = "prism-stage/minecraft/mods/kubejs-create-neoforge-2101.3.1-build.18.jar"
+hash = "9051fd08349850cb9b28845554246ef4f2c976892835a704ee27dcb7c8bfd7a1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/kubejs-neoforge-2101.7.2-build.374.jar"
+hash = "2351c858ccaf4eea1f4125a55cd9583a729dee65cfd04c5fbaa702a2ac2fb084"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ldlib2-neoforge-1.21.1-2.2.37-all.jar"
+hash = "a3848cb43242c5367b984142e520ff8f4324ff67945b728e2a2b606846fc9484"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-beachparty-neoforge-2.1.4.jar"
+hash = "3a283e16bb6b7465a3863cfc4262797293de8d32d8bac85b5553e2d7f62781b4"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-bloomingnature-neoforge-1.1.10.jar"
+hash = "dda4605227be6727668c2768c4f68eecf1de40090a902e4c9545839ee5d01b95"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-farm_and_charm-neoforge-1.1.23.jar"
+hash = "85feb42399e37aff2edb78610dce75bf656032783b145b66fef78f677bf5c213"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-furniture-neoforge-1.1.4.jar"
+hash = "c291928e4402ef638d2544fb3c551379375b80acf5a019383b57752a36196e54"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-hearth_and_timber-neoforge-1.0.3.jar"
+hash = "f1c6c5c33dd44091a55804027f70f701262a2acaef925c9f7047299141aa798b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-herbalbrews-neoforge-1.1.3.jar"
+hash = "053ecf864dc1b1624b0fb78a552a086ee9da21c1c81ce5a75aad61ec2bfebf24"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-lilis_pottery-neoforge-1.0.2.jar"
+hash = "d1f1158d084adc860d8da9e869388e913ac2ccc4d3b0ef506ca368667497b8ef"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-meadow-neoforge-1.4.8.jar"
+hash = "f5d4a870b46f2952b7a04dad663cc4bdf8faad75e8951ba1551e85fd72d14402"
+
+[[files]]
+file = "prism-stage/minecraft/mods/letsdo-vinery-neoforge-1.5.4.jar"
+hash = "5525814d6fb0c3b42e85107de2f87963e18da05da273e415d02c4a5b1a9e6853"
+
+[[files]]
+file = "prism-stage/minecraft/mods/lineage_core-2.1.1.jar"
+hash = "ccd70343e341dfe7eb17def658de1a42a4af06d0d82bfd4e60121721b49ded4e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/lineage_sable_fix-1.0.0.jar"
+hash = "b6bfe21931616dc67cb645a7f10789ad7fe4f2b2fb03b8522b8ed0a5e54fe5a8"
+
+[[files]]
+file = "prism-stage/minecraft/mods/linearbearing-1.2.6.jar"
+hash = "757e7dd749a623e68067189c871f82e4edbc5f373db878a55ee9210d7a2c6128"
+
+[[files]]
+file = "prism-stage/minecraft/mods/lithium-neoforge-0.15.4+mc1.21.1.jar"
+hash = "488f33216030c1cb0baa33e59de3d657d08d5795a6c2080c8c8bbbc133fc8757"
+
+[[files]]
+file = "prism-stage/minecraft/mods/meowaddons-1.0.1.jar"
+hash = "a423fd237beca86e27ec1a43d56e58d0fb6a30aff6082bd0c4d723985077a451"
+
+[[files]]
+file = "prism-stage/minecraft/mods/meowhex.jar"
+hash = "7066fb05122b149cda78f23b7322fc205bc9bc84d9e6aa5f4121d81a7246d871"
+
+[[files]]
+file = "prism-stage/minecraft/mods/meowrelics.jar"
+hash = "6c999d310cf17e7b8b83769de842b6c380377512a82bb5e1f126d8a3edc6e584"
+
+[[files]]
+file = "prism-stage/minecraft/mods/modernfix-neoforge-5.27.20+mc1.21.1.jar"
+hash = "6f367ea4002c39e3cfe27e0a0be1008880a4b35a8482a78a437cfb9d8ee38273"
+
+[[files]]
+file = "prism-stage/minecraft/mods/moonlight-1.21.1-3.6.4-neoforge.jar"
+hash = "0d14c4a6494875dd99de52ac630bd78cd72a561dfa73ac58456baf3705ce1a56"
+
+[[files]]
+file = "prism-stage/minecraft/mods/more_rpg_library-neoforge-2.7.2+1.21.1.jar"
+hash = "c2d0c4d5acd62912bc6fe428fedfd642588e03d98f6fa4902591e1cbfc165ce2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/moreculling-neoforge-1.21.1-1.0.9.jar"
+hash = "0b7000dac4bd8218074ece026f515d8cb24fcfd19c0e9eeb882209ab82f17657"
+
+[[files]]
+file = "prism-stage/minecraft/mods/nodupefix-2.0.0.jar"
+hash = "bc80a88bb9d31f5efad17ef0e1dd802b0ac0e481fba3b5426765721a319bb3e7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/packetfixer-3.3.1-1.20.5-1.21.X-merged.jar"
+hash = "2979a8a3f44e5d5df4f9f6315d18c220f3debf736bb8a2c2740acdfb13bd820f"
+
+[[files]]
+file = "prism-stage/minecraft/mods/paladins-neoforge-3.1.1+1.21.1.jar"
+hash = "4db39abff682d1e707bdc0892e42cc1f8ed371da3b0b77f6b4cf2fc042bdb6a2"
+
+[[files]]
+file = "prism-stage/minecraft/mods/panoptic_recipe_builder-1.21.1-1.0.0.jar"
+hash = "51a71ae996abedb1fbc3e9766de9632beb8cfa355215ab6db6043090fa527803"
+
+[[files]]
+file = "prism-stage/minecraft/mods/paucal-0.7.0+neoforge-1.21.1.jar"
+hash = "0989af16436cecdaceeb031d48f29db00da556bf4178edac4538153cb82be385"
+
+[[files]]
+file = "prism-stage/minecraft/mods/player-animation-lib-forge-2.0.4+1.21.1.jar"
+hash = "dbe5de45f5cd60c0e5e47af14e6d564534a98456e973cf670cb881f6938eee92"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ponderjs-neoforge-1.21.1-2.4.0.jar"
+hash = "d9139c619cb0fa0a0a3058001c4ca993ecdf955c9aa8a81640bc24702b443466"
+
+[[files]]
+file = "prism-stage/minecraft/mods/portable_engine_liquid_fuel-2.0.0-neoforge-1.21.1.jar"
+hash = "39bd87ba2731d2f2416f464120f9019e733558156dbcf85552ef3d5e0703b11b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/powergrid-mc1.21.1-0.6.2.jar"
+hash = "e40d67a874431925d502af88e85064883c67936cfd689033d7df560cffcf19e7"
+
+[[files]]
+file = "prism-stage/minecraft/mods/prickle-neoforge-1.21.1-21.1.11.jar"
+hash = "ccf46c442ed3c7fe41ad056f0940560829ec4dd88360985dfacd78f4614eb167"
+
+[[files]]
+file = "prism-stage/minecraft/mods/railways-0.3.0-beta.2+neoforge-mc1.21.1.jar"
+hash = "64b74ddad661deae1cfe7e8334cfa3d39bb8ef7b761f83595ba0476c4a9bb1d5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ranged_weapon_api-neoforge-3.0.0+1.21.1.jar"
+hash = "3011f512bdcc231778a225941187a70e4282b0b526d7d93f2b0896cde9b796c5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/rechiseled-1.2.5-neoforge-mc1.21.jar"
+hash = "7bf14cf8a4bfdc4b6c990126a75da29fd2bb7559d1c05b71e29c8fd5ae044435"
+
+[[files]]
+file = "prism-stage/minecraft/mods/rechiseled_chipped-2.0-1.21.1.jar"
+hash = "07d5f74f0734aa171b1001e6570f53fa0469d8b81e9bfb4032e5697ba008f869"
+
+[[files]]
+file = "prism-stage/minecraft/mods/rechiseledcreate-1.1.1-neoforge-mc1.21.jar"
+hash = "ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/reeses-sodium-options-neoforge-2.2.3+mc1.21.1.jar"
+hash = "25812f308a87c04686de6ac9f24a8073101f81864f0eb9abf348f95d73a6629e"
+
+[[files]]
+file = "prism-stage/minecraft/mods/relics-1.21.1-0.12.8.jar"
+hash = "db6f436053fe717413389e55390a5f98103ccd91cca5fe469e090bdfaef70717"
+
+[[files]]
+file = "prism-stage/minecraft/mods/relics-neoforge-1.4.0+1.21.1.jar"
+hash = "25a4671e5a40ad4e050ce33773c3929b4842b672be3b09a752113e821855c577"
+
+[[files]]
+file = "prism-stage/minecraft/mods/reliquified_artifacts-1.21.1-1.0.8.jar"
+hash = "360fd701d575b5421675bfdc50c6ed8a22614410eb92dd782424f9b5fb5c0006"
+
+[[files]]
+file = "prism-stage/minecraft/mods/resourcefullib-neoforge-1.21-3.0.12.jar"
+hash = "5e36f2c69de008dc5795f730c84ab767688f15c810944b585485349a0c911261"
+
+[[files]]
+file = "prism-stage/minecraft/mods/rhino-2101.2.8-build.91.jar"
+hash = "1d53d962aa4dac54bcbb4f998c1845980cf194318f1d6b1580ea6ac15cce5ef3"
+
+[[files]]
+file = "prism-stage/minecraft/mods/ritchiesprojectilelib-2.1.2+mc.1.21.1-neoforge.jar"
+hash = "cc509060833736fb650aa4c36b1ce33a7eeeb9ca6e9f8e80a7c951c9e7487b24"
+
+[[files]]
+file = "prism-stage/minecraft/mods/runes-neoforge-1.3.2+1.21.1.jar"
+hash = "51fee4d0f16ddb705c8cac116050834c74f5dc05f695dcf203689bad72cd6ba6"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sable-neoforge-1.21.1-2.0.5.jar"
+hash = "c8710f85bc780bbf523e6726ceaaf76dd0b8c61479db497b382c6bb34317e7ab"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sable-photomancy-1.0.1.jar"
+hash = "1d0805f537f27ce3160488331755497417514a3dfb30d5ca3fdca1b000e7e920"
+
+[[files]]
+file = "prism-stage/minecraft/mods/simulated_addition-1.0.2.jar"
+hash = "f8ea19252f33650427246ee8eaa891af5db6eaa821c8a0ca96fcdf64a7cc19c1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/simulatedcoasters-0.1.5.jar"
+hash = "f80b4c3cdf9fa6188804967147761b0373e150a6eadbdc53626e5ac9700b2049"
+
+[[files]]
+file = "prism-stage/minecraft/mods/smart_bounds-1.0.0.jar"
+hash = "0240f90b62401ef6edf30714cb0eefbbc104be629a9e595383ddf3ac898718b5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sodium-extra-neoforge-0.9.3+mc1.21.1.jar"
+hash = "fa553bce38bad6fdd478841a270a79a31dc05f87d7892b1cf839850602ac9186"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sodium-neoforge-0.8.13+mc1.21.1.jar"
+hash = "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+hash = "2848ff4d01793268859d36263793bf042226a34efaf3a45e849833490b8cc4a1"
+
+[[files]]
+file = "prism-stage/minecraft/mods/sophisticatedcore-1.21.1-1.4.90.2299.jar"
+hash = "517fba2004b2ce9709507b8747bab2efa5d95dd6442cc2fbf3f779b6e2e3875a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/spark-1.10.124-neoforge.jar"
+hash = "647e8a81afbe414dba1df4ba15fd06c5d32d4cb544e68828405e8e074c2e16db"
+
+[[files]]
+file = "prism-stage/minecraft/mods/spell_engine-neoforge-1.10.7+1.21.1.jar"
+hash = "fb63732cfc9868c684524240ec022fea139326b7f66c66323f8e249e261f2014"
+
+[[files]]
+file = "prism-stage/minecraft/mods/spell_power-neoforge-1.6.0+1.21.1.jar"
+hash = "a57cd041be1bee86640861588ad9b4a3a032d2dedff8d44abf5305136e2f5854"
+
+[[files]]
+file = "prism-stage/minecraft/mods/structure_pool_api-neoforge-1.2.1+1.21.1.jar"
+hash = "c18460025b07bc05fdc95bf62621c6b56f45e4eeb1c319f12787f39eb9315ea9"
+
+[[files]]
+file = "prism-stage/minecraft/mods/struts-1.3.0.jar"
+hash = "0d14b832cc0ba05eb1311e6195a98684fc03b16be1ee65f47cc916716eeb650a"
+
+[[files]]
+file = "prism-stage/minecraft/mods/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar"
+hash = "d2ba7b839a2268e4e223457e813d11aa2476c3bf708a7bba691d8fc851778a4b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/supermartijn642corelib-1.1.24-neoforge-mc1.21.jar"
+hash = "22884e7c6b7c4847e7bb97fbfa61b5f836b7909bb468e7637f6788be56e59f00"
+
+[[files]]
+file = "prism-stage/minecraft/mods/supplementaries-1.21.1-3.9.9-neoforge.jar"
+hash = "d6876ad959d0da4bab0ba182839a0af0e38ef3571345e5e7aea0be572f958e05"
+
+[[files]]
+file = "prism-stage/minecraft/mods/synaxis-1.5.0.jar"
+hash = "e3c60f0ba403c745c82d6c4a99e12eef1cf41acda2a041554f43d6d5be32b592"
+
+[[files]]
+file = "prism-stage/minecraft/mods/tracks_plus-1.0.5.jar"
+hash = "b2a8cb466cfce2cbf0078e713ae0500c332aed95b4e1819d17e3539282d8515b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/trading_floor-3.0.16.jar"
+hash = "f0aacddb1f8f191f13b79c603e52bd49a6d1cb918078d8a3bdcb2621c88b8d40"
+
+[[files]]
+file = "prism-stage/minecraft/mods/trashslot-neoforge-1.21.1-21.1.11.jar"
+hash = "61fdb5de0fc3d36db0e5dd82c2e03341e449bbc47ce13eeab834b05596b7bb5b"
+
+[[files]]
+file = "prism-stage/minecraft/mods/vestalihy-2.5.3.jar"
+hash = "acb7bb30c4275c1b70f02f4bc244ddf8cd9d33476e044307c4fc85f4c1bb4b84"
+
+[[files]]
+file = "prism-stage/minecraft/mods/vista-1.21.1-5.4.4-neoforge.jar"
+hash = "bdbbd8a860329edf61d0436ced832165f652c25ad1e02e6c24d1987d972667f5"
+
+[[files]]
+file = "prism-stage/minecraft/mods/voicechat-neoforge-1.21.1-2.6.22.jar"
+hash = "63116a4d21bd57221482d971dd85822f7c723c210b60411670cdb0aa26873cac"
+
+[[files]]
+file = "prism-stage/minecraft/mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"
+hash = "b5c30321b46cfaa521645a04aff89d2804d8167a25bb23ad4b1ae8da73093a2f"
+
+[[files]]
+file = "prism-stage/mmc-pack.json"
+hash = "e748779ac72c9bb7a154dad9b9445e65f1cedfaf2cbcea899bfa8bcd37c54fde"
 
 [[files]]
 file = "prism/mmc-pack.json"

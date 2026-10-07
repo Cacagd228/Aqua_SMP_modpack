@@ -32,6 +32,12 @@
 //   и т.п.), он НЕ трогает. Поэтому «забаненные» кастомные рецепты
 //   из main.js перенесены в тирные файлы — там они и лежат до открытия
 //   века. Не возвращайте их в main.js!
+//   Про хек: раньше hexcasting/meowhex стояли в BANNED_MODS целиком.
+//   Сейчас разбанены (магия доступна с первого века, рецепты из jar'а),
+//   под замком остался только артефакт и мусорные meowhex:assembly
+//   тест-рецепты — см. ЧАСТЬ 2.1. Шесть кастомных рецептов на хек
+//   лежат в archive_hexcasting_recipes.js.bak и НЕ применяются: они
+//   дублируют ванильные, а артефакт из них всё равно заблокирован.
 // ============================================================
 
 ServerEvents.recipes(event => {
@@ -77,6 +83,11 @@ ServerEvents.recipes(event => {
     'create:belt_connector',
     'create:fluid_tank',
     'create:fluid_pipe',
+    // Насос на спине. Рецепт create:copper_backtank (верстачный) снимается.
+    // create:netherite_backtank отдельным ID не локаем: оба его рецепта —
+    // smithing_transform, и база там create:copper_backtank, так что без
+    // медного баллона нетерятитовый тоже не собрать.
+    'create:copper_backtank',
     'create:mechanical_drill',
     'create:mechanical_harvester',
     'create:mechanical_plough',
@@ -135,10 +146,27 @@ ServerEvents.recipes(event => {
     'harderdiesel:large_nitro_generator',
     'harderdiesel:huge_gasoline_generator',
     'harderdiesel:huge_diesel_generator',
-    'harderdiesel:huge_nitro_generator'
+    'harderdiesel:huge_nitro_generator',
+
+    // ---- Create: Big Cannons — боеприпасы (вне тиров) ----
+    // Лист гильзы — вход в ВСЮ цепочку патронов:
+    //   create:cutting (латунь/медь/золото/железо) -> autocannon_cartridge_sheet
+    //   -> create:sequenced_assembly (прессование, 6 шагов) -> empty_autocannon_cartridge
+    //   -> create:sequenced_assembly (наполнение)     -> filled_autocannon_cartridge
+    // Снимаем output, а не mod: 4 рецепта cutting из jar'а одним фильтром,
+    // а рецепты, которые из листа ДЕЛАЮТ патроны (pressing/filling), не трогаем —
+    // они и так становятся недостижимыми, т.к. лист не собрать.
+    // Мод целиком не баним: стволы/стволки не входят в цепочку патронов.
+    'createbigcannons:autocannon_cartridge_sheet'
   ]
 
   LOCKED_OUTPUTS.forEach(id => event.remove({ output: id }))
+
+  // --- Бан промывания гравия (create:splashing) ---
+  // Промывание гравия даёт железные/золотые кусочки и другие ресурсы.
+  // Блокируем ВСЕ рецепты промывания гравия, чтобы закрыть этот путь
+  // получения железных кусочков (и прочих ценных дропов).
+  event.remove({ type: 'create:splashing', input: 'minecraft:gravel' })
 
   // ==========================================================
   // ЧАСТЬ 2 — ПОЛНЫЙ БАН МОДОВ
@@ -167,13 +195,53 @@ ServerEvents.recipes(event => {
     'create_sa',                      // Create: Stuff & Additions
     'create_radar',                   // Create: Radars
     'radiologistics',                 // Create: Radiologistics
-    'createcasing'                    // Create: Encased
+    'createcasing',                   // Create: Encased
+    // ⚠️ Hexcasting (meowhex.jar = форк hexcasting + контент meow) больше НЕ в бане.
+    // Открыт полностью, оба неймспейса: hexcasting (111 рецептов) и meowhex
+    // (стафы, орбы, кулоны, spellbook_cover, assembly). Магия доступна
+    // с медного века без тирных файлов — рецепты лежат в jar'е.
+    // Под локом осталось только одно — см. ЧАСТЬ 2.1 ниже.
   ]
 
   BANNED_MODS.forEach(ns => {
     event.remove({ mod: ns })        // рецепты самого мода
     event.remove({ output: '@' + ns }) // рецепты ИЗ ЛЮБЫХ модов, что дают его предметы
   })
+
+  // ==========================================================
+  // ЧАСТЬ 2.1 — ХЕК ПОД ЗАМКОМ (точечно, не бан мода)
+  // ==========================================================
+  // Разбан hexcasting/meowhex не должен открыть:
+  //
+  // 1) Артефакт (hexcasting:artifact) — вход в магию. Снимаем ВСЕ рецепты
+  //    с таким output: и ванильный из jar'а
+  //    (data/hexcasting/recipe/artifact.json), и кросс-модные.
+  //    Артефакт по-прежнему выпадает только из мешков Relics
+  //    (meowrelics:relic_bag_loot, hex_chance = 0.04).
+  //
+  event.remove({ output: 'hexcasting:artifact' })
+  //
+  // 2) Ожерелья из лута мешков Relics — оставляем только дроп:
+  //      meowhex:charged_amethyst_necklace (удваивает максимум маны)
+  //      meowhex:overloaded_necklace   (перегрузка, бьёт по мане)
+  //    Оба предмета в пуле артефактов meowrelics
+  //    (ArtifactRandomizer: mana_berry, amethyst_necklace,
+  //     charged_amethyst_necklace, lightning_rod, hourglass,
+  //     self_torture_ring, overloaded_necklace), т.е. это дроп, а не крафт.
+  //    Базовый meowhex:amethyst_necklace (золото + аметист + нить) НЕ трогаем:
+  //    он и обычный крафт, и в пуле Relics.
+  //    Рецептов ровно два, оба data/meowhex/recipe/*.json — фильтр по output
+  //    ловит их целиком, кросс-модных нет (проверено по всем jar'ам).
+  event.remove({ output: 'meowhex:charged_amethyst_necklace' })
+  event.remove({ output: 'meowhex:overloaded_necklace' })
+  //
+  // 3) Отладочные рецепты автора meowhex — 7 файлов
+  //    data/meowhex/recipe/assembly/test_*.json (медь -> изумруд,
+  //    золото -> незеритовый лом, железо -> золотое яблоко и т.п.).
+  //    Это рабочие рецепты типа meowhex:assembly, чистый мусор автора.
+  //    Закрываем по ТИПУ рецепта — фильтр по mod их не берёт, потому что
+  //    неймспейс meowhex теперь разбанен.
+  event.remove({ type: 'meowhex:assembly' })
 
   // ==========================================================
   // ЧАСТЬ 3 — ИСКЛЮЧЕНИЯ (единственное, что остаётся жить)

@@ -31,4 +31,23 @@ ServerEvents.recipes(event => {
       results: [{ id: casing }]
     })
   }
+
+  // Ванильный крафт медного корпуса (медный слиток + обтёсанное бревно/дерево)
+  // Возвращается в Медном веке, не удаляется в remove_vanilla_casings.js
+  event.custom({
+    type: 'create:item_application',
+    ingredients: [
+      { tag: 'c:stripped_logs' },
+      { item: 'minecraft:copper_ingot' }
+    ],
+    results: [{ id: 'create:copper_casing' }]
+  })
+  event.custom({
+    type: 'create:item_application',
+    ingredients: [
+      { tag: 'c:stripped_woods' },
+      { item: 'minecraft:copper_ingot' }
+    ],
+    results: [{ id: 'create:copper_casing' }]
+  })
 })

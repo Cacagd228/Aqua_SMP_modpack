@@ -13,7 +13,8 @@
 //     clutch, gearshift, adjustable_chain_gearshift,
 //     mechanical_pump, fluid_valve, cart_assembler,
 //     weighted_ejector, linear_chassis,
-//     gantry_carriage, gantry_shaft, super_glue,
+//     gantry_carriage, gantry_shaft, super_glue (sequenced: заливка
+//     lime_dye + прессование; ванильный верстачный НЕ возвращается),
 //     mechanical_harvester, mechanical_plough, mechanical_roller,
 //     fluid_pipe (крафт-копия, чтобы труба была доступна)
 //
@@ -89,6 +90,37 @@ ServerEvents.recipes(event => {
   }).id('aquasmp:copper/mechanical_drill')
 
   // ---------- Б) ВАНИЛЬ 1:1 ----------
+  // create_rns:resonator — кастомный рецепт вместо ванильного
+  event.remove({ output: 'create_rns:resonator' })
+  event.shaped('create_rns:resonator', [
+    ' A ',
+    'BCB',
+    ' D '
+  ], {
+    A: 'minecraft:amethyst_shard',
+    B: 'create_rns:polished_resonant_amethyst',
+    C: 'create:iron_sheet',
+    D: 'create:andesite_casing'
+  }).id('aquasmp:copper/resonator')
+
+  // colonycard:stage_block — компактирование (последовательно: алмаз -> золото -> железо)
+  event.recipes.create.compacting('colonycard:stage_block', [
+    'minecraft:diamond_block',
+    'minecraft:gold_block',
+    'minecraft:iron_block'
+  ]).id('aquasmp:copper/stage_block')
+
+  // create:copper_backtank — медный баллон (ванильный рецепт: 2 медных листа + железный бак/резервуар для жидкостей)
+  event.shaped('create:copper_backtank', [
+    ' A ',
+    'BCB',
+    ' A '
+  ], {
+    A: 'create:copper_sheet',
+    B: 'minecraft:iron_ingot',
+    C: 'create:fluid_tank'
+  }).id('aquasmp:copper/copper_backtank')
+
   // Труба (чтобы была доступна крафтом, не только sequenced). Оригинал: 4 шт.
   event.shaped(Item.of('create:fluid_pipe', 4), [
     'SCS'
@@ -181,15 +213,19 @@ ServerEvents.recipes(event => {
     R: '#c:dusts/redstone'
   }).id('aquasmp:copper/gantry_shaft')
 
-  // Блок-липучка (super_glue)
-  event.shaped('create:super_glue', [
-    'AS',
-    'NA'
-  ], {
-    A: '#c:slimeballs',
-    N: '#c:nuggets/iron',
-    S: '#c:plates/iron'
-  }).id('aquasmp:copper/super_glue')
+  // Блок-липучка (super_glue) — единственный путь: iron_sheet -> заливка
+  // лаймовой краской (create_dragons_plus:lime_dye) -> прессование.
+  // Ванильный верстачный рецепт (слизь + железо) НЕ возвращаем: в Create он
+  // снят локдауном (create:super_glue в LOCKED_OUTPUTS), здесь его не дублируем.
+  // Шаги ванильные (create:filling / create:pressing): заливку делает spout,
+  // пресс — любой, в т.ч. тировой T1 (TieredPressBlockEntity ищет и ванильные
+  // рецепты прессования, и ванильные сборки).
+  event.recipes.create.sequenced_assembly([
+    'create:super_glue'
+  ], 'create:iron_sheet', [
+    event.recipes.create.filling('create:iron_sheet', ['create:iron_sheet', Fluid.of('create_dragons_plus:lime_dye', 250)]),
+    event.recipes.create.pressing('create:iron_sheet', 'create:iron_sheet')
+  ]).transitionalItem('create:iron_sheet').loops(1).id('aquasmp:copper/super_glue')
 
   // Комбайн (mechanical_harvester)
   event.shaped('create:mechanical_harvester', [

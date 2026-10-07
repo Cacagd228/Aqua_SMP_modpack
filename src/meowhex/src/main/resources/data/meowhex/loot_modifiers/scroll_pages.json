@@ -3,5 +3,6 @@
   "conditions": [],
   "common_chance": 0.05,
   "rich_chance": 0.12,
-  "treasure_chance": 0.25
+  "treasure_chance": 0.25,
+  "fishing_chance": 0.15
 }

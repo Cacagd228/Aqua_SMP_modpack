@@ -90,7 +90,8 @@
 | 15 | Радиальное шасси | `create:radial_chassis` | 📋 ваниль 1:1 (3 шт) |
 | 16 | Андезитовый корпус | `create:andesite_casing` | через рамку века 1 |
 | 17 | Венчик (для смесителя) | `create:whisk` | 📋 ваниль 1:1 |
-| 18 | I2 двигатель | `create_simulated_additions:ckbgi_2_engine` | 📋 ваниль 1:1 (нужен `simulated:engine_assembly`) |
+| 18 | Труба | `create:fluid_pipe` | 📋 ваниль 1:1 (4 шт, из меди) |
+| 19 | I2 двигатель | `create_simulated_additions:ckbgi_2_engine` | 📋 ваниль 1:1 (нужен `simulated:engine_assembly`) |
 
 ---
 
@@ -111,7 +112,7 @@
 | 11 | Регулируемая цепная коробка передач | `create:adjustable_chain_gearshift` | 📋 ваниль 1:1 (нужен `electron_tube`) |
 | 12 | Жидкостный бак | `create:fluid_tank` | 🛠️ кастом |
 | 13 | Помпа | `create:mechanical_pump` | 📋 ваниль 1:1 |
-| 14 | Труба | `create:fluid_pipe` | 🔗 sequenced only (верстачного крафта НЕТ) |
+| 14 | Труба | `create:fluid_pipe` | 📋 ваниль 1:1 + 🔗 sequenced. Дублирует железный век (`tier_iron.js`), чтобы труба точно была |
 | 15 | Буры 💎 | `create:mechanical_drill` | 🛠️ кастом, очень дорого. Правило «лимит 10×10» — договорённость, кодом не режется |
 | 16 | Вагонеточный сборщик | `create:cart_assembler` | 📋 ваниль 1:1 |
 | 17 | Контроллер штуковины | `create:contraption_controls` | 📋 ваниль 1:1 (нужен `electron_tube`) |
@@ -129,8 +130,9 @@
 | 29 | Ящик для инструментов | `create:toolbox` | 📝 ваниль, gating TODO |
 | 30 | Жидкостный люк ❓ | `create:hose_pulley` / `createdieselgenerators:...` (?) | 📝 только список, уточнить ID |
 | 31 | Двигатель (aeronautica) | `create_simulated_additions:ckbg_mid_drive_engine` | 📋 ваниль 1:1 (нужен `simulated:engine_assembly`) |
-| 32 | Hex casting ❓ | ID уточнить | 📝 только список |
+| 32 | Hex casting | `hexcasting:*` / `meowhex:*` | ✅ разбанен (см. раздел «Hexcasting — РАЗБАНЕН»): рецепты из jar'а, тиров не требует. Под локом артефакт, два ожерелья (дроп из Relics) и 7 отладочных `meowhex:assembly/test_*` |
 | 33 | Электронная лампа | `create:electron_tube` | 📋 ваниль 1:1 (нужна для adjustable/roller/контроллера) |
+| 34 | Медный баллон (насос на спине) | `create:copper_backtank` | 🚫 залочен в `00_tier_lockdown.js`, рецепта в векам нет (`create:netherite_backtank` тоже недоступен — база smithing) |
 
 ---
 
@@ -257,6 +259,21 @@ self-referential (`C: 'harderdiesel:gas_generator'` — предмет краф�
 `createbigcannons:nethersteel_ingot` локдауном не блокируются — это самая поздняя
 прогрессия в моде, но она доступна с самого начала. Реши, стоит ли тировать.
 
+🚫 **Боеприпасы Create: Big Cannons закрыты навсегда.**
+`createbigcannons:autocannon_cartridge_sheet` добавлен в `LOCKED_OUTPUTS`
+локдауна. Он был единственным входом в цепочку патронов:
+
+```
+create:cutting (латунь/медь/золото/железо, 3–6 шт) -> autocannon_cartridge_sheet
+  -> create:sequenced_assembly (прессование, 6 шагов) -> empty_autocannon_cartridge
+  -> create:sequenced_assembly (наполнение)            -> filled_autocannon_cartridge
+```
+
+`event.remove({ output })` снимает все 4 рецепта `cutting` из jar'а одним фильтром.
+Рецепты `pressing`/`filling` не удаляются — они просто становятся недостижимыми,
+потому что лист не собрать. Тирного файла, который бы вернул лист, нет и не
+планируется: мод не забанен целиком, стволы/стволки остались ванильными.
+
 ---
 
 ## ✨ ВЕК 7 — Изысканное сияние 📝 (пусто, `tier_radiance.js` будущий)
@@ -306,6 +323,8 @@ modid == неймспейсу рецептов.
 
 Каждый мод закрыт ДВАЖДЫ: `remove({mod})` + `remove({output: '@ns'})`.
 
+`hexsable` и `meowrelics` рецептов не добавляют — бан не нужны.
+
 **Исключения (единственное, что живёт):**
 
 - `createdieselgenerators:hammer` — молот, пересоздан 1:1 в локдауне.
@@ -313,6 +332,39 @@ modid == неймспейсу рецептов.
   перезаписывал этот рецепт, добавляя 5% платины; бан снял, вернули без платины).
 
 **Разбан мода:** удали строку из `BANNED_MODS` в `00_tier_lockdown.js` → `/reload`.
+
+### ✨ Hexcasting — РАЗБАНЕН (магия открыта с первого века)
+
+`hexcasting` и `meowhex` **больше не в `BANNED_MODS`**. Магия доступна сразу,
+рецепты лежат в `meowhex.jar` и тирных файлов не требуют: 111 рецептов
+`hexcasting:*` (стафы, фокус, абакус, слаты, декор, редстоун-блоки, колоризеры,
+brainsweep) + `meowhex:*` (8 стафов, ожерелья, орб рисования, обложка книги).
+
+Под замком осталось ровно три вещи (`00_tier_lockdown.js`, ЧАСТЬ 2.1):
+
+| Что | Как закрыто | Смысл |
+|-----|-------------|-------|
+| `hexcasting:artifact` | `event.remove({ output: 'hexcasting:artifact' })` | Вход в магию. Артефакт остаётся только дропом из мешков Relics (`meowrelics`, `hex_chance` = 0.04) |
+| `meowhex:charged_amethyst_necklace` | `event.remove({ output: ... })` | Удваивает максимум маны. Дроп из Relics |
+| `meowhex:overloaded_necklace` | `event.remove({ output: ... })` | Перегрузка маны. Дроп из Relics |
+| `meowhex:assembly` (7 шт.) | `event.remove({ type: 'meowhex:assembly' })` | Отладочные рецепты автора мода: `test_*.json` — медь → изумруд, золото → незеритовый лом, железо → золотое яблоко и т.п. Закрыты по ТИПУ, фильтр по mod их уже не берёт |
+
+Пул хек-артефактов, который дропает `meowrelics`
+(`ArtifactRandomizer`): `mana_berry`, `amethyst_necklace`,
+`charged_amethyst_necklace`, `lightning_rod`, `hourglass`,
+`self_torture_ring`, `overloaded_necklace`.
+
+Из них под замком только два ожерелья. `amethyst_necklace` (золото + аметист +
+нить) намеренно оставлен крафтовым — это базовое ожерелье, из него
+собирается остальное, и оно же лежит в пуле дропа.
+
+Кастить можно и без артефакта: `hexcasting:cypher` (медь + аметистовая пыль) и
+`hexcasting:trinket` (железо + осколок аметиста) — такие же media holders со
+своими кулдаунами (`cypherCooldown` / `trinketCooldown` в `HexConfig`), плюс
+`meowhex` стафы. Так что маг работает, артефакт просто дороже.
+
+Файл `archive_hexcasting_recipes.js.bak` (6 кастомных рецептов на хек) остаётся
+незагруженным: они дублируют ванильные, а `artifact` из них всё равно заблокирован.
 
 ### ⚠️ Важно про кастомные рецепты
 
@@ -334,7 +386,9 @@ modid == неймспейсу рецептов.
 | — | `aeronautics_utility_objects:*` — удалены навсегда | 8 |
 
 `main.js` теперь пуст (все 60 рецептов перенесены).
-`main(1).js` остались `hexcasting:*`, `aeroworks:*`, `create:brass_sheet`.
+`main(1).js` остались `aeroworks:*`, `create:brass_sheet`.
+Оттуда же 04.10.2026 вырезаны `hexcasting:*` (6 рецептов) — под бан
+`hexcasting`/`meowhex`; копия в `archive_hexcasting_recipes.js.bak`.
 
 ### ⚠️ Рецепты под замком, но с недостижимыми ингредиентами
 
