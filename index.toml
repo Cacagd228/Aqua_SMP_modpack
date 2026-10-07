@@ -3500,12 +3500,12 @@ file = "mods/smart_bounds-1.0.0.jar"
 hash = "0240f90b62401ef6edf30714cb0eefbbc104be629a9e595383ddf3ac898718b5"
 
 [[files]]
-file = "mods/sodium-extra-neoforge-0.9.3+mc1.21.1.jar"
-hash = "fa553bce38bad6fdd478841a270a79a31dc05f87d7892b1cf839850602ac9186"
+file = "mods/sodium-extra-neoforge-0.9.4+mc1.21.1.jar"
+hash = "655b4a25d3d1ccc0f53d0589c676f0a86e46843ae537749048b4b0edc33a0f6f"
 
 [[files]]
 file = "mods/sodium-extra.pw.toml"
-hash = "c490445e40a84c9e19bd3d3a7c8e8b9709b8cea0346a307eb7fb8a32a72a9504"
+hash = "bb91192115a88cbdacb97223adf921bb966331b5fc31464e64722cb2fa469642"
 metafile = true
 
 [[files]]
