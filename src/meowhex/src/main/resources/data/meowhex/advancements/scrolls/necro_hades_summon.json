@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_necro_hades_summon"
+      "id": "meowhex:scroll_hades_summon_necro"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_necro_hades_summon"
+              "meowhex:scroll_hades_summon_necro"
             ]
           }
         ]

@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_draw_sacrifice"
+      "id": "meowhex:scroll_draw_sacrifice_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_draw_sacrifice"
+              "meowhex:scroll_draw_sacrifice_loki"
             ]
           }
         ]

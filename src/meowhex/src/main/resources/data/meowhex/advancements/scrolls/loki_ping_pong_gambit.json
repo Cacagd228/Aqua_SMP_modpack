@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_ping_pong_gambit"
+      "id": "meowhex:scroll_ping_pong_gambit_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_ping_pong_gambit"
+              "meowhex:scroll_ping_pong_gambit_loki"
             ]
           }
         ]

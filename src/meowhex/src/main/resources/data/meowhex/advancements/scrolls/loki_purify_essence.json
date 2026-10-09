@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_purify_essence"
+      "id": "meowhex:scroll_purify_essence_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_purify_essence"
+              "meowhex:scroll_purify_essence_loki"
             ]
           }
         ]

@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_charge_vessel"
+      "id": "meowhex:scroll_charge_vessel_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_charge_vessel"
+              "meowhex:scroll_charge_vessel_loki"
             ]
           }
         ]

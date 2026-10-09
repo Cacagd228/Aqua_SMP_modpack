@@ -35,11 +35,11 @@ public final class AssemblyGate {
 
     /** The five scroll item ids ({@code scroll_*} suffixes of the op names). */
     public static final Set<String> SCROLL_IDS = Set.of(
-            "scroll_loki_merge_entities",
-            "scroll_loki_absorb_gifts",
-            "scroll_loki_purify_essence",
-            "scroll_loki_draw_sacrifice",
-            "scroll_loki_infuse_aether");
+            "scroll_merge_entities_loki",
+            "scroll_absorb_gifts_loki",
+            "scroll_purify_essence_loki",
+            "scroll_draw_sacrifice_loki",
+            "scroll_infuse_aether_loki");
 
     /**
      * Whether the assembly mechanic is live.

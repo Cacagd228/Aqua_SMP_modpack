@@ -34,6 +34,8 @@ public class HexJS {
     public HexJS(IEventBus modBus, net.neoforged.fml.ModContainer modContainer) {
         HexJSInitializer.init(modBus);
         HextendedAddon.init(modBus);
+        me.nanorasmus.nanodev.hex_js.addon.ModBlocks.register(modBus);
+        me.nanorasmus.nanodev.hex_js.addon.ModItems.register(modBus);
         me.nanorasmus.nanodev.hex_js.entity.HexEntities.init(modBus);
         me.nanorasmus.nanodev.hex_js.effect.HexEffects.init(modBus);
         me.nanorasmus.nanodev.hex_js.sound.HexSounds.init(modBus);

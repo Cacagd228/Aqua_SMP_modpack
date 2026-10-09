@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_hex_thought_knot"
+      "id": "meowhex:scroll_thought_knot_hex"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_hex_thought_knot"
+              "meowhex:scroll_thought_knot_hex"
             ]
           }
         ]

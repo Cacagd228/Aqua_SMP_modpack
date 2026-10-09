@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_mana_unpair"
+      "id": "meowhex:scroll_mana_unpair_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_mana_unpair"
+              "meowhex:scroll_mana_unpair_loki"
             ]
           }
         ]

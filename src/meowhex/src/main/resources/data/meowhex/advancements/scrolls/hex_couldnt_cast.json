@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_hex_couldnt_cast"
+      "id": "meowhex:scroll_couldnt_cast_hex"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_hex_couldnt_cast"
+              "meowhex:scroll_couldnt_cast_hex"
             ]
           }
         ]

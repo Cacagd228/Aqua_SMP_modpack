@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_wings_of_irida"
+      "id": "meowhex:scroll_wings_of_irida_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_wings_of_irida"
+              "meowhex:scroll_wings_of_irida_loki"
             ]
           }
         ]

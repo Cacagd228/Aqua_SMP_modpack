@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_hermes_deception"
+      "id": "meowhex:scroll_hermes_deception_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_hermes_deception"
+              "meowhex:scroll_hermes_deception_loki"
             ]
           }
         ]

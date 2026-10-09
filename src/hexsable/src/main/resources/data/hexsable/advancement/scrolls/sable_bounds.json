@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "hexsable:scroll_sable_bounds"
+      "id": "hexsable:scroll_bounds_sable"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "hexsable:scroll_sable_bounds"
+              "hexsable:scroll_bounds_sable"
             ]
           }
         ]

@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.10-release
+
+- **`hexsable` 1.1.0 пересобран:** переименованы все свитки Sable с `scroll_sable_*` на `scroll_*_sable` (get, zone, pos, velocity, angular_velocity, mass, bounds, to_world, to_local, dir_to_world, dir_to_local, impulse, impulse_at, spin, blink). Обновлены модели, достижения, локализации (en_us/ru_ru), категория Patchouli. Версия мода не изменилась (1.1.0).
+- **`meowhex` 1.4.0 пересобран:** масштабный рефакторинг имен свитков: `scroll_hex_*` → `scroll_*_hex`, `scroll_loki_*` → `scroll_*_loki`, `scroll_necro_*` → `scroll_*_necro` (60+ свитков). Удалены модельки старых имен, обновлены достижения, lang-файлы, loot-модификатор `scroll_pages.json` (удалён), миксин `MorphHexChickenMixin` (удалён). Версия мода не изменилась (1.4.0).
+- **`meowaddons` 1.0.1 пересобран:** добавлена регистрация ItemHandler capability для тировых пил (T1–T6), исправляет доступ к инвентарю пилы. Версия мода не изменилась (1.0.1).
+
 ## v1.1.9-release
 
 - **Новые моды (4):**

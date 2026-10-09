@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_hex_chronos_delay"
+      "id": "meowhex:scroll_chronos_delay_hex"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_hex_chronos_delay"
+              "meowhex:scroll_chronos_delay_hex"
             ]
           }
         ]

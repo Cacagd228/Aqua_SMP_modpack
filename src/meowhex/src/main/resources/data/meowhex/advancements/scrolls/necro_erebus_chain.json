@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_necro_erebus_chain"
+      "id": "meowhex:scroll_erebus_chain_necro"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_necro_erebus_chain"
+              "meowhex:scroll_erebus_chain_necro"
             ]
           }
         ]

@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_hex_fanciful_staves"
+      "id": "meowhex:scroll_fanciful_staves_hex"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_hex_fanciful_staves"
+              "meowhex:scroll_fanciful_staves_hex"
             ]
           }
         ]

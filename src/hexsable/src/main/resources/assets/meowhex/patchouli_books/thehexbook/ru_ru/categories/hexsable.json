@@ -1,6 +1,6 @@
 {
   "name": "hexsable.category",
-  "icon": "hexsable:scroll_sable_get",
+  "icon": "hexsable:scroll_get_sable",
   "sortnum": 4,
   "description": "hexsable.category.desc"
 }

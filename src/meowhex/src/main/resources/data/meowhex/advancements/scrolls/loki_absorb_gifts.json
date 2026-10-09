@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_absorb_gifts"
+      "id": "meowhex:scroll_absorb_gifts_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_absorb_gifts"
+              "meowhex:scroll_absorb_gifts_loki"
             ]
           }
         ]

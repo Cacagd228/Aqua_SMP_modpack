@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_necro_morrigan_gambit"
+      "id": "meowhex:scroll_morrigan_gambit_necro"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_necro_morrigan_gambit"
+              "meowhex:scroll_morrigan_gambit_necro"
             ]
           }
         ]

@@ -2,7 +2,7 @@
   "parent": "meowhex:scrolls/root",
   "display": {
     "icon": {
-      "id": "meowhex:scroll_loki_gerd_substitution"
+      "id": "meowhex:scroll_gerd_substitution_loki"
     },
     "title": {
       "translate": "advancement.meowhex.scroll_found.title",
@@ -27,7 +27,7 @@
         "items": [
           {
             "items": [
-              "meowhex:scroll_loki_gerd_substitution"
+              "meowhex:scroll_gerd_substitution_loki"
             ]
           }
         ]

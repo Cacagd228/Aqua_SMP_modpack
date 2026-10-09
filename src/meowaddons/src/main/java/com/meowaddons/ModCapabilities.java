@@ -1,6 +1,7 @@
 package com.meowaddons;
 import com.meowaddons.tier.TieredCrushingWheelControllerBlockEntity;
 import com.meowaddons.tier.TieredDeployerBlockEntity;
+import com.meowaddons.tier.TieredSawBlockEntity;
 import com.meowaddons.transmitter.TransmitterBlockEntity;
 import com.simibubi.create.content.kinetics.deployer.DeployerItemHandler;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,5 +20,17 @@ public class ModCapabilities{
   e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T4.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
   e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T5.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
   e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,ModBlockEntities.TIERED_DEPLOYER_T6.get(),(TieredDeployerBlockEntity be,net.minecraft.core.Direction s)->new DeployerItemHandler(be));
+  for(int i=1;i<=6;i++){
+    var sawType = switch(i){
+      case 1 -> ModBlockEntities.TIERED_SAW_T1.get();
+      case 2 -> ModBlockEntities.TIERED_SAW_T2.get();
+      case 3 -> ModBlockEntities.TIERED_SAW_T3.get();
+      case 4 -> ModBlockEntities.TIERED_SAW_T4.get();
+      case 5 -> ModBlockEntities.TIERED_SAW_T5.get();
+      case 6 -> ModBlockEntities.TIERED_SAW_T6.get();
+      default -> throw new IllegalStateException();
+    };
+    e.registerBlockEntity(Capabilities.ItemHandler.BLOCK,sawType,(TieredSawBlockEntity be,net.minecraft.core.Direction s)->be.inventory);
+  }
  }
 }
