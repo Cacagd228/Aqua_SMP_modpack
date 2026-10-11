@@ -40,13 +40,11 @@ public class TieredPressBlockEntity extends MechanicalPressBlockEntity {
   }
   @Override public Optional<RecipeHolder<com.simibubi.create.content.kinetics.press.PressingRecipe>> getRecipe(ItemStack stack){
    Level level=getLevel(); if(level==null) return Optional.empty();
-   var asm=SequencedAssemblyRecipe.getRecipe(level,stack,com.simibubi.create.AllRecipeTypes.PRESSING.getType(),com.simibubi.create.content.kinetics.press.PressingRecipe.class);
-   if(asm.isPresent()) return asm;
-   for(int l=tier.level; l>=1; l--){
-    @SuppressWarnings("unchecked") net.minecraft.world.item.crafting.RecipeType<com.simibubi.create.content.kinetics.press.PressingRecipe> asmType=(net.minecraft.world.item.crafting.RecipeType<com.simibubi.create.content.kinetics.press.PressingRecipe>)(net.minecraft.world.item.crafting.RecipeType<?>)ModRecipeTypes.pressingTier(Tier.fromLevel(l));
-    var asmT=SequencedAssemblyRecipe.getRecipe(level,stack,asmType,com.simibubi.create.content.kinetics.press.PressingRecipe.class);
-    if(asmT.isPresent()) return asmT;
-   }
+   // Only check exact tier match for sequential assembly
+   @SuppressWarnings("unchecked")
+   net.minecraft.world.item.crafting.RecipeType<com.simibubi.create.content.kinetics.press.PressingRecipe> asmType=(net.minecraft.world.item.crafting.RecipeType<com.simibubi.create.content.kinetics.press.PressingRecipe>)(net.minecraft.world.item.crafting.RecipeType<?>)ModRecipeTypes.pressingTier(tier);
+   var asmT=SequencedAssemblyRecipe.getRecipe(level,stack,asmType,com.simibubi.create.content.kinetics.press.PressingRecipe.class);
+   if(asmT.isPresent()) return asmT;
    SingleRecipeInput input=new SingleRecipeInput(stack);
   for(int l=tier.level; l>=1; l--){
    Tier rt=Tier.fromLevel(l);

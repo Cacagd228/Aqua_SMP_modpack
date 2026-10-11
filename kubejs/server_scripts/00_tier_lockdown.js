@@ -196,6 +196,7 @@ ServerEvents.recipes(event => {
     'create_radar',                   // Create: Radars
     'radiologistics',                 // Create: Radiologistics
     'createcasing',                   // Create: Encased
+    'createnuclear',                  // Create Nuclear
     // ⚠️ Hexcasting (meowhex.jar = форк hexcasting + контент meow) больше НЕ в бане.
     // Открыт полностью, оба неймспейса: hexcasting (111 рецептов) и meowhex
     // (стафы, орбы, кулоны, spellbook_cover, assembly). Магия доступна
@@ -234,6 +235,7 @@ ServerEvents.recipes(event => {
   //    ловит их целиком, кросс-модных нет (проверено по всем jar'ам).
   event.remove({ output: 'meowhex:charged_amethyst_necklace' })
   event.remove({ output: 'meowhex:overloaded_necklace' })
+  event.remove({ output: 'scguns:flare_pistol' })
   //
   // 3) Отладочные рецепты автора meowhex — 7 файлов
   //    data/meowhex/recipe/assembly/test_*.json (медь -> изумруд,

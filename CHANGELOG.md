@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.11-release
+
+- **Новый мод:** `Create Nuclear` 2.0.0 (Modrinth) — ядерные реакторы для Create (Tier 1–3), система охлаждения (азот), радиация, йод, броня, заражённые биомы, взрывы. Зависит от Create.
+- **`meowaddons` 1.0.1 пересобран из исходников:** строгий exact-tier матч для тировых рецептов sequenced assembly (pressing/cutting/deploying) — больше нет фоллбэка на ниже тиры; пресс и пила ищут только свой тир, деплойер проверяет ингредиент в руке игрока.
+- **`meowhex` 1.4.0 без изменений** (сборка из исходников не проходит из-за отсутствующих классов — оставлен рабочий jar).
+- **KubeJS:** в `00_tier_lockdown.js` добавлен полный бан рецептов `createnuclear` (мод закрыт полностью, как и остальные технологические аддоны Create).
+
 ## v1.1.10-release
 
 - **`hexsable` 1.1.0 пересобран:** переименованы все свитки Sable с `scroll_sable_*` на `scroll_*_sable` (get, zone, pos, velocity, angular_velocity, mass, bounds, to_world, to_local, dir_to_world, dir_to_local, impulse, impulse_at, spin, blink). Обновлены модели, достижения, локализации (en_us/ru_ru), категория Patchouli. Версия мода не изменилась (1.1.0).

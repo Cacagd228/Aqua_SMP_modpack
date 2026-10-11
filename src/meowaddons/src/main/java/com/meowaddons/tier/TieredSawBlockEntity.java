@@ -83,27 +83,16 @@ public class TieredSawBlockEntity extends SawBlockEntity {
   public List<RecipeHolder<? extends Recipe<?>>> collectTieredRecipes(Level level, ItemStack stack, FilteringBehaviour filter) {
     if (level == null || stack.isEmpty()) return null;
 
-    // --- 1. ШАГ ПОСЛЕДОВАТЕЛЬНОЙ СБОРКИ (собственный тир → вниз по тирам) ---
-    for (int l = tier.level; l >= 1; l--) {
-      Tier rt = Tier.fromLevel(l);
-      @SuppressWarnings("unchecked")
-      RecipeType<CuttingRecipe> asmType =
-          (RecipeType<CuttingRecipe>) (RecipeType<?>) ModRecipeTypes.cuttingTier(rt);
-      Optional<RecipeHolder<CuttingRecipe>> asm =
-          SequencedAssemblyRecipe.getRecipe(level, stack, asmType, CuttingRecipe.class);
-      if (asm.isPresent() && passesFilter(filter, level, asm.get())) {
-        List<RecipeHolder<? extends Recipe<?>>> single = new ArrayList<>(1);
-        single.add(asm.get());
-        return single;
-      }
-    }
-    // Шаг ванильной сборки (create:cutting внутри create:sequenced_assembly).
-    // На случай, если в патче появится такой рецепт.
-    Optional<RecipeHolder<CuttingRecipe>> vanillaAsm =
-        SequencedAssemblyRecipe.getRecipe(level, stack, AllRecipeTypes.CUTTING.getType(), CuttingRecipe.class);
-    if (vanillaAsm.isPresent() && passesFilter(filter, level, vanillaAsm.get())) {
+    // --- 1. ШАГ ПОСЛЕДОВАТЕЛЬНОЙ СБОРКИ (ТОЛЬКО СОБСТВЕННЫЙ ТИР - exact tier match) ---
+    Tier rt = tier;
+    @SuppressWarnings("unchecked")
+    RecipeType<CuttingRecipe> asmType =
+        (RecipeType<CuttingRecipe>) (RecipeType<?>) ModRecipeTypes.cuttingTier(rt);
+    Optional<RecipeHolder<CuttingRecipe>> asm =
+        SequencedAssemblyRecipe.getRecipe(level, stack, asmType, CuttingRecipe.class);
+    if (asm.isPresent() && passesFilter(filter, level, asm.get())) {
       List<RecipeHolder<? extends Recipe<?>>> single = new ArrayList<>(1);
-      single.add(vanillaAsm.get());
+      single.add(asm.get());
       return single;
     }
 
@@ -159,15 +148,14 @@ public class TieredSawBlockEntity extends SawBlockEntity {
   private Optional<RecipeHolder<CuttingRecipe>> findAssemblyStep(ItemStack stack) {
     Level level = getLevel();
     if (level == null || stack.isEmpty()) return Optional.empty();
-    for (int l = tier.level; l >= 1; l--) {
-      Tier rt = Tier.fromLevel(l);
-      @SuppressWarnings("unchecked")
-      RecipeType<CuttingRecipe> asmType =
-          (RecipeType<CuttingRecipe>) (RecipeType<?>) ModRecipeTypes.cuttingTier(rt);
-      Optional<RecipeHolder<CuttingRecipe>> asm =
-          SequencedAssemblyRecipe.getRecipe(level, stack, asmType, CuttingRecipe.class);
-      if (asm.isPresent()) return asm;
-    }
+    // Only exact tier match for sequential assembly
+    Tier rt = tier;
+    @SuppressWarnings("unchecked")
+    RecipeType<CuttingRecipe> asmType =
+        (RecipeType<CuttingRecipe>) (RecipeType<?>) ModRecipeTypes.cuttingTier(rt);
+    Optional<RecipeHolder<CuttingRecipe>> asm =
+        SequencedAssemblyRecipe.getRecipe(level, stack, asmType, CuttingRecipe.class);
+    if (asm.isPresent()) return asm;
     return Optional.empty();
   }
 

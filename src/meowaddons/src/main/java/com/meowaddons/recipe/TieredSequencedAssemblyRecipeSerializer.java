@@ -35,16 +35,14 @@ public class TieredSequencedAssemblyRecipeSerializer implements RecipeSerializer
 	}
 	private TieredSequencedAssemblyRecipe build(Ingredient ing, ProcessingOutput tr, List<SequencedRecipe<?>> seq, List<ProcessingOutput> res, Integer lp){
 		if (seq.isEmpty()) throw new IllegalArgumentException("meowaddons:sequenced_assembly_t" + tier.level + ": empty sequence");
-		boolean hasTiered = false;
 		for (SequencedRecipe<?> sr : seq) {
 			if (sr.getRecipe() instanceof TieredRecipe step) {
-				hasTiered = true;
-				if (step.getTier().level > tier.level)
-					throw new IllegalArgumentException("meowaddons:sequenced_assembly_t" + tier.level + ": step tier t" + step.getTier().level + " exceeds assembly tier");
+				if (step.getTier().level != tier.level)
+					throw new IllegalArgumentException("meowaddons:sequenced_assembly_t" + tier.level + ": step tier t" + step.getTier().level + " must match assembly tier exactly (t" + tier.level + ")");
+			} else {
+				throw new IllegalArgumentException("meowaddons:sequenced_assembly_t" + tier.level + ": all steps must be tiered recipes (meowaddons:pressing_t" + tier.level + ", cutting_t" + tier.level + ", deploying_t" + tier.level + ", etc.)");
 			}
 		}
-		if (tier.level >= 2 && !hasTiered)
-			throw new IllegalArgumentException("meowaddons:sequenced_assembly_t" + tier.level + ": no tiered steps - use create:sequenced_assembly");
 		TieredSequencedAssemblyRecipe r = new TieredSequencedAssemblyRecipe(tier);
 		r.apply(ing, tr, seq, res, lp);
 		return r;
